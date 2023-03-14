@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="PrimaryColor">#23272C</Color>
+    
+    <Color x:Key="SubSecondaryColor">#3F1DBAC5</Color>
+    <Color x:Key="SecondaryColor">#1DBAC5</Color>
+    
+    <Color x:Key="TertiaryColor">#D14D14</Color>
+    <Color x:Key="SubTertiaryColor">#C51D31</Color>
+
+
+    <Color x:Key="WindowColor">#23272C</Color>
+
+</ResourceDictionary>
