@@ -12,11 +12,20 @@
     
     <ControlTemplate x:Key="DefaultWindowTemplate" TargetType="{x:Type Window}">
         <Border x:Name="PATH_Border" Style="{DynamicResource DefaultBorderStyle}" Background="{TemplateBinding Background}">
-            <Grid>
-                <AdornerDecorator>
-                    <ContentPresenter/>
-                </AdornerDecorator>
-                <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Button/>
+                </Grid>
+                <Grid Grid.RowSpan="2">
+                    <AdornerDecorator>
+                        <ContentPresenter/>
+                    </AdornerDecorator>
+                    <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
+                </Grid>
             </Grid>
         </Border>
         <ControlTemplate.Triggers>
