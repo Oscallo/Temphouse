@@ -27,19 +27,14 @@
     
     <!--#endregion-->
 
-
-    <Style x:Key="DefaultBorderStyle" TargetType="{x:Type Border}">
-        <Setter Property="CornerRadius" Value="20"/>
-    </Style>
-
     <ControlTemplate x:Key="DefaultWindowTemplate" TargetType="{x:Type Window}">
-        <Border x:Name="PATH_Border" Style="{DynamicResource DefaultBorderStyle}" Background="{TemplateBinding Background}">
+        <Border x:Name="PART_Border" Background="{TemplateBinding Background}">
             <Grid Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid x:Name="PATH_HeaderBar" Grid.Row="0" Panel.ZIndex="{x:Static sys:Int32.MaxValue}">
+                <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{x:Static sys:Int32.MaxValue}">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
                         
                     </StackPanel>
@@ -61,6 +56,17 @@
             <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
                 <Setter TargetName="WindowResizeGrip" Property="Visibility" Value="Visible" />
             </Trigger>
+
+            <Trigger Property="WindowState" Value="Normal">
+                <Setter TargetName="PART_Border" Property="BorderThickness" Value="1"/>
+                <Setter TargetName="PART_Border" Property="CornerRadius" Value="20"/>
+            </Trigger>
+
+            <Trigger Property="WindowState" Value="Maximized">
+                <Setter TargetName="PART_Border" Property="BorderThickness" Value="7"/>
+                <Setter TargetName="PART_Border" Property="CornerRadius" Value="0"/>
+            </Trigger>
+            
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
