@@ -4,11 +4,10 @@
 
     <sys:Double x:Key="HeaderHeight">32</sys:Double>
 
+    
     <Style x:Key="DefaultBorderStyle" TargetType="{x:Type Border}">
         <Setter Property="CornerRadius" Value="20"/>
     </Style>
-
-    <!-- Нет скругления в конструкторе.... -->
     
     <ControlTemplate x:Key="DefaultWindowTemplate" TargetType="{x:Type Window}">
         <Border x:Name="PATH_Border" Style="{DynamicResource DefaultBorderStyle}" Background="{TemplateBinding Background}">
@@ -17,8 +16,8 @@
                     <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid x:Name="HeaderBar" Grid.Row="0">
-                    <Button  WindowChrome.IsHitTestVisibleInChrome="True"/>
+                <Grid x:Name="HeaderBar" Grid.Row="0" Panel.ZIndex="{x:Static sys:Int32.MaxValue}">
+                    <Button WindowChrome.IsHitTestVisibleInChrome="True"/>
                 </Grid>
                 <Grid Grid.RowSpan="2">
                     <AdornerDecorator>
@@ -36,7 +35,7 @@
     </ControlTemplate>
 
     <Style x:Key="DefaultWindowStyle"  TargetType="{x:Type Window}">
-        <Setter Property="AllowsTransparency" Value="True"/> <!-- Найти альтернативу -->
+        <Setter Property="AllowsTransparency" Value="True"/>   <!-- Найти альтернативу -->
         <Setter Property="Background">
             <Setter.Value>
                 <SolidColorBrush Color="{DynamicResource WindowColor}"/>
@@ -57,7 +56,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
 
 </ResourceDictionary>
     
