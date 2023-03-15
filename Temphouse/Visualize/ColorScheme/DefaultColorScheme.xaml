@@ -10,6 +10,7 @@
     <Color x:Key="SubTertiaryColor">#C51D31</Color>
 
 
+    <!-- Перезапись стандартного цвета окна-->
     <Color x:Key="WindowColor">#23272C</Color>
 
 </ResourceDictionary>

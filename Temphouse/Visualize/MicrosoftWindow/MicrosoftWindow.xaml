@@ -2,13 +2,36 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <sys:Double x:Key="HeaderHeight">32</sys:Double>
-
+   <!-- 
+    Требования:
+    1. Необходисо найти возможность скруглить окно так, чтобы фигуры не выходили за пределы окна.
     
+    Пример (но не рабочий):
+      <Grid.OpacityMask>
+         <VisualBrush Visual="{Binding ElementName=PATH_Border}" />
+      </Grid.OpacityMask> 
+    
+    2. Найти альтернативу AllowsTransparency, для экономии производительности.
+    3. Сделать общий стиль и шаблон так, чтобы они были у всех окон. 
+    --> 
+
+    <!--#region Константы-->
+    
+    <sys:Double x:Key="HeaderHeight">32</sys:Double>
+    
+    <!--#endregion-->
+
+    <!--#region Цветовая схема -->
+
+    <SolidColorBrush x:Key="WindowSolidColorBrush" Color="{DynamicResource WindowColor}"/>
+    
+    <!--#endregion-->
+
+
     <Style x:Key="DefaultBorderStyle" TargetType="{x:Type Border}">
         <Setter Property="CornerRadius" Value="20"/>
     </Style>
-    
+
     <ControlTemplate x:Key="DefaultWindowTemplate" TargetType="{x:Type Window}">
         <Border x:Name="PATH_Border" Style="{DynamicResource DefaultBorderStyle}" Background="{TemplateBinding Background}">
             <Grid Margin="10">
@@ -16,8 +39,15 @@
                     <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid x:Name="HeaderBar" Grid.Row="0" Panel.ZIndex="{x:Static sys:Int32.MaxValue}">
-                    <Button WindowChrome.IsHitTestVisibleInChrome="True"/>
+                <Grid x:Name="PATH_HeaderBar" Grid.Row="0" Panel.ZIndex="{x:Static sys:Int32.MaxValue}">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
+                        
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right" >
+                        <Button WindowChrome.IsHitTestVisibleInChrome="True" Width="27" Height="27" Margin="0,0,10,0" />
+                        <Button WindowChrome.IsHitTestVisibleInChrome="True" Width="27" Height="27" Margin="0,0,10,0" />
+                        <Button WindowChrome.IsHitTestVisibleInChrome="True" Width="27" Height="27" Margin="0,0,10,0" />
+                    </StackPanel>
                 </Grid>
                 <Grid Grid.RowSpan="2">
                     <AdornerDecorator>
@@ -35,12 +65,8 @@
     </ControlTemplate>
 
     <Style x:Key="DefaultWindowStyle"  TargetType="{x:Type Window}">
-        <Setter Property="AllowsTransparency" Value="True"/>   <!-- Найти альтернативу -->
-        <Setter Property="Background">
-            <Setter.Value>
-                <SolidColorBrush Color="{DynamicResource WindowColor}"/>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="AllowsTransparency" Value="True"/>
+        <Setter Property="Background" Value="{DynamicResource WindowSolidColorBrush}"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="WindowStyle" Value="None"/>
@@ -60,11 +86,3 @@
 </ResourceDictionary>
     
     
-    
-    <!-- Попытка скруглить
-    
-                 <Grid.OpacityMask>
-                    <VisualBrush Visual="{Binding ElementName=PATH_Border}" />
-                </Grid.OpacityMask>
-    
-    -->
