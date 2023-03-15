@@ -18,7 +18,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid x:Name="HeaderBar" Grid.Row="0">
-                    <Button/>
+                    <Button  WindowChrome.IsHitTestVisibleInChrome="True"/>
                 </Grid>
                 <Grid Grid.RowSpan="2">
                     <AdornerDecorator>
@@ -46,7 +46,6 @@
         <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="Template" Value="{DynamicResource DefaultWindowTemplate}"/>
-
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome CaptionHeight="{DynamicResource HeaderHeight}"
@@ -58,6 +57,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
 
 </ResourceDictionary>
     
