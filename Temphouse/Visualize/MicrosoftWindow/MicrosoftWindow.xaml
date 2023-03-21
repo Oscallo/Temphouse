@@ -46,7 +46,7 @@
                         <Image Source="{TemplateBinding Icon}" Height="27" Width="27"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                        <Button x:Name="PART_MINIMIZE" Style="{DynamicResource DefaultWindowRightButtonStyle}" />
+                        <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
                         <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
                         <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
                     </StackPanel>
