@@ -38,7 +38,7 @@
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
                         
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right" >
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
                         <Button WindowChrome.IsHitTestVisibleInChrome="True" Width="27" Height="27" Margin="0,0,10,0" />
                         <Button WindowChrome.IsHitTestVisibleInChrome="True" Width="27" Height="27" Margin="0,0,10,0" />
                         <Button WindowChrome.IsHitTestVisibleInChrome="True" Width="27" Height="27" Margin="0,0,10,0" />
