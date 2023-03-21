@@ -10,6 +10,6 @@
         Title="DashboardWindow" Height="450" Width="800">
     <!-- Найти альтернативу d:Template и Style -->
     <Grid>
-
+        
     </Grid>
 </Window>

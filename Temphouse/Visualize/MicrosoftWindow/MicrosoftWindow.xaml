@@ -46,14 +46,16 @@
                         <Image Source="{TemplateBinding Icon}" Height="27" Width="27"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                        <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
+                        <Button x:Name="PART_MINIMIZE" Style="{DynamicResource DefaultWindowRightButtonStyle}" />
                         <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
                         <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
                     </StackPanel>
                 </Grid>
                 <Grid Grid.RowSpan="2">
                     <AdornerDecorator>
-                        <ContentPresenter/>
+                        <ContentPresenter
+                            Content="{TemplateBinding Content}" 
+                            ContentTemplate="{TemplateBinding ContentTemplate}"/>
                     </AdornerDecorator>
                     <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
                 </Grid>
