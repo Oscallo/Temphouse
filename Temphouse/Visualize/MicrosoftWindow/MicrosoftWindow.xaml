@@ -27,6 +27,13 @@
     
     <!--#endregion-->
 
+    <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="Width" Value="27"/>
+        <Setter Property="Height" Value="27"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+    </Style>
+
     <ControlTemplate x:Key="DefaultWindowTemplate" TargetType="{x:Type Window}">
         <Border x:Name="PART_Border" Background="{TemplateBinding Background}">
             <Grid Margin="10">
@@ -39,9 +46,9 @@
                         
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                        <Button WindowChrome.IsHitTestVisibleInChrome="True" Width="27" Height="27" Margin="0,0,10,0" />
-                        <Button WindowChrome.IsHitTestVisibleInChrome="True" Width="27" Height="27" Margin="0,0,10,0" />
-                        <Button WindowChrome.IsHitTestVisibleInChrome="True" Width="27" Height="27" Margin="0,0,10,0" />
+                        <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
+                        <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
+                        <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
                     </StackPanel>
                 </Grid>
                 <Grid Grid.RowSpan="2">
