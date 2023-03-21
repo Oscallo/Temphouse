@@ -43,7 +43,7 @@
                 </Grid.RowDefinitions>
                 <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{x:Static sys:Int32.MaxValue}">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
-                        
+                        <Image Source="{TemplateBinding Icon}" Height="27" Width="27"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
                         <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
