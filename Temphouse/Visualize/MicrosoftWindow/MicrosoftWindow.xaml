@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    >
 
    <!-- 
     Требования:
@@ -13,6 +14,7 @@
     
     2. Найти альтернативу AllowsTransparency, для экономии производительности.
     3. Сделать общий стиль и шаблон так, чтобы они были у всех окон. 
+    4. Использовать команды для кнопок
     --> 
 
     <!--#region Константы-->
@@ -27,11 +29,14 @@
     
     <!--#endregion-->
 
+
     <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="Focusable" Value="False" />
         <Setter Property="Width" Value="27"/>
         <Setter Property="Height" Value="27"/>
         <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="IsTabStop" Value="False"/>
     </Style>
 
     <ControlTemplate x:Key="DefaultWindowTemplate" TargetType="{x:Type Window}">
@@ -43,19 +48,24 @@
                 </Grid.RowDefinitions>
                 <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{x:Static sys:Int32.MaxValue}">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
-                        <Image Source="{TemplateBinding Icon}" Height="27" Width="27"/>
+                        <Image Source="{TemplateBinding Icon}" Height="{Binding Source={x:Static SystemParameters.IconHeight}}" Width="{Binding Source={x:Static SystemParameters.IconWidth}}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                        <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
-                        <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
-                        <Button Style="{DynamicResource DefaultWindowRightButtonStyle}" />
+                        <StackPanel.CommandBindings>
+                           
+                        </StackPanel.CommandBindings>
+                        <Button x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Close" />
+                        <Button x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.MinimizeWindowCommand}" ToolTip="Close" />
+                        <Button x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Close" />
+                        <Button x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.CloseWindowCommand}" ToolTip="Close" />
                     </StackPanel>
                 </Grid>
                 <Grid Grid.RowSpan="2">
                     <AdornerDecorator>
                         <ContentPresenter
                             Content="{TemplateBinding Content}" 
-                            ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                            ContentTemplate="{TemplateBinding ContentTemplate}" 
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </AdornerDecorator>
                     <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
                 </Grid>
@@ -67,11 +77,13 @@
             </Trigger>
 
             <Trigger Property="WindowState" Value="Normal">
+                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static SystemCommands.MaximizeWindowCommand}"/>
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="1"/>
                 <Setter TargetName="PART_Border" Property="CornerRadius" Value="20"/>
             </Trigger>
 
             <Trigger Property="WindowState" Value="Maximized">
+                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static SystemCommands.RestoreWindowCommand}"/>
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="7"/>
                 <Setter TargetName="PART_Border" Property="CornerRadius" Value="0"/>
             </Trigger>
@@ -97,7 +109,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
 </ResourceDictionary>
     
     
