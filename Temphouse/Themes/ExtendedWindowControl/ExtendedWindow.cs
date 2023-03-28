@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Permissions;
 using System.Text;
@@ -24,6 +25,7 @@ namespace Temphouse.Themes.ExtendedWindowControl
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ExtendedWindow), new FrameworkPropertyMetadata(typeof(ExtendedWindow)));
         }
+
         public ExtendedWindow() : base()
         {
             this.CommandBindings.Add(new CommandBinding(SystemCommands.CloseWindowCommand, OnCloseWindow));
@@ -60,6 +62,18 @@ namespace Temphouse.Themes.ExtendedWindowControl
         private void OnRestoreWindow(object sender, ExecutedRoutedEventArgs e)
         {
             SystemCommands.RestoreWindow(this);
+        }
+
+        /// <summary>
+        /// Возвращает true, если объект Window находится в режиме разработки, или false, если в режиме выполнения.
+        /// </summary>
+        /// <returns>Boolean</returns>
+        public bool IsInDesignMode
+        {
+            get
+            {
+                return DesignerProperties.GetIsInDesignMode(this);
+            }
         }
     }
 }
