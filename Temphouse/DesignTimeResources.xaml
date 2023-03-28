@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-
+    <!-- Необходимо для визуализации из dll -->
+    
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/Generic.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Themes/Generic.xaml"/>
