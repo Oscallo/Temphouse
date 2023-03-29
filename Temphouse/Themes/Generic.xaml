@@ -4,8 +4,11 @@
     xmlns:local="clr-namespace:Temphouse">
     
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Themes/ExtendedWindowControl/ExtendedWindow.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/ColorScheme/DefaultColorScheme.xaml"/>
+
+        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Themes/ExtendedWindowControl/ExtendedWindow.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Themes/SquaredButtonControl/SquaredButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+
 
 </ResourceDictionary>
