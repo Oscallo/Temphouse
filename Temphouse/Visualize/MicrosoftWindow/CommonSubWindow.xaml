@@ -2,9 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <!--#region Константы-->
+    <!--#region Переменные -->
 
     <sys:Double x:Key="HeaderHeight">32</sys:Double>
+    <x:Static x:Key="HeaderZIndex" Member="sys:Int32.MaxValue" />
+
+    <x:Static x:Key="HeaderIconHeight" Member="SystemParameters.IconHeight"/>
+    <x:Static x:Key="HeaderIconWidth" Member="SystemParameters.IconWidth"/>
 
     <!--#endregion-->
 
@@ -24,8 +28,9 @@
       </Grid.OpacityMask> 
     
     2. Найти альтернативу AllowsTransparency, для экономии производительности.
-    3. Сделать общий стиль и шаблон так, чтобы они были у всех окон. 
-    4. Использовать команды для кнопок
+    3. Сделать общий стиль и шаблон так, чтобы они были у всех окон. - Готово 
+    4. Использовать команды для кнопок - Готово
+    5. Найти альтернативный способ, чтобы он отображался и в дизайнере.
     -->
 
     <!-- 

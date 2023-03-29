@@ -13,16 +13,13 @@
                     <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{x:Static sys:Int32.MaxValue}">
+                <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{Binding Source={StaticResource HeaderZIndex}}">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
-                        <Image Source="{TemplateBinding Icon}" Height="{Binding Source={x:Static SystemParameters.IconHeight}}" Width="{Binding Source={x:Static SystemParameters.IconWidth}}"/>
+                        <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource HeaderIconHeight}}" Width="{Binding Source={StaticResource HeaderIconWidth}}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                        <StackPanel.CommandBindings>
-
-                        </StackPanel.CommandBindings>
-                        <Button x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Close" />
-                        <Button x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.MinimizeWindowCommand}" ToolTip="Close" />
+                        <Button x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Hide" />
+                        <Button x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
                         <Button x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Close" />
                         <Button x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.CloseWindowCommand}" ToolTip="Close" />
                     </StackPanel>
@@ -45,12 +42,16 @@
 
             <Trigger Property="WindowState" Value="Normal">
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static SystemCommands.MaximizeWindowCommand}"/>
+                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Maximize"/>
+
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="1"/>
                 <Setter TargetName="PART_Border" Property="CornerRadius" Value="20"/>
             </Trigger>
 
             <Trigger Property="WindowState" Value="Maximized">
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static SystemCommands.RestoreWindowCommand}"/>
+                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Restore"/>
+
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="7"/>
                 <Setter TargetName="PART_Border" Property="CornerRadius" Value="0"/>
             </Trigger>
@@ -62,7 +63,7 @@
         <Setter Property="Background" Value="{DynamicResource WindowSolidColorBrush}"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="WindowStyle" Value="None"/>
-        <Setter Property="Template" Value="{DynamicResource DefaulWindowTemplate}"/>
+        <Setter Property="Template" Value="{DynamicResource DefaultWindowTemplate}"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome CaptionHeight="{DynamicResource HeaderHeight}"
