@@ -6,6 +6,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temphouse.Windows"
         mc:Ignorable="d"
+        d:Template="{DynamicResource DefaultWindowTemplate}"
+        d:Style="{DynamicResource DefaultWindowStyle}"
         Title="TWindow" Height="450" Width="800">
     <Grid>
         

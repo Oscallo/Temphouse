@@ -1,43 +1,10 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    >
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-   <!-- 
-    Требования:
-    1. Необходисо найти возможность скруглить окно так, чтобы фигуры не выходили за пределы окна.
-    
-    Пример (но не рабочий):
-      <Grid.OpacityMask>
-         <VisualBrush Visual="{Binding ElementName=PATH_Border}" />
-      </Grid.OpacityMask> 
-    
-    2. Найти альтернативу AllowsTransparency, для экономии производительности.
-    3. Сделать общий стиль и шаблон так, чтобы они были у всех окон. 
-    4. Использовать команды для кнопок
-    --> 
-
-    <!--#region Константы-->
-    
-    <sys:Double x:Key="HeaderHeight">32</sys:Double>
-    
-    <!--#endregion-->
-
-    <!--#region Цветовая схема -->
-
-    <SolidColorBrush x:Key="WindowSolidColorBrush" Color="{DynamicResource WindowColor}"/>
-    
-    <!--#endregion-->
-
-
-    <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
-        <Setter Property="Focusable" Value="False" />
-        <Setter Property="Width" Value="27"/>
-        <Setter Property="Height" Value="27"/>
-        <Setter Property="Margin" Value="0,0,10,0"/>
-        <Setter Property="IsTabStop" Value="False"/>
-    </Style>
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/MicrosoftWindow/CommonSubWindow.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
     <ControlTemplate x:Key="DefaultWindowTemplate" TargetType="{x:Type Window}">
         <Border x:Name="PART_Border" Background="{TemplateBinding Background}">
@@ -52,7 +19,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
                         <StackPanel.CommandBindings>
-                           
+
                         </StackPanel.CommandBindings>
                         <Button x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Close" />
                         <Button x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.MinimizeWindowCommand}" ToolTip="Close" />
@@ -87,17 +54,15 @@
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="7"/>
                 <Setter TargetName="PART_Border" Property="CornerRadius" Value="0"/>
             </Trigger>
-            
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style x:Key="DefaultWindowStyle"  TargetType="{x:Type Window}">
+    <Style x:Key="DefaultWindowStyle" TargetType="{x:Type Window}">
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="Background" Value="{DynamicResource WindowSolidColorBrush}"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="OverridesDefaultStyle" Value="True"/>
         <Setter Property="WindowStyle" Value="None"/>
-        <Setter Property="Template" Value="{DynamicResource DefaultWindowTemplate}"/>
+        <Setter Property="Template" Value="{DynamicResource DefaulWindowTemplate}"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome CaptionHeight="{DynamicResource HeaderHeight}"
@@ -109,6 +74,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
 </ResourceDictionary>
     
     

@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!--#region Константы-->
+
+    <sys:Double x:Key="HeaderHeight">32</sys:Double>
+
+    <!--#endregion-->
+
+    <!--#region Цветовая схема -->
+
+    <SolidColorBrush x:Key="WindowSolidColorBrush" Color="{DynamicResource WindowColor}"/>
+
+    <!--#endregion-->
+    
+    <!-- 
+    Требования:
+    1. Необходисо найти возможность скруглить окно так, чтобы фигуры не выходили за пределы окна.
+    
+    Пример (но не рабочий):
+      <Grid.OpacityMask>
+         <VisualBrush Visual="{Binding ElementName=PATH_Border}" />
+      </Grid.OpacityMask> 
+    
+    2. Найти альтернативу AllowsTransparency, для экономии производительности.
+    3. Сделать общий стиль и шаблон так, чтобы они были у всех окон. 
+    4. Использовать команды для кнопок
+    -->
+
+    <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Width" Value="27"/>
+        <Setter Property="Height" Value="27"/>
+        <Setter Property="Margin" Value="0,0,10,0"/>
+        <Setter Property="IsTabStop" Value="False"/>
+    </Style>
+
+</ResourceDictionary>

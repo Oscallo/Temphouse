@@ -3,17 +3,9 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:Temphouse.Themes.ExtendedWindowControl">
 
-    <!--#region Константы-->
-
-    <sys:Double x:Key="HeaderHeight">32</sys:Double>
-
-    <!--#endregion-->
-
-    <!--#region Цветовая схема -->
-
-    <SolidColorBrush x:Key="WindowSolidColorBrush" Color="{DynamicResource WindowColor}"/>
-
-    <!--#endregion-->
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/MicrosoftWindow/CommonSubWindow.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
     <ControlTemplate x:Key="DefaulExtendedWindowTemplate" TargetType="{x:Type local:ExtendedWindow}">
         <Border x:Name="PART_Border" Background="{TemplateBinding Background}">
