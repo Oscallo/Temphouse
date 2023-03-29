@@ -28,6 +28,16 @@
     4. Использовать команды для кнопок
     -->
 
+    <!-- 
+        Window:
+        d:Template="{DynamicResource DefaultWindowTemplate}" 
+        Style="{DynamicResource DefaultWindowStyle}"
+    
+        ExtendedWindow:
+        d:Template="{DynamicResource DefaultWindowTemplate}" 
+        d:Style="{DynamicResource DefaultWindowStyle}"
+    -->
+
     <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Focusable" Value="False" />

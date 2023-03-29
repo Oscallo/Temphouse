@@ -4,7 +4,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/ColorScheme/DefaultColorScheme.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/MicrosoftWindow/MicrosoftWindow.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/MicrosoftWindow/TestWindow.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 

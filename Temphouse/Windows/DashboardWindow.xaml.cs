@@ -11,13 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Temphouse.Themes.ExtendedWindowControl;
 
 namespace Temphouse.Windows
 {
     /// <summary>
     /// Логика взаимодействия для DashboardWindow.xaml
     /// </summary>
-    public partial class DashboardWindow : Window
+    public partial class DashboardWindow : ExtendedWindow
     {
         public DashboardWindow()
         {
