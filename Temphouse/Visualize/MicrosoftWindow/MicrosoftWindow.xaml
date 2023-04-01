@@ -61,6 +61,7 @@
 
     <!-- Если убрать AllowsTransparency и WindowStyle, то есть возможность на полную кастомизацию -->
     <Style x:Key="DefaultWindowStyle" TargetType="{x:Type Window}">
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="Background" Value="{DynamicResource WindowSolidColorBrush}"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />

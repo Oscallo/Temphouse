@@ -60,6 +60,7 @@
     </ControlTemplate>
 
     <Style TargetType="{x:Type local:ExtendedWindow}">
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="Background" Value="{DynamicResource WindowSolidColorBrush}"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
