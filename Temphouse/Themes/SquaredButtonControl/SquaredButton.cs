@@ -19,21 +19,21 @@ namespace Temphouse.Themes.SquaredButtonControl
     public class SquaredButton : Button
     {
 
-        [TypeConverter(typeof(LengthConverter))]
-        [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
-        private new double Height
-        {
-            get { return (double)GetValue(HeightProperty); }
-            set { SetValue(HeightProperty, value); }
-        }
+        /// [TypeConverter(typeof(LengthConverter))]
+        /// [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
+        /// private new double Height
+        /// {
+        /// get { return (double)GetValue(HeightProperty); }
+        /// set { SetValue(HeightProperty, value); }
+        /// }
 
-        [TypeConverter(typeof(LengthConverter))]
-        [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
-        private new double Width
-        {
-            get { return (double)GetValue(WidthProperty); }
-            set { SetValue(WidthProperty, value); }
-        }
+        /// [TypeConverter(typeof(LengthConverter))]
+        /// [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
+        /// private new double Width
+        /// {
+        /// get { return (double)GetValue(WidthProperty); }
+        /// set { SetValue(WidthProperty, value); }
+        /// }
 
         [TypeConverter(typeof(LengthConverter))]
         [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
@@ -45,6 +45,7 @@ namespace Temphouse.Themes.SquaredButtonControl
 
         public SquaredButton() : base() 
         {
+
         }
 
         public static readonly DependencyProperty EdgeProperty = DependencyProperty.Register(

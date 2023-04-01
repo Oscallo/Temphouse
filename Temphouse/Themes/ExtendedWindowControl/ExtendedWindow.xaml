@@ -21,7 +21,7 @@
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
                         <Button x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Hide" />
                         <Button x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
-                        <Button x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Close" />
+                        <Button x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" />
                         <Button x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.CloseWindowCommand}" ToolTip="Close" />
                     </StackPanel>
                 </Grid>
