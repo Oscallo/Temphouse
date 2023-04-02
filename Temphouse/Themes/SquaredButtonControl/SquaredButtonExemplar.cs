@@ -16,38 +16,8 @@ using System.Windows.Shapes;
 
 namespace Temphouse.Themes.SquaredButtonControl
 {
-    public class SquaredButton : Button
+    public partial class SquaredButton : Button
     {
-
-        /// [TypeConverter(typeof(LengthConverter))]
-        /// [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
-        /// private new double Height
-        /// {
-        /// get { return (double)GetValue(HeightProperty); }
-        /// set { SetValue(HeightProperty, value); }
-        /// }
-
-        /// [TypeConverter(typeof(LengthConverter))]
-        /// [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
-        /// private new double Width
-        /// {
-        /// get { return (double)GetValue(WidthProperty); }
-        /// set { SetValue(WidthProperty, value); }
-        /// }
-
-        [TypeConverter(typeof(LengthConverter))]
-        [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
-        public double Edge
-        {
-            get { return (double)GetValue(EdgeProperty); }
-            set { SetValue(EdgeProperty, value); }
-        }
-
-        public SquaredButton() : base() 
-        {
-
-        }
-
         public static readonly DependencyProperty EdgeProperty = DependencyProperty.Register(
                                                                  "Edge", typeof(double), typeof(SquaredButton),
                                                                  new FrameworkPropertyMetadata(Double.NaN,FrameworkPropertyMetadataOptions.AffectsMeasure,new PropertyChangedCallback(OnTransformDirty)),
