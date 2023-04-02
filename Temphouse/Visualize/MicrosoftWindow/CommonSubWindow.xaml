@@ -16,7 +16,7 @@
     <!--#region Цветовая схема -->
 
     <SolidColorBrush x:Key="WindowSolidColorBrush" Color="{DynamicResource WindowColor}"/>
-
+    
     <!--#endregion-->
     
     <!-- 

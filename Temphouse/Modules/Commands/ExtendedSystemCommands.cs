@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
+using Temphouse.Modules.Trey;
 
 namespace Temphouse.Modules.Commands
 {
@@ -39,7 +40,7 @@ namespace Temphouse.Modules.Commands
             {
                 throw new ArgumentNullException(nameof(window));    
             }
-            throw new NotImplementedException();
+            TreyController.HideWindow(window);
         }
     }
 }
