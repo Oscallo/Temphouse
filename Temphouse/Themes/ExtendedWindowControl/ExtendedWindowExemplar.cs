@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Temphouse.Modules.Commands;
 using Temphouse.Windows;
 
 namespace Temphouse.Themes.ExtendedWindowControl
@@ -23,10 +24,21 @@ namespace Temphouse.Themes.ExtendedWindowControl
     {
         public ExtendedWindow() : base()
         {
-            this.CommandBindings.Add(new CommandBinding(SystemCommands.CloseWindowCommand, OnCloseWindow));
-            this.CommandBindings.Add(new CommandBinding(SystemCommands.MaximizeWindowCommand, OnMaximizeWindow, OnCanResizeWindow));
-            this.CommandBindings.Add(new CommandBinding(SystemCommands.MinimizeWindowCommand, OnMinimizeWindow, OnCanMinimizeWindow));
-            this.CommandBindings.Add(new CommandBinding(SystemCommands.RestoreWindowCommand, OnRestoreWindow, OnCanResizeWindow));
+            this.CommandBindings.Add(new CommandBinding(ExtendedSystemCommands.CloseWindowCommand, OnCloseWindow));
+            this.CommandBindings.Add(new CommandBinding(ExtendedSystemCommands.MaximizeWindowCommand, OnMaximizeWindow, OnCanResizeWindow));
+            this.CommandBindings.Add(new CommandBinding(ExtendedSystemCommands.MinimizeWindowCommand, OnMinimizeWindow, OnCanMinimizeWindow));
+            this.CommandBindings.Add(new CommandBinding(ExtendedSystemCommands.RestoreWindowCommand, OnRestoreWindow, OnCanResizeWindow));
+            this.CommandBindings.Add(new CommandBinding(ExtendedSystemCommands.HideInTreyWindowCommand, OnHideInTreyWindow, OnCanHideInTreyWindow));
+        }
+
+        private void OnCanHideInTreyWindow(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = this.Icon != null;
+        }
+
+        private void OnHideInTreyWindow(object sender, ExecutedRoutedEventArgs e)
+        {
+            ExtendedSystemCommands.HideInTreyWindow(this);
         }
 
         private void OnCanMinimizeWindow(object sender, CanExecuteRoutedEventArgs e)
@@ -41,22 +53,22 @@ namespace Temphouse.Themes.ExtendedWindowControl
 
         private void OnCloseWindow(object sender, ExecutedRoutedEventArgs e)
         {
-            SystemCommands.CloseWindow(this);
+            ExtendedSystemCommands.CloseWindow(this);
         }
 
         private void OnMaximizeWindow(object sender, ExecutedRoutedEventArgs e)
         {
-            SystemCommands.MaximizeWindow(this);
+            ExtendedSystemCommands.MaximizeWindow(this);
         }
 
         private void OnMinimizeWindow(object sender, ExecutedRoutedEventArgs e)
         {
-            SystemCommands.MinimizeWindow(this);
+            ExtendedSystemCommands.MinimizeWindow(this);
         }
 
         private void OnRestoreWindow(object sender, ExecutedRoutedEventArgs e)
         {
-            SystemCommands.RestoreWindow(this);
+            ExtendedSystemCommands.RestoreWindow(this);
         }
 
         /// <summary>

@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Temphouse.Themes.ExtendedWindowControl"
-                    xmlns:sqb="clr-namespace:Temphouse.Themes.SquaredButtonControl">
+                    xmlns:sqb="clr-namespace:Temphouse.Themes.SquaredButtonControl"
+                    xmlns:com="clr-namespace:Temphouse.Modules.Commands">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/MicrosoftWindow/CommonSubWindow.xaml"/>
@@ -19,10 +20,10 @@
                         <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource HeaderIconHeight}}" Width="{Binding Source={StaticResource HeaderIconWidth}}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                        <sqb:SquaredButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Hide" />
-                        <sqb:SquaredButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
+                        <sqb:SquaredButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" />
+                        <sqb:SquaredButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
                         <sqb:SquaredButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" />
-                        <sqb:SquaredButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static SystemCommands.CloseWindowCommand}" ToolTip="Close" />
+                        <sqb:SquaredButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" />
                     </StackPanel>
                 </Grid>
                 <Grid Grid.RowSpan="2">
@@ -42,7 +43,7 @@
             </Trigger>
 
             <Trigger Property="WindowState" Value="Normal">
-                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static SystemCommands.MaximizeWindowCommand}"/>
+                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static com:ExtendedSystemCommands.MaximizeWindowCommand}"/>
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Maximize"/>
                 
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="1"/>
@@ -50,7 +51,7 @@
             </Trigger>
 
             <Trigger Property="WindowState" Value="Maximized">
-                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static SystemCommands.RestoreWindowCommand}"/>
+                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static com:ExtendedSystemCommands.RestoreWindowCommand}"/>
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Restore"/>
                 
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="7"/>
