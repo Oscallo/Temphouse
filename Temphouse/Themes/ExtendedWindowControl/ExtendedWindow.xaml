@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Temphouse.Themes.ExtendedWindowControl"
                     xmlns:sqb="clr-namespace:Temphouse.Themes.SquaredButtonControl"
-                    xmlns:com="clr-namespace:Temphouse.Modules.Commands">
+                    xmlns:com="clr-namespace:Temphouse.Modules.Commands"
+                    xmlns:coverter="clr-namespace:Temphouse.Modules.Converters">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/MicrosoftWindow/CommonSubWindow.xaml"/>
@@ -45,7 +46,7 @@
             <Trigger Property="WindowState" Value="Normal">
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static com:ExtendedSystemCommands.MaximizeWindowCommand}"/>
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Maximize"/>
-                
+
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="1"/>
                 <Setter TargetName="PART_Border" Property="CornerRadius" Value="20"/>
             </Trigger>
@@ -53,7 +54,7 @@
             <Trigger Property="WindowState" Value="Maximized">
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static com:ExtendedSystemCommands.RestoreWindowCommand}"/>
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Restore"/>
-                
+
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="7"/>
                 <Setter TargetName="PART_Border" Property="CornerRadius" Value="0"/>
             </Trigger>

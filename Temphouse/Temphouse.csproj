@@ -13,4 +13,7 @@
 			<ContainsDesignTimeResources>true</ContainsDesignTimeResources>
 		</Page>
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Modules\Converters\" />
+	</ItemGroup>
 </Project>
