@@ -2,41 +2,51 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:sqb="clr-namespace:Temphouse.Themes.SquaredButtonControl"
-                    xmlns:com="clr-namespace:Temphouse.Modules.Commands">
+                    xmlns:com="clr-namespace:Temphouse.Modules.Commands"
+                    xmlns:coverter="clr-namespace:Temphouse.Modules.Converters">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/MicrosoftWindow/CommonSubWindow.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <ControlTemplate x:Key="DefaultWindowTemplate" TargetType="{x:Type Window}">
-        <Border x:Name="PART_Border" Background="{TemplateBinding Background}">
-            <Grid Margin="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{Binding Source={StaticResource HeaderZIndex}}">
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
-                        <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource HeaderIconHeight}}" Width="{Binding Source={StaticResource HeaderIconWidth}}"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                        <sqb:SquaredButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" />
-                        <sqb:SquaredButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
-                        <sqb:SquaredButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" ToolTip="Close" />
-                        <sqb:SquaredButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" />
-                    </StackPanel>
-                </Grid>
-                <Grid Grid.RowSpan="2">
-                    <AdornerDecorator>
-                        <ContentPresenter
+        <ControlTemplate.Resources>
+            <coverter:ToWhiteBackgroundConventer x:Key="ToWhiteBackgroundConventer"/>
+        </ControlTemplate.Resources>
+        <Grid>
+            <Border x:Name="PART_Border" Background="{TemplateBinding Background}" />
+            <Grid>
+                <Grid.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=PART_Border,Converter={StaticResource ToWhiteBackgroundConventer}}" />
+                </Grid.OpacityMask>
+                <Grid Background="{TemplateBinding Background}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{Binding Source={StaticResource HeaderZIndex}}">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
+                            <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource HeaderIconHeight}}" Width="{Binding Source={StaticResource HeaderIconWidth}}"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+                            <sqb:SquaredButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" />
+                            <sqb:SquaredButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
+                            <sqb:SquaredButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" />
+                            <sqb:SquaredButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.RowSpan="2">
+                        <AdornerDecorator>
+                            <ContentPresenter
                             Content="{TemplateBinding Content}" 
                             ContentTemplate="{TemplateBinding ContentTemplate}" 
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                    </AdornerDecorator>
-                    <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
+                        </AdornerDecorator>
+                        <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
+                    </Grid>
                 </Grid>
             </Grid>
-        </Border>
+        </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
                 <Setter TargetName="WindowResizeGrip" Property="Visibility" Value="Visible" />
