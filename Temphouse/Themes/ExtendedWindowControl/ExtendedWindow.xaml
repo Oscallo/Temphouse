@@ -19,31 +19,29 @@
                 <Grid.OpacityMask>
                     <VisualBrush Visual="{Binding ElementName=PART_Border,Converter={StaticResource ToWhiteBackgroundConventer}}" />
                 </Grid.OpacityMask>
-                <Grid Margin="5" Background="{TemplateBinding Background}">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{Binding Source={StaticResource HeaderZIndex}}">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
-                            <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource HeaderIconHeight}}" Width="{Binding Source={StaticResource HeaderIconWidth}}"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                            <sqb:SquaredButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" />
-                            <sqb:SquaredButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
-                            <sqb:SquaredButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" />
-                            <sqb:SquaredButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" />
-                        </StackPanel>
-                    </Grid>
-                    <Grid Grid.RowSpan="2">
-                        <AdornerDecorator>
-                            <ContentPresenter
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{Binding Source={StaticResource HeaderZIndex}}" Margin="0,10,10,0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
+                        <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource HeaderIconHeight}}" Width="{Binding Source={StaticResource HeaderIconWidth}}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+                        <sqb:SquaredButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" />
+                        <sqb:SquaredButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
+                        <sqb:SquaredButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" />
+                        <sqb:SquaredButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" />
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.RowSpan="2">
+                    <AdornerDecorator>
+                        <ContentPresenter
                                 Content="{TemplateBinding Content}" 
                                 ContentTemplate="{TemplateBinding ContentTemplate}" 
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                        </AdornerDecorator>
-                        <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
-                    </Grid>
+                    </AdornerDecorator>
+                    <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
                 </Grid>
             </Grid>
         </Grid>

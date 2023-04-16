@@ -1,11 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                     xmlns:sqb="clr-namespace:Temphouse.Themes.SquaredButtonControl">
+                    xmlns:sqb="clr-namespace:Temphouse.Themes.SquaredButtonControl">
 
     <!--#region Переменные -->
 
-    <sys:Double x:Key="HeaderHeight">32</sys:Double>
+    <sys:Double x:Key="HeaderHeight">36</sys:Double>
     <x:Static x:Key="HeaderZIndex" Member="sys:Int32.MaxValue" />
 
     <x:Static x:Key="HeaderIconHeight" Member="SystemParameters.IconHeight"/>
