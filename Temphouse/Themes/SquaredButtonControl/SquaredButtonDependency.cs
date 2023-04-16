@@ -18,34 +18,30 @@ namespace Temphouse.Themes.SquaredButtonControl
 {
     public partial class SquaredButton : Button
     {
+        public static readonly DependencyProperty EdgeProperty = DependencyProperty.Register(
+                                                                 "Edge", typeof(double), typeof(SquaredButton),
+                                                                 new FrameworkPropertyMetadata(Double.NaN,FrameworkPropertyMetadataOptions.AffectsMeasure,new PropertyChangedCallback(OnTransformDirty)),
+                                                                 new ValidateValueCallback(IsEdgeValid));
 
-        [TypeConverter(typeof(LengthConverter))]
-        [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
-        public new double Height
+
+        private static void OnTransformDirty(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            get { return (double)GetValue(HeightProperty); }
-            private set { SetValue(HeightProperty, value); }
+            SquaredButton squaredButton = ((SquaredButton)d);
+
+            squaredButton.Width = (double)e.NewValue;
+            squaredButton.Height = (double)e.NewValue;
         }
 
-        [TypeConverter(typeof(LengthConverter))]
-        [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
-        public new double Width
+        private static bool IsEdgeValid(object value)
         {
-            get { return (double)GetValue(WidthProperty); }
-            private set { SetValue(WidthProperty, value); }
+            double doubleValue = (double)value;
+            return (Double.IsNaN(doubleValue)) || (doubleValue >= 0.0d && !Double.IsPositiveInfinity(doubleValue));
         }
 
-        [TypeConverter(typeof(LengthConverter))]
-        [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
-        public double Edge
-        {
-            get { return (double)GetValue(EdgeProperty); }
-            set { SetValue(EdgeProperty, value); }
-        }
 
-        public SquaredButton() : base() 
+        static SquaredButton()
         {
-
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(SquaredButton), new FrameworkPropertyMetadata(typeof(SquaredButton)));
         }
     }
 }

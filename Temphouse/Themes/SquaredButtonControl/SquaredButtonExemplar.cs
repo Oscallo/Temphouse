@@ -18,30 +18,34 @@ namespace Temphouse.Themes.SquaredButtonControl
 {
     public partial class SquaredButton : Button
     {
-        public static readonly DependencyProperty EdgeProperty = DependencyProperty.Register(
-                                                                 "Edge", typeof(double), typeof(SquaredButton),
-                                                                 new FrameworkPropertyMetadata(Double.NaN,FrameworkPropertyMetadataOptions.AffectsMeasure,new PropertyChangedCallback(OnTransformDirty)),
-                                                                 new ValidateValueCallback(IsEdgeValid));
 
-
-        private static void OnTransformDirty(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        [TypeConverter(typeof(LengthConverter))]
+        [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
+        public new double Height
         {
-            SquaredButton squaredButton = ((SquaredButton)d);
-
-            squaredButton.Width = (double)e.NewValue;
-            squaredButton.Height = (double)e.NewValue;
+            get { return (double)GetValue(HeightProperty); }
+            private set { SetValue(HeightProperty, value); }
         }
 
-        private static bool IsEdgeValid(object value)
+        [TypeConverter(typeof(LengthConverter))]
+        [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
+        public new double Width
         {
-            double doubleValue = (double)value;
-            return (Double.IsNaN(doubleValue)) || (doubleValue >= 0.0d && !Double.IsPositiveInfinity(doubleValue));
+            get { return (double)GetValue(WidthProperty); }
+            private set { SetValue(WidthProperty, value); }
         }
 
-
-        static SquaredButton()
+        [TypeConverter(typeof(LengthConverter))]
+        [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
+        public double Edge
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(SquaredButton), new FrameworkPropertyMetadata(typeof(SquaredButton)));
+            get { return (double)GetValue(EdgeProperty); }
+            set { SetValue(EdgeProperty, value); }
+        }
+
+        public SquaredButton() : base() 
+        {
+
         }
     }
 }
