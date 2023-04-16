@@ -15,11 +15,11 @@
         </ControlTemplate.Resources>
         <Grid>
             <Border x:Name="PART_Border"/>
-            <Grid>
+            <Grid x:Name="PART_ExternalGrid" Background="{TemplateBinding Background}">
                 <Grid.OpacityMask>
                     <VisualBrush Visual="{Binding ElementName=PART_Border,Converter={StaticResource ToWhiteBackgroundConventer}}" />
                 </Grid.OpacityMask>
-                <Grid Background="{TemplateBinding Background}">
+                <Grid Margin="5" Background="{TemplateBinding Background}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
                         <RowDefinition Height="*"/>
@@ -56,6 +56,8 @@
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static com:ExtendedSystemCommands.MaximizeWindowCommand}"/>
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Maximize"/>
 
+                <Setter TargetName="PART_ExternalGrid" Property="Margin" Value="0"/>
+
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="1"/>
                 <Setter TargetName="PART_Border" Property="CornerRadius" Value="20"/>
             </Trigger>
@@ -63,6 +65,8 @@
             <Trigger Property="WindowState" Value="Maximized">
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static com:ExtendedSystemCommands.RestoreWindowCommand}"/>
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Restore"/>
+
+                <Setter TargetName="PART_ExternalGrid" Property="Margin" Value="7"/>
 
                 <Setter TargetName="PART_Border" Property="BorderThickness" Value="7"/>
                 <Setter TargetName="PART_Border" Property="CornerRadius" Value="0"/>

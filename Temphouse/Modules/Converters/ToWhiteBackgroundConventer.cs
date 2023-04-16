@@ -15,9 +15,7 @@ namespace Temphouse.Modules.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Border border = (Border)value;
-
             border.Background = Brushes.White;
-
             return border;
         }
 
