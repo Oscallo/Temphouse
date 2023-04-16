@@ -82,7 +82,7 @@
         <Setter Property="Template" Value="{DynamicResource DefaultExtendedWindowTemplate}"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
-                <WindowChrome CaptionHeight="{DynamicResource HeaderHeight}"
+                <WindowChrome CaptionHeight="{DynamicResource Window.HeaderBar.HeaderHeight}"
                               CornerRadius="4"
                               GlassFrameThickness="0"
                               NonClientFrameEdges="None"
