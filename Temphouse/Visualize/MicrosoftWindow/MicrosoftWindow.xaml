@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:sqb="clr-namespace:Temphouse.Themes.SquaredButtonControl"
                     xmlns:rb="clr-namespace:Temphouse.Themes.RoundedButtonControl"
                     xmlns:com="clr-namespace:Temphouse.Modules.Commands"
                     xmlns:coverter="clr-namespace:Temphouse.Modules.Converters">
@@ -21,18 +20,18 @@
                     <VisualBrush Visual="{Binding ElementName=PART_Border,Converter={StaticResource ToWhiteBackgroundConventer}}" />
                 </Grid.OpacityMask>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="{Binding Source={StaticResource Window.HeaderBar.HeaderHeight}}"/>
+                    <RowDefinition Height="{Binding Source={StaticResource HeaderHeight}}"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{Binding Source={StaticResource Window.HeaderBar.HeaderZIndex}}" Margin="0,10,10,0">
+                <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{Binding Source={StaticResource HeaderZIndex}}">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left">
-                        <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource Window.HeaderBar.HeaderIconHeight}}" Width="{Binding Source={StaticResource Window.HeaderBar.HeaderIconWidth}}"/>
+                        <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource HeaderIconHeight}}" Width="{Binding Source={StaticResource HeaderIconWidth}}"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right">
-                        <rb:RoundedButton  x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" />
-                        <rb:RoundedButton  x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
-                        <rb:RoundedButton  x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" />
-                        <rb:RoundedButton  x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"  Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" />
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,15,0">
+                        <rb:RoundedButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" />
+                        <rb:RoundedButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" />
+                        <rb:RoundedButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" />
+                        <rb:RoundedButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" />
                     </StackPanel>
                 </Grid>
                 <Grid Grid.RowSpan="2">

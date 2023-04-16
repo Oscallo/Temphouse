@@ -6,7 +6,7 @@
 
     <!--#region Переменные -->
 
-    <sys:Double x:Key="Window.HeaderBar.HeaderHeight">36</sys:Double>
+    <sys:Double x:Key="Window.HeaderBar.HeaderHeight">60</sys:Double>
     <x:Static x:Key="Window.HeaderBar.HeaderZIndex" Member="sys:Int32.MaxValue" />
 
     <x:Static x:Key="Window.HeaderBar.HeaderIconHeight" Member="SystemParameters.IconHeight"/>

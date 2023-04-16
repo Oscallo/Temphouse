@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:Temphouse.Windows"
         d:Template="{DynamicResource DefaultWindowTemplate}" 
         d:Style="{DynamicResource DefaultWindowStyle}"
-        mc:Ignorable="d"        
+        mc:Ignorable="d"
         Title="DashboardWindow" Height="450" Width="800">
     <Grid>
 
