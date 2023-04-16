@@ -4,12 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ew="clr-namespace:Temphouse.Themes.ExtendedWindowControl"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:rd="clr-namespace:Temphouse.Themes.RoundedButtonControl"
         xmlns:local="clr-namespace:Temphouse.Windows"
         d:Template="{DynamicResource DefaultWindowTemplate}" 
         d:Style="{DynamicResource DefaultWindowStyle}"
         mc:Ignorable="d"        
         Title="DashboardWindow" Height="450" Width="800">
     <Grid>
-    
+
     </Grid>
 </ew:ExtendedWindow>

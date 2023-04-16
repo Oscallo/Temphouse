@@ -13,7 +13,7 @@ namespace Temphouse.Themes.RoundedButtonControl
     public partial class RoundedButton : SquaredButton
     {
         public static readonly DependencyProperty CornerRadiusProperty
-            = DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(Border),
+            = DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(RoundedButton),
                                           new FrameworkPropertyMetadata(
                                                 new CornerRadius(),
                                                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender),
@@ -23,6 +23,11 @@ namespace Temphouse.Themes.RoundedButtonControl
         {
             CornerRadius cr = (CornerRadius)value;
             return (cr.IsValid(false, false, false, false));
+        }
+
+        static RoundedButton()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(RoundedButton), new FrameworkPropertyMetadata(typeof(RoundedButton)));
         }
     }
 }

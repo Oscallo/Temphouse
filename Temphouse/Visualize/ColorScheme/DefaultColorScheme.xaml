@@ -13,5 +13,7 @@
 
     <!-- Перезапись стандартного цвета окна-->
     <Color x:Key="WindowColor">#23272C</Color>
+    
+    <!-- RoundedButton цвета -->
 
 </ResourceDictionary>
