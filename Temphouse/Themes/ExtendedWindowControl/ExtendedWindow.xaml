@@ -11,13 +11,13 @@
 
     <ControlTemplate x:Key="DefaultExtendedWindowTemplate" TargetType="{x:Type local:ExtendedWindow}">
         <ControlTemplate.Resources>
-            <coverter:ToWhiteBackgroundConventer x:Key="ToWhiteBackgroundConventer"/>
+            <coverter:ToWhiteBackgroundBorderConventer x:Key="ToWhiteBackgroundBorderConventer"/>
         </ControlTemplate.Resources>
         <Grid>
             <Border x:Name="PART_Border"/>
             <Grid x:Name="PART_ExternalGrid" Background="{TemplateBinding Background}">
                 <Grid.OpacityMask>
-                    <VisualBrush Visual="{Binding ElementName=PART_Border,Converter={StaticResource ToWhiteBackgroundConventer}}" />
+                    <VisualBrush Visual="{Binding ElementName=PART_Border,Converter={StaticResource ToWhiteBackgroundBorderConventer}}" />
                 </Grid.OpacityMask>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="{Binding Source={StaticResource Window.HeaderBar.HeaderHeight}}"/>

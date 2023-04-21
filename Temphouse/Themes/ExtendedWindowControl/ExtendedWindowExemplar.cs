@@ -19,7 +19,9 @@ using Temphouse.Windows;
 
 namespace Temphouse.Themes.ExtendedWindowControl
 {
-    
+    /// <summary>
+    /// Расширенный класс окна, наследуемый от <seealso cref="Window"/>
+    /// </summary>
     public partial class ExtendedWindow : Window
     {
         public ExtendedWindow() : base()
@@ -31,50 +33,90 @@ namespace Temphouse.Themes.ExtendedWindowControl
             this.CommandBindings.Add(new CommandBinding(ExtendedSystemCommands.HideInTreyWindowCommand, OnHideInTreyWindow, OnCanHideInTreyWindow));
         }
 
+        /// <summary>
+        /// <seealso cref="Delegate">Делегат</seealso> на проверку возможности свернуть в трей.
+        /// </summary>
+        /// <param name="sender">Вызывающий объект</param>
+        /// <param name="e">Аргументы</param>
         private void OnCanHideInTreyWindow(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = this.Icon != null;
         }
 
+        /// <summary>
+        /// <seealso cref="Delegate">Делегат</seealso> на сокрытие окна в трее.
+        /// </summary>
+        /// <param name="sender">Вызывающий объект</param>
+        /// <param name="e">Аргументы</param>
         private void OnHideInTreyWindow(object sender, ExecutedRoutedEventArgs e)
         {
             ExtendedSystemCommands.HideInTreyWindow(this);
         }
 
+        /// <summary>
+        /// <seealso cref="Delegate">Делегат</seealso> на проверку возможности свернуть окно.
+        /// </summary>
+        /// <param name="sender">Вызывающий объект</param>
+        /// <param name="e">Аргументы</param>
         private void OnCanMinimizeWindow(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = this.ResizeMode != ResizeMode.NoResize;
         }
 
+        /// <summary>
+        /// <seealso cref="Delegate">Делегат</seealso> на проверку возможности изменить размер окна.
+        /// </summary>
+        /// <param name="sender">Вызывающий объект</param>
+        /// <param name="e">Аргументы</param>
         private void OnCanResizeWindow(object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = this.ResizeMode == ResizeMode.CanResize || this.ResizeMode == ResizeMode.CanResizeWithGrip;
         }
 
+        /// <summary>
+        /// <seealso cref="Delegate">Делегат</seealso> на закрытие окна.
+        /// </summary>
+        /// <param name="sender">Вызывающий объект</param>
+        /// <param name="e">Аргументы</param>
         private void OnCloseWindow(object sender, ExecutedRoutedEventArgs e)
         {
             ExtendedSystemCommands.CloseWindow(this);
         }
 
+        /// <summary>
+        /// <seealso cref="Delegate">Делегат</seealso> на разворачивание окна в полноэкранный режим.
+        /// </summary>
+        /// <param name="sender">Вызывающий объект</param>
+        /// <param name="e">Аргументы</param>
         private void OnMaximizeWindow(object sender, ExecutedRoutedEventArgs e)
         {
             ExtendedSystemCommands.MaximizeWindow(this);
         }
 
+        /// <summary>
+        /// <seealso cref="Delegate">Делегат</seealso> на сокрытие окна.
+        /// </summary>
+        /// <param name="sender">Вызывающий объект</param>
+        /// <param name="e">Аргументы</param>
         private void OnMinimizeWindow(object sender, ExecutedRoutedEventArgs e)
         {
             ExtendedSystemCommands.MinimizeWindow(this);
         }
 
+        /// <summary>
+        /// <seealso cref="Delegate">Делегат</seealso> на восстановление окна.
+        /// </summary>
+        /// <param name="sender">Вызывающий объект</param>
+        /// <param name="e">Аргументы</param>
         private void OnRestoreWindow(object sender, ExecutedRoutedEventArgs e)
         {
             ExtendedSystemCommands.RestoreWindow(this);
         }
 
         /// <summary>
-        /// Возвращает true, если объект Window находится в режиме разработки, или false, если в режиме выполнения.
+        /// Проверка на DesignMode.
         /// </summary>
-        /// <returns>Boolean</returns>
+        /// <returns>Возвращает true, если объект <seealso cref="Window"/> находится в режиме разработки</returns>
         public bool IsInDesignMode
         {
             get

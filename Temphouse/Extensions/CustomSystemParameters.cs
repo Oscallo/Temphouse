@@ -8,12 +8,18 @@ using System.Windows;
 
 namespace Temphouse.Extensions
 {
+
+    /// <summary>
+    /// Расширение для <seealso cref="SystemParameters"/>
+    /// </summary>
     public static class CustomSystemParameters
     {
         private static double _IconHeight = 45;
         private static double _IconWidth = 45;
 
-
+        /// <summary>
+        /// Высота иконки
+        /// </summary>
         public static double IconHeight
         {
             get
@@ -22,6 +28,9 @@ namespace Temphouse.Extensions
             }
         }
 
+        /// <summary>
+        /// Ширина иконки
+        /// </summary>
         public static double IconWidth
         {
             get

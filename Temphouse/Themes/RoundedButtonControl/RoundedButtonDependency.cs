@@ -10,8 +10,14 @@ using Temphouse.Extensions;
 
 namespace Temphouse.Themes.RoundedButtonControl
 {
+    /// <summary>
+    /// Скругленная кнопка от <seealso cref="SquaredButton"/>
+    /// </summary>
     public partial class RoundedButton : SquaredButton
     {
+        /// <summary>
+        /// <seealso cref="DependencyProperty"/> скругления.
+        /// </summary>
         public static readonly DependencyProperty CornerRadiusProperty
             = DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(RoundedButton),
                                           new FrameworkPropertyMetadata(
@@ -19,6 +25,11 @@ namespace Temphouse.Themes.RoundedButtonControl
                                                 FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender),
                                           new ValidateValueCallback(IsCornerRadiusValid));
 
+        /// <summary>
+        /// Проверка на валидность.
+        /// </summary>
+        /// <param name="value">Предпологаемый <seealso cref="CornerRadius"/></param>
+        /// <returns>Возвращает True, если конвертация возможна.</returns>
         private static bool IsCornerRadiusValid(object value)
         {
             CornerRadius cr = (CornerRadius)value;

@@ -10,7 +10,11 @@ using System.Windows.Media;
 
 namespace Temphouse.Modules.Converters
 {
-    internal class ToWhiteBackgroundConventer : IValueConverter
+    /// <summary>
+    /// Базовый преобразователь кисти заднего фона для <seealso cref="Border"/>
+    /// </summary>
+    [ValueConversion(typeof(Border), typeof(Border))]
+    internal class ToWhiteBackgroundBorderConventer : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -21,7 +25,7 @@ namespace Temphouse.Modules.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
         }
     }
 }

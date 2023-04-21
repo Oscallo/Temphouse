@@ -19,6 +19,9 @@ namespace Temphouse.Themes.SquaredButtonControl
     public partial class SquaredButton : Button
     {
 
+        /// <summary>
+        /// Сокрытие <seealso cref="Height"/> от <seealso cref="Button"/>
+        /// </summary>
         [TypeConverter(typeof(LengthConverter))]
         [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
         public new double Height
@@ -27,6 +30,9 @@ namespace Temphouse.Themes.SquaredButtonControl
             private set { SetValue(HeightProperty, value); }
         }
 
+        /// <summary>
+        /// Сокрытие <seealso cref="Width"/> от <seealso cref="Button"/>
+        /// </summary>
         [TypeConverter(typeof(LengthConverter))]
         [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
         public new double Width
@@ -35,6 +41,9 @@ namespace Temphouse.Themes.SquaredButtonControl
             private set { SetValue(WidthProperty, value); }
         }
 
+        /// <summary>
+        /// Новое свойство, которое заменяет <seealso cref="Height"/> и <seealso cref="Width"/>.
+        /// </summary>
         [TypeConverter(typeof(LengthConverter))]
         [Localizability(LocalizationCategory.None, Readability = Readability.Unreadable)]
         public double Edge
