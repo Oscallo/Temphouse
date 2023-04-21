@@ -2,15 +2,15 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:rb="clr-namespace:Temphouse.Themes.RoundedButtonControl"
-                    xmlns:sqb="clr-namespace:Temphouse.Themes.SquaredButtonControl">
+                    xmlns:ex="clr-namespace:Temphouse.Extensions">
 
     <!--#region Переменные -->
 
-    <sys:Double x:Key="Window.HeaderBar.HeaderHeight">60</sys:Double>
+    <sys:Double x:Key="Window.HeaderBar.HeaderHeight">65</sys:Double>
     <x:Static x:Key="Window.HeaderBar.HeaderZIndex" Member="sys:Int32.MaxValue" />
 
-    <x:Static x:Key="Window.HeaderBar.HeaderIconHeight" Member="SystemParameters.IconHeight"/>
-    <x:Static x:Key="Window.HeaderBar.HeaderIconWidth" Member="SystemParameters.IconWidth"/>
+    <x:Static x:Key="Window.HeaderBar.HeaderIconHeight" Member="ex:CustomSystemParameters.IconHeight"/>
+    <x:Static x:Key="Window.HeaderBar.HeaderIconWidth" Member="ex:CustomSystemParameters.IconWidth"/>
 
     <!--#endregion-->
 

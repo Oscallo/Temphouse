@@ -40,7 +40,7 @@ namespace Temphouse.Modules.Commands
             {
                 throw new ArgumentNullException(nameof(window));    
             }
-            TreyController.HideWindow(window);
+            TreyController.Instance.HideWindow(window);
         }
     }
 }

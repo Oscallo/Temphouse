@@ -17,7 +17,7 @@ namespace Temphouse.Extensions
             double _bottomRight = cornerRadius.BottomRight;
 
 
-            if (!allowNegative)
+            if (allowNegative == false)
             {
                 if (_topLeft < 0d || _topRight < 0d || _bottomLeft < 0d || _bottomRight < 0d)
                 {
@@ -25,7 +25,7 @@ namespace Temphouse.Extensions
                 }
             }
 
-            if (!allowNaN)
+            if (allowNaN == false)
             {
                 if (Double.IsNaN(_topLeft) || Double.IsNaN(_topRight) || Double.IsNaN(_bottomLeft) || Double.IsNaN(_bottomRight))
                 {
@@ -33,7 +33,7 @@ namespace Temphouse.Extensions
                 }
             }
 
-            if (!allowPositiveInfinity)
+            if (allowPositiveInfinity == false)
             {
                 if (Double.IsPositiveInfinity(_topLeft) || Double.IsPositiveInfinity(_topRight) || Double.IsPositiveInfinity(_bottomLeft) || Double.IsPositiveInfinity(_bottomRight))
                 {
@@ -41,7 +41,7 @@ namespace Temphouse.Extensions
                 }
             }
 
-            if (!allowNegativeInfinity)
+            if (allowNegativeInfinity == false)
             {
                 if (Double.IsNegativeInfinity(_topLeft) || Double.IsNegativeInfinity(_topRight) || Double.IsNegativeInfinity(_bottomLeft) || Double.IsNegativeInfinity(_bottomRight))
                 {
