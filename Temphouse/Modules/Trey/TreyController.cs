@@ -33,6 +33,19 @@ namespace Temphouse.Modules.Trey
             _SetIcon(InformationReporter.ApplicationIcon);
             _SetText(InformationReporter.ApplicationName + Environment.NewLine + "v." + InformationReporter.ApplicationVersion);
 
+            _InitializeEvents();
+        }
+
+        static TreyController()
+        {
+            Instance = new TreyController();
+        }
+
+        /// <summary>
+        /// Инициализация событий
+        /// </summary>
+        private void _InitializeEvents()
+        {
             _NotifyIcon.Click += _NotifyIcon_Click;
             ApplicationWPF.Current.Exit += App_Exit;
         }
@@ -45,11 +58,6 @@ namespace Temphouse.Modules.Trey
         private void App_Exit(object sender, ExitEventArgs e)
         {
             DisposeInstance();
-        }
-
-        static TreyController()
-        {
-            Instance = new TreyController();
         }
 
         /// <summary>
