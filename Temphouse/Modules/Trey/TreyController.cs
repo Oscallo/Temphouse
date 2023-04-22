@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Temphouse.Modules.Information;
 
 using ApplicationWPF = System.Windows.Application;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Temphouse.Modules.Trey
 {
@@ -28,12 +29,16 @@ namespace Temphouse.Modules.Trey
         /// </summary>
         private Window? _HidedWindow;
 
-        public TreyController()
+        public TreyController(string text, Icon icon)
         {
-            _SetIcon(InformationReporter.ApplicationIcon);
-            _SetText(InformationReporter.ApplicationName + Environment.NewLine + "v." + InformationReporter.ApplicationVersion);
-
             _InitializeEvents();
+            _SetIcon(icon);
+            _SetText(text);
+        }
+
+        public TreyController() : this(InformationReporter.ApplicationName + Environment.NewLine + "v." + InformationReporter.ApplicationVersion, InformationReporter.ApplicationIcon)
+        {
+
         }
 
         static TreyController()
@@ -48,6 +53,15 @@ namespace Temphouse.Modules.Trey
         {
             _NotifyIcon.Click += _NotifyIcon_Click;
             ApplicationWPF.Current.Exit += App_Exit;
+        }
+
+        /// <summary>
+        /// Деинициализация событий
+        /// </summary>
+        private void _UninitializeEvents()
+        {
+            _NotifyIcon.Click -= _NotifyIcon_Click;
+            ApplicationWPF.Current.Exit -= App_Exit;
         }
 
         /// <summary>
@@ -66,8 +80,16 @@ namespace Temphouse.Modules.Trey
         /// <param name="window">Скрываемое окно.</param>
         public void HideWindow(Window window)
         {
+            _SetWindow(window);
+            HideWindow();
+        }
+
+        /// <summary>
+        /// Скрыть окно в трее и отобразить иконку окна трей-панели.
+        /// </summary>
+        public void HideWindow()
+        {
             _NotifyIcon.Visible = true;
-            _HidedWindow = window;
             _HidedWindow.Hide();
         }
 
@@ -135,6 +157,7 @@ namespace Temphouse.Modules.Trey
         public void Dispose()
         {
             _HideIcon();
+            _UninitializeEvents();
         }
 
         /// <summary>
