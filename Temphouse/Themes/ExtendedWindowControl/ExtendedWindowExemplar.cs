@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Temphouse.Modules.Commands;
+using Temphouse.Modules.Information;
 using Temphouse.Windows;
 
 namespace Temphouse.Themes.ExtendedWindowControl
@@ -40,7 +41,7 @@ namespace Temphouse.Themes.ExtendedWindowControl
         /// <param name="e">Аргументы</param>
         private void OnCanHideInTreyWindow(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = this.Icon != null;
+            e.CanExecute = InformationReporter.ApplicationIcon != null;
         }
 
         /// <summary>
