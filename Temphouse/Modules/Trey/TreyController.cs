@@ -89,6 +89,7 @@ namespace Temphouse.Modules.Trey
         /// </summary>
         public void HideWindow()
         {
+            if (_HidedWindow == null) { throw new NullReferenceException(); }
             _NotifyIcon.Visible = true;
             _HidedWindow.Hide();
         }
