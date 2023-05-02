@@ -4,8 +4,13 @@
                     xmlns:rb="clr-namespace:Temphouse.Themes.RoundedButtonControl"
                     xmlns:ex="clr-namespace:Temphouse.Extensions">
 
-    <!--#region Переменные -->
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Models/WindowControlButton/DataTemplates.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+    <!--#region Переменные -->
+    
     <sys:Double x:Key="Window.HeaderBar.HeaderHeight">65</sys:Double>
     <x:Static x:Key="Window.HeaderBar.HeaderZIndex" Member="sys:Int32.MaxValue" />
 
