@@ -20,7 +20,7 @@ namespace Temphouse.Modules.Commands
         /// <summary>
         /// Константа имени для RoutedCommand HideInTreyWindowCommand.
         /// </summary>
-        private static string _HideInTreyWindowCommandNameConst = "HideInTreyWindow";
+        private static string _HIDEINTREYWINDOWCOMMANDNAME = "HideInTreyWindow";
 
         /// <summary>
         /// Комманда на закрытие окна.
@@ -85,7 +85,7 @@ namespace Temphouse.Modules.Commands
         
         static ExtendedSystemCommands() 
         {
-            HideInTreyWindowCommand = new RoutedCommand(_HideInTreyWindowCommandNameConst, typeof(ExtendedSystemCommands));
+            HideInTreyWindowCommand = new RoutedCommand(_HIDEINTREYWINDOWCOMMANDNAME, typeof(ExtendedSystemCommands));
         }
 
         /// <summary>
