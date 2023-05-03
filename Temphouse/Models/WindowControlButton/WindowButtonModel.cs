@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Temphouse.Models.WindowControlButton
 {
@@ -19,6 +20,7 @@ namespace Temphouse.Models.WindowControlButton
             get { return _Content; }
             set 
             {
+                if (_Content == value) return;
                 OnPropertyChanging(nameof(this.Content));
                 _Content = value;
                 OnPropertyChanged(nameof(this.Content));
@@ -31,13 +33,17 @@ namespace Temphouse.Models.WindowControlButton
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
+            {
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            }
         }
 
         public void OnPropertyChanging([CallerMemberName] string prop = "")
         {
             if (PropertyChanging != null)
+            {
                 PropertyChanging(this, new PropertyChangingEventArgs(prop));
+            }
         }
     }
 }
