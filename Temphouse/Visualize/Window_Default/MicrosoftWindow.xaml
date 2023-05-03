@@ -28,10 +28,10 @@
                         <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource Window.HeaderBar.HeaderIconHeight}}" Width="{Binding Source={StaticResource Window.HeaderBar.HeaderIconWidth}}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,15,0">
-                        <rb:RoundedButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" Content="{x:Static fil:WindowButtonFilling.WindowHideButtonFilling}"/>
-                        <rb:RoundedButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" Content="{x:Static fil:WindowButtonFilling.WindowMinimizeButtonFilling}"/>
+                        <rb:RoundedButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" Content="{x:Static fil:WindowButtonFilling.HideButtonFilling}"/>
+                        <rb:RoundedButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" Content="{x:Static fil:WindowButtonFilling.MinimizeButtonFilling}"/>
                         <rb:RoundedButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"/>
-                        <rb:RoundedButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" Content="{x:Static fil:WindowButtonFilling.WindowCloseButtonFilling}"/>
+                        <rb:RoundedButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" Content="{x:Static fil:WindowButtonFilling.CloseButtonFilling}"/>
                     </StackPanel>
                 </Grid>
                 <Grid Grid.RowSpan="2">
@@ -52,7 +52,7 @@
 
             <Trigger Property="WindowState" Value="Normal">
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static com:ExtendedSystemCommands.MaximizeWindowCommand}"/>
-                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Content" Value="{x:Static fil:WindowButtonFilling.WindowMaximizeButtonFilling}"/>
+                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Content" Value="{x:Static fil:WindowButtonFilling.MaximizeButtonFilling}"/>
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Maximize"/>
 
                 <Setter TargetName="PART_ExternalGrid" Property="Margin" Value="0"/>
@@ -63,7 +63,7 @@
 
             <Trigger Property="WindowState" Value="Maximized">
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Command" Value="{x:Static com:ExtendedSystemCommands.RestoreWindowCommand}"/>
-                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Content" Value="{x:Static fil:WindowButtonFilling.WindowRestoreButtonFilling}"/>
+                <Setter TargetName="PART_MaximizeAndRestore_Button" Property="Content" Value="{x:Static fil:WindowButtonFilling.RestoreButtonFilling}"/>
                 <Setter TargetName="PART_MaximizeAndRestore_Button" Property="ToolTip" Value="Restore"/>
 
                 <Setter TargetName="PART_ExternalGrid" Property="Margin" Value="7"/>

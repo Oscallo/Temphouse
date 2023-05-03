@@ -9,58 +9,58 @@ namespace Temphouse.Modules.Filling
 {
     public static class WindowButtonFilling
     {
-        private static WindowButtonModel _WindowCloseButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _CloseButtonFilling = new WindowButtonModel();
 
-        private static WindowButtonModel _WindowMinimizeButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _MinimizeButtonFilling = new WindowButtonModel();
 
-        private static WindowButtonModel _WindowMaximizeButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _MaximizeButtonFilling = new WindowButtonModel();
 
-        private static WindowButtonModel _WindowHideButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _HideButtonFilling = new WindowButtonModel();
 
-        private static WindowButtonModel _WindowRestoreButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _RestoreButtonFilling = new WindowButtonModel();
 
-        public static WindowButtonModel WindowCloseButtonFilling 
+        public static WindowButtonModel CloseButtonFilling 
         {
-            get { return _WindowCloseButtonFilling; }
+            get { return _CloseButtonFilling; }
             private set 
             {
-                _WindowCloseButtonFilling = value;
+                _CloseButtonFilling = value;
             }
         }
 
-        public static WindowButtonModel WindowMinimizeButtonFilling
+        public static WindowButtonModel MinimizeButtonFilling
         {
-            get { return _WindowMinimizeButtonFilling; }
+            get { return _MinimizeButtonFilling; }
             private set
             {
-                _WindowMinimizeButtonFilling = value;
+                _MinimizeButtonFilling = value;
             }
         }
 
-        public static WindowButtonModel WindowMaximizeButtonFilling
+        public static WindowButtonModel MaximizeButtonFilling
         {
-            get { return _WindowMaximizeButtonFilling; }
+            get { return _MaximizeButtonFilling; }
             private set
             {
-                _WindowMaximizeButtonFilling = value;
+                _MaximizeButtonFilling = value;
             }
         }
 
-        public static WindowButtonModel WindowHideButtonFilling
+        public static WindowButtonModel HideButtonFilling
         {
-            get { return _WindowHideButtonFilling; }
+            get { return _HideButtonFilling; }
             private set
             {
-                _WindowHideButtonFilling = value;
+                _HideButtonFilling = value;
             }
         }
 
-        public static WindowButtonModel WindowRestoreButtonFilling
+        public static WindowButtonModel RestoreButtonFilling
         {
-            get { return _WindowRestoreButtonFilling; }
+            get { return _RestoreButtonFilling; }
             private set
             {
-                _WindowRestoreButtonFilling = value;
+                _RestoreButtonFilling = value;
             }
         }
 
