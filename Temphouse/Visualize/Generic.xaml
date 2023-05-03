@@ -3,7 +3,8 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/ColorScheme/DefaultColorScheme.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/MicrosoftWindow/MicrosoftWindow.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/Window_Default/MicrosoftWindow.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/Tooltip_Default/Tooltip.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
