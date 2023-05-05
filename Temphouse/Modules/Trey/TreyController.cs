@@ -51,8 +51,41 @@ namespace Temphouse.Modules.Trey
         /// </summary>
         private void _InitializeEvents()
         {
-            _NotifyIcon.Click += _NotifyIcon_Click;
+            _NotifyIcon.MouseClick += _NotifyIcon_MouseClick;
             ApplicationWPF.Current.Exit += App_Exit;
+        }
+
+        /// <summary>
+        /// <seealso cref="Delegate">Делегат</seealso> события <seealso cref="NotifyIcon.MouseClick">нажатия на иконку</seealso>.
+        /// </summary>
+        /// <param name="sender">Вызывающий объект</param>
+        /// <param name="e">Аргументы</param>
+        private void _NotifyIcon_MouseClick(object? sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                _MouseLeftButtonClick();
+            }
+            else if (e.Button == MouseButtons.Right) 
+            {
+                _MouseRightButtonClick();
+            }
+        }
+
+        /// <summary>
+        /// При нажатии левой кнопки мыши
+        /// </summary>
+        private void _MouseLeftButtonClick()
+        {
+            ShowWindow();
+        }
+
+        /// <summary>
+        /// При нажатии правой кнопки мыши
+        /// </summary>
+        private void _MouseRightButtonClick()
+        {
+
         }
 
         /// <summary>
@@ -60,7 +93,7 @@ namespace Temphouse.Modules.Trey
         /// </summary>
         private void _UninitializeEvents()
         {
-            _NotifyIcon.Click -= _NotifyIcon_Click;
+            _NotifyIcon.MouseClick -= _NotifyIcon_MouseClick;
             ApplicationWPF.Current.Exit -= App_Exit;
         }
 
@@ -117,16 +150,6 @@ namespace Temphouse.Modules.Trey
                 ShowWindow();
             }
             _HidedWindow = window;
-        }
-
-        /// <summary>
-        /// <seealso cref="Delegate">Делегат</seealso> события <seealso cref="NotifyIcon.Click">нажатия на иконку</seealso>.
-        /// </summary>
-        /// <param name="sender">Вызывающий объект</param>
-        /// <param name="e">Аргументы</param>
-        private void _NotifyIcon_Click(object? sender, EventArgs e)
-        {
-            ShowWindow();
         }
 
         /// <summary>
