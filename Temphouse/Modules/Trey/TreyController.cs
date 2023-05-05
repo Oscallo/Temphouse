@@ -14,10 +14,31 @@ namespace Temphouse.Modules.Trey
     /// </summary>
     public class TreyController : IDisposable
     {
+        #region static Instance
+
         /// <summary>
         /// Статический экземпляр объекта.
         /// </summary>
         public static TreyController Instance { get; private set; }
+
+        static TreyController()
+        {
+            Instance = new TreyController();
+        }
+
+        /// <summary>
+        /// Вызов <seealso cref="Dispose"/> для <seealso cref="Instance"/>.
+        /// </summary>
+        public static void DisposeInstance()
+        {
+            if (Instance != null)
+            {
+                Instance.Dispose();
+                Instance = null;
+            }
+        }
+
+        #endregion
 
         /// <summary>
         /// Иконка окна трей-панели.
@@ -39,11 +60,6 @@ namespace Temphouse.Modules.Trey
         public TreyController() : this(InformationReporter.ApplicationName + Environment.NewLine + "v." + InformationReporter.ApplicationVersion, InformationReporter.ApplicationIcon)
         {
 
-        }
-
-        static TreyController()
-        {
-            Instance = new TreyController();
         }
 
         /// <summary>
@@ -184,16 +200,5 @@ namespace Temphouse.Modules.Trey
             _UninitializeEvents();
         }
 
-        /// <summary>
-        /// Вызов <seealso cref="Dispose"/> для <seealso cref="Instance"/>.
-        /// </summary>
-        public static void DisposeInstance()
-        {
-            if (Instance != null)
-            {
-                Instance.Dispose();
-                Instance = null;
-            }
-        }
     }
 }
