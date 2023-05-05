@@ -35,16 +35,6 @@
     6. Вынести цвета из RoundedButton.xaml в DefaultColorScheme.xaml
     -->
 
-    <!-- 
-        Window:
-        d:Template="{DynamicResource DefaultWindowTemplate}" 
-        Style="{DynamicResource DefaultWindowStyle}"
-    
-        ExtendedWindow:
-        d:Template="{DynamicResource DefaultWindowTemplate}" 
-        d:Style="{DynamicResource DefaultWindowStyle}"
-    -->
-
     <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type rb:RoundedButton}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Focusable" Value="False" />
