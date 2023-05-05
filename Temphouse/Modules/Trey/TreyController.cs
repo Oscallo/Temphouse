@@ -85,7 +85,7 @@ namespace Temphouse.Modules.Trey
         /// </summary>
         private void _MouseRightButtonClick()
         {
-
+            /// Возможна отрисовка меню выбора.
         }
 
         /// <summary>
