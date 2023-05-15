@@ -5,6 +5,11 @@
              StartupUri="/Windows/DashboardWindow.xaml">
     <Application.Resources>
 
+        <!-- 
+        Задачи: https://keep.google.com/u/0/#LIST/12k1MRrC3Ll6Fcz6zD4InoZtc5TJMpObEDE6y8yxH6MRyjULfqA0iE6RNv3X-VeA 
+        Идеи и мысли: https://keep.google.com/u/0/#NOTE/1XbwhFGTOxFfT80IhzaILRqmPcBcSctksKOofKlOyHI79gJsCtfxPdhNA-CY8eB83dK0l
+        -->
+        
         <ResourceDictionary>
             
             <!-- Следующая строка исправляет MS ошибку -->

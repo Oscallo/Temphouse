@@ -25,16 +25,6 @@
     
     <!--#endregion-->
     
-    <!-- 
-    Требования:
-    1. Необходисо найти возможность скруглить окно так, чтобы фигуры не выходили за пределы окна. - Готово 
-    2. Найти альтернативу AllowsTransparency, для экономии производительности.
-    3. Сделать общий стиль и шаблон так, чтобы они были у всех окон. - Готово 
-    4. Использовать команды для кнопок - Готово
-    5. Найти альтернативный способ, чтобы он отображался и в дизайнере.
-    6. Вынести цвета из RoundedButton.xaml в DefaultColorScheme.xaml
-    -->
-
     <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type rb:RoundedButton}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Focusable" Value="False" />
