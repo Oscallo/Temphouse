@@ -6,7 +6,7 @@ namespace CoreLand.UI.CustomControls
     /// <summary>
     /// Скругленная кнопка от <seealso cref="SquaredButton"/>
     /// </summary>
-    public partial class RoundedButton : SquaredButton
+    public partial class RoundedButton : SquaredButtonBase
     {
         /// <summary>
         /// <seealso cref="DependencyProperty"/> скругления.

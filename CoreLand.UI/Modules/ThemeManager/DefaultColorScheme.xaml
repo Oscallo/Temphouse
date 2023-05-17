@@ -1,0 +1,63 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--#region На основе каких цветов будет построение остальных -->
+    
+    <Color x:Key="PrimaryColor">#23272C</Color>
+    <Color x:Key="SubPrimaryColor">#13141f</Color>
+    
+    <Color x:Key="SubSecondaryColor">#3F1DBAC5</Color>
+    <Color x:Key="SecondaryColor">#1DBAC5</Color>
+    
+    <Color x:Key="TertiaryColor">#D14D14</Color>
+    <Color x:Key="SubTertiaryColor">#C51D31</Color>
+
+    <!--#endregion-->
+
+    <!--#region Window и ExtendedWindow цвета -->
+    
+    <Color x:Key="WindowColor">#23272C</Color>
+
+    <!--#endregion-->
+
+    <!--#region RoundedButton цвета -->
+
+    <Color x:Key="RoundedButton.Static.BackgroundColor">#FFDDDDDD</Color>
+    <Color x:Key="RoundedButton.Static.BorderColor">#FF707070</Color>
+    <Color x:Key="RoundedButton.Static.ForegroundColor">Black</Color>
+
+    <Color x:Key="RoundedButton.MouseOver.BackgroundColor">#FFBEE6FD</Color>
+    <Color x:Key="RoundedButton.MouseOver.BorderColor">#FF3C7FB1</Color>
+    <Color x:Key="RoundedButton.MouseOver.ForegroundColor">White</Color>
+
+    <Color x:Key="RoundedButton.Pressed.BackgroundColor">#FFC4E5F6</Color>
+    <Color x:Key="RoundedButton.Pressed.BorderColor">#FF2C628B</Color>
+    <Color x:Key="RoundedButton.Pressed.ForegroundColor">White</Color>
+
+    <Color x:Key="RoundedButton.Disabled.BackgroundColor">#FFF4F4F4</Color>
+    <Color x:Key="RoundedButton.Disabled.BorderColor">#FFADB2B5</Color>
+    <Color x:Key="RoundedButton.Disabled.ForegroundColor">#FF838383</Color>
+    
+    <!--#endregion-->
+
+    <!--#region SquaredButton цвета -->
+
+    <Color x:Key="SquaredButton.Static.BackgroundColor">#FFDDDDDD</Color>
+    <Color x:Key="SquaredButton.Static.BorderColor">#FF707070</Color>
+    <Color x:Key="SquaredButton.Static.ForegroundColor">Black</Color>
+
+    <Color x:Key="SquaredButton.MouseOver.BackgroundColor">#FFBEE6FD</Color>
+    <Color x:Key="SquaredButton.MouseOver.BorderColor">#FF3C7FB1</Color>
+    <Color x:Key="SquaredButton.MouseOver.ForegroundColor">White</Color>
+
+    <Color x:Key="SquaredButton.Pressed.BackgroundColor">#FFC4E5F6</Color>
+    <Color x:Key="SquaredButton.Pressed.BorderColor">#FF2C628B</Color>
+    <Color x:Key="SquaredButton.Pressed.ForegroundColor">White</Color>
+
+    <Color x:Key="SquaredButton.Disabled.BackgroundColor">#FFF4F4F4</Color>
+    <Color x:Key="SquaredButton.Disabled.BorderColor">#FFADB2B5</Color>
+    <Color x:Key="SquaredButton.Disabled.ForegroundColor">#FF838383</Color>
+
+    <!--#endregion-->
+
+</ResourceDictionary>

@@ -2,7 +2,7 @@
 
 namespace CoreLand.UI.CustomControls
 {
-    public partial class RoundedButton : SquaredButton
+    public partial class RoundedButton : SquaredButtonBase
     {
         /// <summary>
         /// Свойство CornerRadius позволяет пользователям независимо управлять округлостью углов, устанавливая 

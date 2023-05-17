@@ -2,23 +2,31 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:CoreLand.UI.CustomControls">
 
-    <SolidColorBrush x:Key="SquaredButton.Static.Background" Color="#FFDDDDDD"/>
-    <SolidColorBrush x:Key="SquaredButton.Static.Border" Color="#FF707070"/>
-    <SolidColorBrush x:Key="SquaredButton.Static.Foreground" Color="Black"/>
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="SquaredButton.MouseOver.Background" Color="#FFBEE6FD"/>
-    <SolidColorBrush x:Key="SquaredButton.MouseOver.Border" Color="#FF3C7FB1"/>
-    <SolidColorBrush x:Key="SquaredButton.MouseOver.Foreground" Color="White"/>
+    <!--#region SquaredButtonButton кисти -->
 
-    <SolidColorBrush x:Key="SquaredButton.Pressed.Background" Color="#FFC4E5F6"/>
-    <SolidColorBrush x:Key="SquaredButton.Pressed.Border" Color="#FF2C628B"/>
-    <SolidColorBrush x:Key="SquaredButton.Pressed.Foreground" Color="White"/>
+    <SolidColorBrush x:Key="SquaredButton.Static.Background" Color="{DynamicResource SquaredButton.Static.BackgroundColor}"/>
+    <SolidColorBrush x:Key="SquaredButton.Static.Border" Color="{DynamicResource SquaredButton.Static.BorderColor}"/>
+    <SolidColorBrush x:Key="SquaredButton.Static.Foreground" Color="{DynamicResource SquaredButton.Static.ForegroundColor}"/>
 
-    <SolidColorBrush x:Key="SquaredButton.Disabled.Background" Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="SquaredButton.Disabled.Border" Color="#FFADB2B5"/>
-    <SolidColorBrush x:Key="SquaredButton.Disabled.Foreground" Color="#FF838383"/>
+    <SolidColorBrush x:Key="SquaredButton.MouseOver.Background" Color="{DynamicResource SquaredButton.MouseOver.BackgroundColor}"/>
+    <SolidColorBrush x:Key="SquaredButton.MouseOver.Border" Color="{DynamicResource SquaredButton.MouseOver.BorderColor}"/>
+    <SolidColorBrush x:Key="SquaredButton.MouseOver.Foreground" Color="{DynamicResource SquaredButton.MouseOver.ForegroundColor}"/>
 
-    <ControlTemplate TargetType="{x:Type local:RoundedButton}" x:Key="DefaultSquaredButtonTemplate">
+    <SolidColorBrush x:Key="SquaredButton.Pressed.Background" Color="{DynamicResource SquaredButton.Pressed.BackgroundColor}"/>
+    <SolidColorBrush x:Key="SquaredButton.Pressed.Border" Color="{DynamicResource SquaredButton.Pressed.BorderColor}"/>
+    <SolidColorBrush x:Key="SquaredButton.Pressed.Foreground" Color="{DynamicResource SquaredButton.Pressed.ForegroundColor}"/>
+
+    <SolidColorBrush x:Key="SquaredButton.Disabled.Background" Color="{DynamicResource SquaredButton.Disabled.BackgroundColor}"/>
+    <SolidColorBrush x:Key="SquaredButton.Disabled.Border" Color="{DynamicResource SquaredButton.Disabled.BorderColor}"/>
+    <SolidColorBrush x:Key="SquaredButton.Disabled.Foreground" Color="{DynamicResource SquaredButton.Disabled.ForegroundColor}"/>
+
+    <!--#endregion-->
+
+    <ControlTemplate TargetType="{x:Type local:SquaredButton}" x:Key="DefaultSquaredButtonTemplate">
         <Border x:Name="PART_border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
             <ContentPresenter x:Name="PART_ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>

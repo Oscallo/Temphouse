@@ -2,9 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/ColorScheme/DefaultColorScheme.xaml"/>
+        
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/Window_Default/MicrosoftWindow.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/Tooltip_Default/Tooltip.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 

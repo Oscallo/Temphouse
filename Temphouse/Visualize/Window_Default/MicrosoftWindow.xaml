@@ -97,8 +97,6 @@
     <!-- Стиль окна для дизайнера -->
     <Style TargetType="{x:Type Window}" BasedOn="{StaticResource DefaultWindowStyle}"/>
 
-
-
 </ResourceDictionary>
     
     

@@ -1,23 +1,31 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:CoreLand.UI.CustomControls">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="RoundedButton.Static.Background" Color="#FFDDDDDD"/>
-    <SolidColorBrush x:Key="RoundedButton.Static.Border" Color="#FF707070"/>
-    <SolidColorBrush x:Key="RoundedButton.Static.Foreground" Color="Black"/>
+    <!--#region RoundedButton кисти -->
+    
+    <SolidColorBrush x:Key="RoundedButton.Static.Background" Color="{DynamicResource RoundedButton.Static.BackgroundColor}"/>
+    <SolidColorBrush x:Key="RoundedButton.Static.Border" Color="{DynamicResource RoundedButton.Static.BorderColor}"/>
+    <SolidColorBrush x:Key="RoundedButton.Static.Foreground" Color="{DynamicResource RoundedButton.Static.ForegroundColor}"/>
 
-    <SolidColorBrush x:Key="RoundedButton.MouseOver.Background" Color="#FFBEE6FD"/>
-    <SolidColorBrush x:Key="RoundedButton.MouseOver.Border" Color="#FF3C7FB1"/>
-    <SolidColorBrush x:Key="RoundedButton.MouseOver.Foreground" Color="White"/>
+    <SolidColorBrush x:Key="RoundedButton.MouseOver.Background" Color="{DynamicResource RoundedButton.MouseOver.BackgroundColor}"/>
+    <SolidColorBrush x:Key="RoundedButton.MouseOver.Border" Color="{DynamicResource RoundedButton.MouseOver.BorderColor}"/>
+    <SolidColorBrush x:Key="RoundedButton.MouseOver.Foreground" Color="{DynamicResource RoundedButton.MouseOver.ForegroundColor}"/>
 
-    <SolidColorBrush x:Key="RoundedButton.Pressed.Background" Color="#FFC4E5F6"/>
-    <SolidColorBrush x:Key="RoundedButton.Pressed.Border" Color="#FF2C628B"/>
-    <SolidColorBrush x:Key="RoundedButton.Pressed.Foreground" Color="White"/>
+    <SolidColorBrush x:Key="RoundedButton.Pressed.Background" Color="{DynamicResource RoundedButton.Pressed.BackgroundColor}"/>
+    <SolidColorBrush x:Key="RoundedButton.Pressed.Border" Color="{DynamicResource RoundedButton.Pressed.BorderColor}"/>
+    <SolidColorBrush x:Key="RoundedButton.Pressed.Foreground" Color="{DynamicResource RoundedButton.Pressed.ForegroundColor}"/>
 
-    <SolidColorBrush x:Key="RoundedButton.Disabled.Background" Color="#FFF4F4F4"/>
-    <SolidColorBrush x:Key="RoundedButton.Disabled.Border" Color="#FFADB2B5"/>
-    <SolidColorBrush x:Key="RoundedButton.Disabled.Foreground" Color="#FF838383"/>
-
+    <SolidColorBrush x:Key="RoundedButton.Disabled.Background" Color="{DynamicResource RoundedButton.Disabled.BackgroundColor}"/>
+    <SolidColorBrush x:Key="RoundedButton.Disabled.Border" Color="{DynamicResource RoundedButton.Disabled.BorderColor}"/>
+    <SolidColorBrush x:Key="RoundedButton.Disabled.Foreground" Color="{DynamicResource RoundedButton.Disabled.ForegroundColor}"/>
+    
+    <!--#endregion-->
+    
     <ControlTemplate TargetType="{x:Type local:RoundedButton}" x:Key="DefaultRoundedButtonTemplate">
         <Border x:Name="PART_border" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
             <ContentPresenter x:Name="PART_ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 

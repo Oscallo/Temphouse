@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
+
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/Generic.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/Generic.xaml"/>
     </ResourceDictionary.MergedDictionaries>
