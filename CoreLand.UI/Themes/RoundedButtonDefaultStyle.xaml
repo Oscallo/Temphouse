@@ -6,7 +6,7 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <!--#region RoundedButton кисти -->
+    <!--#region Цветовая схема -->
     
     <SolidColorBrush x:Key="RoundedButton.Static.Background" Color="{DynamicResource RoundedButton.Static.BackgroundColor}"/>
     <SolidColorBrush x:Key="RoundedButton.Static.Border" Color="{DynamicResource RoundedButton.Static.BorderColor}"/>

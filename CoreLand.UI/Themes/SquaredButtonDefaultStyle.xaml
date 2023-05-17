@@ -6,7 +6,7 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <!--#region SquaredButtonButton кисти -->
+    <!--#region Цветовая схема -->
 
     <SolidColorBrush x:Key="SquaredButton.Static.Background" Color="{DynamicResource SquaredButton.Static.BackgroundColor}"/>
     <SolidColorBrush x:Key="SquaredButton.Static.Border" Color="{DynamicResource SquaredButton.Static.BorderColor}"/>

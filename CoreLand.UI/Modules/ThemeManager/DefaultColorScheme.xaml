@@ -16,7 +16,15 @@
 
     <!--#region Window и ExtendedWindow цвета -->
     
-    <Color x:Key="WindowColor">#23272C</Color>
+    <Color x:Key="Window.Static.BackgroundColor">#23272C</Color>
+    <Color x:Key="Window.Static.ForegroundColor">#1DBAC5</Color>
+
+    <!--#endregion-->
+
+    <!--#region Tooltip цвета -->
+
+    <Color x:Key="ToolTip.BackgroundColor">#23272C</Color>
+    <Color x:Key="ToolTip.ForegroundColor">#1DBAC5</Color>
 
     <!--#endregion-->
 

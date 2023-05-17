@@ -5,4 +5,16 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <!--#region Цветовая схема -->
+
+    <SolidColorBrush x:Key="ToolTip.Background" Color="{DynamicResource ToolTip.BackgroundColor}"/>
+    <SolidColorBrush x:Key="ToolTip.Foreground" Color="{DynamicResource ToolTip.ForegroundColor}"/>
+
+    <!--#endregion-->
+
+    <Style TargetType="{x:Type ToolTip}">
+        <Setter Property="Background" Value="{DynamicResource ToolTip.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ToolTip.Foreground}"/>
+    </Style>
+    
 </ResourceDictionary>

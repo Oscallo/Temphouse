@@ -22,8 +22,9 @@
 
     <!--#region Цветовая схема -->
 
-    <SolidColorBrush x:Key="WindowSolidColorBrush" Color="{DynamicResource WindowColor}"/>
-    
+    <SolidColorBrush x:Key="Window.Static.Background" Color="{DynamicResource Window.Static.BackgroundColor}"/>
+    <SolidColorBrush x:Key="Window.Static.Foreground" Color="{DynamicResource Window.Static.ForegroundColor}"/>
+
     <!--#endregion-->
     
     <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type ui:RoundedButton}">

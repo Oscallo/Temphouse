@@ -3,7 +3,7 @@
 
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/Tooltip.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/ToolTip.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 

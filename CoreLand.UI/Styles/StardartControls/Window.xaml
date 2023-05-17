@@ -78,7 +78,8 @@
     <Style x:Key="DefaultWindowStyle" TargetType="{x:Type Window}">
         <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
         <Setter Property="AllowsTransparency" Value="True"/>
-        <Setter Property="Background" Value="{DynamicResource WindowSolidColorBrush}"/>
+        <Setter Property="Background" Value="{DynamicResource Window.Static.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Window.Static.Foreground}"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="Template" Value="{DynamicResource DefaultWindowTemplate}"/>
