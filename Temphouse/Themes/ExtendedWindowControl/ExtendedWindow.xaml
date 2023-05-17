@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Temphouse.Themes.ExtendedWindowControl"
-                    xmlns:rb="clr-namespace:Temphouse.Themes.RoundedButtonControl"
+                    xmlns:ui="clr-namespace:CoreLand.UI.CustomControls;assembly=CoreLand.UI"
                     xmlns:fil="clr-namespace:Temphouse.Modules.Filling"
                     xmlns:com="clr-namespace:Temphouse.Modules.Commands"
                     xmlns:coverter="clr-namespace:Temphouse.Modules.Converters">
@@ -29,10 +29,10 @@
                         <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource Window.HeaderBar.HeaderIconHeight}}" Width="{Binding Source={StaticResource Window.HeaderBar.HeaderIconWidth}}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,15,0">
-                        <rb:RoundedButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" Content="{x:Static fil:WindowButtonFilling.HideButtonFilling}"/>
-                        <rb:RoundedButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" Content="{x:Static fil:WindowButtonFilling.MinimizeButtonFilling}"/>
-                        <rb:RoundedButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"/>
-                        <rb:RoundedButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" Content="{x:Static fil:WindowButtonFilling.CloseButtonFilling}"/>
+                        <ui:RoundedButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" Content="{x:Static fil:WindowButtonFilling.HideButtonFilling}"/>
+                        <ui:RoundedButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" Content="{x:Static fil:WindowButtonFilling.MinimizeButtonFilling}"/>
+                        <ui:RoundedButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"/>
+                        <ui:RoundedButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" Content="{x:Static fil:WindowButtonFilling.CloseButtonFilling}"/>
                     </StackPanel>
                 </Grid>
                 <Grid Grid.RowSpan="2">

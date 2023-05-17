@@ -20,6 +20,9 @@
 		</Page>
 	</ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\CoreLand.UI\CoreLand.UI.csproj" />
+	</ItemGroup>
+	<ItemGroup>
 	  <None Update="Icon.ico">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>

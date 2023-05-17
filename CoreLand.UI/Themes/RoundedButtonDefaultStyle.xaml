@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Temphouse.Themes.RoundedButtonControl">
+                    xmlns:local="clr-namespace:CoreLand.UI.CustomControls">
 
     <SolidColorBrush x:Key="RoundedButton.Static.Background" Color="#FFDDDDDD"/>
     <SolidColorBrush x:Key="RoundedButton.Static.Border" Color="#FF707070"/>
