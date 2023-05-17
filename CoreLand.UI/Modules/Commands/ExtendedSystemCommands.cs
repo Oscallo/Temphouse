@@ -95,7 +95,9 @@ namespace CoreLand.UI.Modules.Commands
             {
                 throw new ArgumentNullException(nameof(window));    
             }
+            #pragma warning disable CS8602 // Разыменование вероятной пустой ссылки.
             TreyController.Instance.HideWindow(window);
+            #pragma warning restore CS8602 // Разыменование вероятной пустой ссылки.
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Temphouse.Modules.Notifications
     {
         public const byte MAX_NOTIFICATIONS = 4;
 
-        public static GrowlNotifiactions Instance { get; private set; }
+        public static GrowlNotifiactions? Instance { get; private set; }
 
         static GrowlNotifiactions()
         {
