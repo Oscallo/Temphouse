@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace Temphouse.Models.WindowControlButton
+namespace CoreLand.UI.Models
 {
     public class WindowButtonModel : INotifyPropertyChanged, INotifyPropertyChanging
     {
@@ -15,15 +9,15 @@ namespace Temphouse.Models.WindowControlButton
 
         private object? _Content;
 
-        public object? Content 
+        public object? Content
         {
             get { return _Content; }
-            set 
+            set
             {
                 if (_Content == value) return;
-                OnPropertyChanging(nameof(this.Content));
+                OnPropertyChanging(nameof(Content));
                 _Content = value;
-                OnPropertyChanged(nameof(this.Content));
+                OnPropertyChanged(nameof(Content));
             }
         }
 

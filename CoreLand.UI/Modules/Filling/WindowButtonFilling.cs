@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Temphouse.Models.WindowControlButton;
+﻿using CoreLand.UI.Models;
 
-namespace Temphouse.Modules.Filling
+namespace CoreLand.UI.Modules.Filling
 {
     public static class WindowButtonFilling
     {

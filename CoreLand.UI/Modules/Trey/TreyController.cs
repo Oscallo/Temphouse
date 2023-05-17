@@ -2,12 +2,12 @@
 using System.Windows;
 using System.Drawing;
 using System.Windows.Forms;
-using Temphouse.Modules.Information;
+using CoreLand.UI.Modules.Information;
 
 using ApplicationWPF = System.Windows.Application;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace Temphouse.Modules.Trey
+namespace CoreLand.UI.Modules.Trey
 {
     /// <summary>
     /// Контроллер окна для вывода в трей
@@ -19,7 +19,7 @@ namespace Temphouse.Modules.Trey
         /// <summary>
         /// Статический экземпляр объекта.
         /// </summary>
-        public static TreyController Instance { get; private set; }
+        public static TreyController? Instance { get; private set; }
 
         static TreyController()
         {

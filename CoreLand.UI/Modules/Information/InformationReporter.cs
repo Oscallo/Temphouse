@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
+﻿using System.Drawing;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Temphouse.Modules.Information
+namespace CoreLand.UI.Modules.Information
 {
     /// <summary>
     /// Фасад от <seealso cref="Assembly"/> и <seealso cref="Icon"/>

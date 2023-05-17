@@ -5,6 +5,7 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/SquaredButtonDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/RoundedButtonDefaultStyle.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/ExtendedWindowDefaultStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

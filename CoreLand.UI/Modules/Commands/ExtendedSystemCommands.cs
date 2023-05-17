@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using CoreLand.UI.Modules.Trey;
+using System;
 using System.Windows;
-using Temphouse.Modules.Trey;
+using System.Windows.Input;
 
-namespace Temphouse.Modules.Commands
+namespace CoreLand.UI.Modules.Commands
 {
     /// <summary>
     /// Фасад от <seealso cref="SystemCommands"/>.

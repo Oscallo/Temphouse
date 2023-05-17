@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using Temphouse.Modules.Trey;
+using CoreLand.UI.Modules;
 
 /// https://www.codeproject.com/Articles/499241/Growl-Alike-WPF-Notifications
 

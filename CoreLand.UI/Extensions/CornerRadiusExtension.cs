@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace CoreLand.UI.Extensions
@@ -11,7 +7,7 @@ namespace CoreLand.UI.Extensions
     /// <summary>
     /// Класс расшринения <seealso cref="CornerRadius"/>
     /// </summary>
-    
+
     public static class CornerRadiusExtension
     {
 
