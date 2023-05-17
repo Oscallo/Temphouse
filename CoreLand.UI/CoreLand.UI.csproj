@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Styles\CommonDictionaries\" />
+    <Folder Include="CommonDictionaries\" />
   </ItemGroup>
 
 </Project>
