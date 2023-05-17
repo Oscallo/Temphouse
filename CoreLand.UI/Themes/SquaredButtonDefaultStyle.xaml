@@ -2,10 +2,59 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:CoreLand.UI.CustomControls">
 
+    <SolidColorBrush x:Key="SquaredButton.Static.Background" Color="#FFDDDDDD"/>
+    <SolidColorBrush x:Key="SquaredButton.Static.Border" Color="#FF707070"/>
+    <SolidColorBrush x:Key="SquaredButton.Static.Foreground" Color="Black"/>
+
+    <SolidColorBrush x:Key="SquaredButton.MouseOver.Background" Color="#FFBEE6FD"/>
+    <SolidColorBrush x:Key="SquaredButton.MouseOver.Border" Color="#FF3C7FB1"/>
+    <SolidColorBrush x:Key="SquaredButton.MouseOver.Foreground" Color="White"/>
+
+    <SolidColorBrush x:Key="SquaredButton.Pressed.Background" Color="#FFC4E5F6"/>
+    <SolidColorBrush x:Key="SquaredButton.Pressed.Border" Color="#FF2C628B"/>
+    <SolidColorBrush x:Key="SquaredButton.Pressed.Foreground" Color="White"/>
+
+    <SolidColorBrush x:Key="SquaredButton.Disabled.Background" Color="#FFF4F4F4"/>
+    <SolidColorBrush x:Key="SquaredButton.Disabled.Border" Color="#FFADB2B5"/>
+    <SolidColorBrush x:Key="SquaredButton.Disabled.Foreground" Color="#FF838383"/>
+
+    <ControlTemplate TargetType="{x:Type local:RoundedButton}" x:Key="DefaultSquaredButtonTemplate">
+        <Border x:Name="PART_border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+            <ContentPresenter x:Name="PART_ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
+                              RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsDefaulted" Value="true">
+                <Setter Property="BorderBrush" TargetName="PART_border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" TargetName="PART_border" Value="{StaticResource SquaredButton.MouseOver.Background}"/>
+                <Setter Property="BorderBrush" TargetName="PART_border" Value="{StaticResource SquaredButton.MouseOver.Border}"/>
+                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource SquaredButton.MouseOver.Foreground}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" TargetName="PART_border" Value="{StaticResource SquaredButton.Pressed.Background}"/>
+                <Setter Property="BorderBrush" TargetName="PART_border" Value="{StaticResource SquaredButton.Pressed.Border}"/>
+                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource SquaredButton.Pressed.Foreground}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Background" TargetName="PART_border" Value="{StaticResource SquaredButton.Disabled.Background}"/>
+                <Setter Property="BorderBrush" TargetName="PART_border" Value="{StaticResource SquaredButton.Disabled.Border}"/>
+                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource SquaredButton.Disabled.Foreground}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
     <Style TargetType="{x:Type local:SquaredButton}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="MinWidth" Value="20"/>
         <Setter Property="MinHeight" Value="20"/>
         <Setter Property="Edge" Value="20"/>
+        <Setter Property="Background" Value="{StaticResource SquaredButton.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SquaredButton.Static.Border}"/>
+        <Setter Property="Foreground" Value="{StaticResource SquaredButton.Static.Foreground}"/>
+        <Setter Property="Template" Value="{StaticResource DefaultSquaredButtonTemplate}"/>
     </Style>
+
     
 </ResourceDictionary>
