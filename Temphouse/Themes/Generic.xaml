@@ -7,8 +7,6 @@
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Visualize/ColorScheme/DefaultColorScheme.xaml"/>
 
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Themes/ExtendedWindowControl/ExtendedWindow.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Themes/SquaredButtonControl/SquaredButton.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Themes/RoundedButtonControl/RoundedButton.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
