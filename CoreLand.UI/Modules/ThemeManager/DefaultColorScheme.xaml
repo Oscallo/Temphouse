@@ -27,6 +27,14 @@
     <Color x:Key="ToolTip.ForegroundColor">#1DBAC5</Color>
 
     <!--#endregion-->
+    
+    <!--#region Separator цвета -->
+
+    <Color x:Key="Separator.BackgroundColor">#4C4E4E4E</Color>
+    
+    <!--#endregion-->
+
+
 
     <!--#region RoundedButton цвета -->
 
