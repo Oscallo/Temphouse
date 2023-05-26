@@ -34,8 +34,6 @@
     
     <!--#endregion-->
 
-
-
     <!--#region RoundedButton цвета -->
 
     <Color x:Key="RoundedButton.Static.BackgroundColor">#FFDDDDDD</Color>
