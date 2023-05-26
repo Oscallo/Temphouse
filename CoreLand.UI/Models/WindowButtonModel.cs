@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using FontAwesome.Sharp;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace CoreLand.UI.Models
@@ -7,17 +8,22 @@ namespace CoreLand.UI.Models
     {
         public WindowButtonModel() { }
 
-        private object? _Content;
+        public WindowButtonModel(IconChar icon)
+        { 
+            Icon = icon; 
+        }
 
-        public object? Content
+        private IconChar _Icon = IconChar.Accusoft;
+
+        public IconChar Icon
         {
-            get { return _Content; }
+            get { return _Icon; }
             set
             {
-                if (_Content == value) return;
-                OnPropertyChanging(nameof(Content));
-                _Content = value;
-                OnPropertyChanged(nameof(Content));
+                if (_Icon == value) return;
+                OnPropertyChanging(nameof(Icon));
+                _Icon = value;
+                OnPropertyChanged(nameof(Icon));
             }
         }
 

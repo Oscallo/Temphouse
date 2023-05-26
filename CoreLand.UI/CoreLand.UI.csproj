@@ -5,6 +5,12 @@
     <Nullable>enable</Nullable>
 	<UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
+    <AssemblyVersion>1.0.0.5</AssemblyVersion>
+    <FileVersion>1.0.0.5</FileVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
+  </ItemGroup>
 
 </Project>

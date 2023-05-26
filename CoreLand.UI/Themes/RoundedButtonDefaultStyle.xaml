@@ -32,22 +32,22 @@
                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
         </Border>
         <ControlTemplate.Triggers>
-            <Trigger Property="IsDefaulted" Value="true">
-                <Setter Property="BorderBrush" TargetName="PART_border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            <Trigger Property="IsDefaulted" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
             </Trigger>
-            <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" TargetName="PART_border" Value="{StaticResource RoundedButton.MouseOver.Background}"/>
-                <Setter Property="BorderBrush" TargetName="PART_border" Value="{StaticResource RoundedButton.MouseOver.Border}"/>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource RoundedButton.MouseOver.Background}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource RoundedButton.MouseOver.Border}"/>
                 <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource RoundedButton.MouseOver.Foreground}"/>
             </Trigger>
-            <Trigger Property="IsPressed" Value="true">
-                <Setter Property="Background" TargetName="PART_border" Value="{StaticResource RoundedButton.Pressed.Background}"/>
-                <Setter Property="BorderBrush" TargetName="PART_border" Value="{StaticResource RoundedButton.Pressed.Border}"/>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{StaticResource RoundedButton.Pressed.Background}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource RoundedButton.Pressed.Border}"/>
                 <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource RoundedButton.Pressed.Foreground}"/>
             </Trigger>
-            <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Background" TargetName="PART_border" Value="{StaticResource RoundedButton.Disabled.Background}"/>
-                <Setter Property="BorderBrush" TargetName="PART_border" Value="{StaticResource RoundedButton.Disabled.Border}"/>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource RoundedButton.Disabled.Background}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource RoundedButton.Disabled.Border}"/>
                 <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource RoundedButton.Disabled.Foreground}"/>
             </Trigger>
         </ControlTemplate.Triggers>

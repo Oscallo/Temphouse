@@ -1,18 +1,19 @@
 ﻿using CoreLand.UI.Models;
+using FontAwesome.Sharp;
 
 namespace CoreLand.UI.Modules.Filling
 {
     public static class WindowButtonFilling
     {
-        private static WindowButtonModel _CloseButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _CloseButtonFilling = new WindowButtonModel(IconChar.WindowClose);
 
-        private static WindowButtonModel _MinimizeButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _MinimizeButtonFilling = new WindowButtonModel(IconChar.WindowMinimize);
 
-        private static WindowButtonModel _MaximizeButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _MaximizeButtonFilling = new WindowButtonModel(IconChar.WindowMaximize);
 
-        private static WindowButtonModel _HideButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _HideButtonFilling = new WindowButtonModel(IconChar.EyeLowVision);
 
-        private static WindowButtonModel _RestoreButtonFilling = new WindowButtonModel();
+        private static WindowButtonModel _RestoreButtonFilling = new WindowButtonModel(IconChar.WindowRestore);
 
         public static WindowButtonModel CloseButtonFilling 
         {
