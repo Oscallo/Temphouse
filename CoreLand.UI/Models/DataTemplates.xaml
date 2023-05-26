@@ -5,7 +5,7 @@
 
 
     <DataTemplate DataType="{x:Type local:WindowButtonModel}">
-        <fa:IconImage Margin="4" Icon="{Binding Icon}" Foreground="{Binding Foreground,RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+        <fa:IconImage Margin="4" VerticalAlignment="Center" HorizontalAlignment="Center" Icon="{Binding Icon}" Foreground="{Binding Foreground,RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
     </DataTemplate>
     
 </ResourceDictionary>
