@@ -1,6 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- 
+        Задачи CoreLand.UI: https://todoist.com/app/project/2314470350
+        Идеи и мысли: https://keep.google.com/u/0/#NOTE/1XbwhFGTOxFfT80IhzaILRqmPcBcSctksKOofKlOyHI79gJsCtfxPdhNA-CY8eB83dK0l
+        -->
+
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/Generic.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/Generic.xaml"/>
