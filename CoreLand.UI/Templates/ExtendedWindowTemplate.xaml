@@ -1,0 +1,15 @@
+﻿<ui:ExtendedWindow x:Class="CoreLand.UI.Templates.ExtendedWindowTemplate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ui="clr-namespace:CoreLand.UI.CustomControls" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoreLand.UI.Templates"
+        d:Template="{DynamicResource DefaultWindowTemplate}" 
+        mc:Ignorable="d"
+        Title="ExtendedWindowTemplate" Height="450" Width="800">
+    <Grid>
+        <!-- Добавить ;assembly=CoreLand.UI в шаблоне и пункте UI -->
+        <!-- Убрать из шаблона дублирующиеся xaml при наличии -->
+    </Grid>
+</ui:ExtendedWindow>

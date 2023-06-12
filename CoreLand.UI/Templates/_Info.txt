@@ -1,0 +1,2 @@
+﻿ExtendedWindow.zip необходимо добавить в папку [Документы]\[Версия Visual Studio]\Templates\ItemTemplates\C#\CoreLand.UI\
+В проект, должена быть добавлена библиотека CoreLand.UI
