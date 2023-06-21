@@ -4,7 +4,6 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/ToolTip.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/Window.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/Separator.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 

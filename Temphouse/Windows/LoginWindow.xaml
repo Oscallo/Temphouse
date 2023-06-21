@@ -1,4 +1,4 @@
-﻿<ui:ExtendedWindow x:Class="Temphouse.Windows.DashboardWindow"
+﻿<ui:ExtendedWindow x:Class="Temphouse.Windows.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,16 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temphouse.Windows"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
-        mc:Ignorable="d" IsHideable="False"
-        Title="DashboardWindow" Height="450" Width="800" Icon="/Icon.ico">
+        mc:Ignorable="d" WindowStyle="SingleBorderWindow" IsHideable="False"
+        Title="LoginWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="80"/>
-            <ColumnDefinition Width="5"/>
-            <ColumnDefinition Width="179*"/>
-        </Grid.ColumnDefinitions>
-
-        <Separator Grid.Column="1" Style="{DynamicResource VerticalSeparatorStyle}"/>
         
     </Grid>
 </ui:ExtendedWindow>

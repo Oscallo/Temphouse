@@ -13,7 +13,6 @@ namespace CoreLand.UI.CustomControls
         {
             get { return (CornerRadius)GetValue(CornerRadiusProperty); }
             set { SetValue(CornerRadiusProperty, value); }
-
         }
     }
 }

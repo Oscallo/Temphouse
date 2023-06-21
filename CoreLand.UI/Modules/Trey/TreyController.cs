@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using CoreLand.UI.Modules.Information;
 
 using ApplicationWPF = System.Windows.Application;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace CoreLand.UI.Modules.Trey
 {
