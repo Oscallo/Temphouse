@@ -1,5 +1,6 @@
 ﻿using CoreLand.UI.Modules.Boxes;
 using System;
+using System.Security;
 using System.Windows;
 
 namespace CoreLand.UI.CustomControls
@@ -31,6 +32,7 @@ namespace CoreLand.UI.CustomControls
         /// </summary>
         /// <param name="d">Свойство</param>
         /// <exception cref="FieldAccessException"/>
+        [SecurityCritical, SecurityTreatAsSafe]
         private void VerifyApiSupported(DependencyObject d) 
         {
         
