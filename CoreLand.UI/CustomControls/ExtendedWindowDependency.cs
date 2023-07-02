@@ -2,17 +2,28 @@
 using System;
 using System.Security;
 using System.Windows;
+using System.Windows.Media;
+
+using Window = System.Windows.Window;
 
 namespace CoreLand.UI.CustomControls
 {
-    public partial class ExtendedWindow : System.Windows.Window
+    public partial class ExtendedWindow : Window
     {
+        private static object ISHIDEABLE_DEFAULTVALUE = BooleanBoxes.TrueBox;
+        private const SolidColorBrush HEADERBARBACKGROUND_DEFAULTVALUE = (SolidColorBrush)null;
+
         /// <summary>
-        ///     DependencyProperty свойства IsHideable.
+        ///     DependencyProperty свойства <see cref="IsHideable"/>.
         /// </summary>
         public static readonly DependencyProperty IsHideableProperty = DependencyProperty.Register(nameof(IsHideable), typeof(bool), typeof(ExtendedWindow),
-                               new FrameworkPropertyMetadata(BooleanBoxes.TrueBox,FrameworkPropertyMetadataOptions.AffectsRender, new PropertyChangedCallback(OnIsHideableChanged), new CoerceValueCallback(VerifyAccessHideableCoercion)));
+                               new FrameworkPropertyMetadata(ExtendedWindow.ISHIDEABLE_DEFAULTVALUE, FrameworkPropertyMetadataOptions.AffectsRender, new PropertyChangedCallback(OnIsHideableChanged), new CoerceValueCallback(VerifyAccessHideableCoercion)));
 
+        /// <summary>
+        ///     DependencyProperty свойства <see cref="HeaderBarBackground\"/>.
+        /// </summary>
+        public static readonly DependencyProperty HeaderBarBackgroundProperty = DependencyProperty.Register(nameof(HeaderBarBackground), typeof(SolidColorBrush), typeof(ExtendedWindow),
+                               new FrameworkPropertyMetadata(ExtendedWindow.HEADERBARBACKGROUND_DEFAULTVALUE, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.SubPropertiesDoNotAffectRender));
 
         /// <summary>
         /// Проверяет на запрет изменения свойства

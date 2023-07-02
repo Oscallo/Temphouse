@@ -1,18 +1,22 @@
-﻿using CoreLand.UI.Modules.Boxes;
+﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+using CoreLand.UI.Modules.Boxes;
 using CoreLand.UI.Modules.Commands;
 using CoreLand.UI.Modules.Information;
 using System;
 using System.ComponentModel;
+using System.Windows.Media;
 using System.Windows;
 using System.Windows.Input;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+using Window = System.Windows.Window;
 
 namespace CoreLand.UI.CustomControls
 {
     /// <summary>
     /// Расширенный класс окна, наследуемый от <seealso cref="Window"/>
     /// </summary>
-    public partial class ExtendedWindow : System.Windows.Window
+    public partial class ExtendedWindow : Window
     {
         public ExtendedWindow() : base()
         {
@@ -128,6 +132,22 @@ namespace CoreLand.UI.CustomControls
             set 
             {
                 SetValue(IsHideableProperty, BooleanBoxes.Box(value)); 
+            }
+        }
+
+        /// <summary>
+        /// Кисть фона заголовка.
+        /// </summary>
+        [Bindable(true), Category("Appearance")]
+        public SolidColorBrush HeaderBarBackground
+        {
+            get
+            {
+                return (SolidColorBrush)GetValue(HeaderBarBackgroundProperty);
+            }
+            set
+            {
+                SetValue(HeaderBarBackgroundProperty, value);
             }
         }
     }
