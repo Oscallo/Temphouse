@@ -29,7 +29,7 @@
 
     <!--#endregion-->
 
-    <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type ui:RoundedButton}">
+    <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type ui:RoundedSquaredButton}">
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="#26FFFFFF"/>
@@ -67,10 +67,10 @@
                         <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource Window.HeaderBar.HeaderIconHeight}}" Width="{Binding Source={StaticResource Window.HeaderBar.HeaderIconWidth}}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,15,0">
-                        <ui:RoundedButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" Content="{x:Static fil:WindowButtonFilling.HideButtonFilling}"/>
-                        <ui:RoundedButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" Content="{x:Static fil:WindowButtonFilling.MinimizeButtonFilling}"/>
-                        <ui:RoundedButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"/>
-                        <ui:RoundedButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" Content="{x:Static fil:WindowButtonFilling.CloseButtonFilling}"/>
+                        <ui:RoundedSquaredButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" Content="{x:Static fil:WindowButtonFilling.HideButtonFilling}"/>
+                        <ui:RoundedSquaredButton x:Name="PART_Minimize_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.MinimizeWindowCommand}" ToolTip="Minimize" Content="{x:Static fil:WindowButtonFilling.MinimizeButtonFilling}"/>
+                        <ui:RoundedSquaredButton x:Name="PART_MaximizeAndRestore_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}"/>
+                        <ui:RoundedSquaredButton x:Name="PART_Close_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.CloseWindowCommand}" ToolTip="Close" Content="{x:Static fil:WindowButtonFilling.CloseButtonFilling}"/>
                     </StackPanel>
                 </Grid>
                 <Grid Grid.RowSpan="2">

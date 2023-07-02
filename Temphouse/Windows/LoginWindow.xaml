@@ -7,13 +7,21 @@
         xmlns:local="clr-namespace:Temphouse.Windows"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
         mc:Ignorable="d" WindowStyle="SingleBorderWindow" IsHideable="False"
-        Title="LoginWindow" Height="600" Width="300">
-    <Grid Margin="40">
-        <Grid x:Name="PART_AuthorizeUsersGrid">
-            
-        </Grid>
+        Title="LoginWindow" Height="500" Width="300">
+    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="40">
         <Grid x:Name="PART_FormAuthorizeGrid">
-
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBox Margin="0,0,0,20" Height="50"/>
+                <TextBox Margin="0,20,0,20" Height="50"/>
+                <Button Margin="0,20,0,0" Height="50">Авторизация</Button>
+            </StackPanel>
         </Grid>
-    </Grid>
+        <Grid x:Name="PART_AuthorizeUsersGrid" Margin="0,30,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="Green"/>
+                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="Green"/>
+                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="Green"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
 </ui:ExtendedWindow>

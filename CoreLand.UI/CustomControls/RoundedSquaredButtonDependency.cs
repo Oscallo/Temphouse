@@ -6,13 +6,13 @@ namespace CoreLand.UI.CustomControls
     /// <summary>
     /// Скругленная кнопка от <seealso cref="SquaredButton"/>
     /// </summary>
-    public partial class RoundedButton : SquaredButtonBase
+    public partial class RoundedSquaredButton : SquaredButtonBase
     {
         /// <summary>
         /// <seealso cref="DependencyProperty"/> скругления.
         /// </summary>
         public static readonly DependencyProperty CornerRadiusProperty
-            = DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(RoundedButton),
+            = DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(RoundedSquaredButton),
                                           new FrameworkPropertyMetadata(new CornerRadius(), FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender),
                                           new ValidateValueCallback(IsCornerRadiusValid));
 
@@ -27,9 +27,9 @@ namespace CoreLand.UI.CustomControls
             return (cr.IsValid(false, false, false, false));
         }
 
-        static RoundedButton()
+        static RoundedSquaredButton()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(RoundedButton), new FrameworkPropertyMetadata(typeof(RoundedButton)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(RoundedSquaredButton), new FrameworkPropertyMetadata(typeof(RoundedSquaredButton)));
         }
     }
 }

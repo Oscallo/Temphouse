@@ -25,8 +25,8 @@
     <SolidColorBrush x:Key="RoundedButton.Disabled.Foreground" Color="{DynamicResource RoundedButton.Disabled.ForegroundColor}"/>
     
     <!--#endregion-->
-    
-    <ControlTemplate TargetType="{x:Type local:RoundedButton}" x:Key="DefaultRoundedButtonTemplate">
+
+    <ControlTemplate TargetType="{x:Type local:RoundedSquaredButton}" x:Key="DefaultRoundedButtonTemplate">
         <Border x:Name="PART_border" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
             <ContentPresenter x:Name="PART_ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
@@ -52,8 +52,8 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    
-    <Style TargetType="{x:Type local:RoundedButton}" BasedOn="{StaticResource {x:Type Button}}">
+
+    <Style TargetType="{x:Type local:RoundedSquaredButton}" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="SnapsToDevicePixels" Value="true" />
         <Setter Property="MinWidth" Value="20"/>
         <Setter Property="MinHeight" Value="20"/>
