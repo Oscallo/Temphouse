@@ -19,8 +19,8 @@
         <Grid Name="PART_MenuGrid" Style="{DynamicResource MenuGridStyle}">
             
         </Grid>
-        <Grid Name="PART_UserGrid" Grid.Column="2" Style="{DynamicResource UserGridStyle}">
-
-        </Grid>
+        <Border Name="PART_UserGrid" Grid.Column="2" Style="{DynamicResource UserBorderStyle}">
+            
+        </Border>
     </Grid>
 </ui:ExtendedWindow>

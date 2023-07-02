@@ -4,6 +4,6 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Styles/MenuGridStyle.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Styles/UserGridStyle.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Styles/UserBorderStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

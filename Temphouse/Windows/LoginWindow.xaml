@@ -7,8 +7,13 @@
         xmlns:local="clr-namespace:Temphouse.Windows"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
         mc:Ignorable="d" WindowStyle="SingleBorderWindow" IsHideable="False"
-        Title="LoginWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="LoginWindow" Height="600" Width="300">
+    <Grid Margin="40">
+        <Grid x:Name="PART_AuthorizeUsersGrid">
+            
+        </Grid>
+        <Grid x:Name="PART_FormAuthorizeGrid">
+
+        </Grid>
     </Grid>
 </ui:ExtendedWindow>
