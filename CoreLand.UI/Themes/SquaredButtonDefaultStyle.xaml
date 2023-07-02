@@ -36,18 +36,18 @@
                 <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{StaticResource SquaredButton.MouseOver.Background}"/>
-                <Setter Property="BorderBrush" Value="{StaticResource SquaredButton.MouseOver.Border}"/>
+                <Setter Property="Background" Value="{DynamicResource SquaredButton.MouseOver.Background}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource SquaredButton.MouseOver.Border}"/>
                 <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource SquaredButton.MouseOver.Foreground}"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{StaticResource SquaredButton.Pressed.Background}"/>
-                <Setter Property="BorderBrush" Value="{StaticResource SquaredButton.Pressed.Border}"/>
+                <Setter Property="Background" Value="{DynamicResource SquaredButton.Pressed.Background}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource SquaredButton.Pressed.Border}"/>
                 <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource SquaredButton.Pressed.Foreground}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="{StaticResource SquaredButton.Disabled.Background}"/>
-                <Setter Property="BorderBrush" Value="{StaticResource SquaredButton.Disabled.Border}"/>
+                <Setter Property="Background" Value="{DynamicResource SquaredButton.Disabled.Background}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource SquaredButton.Disabled.Border}"/>
                 <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource SquaredButton.Disabled.Foreground}"/>
             </Trigger>
         </ControlTemplate.Triggers>
@@ -58,9 +58,9 @@
         <Setter Property="MinWidth" Value="20"/>
         <Setter Property="MinHeight" Value="20"/>
         <Setter Property="Edge" Value="20"/>
-        <Setter Property="Background" Value="{StaticResource SquaredButton.Static.Background}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource SquaredButton.Static.Border}"/>
-        <Setter Property="Foreground" Value="{StaticResource SquaredButton.Static.Foreground}"/>
+        <Setter Property="Background" Value="{DynamicResource SquaredButton.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource SquaredButton.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource SquaredButton.Static.Foreground}"/>
         <Setter Property="Template" Value="{StaticResource DefaultSquaredButtonTemplate}"/>
     </Style>
 

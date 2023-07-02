@@ -7,7 +7,7 @@ namespace CoreLand.UI.CustomControls
     public partial class SquaredButtonBase : Button
     {
         /// <summary>
-        /// <seealso cref="DependencyProperty"/> задающее ширину и высоту кнопки.
+        /// <seealso cref="DependencyProperty"/> задающее <see cref="Height"/> и высоту <see cref="Width"/>.
         /// </summary>
         public static readonly DependencyProperty EdgeProperty = DependencyProperty.Register(nameof(Edge), typeof(double), typeof(SquaredButtonBase),
                                                                  new FrameworkPropertyMetadata(Double.NaN, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnTransformDirty)),

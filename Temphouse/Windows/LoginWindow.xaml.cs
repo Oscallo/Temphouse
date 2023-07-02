@@ -24,5 +24,10 @@ namespace Temphouse.Windows
         {
             InitializeComponent();
         }
+
+        private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

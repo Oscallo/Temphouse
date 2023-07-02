@@ -11,13 +11,98 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
+    <!--#region Переменные -->
+
+    <sys:Double x:Key="HintableTextBox.IsEnabled.Opacity">0.56</sys:Double>
+
+    <!--#endregion-->
+
+    <!--#region Цветовая схема -->
+    
+    <SolidColorBrush x:Key="HintableTextBox.Static.Background" Color="{DynamicResource HintableTextBox.Static.BackgroundColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.Static.Border" Color="{DynamicResource HintableTextBox.Static.BorderColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.Static.Foreground" Color="{DynamicResource HintableTextBox.Static.ForegroundColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.Static.HintForeground" Color="{DynamicResource HintableTextBox.Static.HintForegroundColor}"/>
+
+    <SolidColorBrush x:Key="HintableTextBox.Focus.Background" Color="{DynamicResource HintableTextBox.Focus.BackgroundColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.Focus.Border" Color="{DynamicResource HintableTextBox.Focus.BorderColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.Focus.Foreground" Color="{DynamicResource HintableTextBox.Focus.ForegroundColor}"/>
+
+    <SolidColorBrush x:Key="HintableTextBox.MouseOver.Background" Color="{DynamicResource HintableTextBox.MouseOver.BackgroundColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.MouseOver.Border" Color="{DynamicResource HintableTextBox.MouseOver.BorderColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.MouseOver.Foreground" Color="{DynamicResource HintableTextBox.MouseOver.ForegroundColor}"/>
+
+    <SolidColorBrush x:Key="HintableTextBox.Disabled.Background" Color="{DynamicResource HintableTextBox.Disabled.BackgroundColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.Disabled.Border" Color="{DynamicResource HintableTextBox.Disabled.BorderColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.Disabled.Foreground" Color="{DynamicResource HintableTextBox.Disabled.ForegroundColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.Disabled.HintForeground" Color="{DynamicResource HintableTextBox.Disabled.HintForegroundColor}"/>
+    
+    <!--#endregion-->
+
+    <Style x:Key="RoundedHintableTextBoxStyle" TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource {x:Type ui:HintableTextBox}}">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="LoginHintableTextBoxStyle" TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource RoundedHintableTextBoxStyle}">
+        <Setter Property="Height" Value="50" />
+    </Style>
 
     <ControlTemplate x:Key="HintableTextBoxTemplate" TargetType="{x:Type ui:HintableTextBox}">
-       
+        <Border x:Name="PART_Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+            <Grid>
+                <Label x:Name="PART_HintLabel" Visibility="Collapsed" Content="{TemplateBinding Hint}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Text" Value="">
+                <Setter Property="Visibility" TargetName="PART_HintLabel" Value="Visible"/>
+            </Trigger>
+            
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" TargetName="PART_Border" Value="{Binding Source={StaticResource HintableTextBox.IsEnabled.Opacity}}"/>
+                
+                <Setter Property="BorderBrush" TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Disabled.Border}"/>
+                <Setter Property="Foreground" TargetName="PART_HintLabel" Value="{DynamicResource HintableTextBox.Disabled.HintForeground}"/>
+            </Trigger>
+            
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" TargetName="PART_Border" Value="{DynamicResource HintableTextBox.MouseOver.Border}"/>
+            </Trigger>
+            
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter Property="BorderBrush" TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Focus.Border}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style TargetType="{x:Type ui:HintableTextBox}">
-        
+        <Setter Property="Background" Value="{DynamicResource HintableTextBox.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource HintableTextBox.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource HintableTextBox.Static.Foreground}"/>
+        <Setter Property="HintForeground" Value="{DynamicResource HintableTextBox.Static.HintForeground}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="True"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="Template" Value="{DynamicResource HintableTextBoxTemplate}"/>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="True"/>
+                    <Condition Property="IsSelectionActive" Value="False"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+            </MultiTrigger>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

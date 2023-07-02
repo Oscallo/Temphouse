@@ -33,6 +33,27 @@
     <Color x:Key="Separator.BackgroundColor">#4C4E4E4E</Color>
     
     <!--#endregion-->
+    
+    <!--#region Button цвета -->
+
+    <Color x:Key="Button.Static.BackgroundColor">#FFDDDDDD</Color>
+    <Color x:Key="Button.Static.BorderColor">#FF707070</Color>
+    <Color x:Key="Button.Static.ForegroundColor">Black</Color>
+
+    <Color x:Key="Button.MouseOver.BackgroundColor">#FFBEE6FD</Color>
+    <Color x:Key="Button.MouseOver.BorderColor">#FF3C7FB1</Color>
+    <Color x:Key="Button.MouseOver.ForegroundColor">White</Color>
+
+    <Color x:Key="Button.Pressed.BackgroundColor">#FFC4E5F6</Color>
+    <Color x:Key="Button.Pressed.BorderColor">#FF2C628B</Color>
+    <Color x:Key="Button.Pressed.ForegroundColor">White</Color>
+
+    <Color x:Key="Button.Disabled.BackgroundColor">#FFF4F4F4</Color>
+    <Color x:Key="Button.Disabled.BorderColor">#FFADB2B5</Color>
+    <Color x:Key="Button.Disabled.ForegroundColor">#FF838383</Color>
+
+    <!--#endregion-->
+    
 
     <!--#region RoundedButton цвета -->
 
@@ -71,6 +92,29 @@
     <Color x:Key="SquaredButton.Disabled.BackgroundColor">#FFF4F4F4</Color>
     <Color x:Key="SquaredButton.Disabled.BorderColor">#FFADB2B5</Color>
     <Color x:Key="SquaredButton.Disabled.ForegroundColor">#FF838383</Color>
+
+    <!--#endregion-->
+
+    <!--#region HintableTextBox цвета -->
+
+
+    <Color x:Key="HintableTextBox.Static.BackgroundColor">#FFDDDDDD</Color>
+    <Color x:Key="HintableTextBox.Static.BorderColor">#FFABAdB3</Color>
+    <Color x:Key="HintableTextBox.Static.ForegroundColor">Black</Color>
+    <Color x:Key="HintableTextBox.Static.HintForegroundColor">#2E2E2E</Color>
+
+    <Color x:Key="HintableTextBox.Focus.BackgroundColor">#FFDDDDDD</Color>
+    <Color x:Key="HintableTextBox.Focus.BorderColor">#FF707070</Color>
+    <Color x:Key="HintableTextBox.Focus.ForegroundColor">#FF569DE5</Color>
+
+    <Color x:Key="HintableTextBox.MouseOver.BackgroundColor">#FFBEE6FD</Color>
+    <Color x:Key="HintableTextBox.MouseOver.BorderColor">#FF3C7FB1</Color>
+    <Color x:Key="HintableTextBox.MouseOver.ForegroundColor">White</Color>
+
+    <Color x:Key="HintableTextBox.Disabled.BackgroundColor">#FFF4F4F4</Color>
+    <Color x:Key="HintableTextBox.Disabled.BorderColor">#FFADB2B5</Color>
+    <Color x:Key="HintableTextBox.Disabled.ForegroundColor">#FF838383</Color>
+    <Color x:Key="HintableTextBox.Disabled.HintForegroundColor">#bababa</Color>
 
     <!--#endregion-->
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoreLand.UI.Modules.Boxes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,12 @@ namespace CoreLand.UI.CustomControls
 {
     public partial class HintableTextBox : TextBox
     {
-        /// <summary>
-        /// <seealso cref="DependencyProperty"/> задающее ширину и высоту кнопки.
-        /// </summary>
+
         public static readonly DependencyProperty HintProperty = DependencyProperty.Register(nameof(Hint), typeof(string), typeof(HintableTextBox),
                                                                  new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.AffectsRender));
+
+        public static readonly DependencyProperty HintForegroundProperty = DependencyProperty.Register(nameof(HintForeground), typeof(SolidColorBrush), typeof(HintableTextBox),
+                                                         new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
 
         static HintableTextBox()
         {

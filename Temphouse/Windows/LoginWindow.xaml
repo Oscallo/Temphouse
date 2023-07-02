@@ -11,9 +11,9 @@
     <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="40">
         <Grid x:Name="PART_FormAuthorizeGrid">
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                <TextBox Margin="0,00,0,20" Height="50"/>
-                <TextBox Margin="0,20,0,20" Height="50"/>
-                <Button  Style="{DynamicResource LoginButtonStyle}" Content="Авторизация"/>
+                <ui:HintableTextBox Style="{DynamicResource LoginHintableTextBoxStyle}" Margin="0,00,0,20" Hint="Логин"  />
+                <ui:HintableTextBox Style="{DynamicResource LoginHintableTextBoxStyle}" Margin="0,20,0,20" Hint="Пароль" />
+                <Button Name="AuthorizationButton" Style="{DynamicResource LoginButtonStyle}" Content="Авторизация" Click="AuthorizationButton_Click"/>
             </StackPanel>
         </Grid>
         <Grid x:Name="PART_AuthorizeUsersGrid" Margin="0,30,0,0">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoreLand.UI.Modules.Boxes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,12 @@ namespace CoreLand.UI.CustomControls
         {
             get { return (string)GetValue(HintProperty); }
             set { SetValue(HintProperty, value); }
+        }
+
+        public SolidColorBrush HintForeground
+        {
+            get { return (SolidColorBrush)GetValue(HintForegroundProperty); }
+            set { SetValue(HintForegroundProperty, value); }
         }
     }
 }

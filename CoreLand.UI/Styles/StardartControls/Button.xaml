@@ -5,7 +5,15 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+    <SolidColorBrush x:Key="Button.Background" Color="{DynamicResource Button.Static.BackgroundColor}"/>
+    <SolidColorBrush x:Key="Button.Foregtound" Color="{DynamicResource Button.Static.ForegroundColor}"/>
+
+    <Style TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{DynamicResource Button.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Foregtound}"/>
+    </Style>
+
+    <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
         <Style.Resources>
             <Style TargetType="Border">
                 <Setter Property="CornerRadius" Value="10" />
