@@ -11,9 +11,9 @@
     <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="40">
         <Grid x:Name="PART_FormAuthorizeGrid">
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                <TextBox Margin="0,0,0,20" Height="50"/>
+                <TextBox Margin="0,00,0,20" Height="50"/>
                 <TextBox Margin="0,20,0,20" Height="50"/>
-                <Button Margin="0,20,0,0" Height="50">Авторизация</Button>
+                <Button  Margin="0,20,0,00" Height="50">Авторизация</Button>
             </StackPanel>
         </Grid>
         <Grid x:Name="PART_AuthorizeUsersGrid" Margin="0,30,0,0">

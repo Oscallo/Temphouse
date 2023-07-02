@@ -9,8 +9,7 @@ namespace CoreLand.UI.CustomControls
         /// <summary>
         /// <seealso cref="DependencyProperty"/> задающее ширину и высоту кнопки.
         /// </summary>
-        public static readonly DependencyProperty EdgeProperty = DependencyProperty.Register(
-                                                                 "Edge", typeof(double), typeof(SquaredButtonBase),
+        public static readonly DependencyProperty EdgeProperty = DependencyProperty.Register(nameof(Edge), typeof(double), typeof(SquaredButtonBase),
                                                                  new FrameworkPropertyMetadata(Double.NaN, FrameworkPropertyMetadataOptions.AffectsMeasure, new PropertyChangedCallback(OnTransformDirty)),
                                                                  new ValidateValueCallback(IsEdgeValid));
 

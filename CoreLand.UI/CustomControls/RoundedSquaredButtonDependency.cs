@@ -11,8 +11,7 @@ namespace CoreLand.UI.CustomControls
         /// <summary>
         /// <seealso cref="DependencyProperty"/> скругления.
         /// </summary>
-        public static readonly DependencyProperty CornerRadiusProperty
-            = DependencyProperty.Register("CornerRadius", typeof(CornerRadius), typeof(RoundedSquaredButton),
+        public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(nameof(CornerRadius), typeof(CornerRadius), typeof(RoundedSquaredButton),
                                           new FrameworkPropertyMetadata(new CornerRadius(), FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender),
                                           new ValidateValueCallback(IsCornerRadiusValid));
 

@@ -17,6 +17,12 @@ namespace CoreLand.UI.CustomControls
 {
     public partial class HintableTextBox : TextBox
     {
+        /// <summary>
+        /// <seealso cref="DependencyProperty"/> задающее ширину и высоту кнопки.
+        /// </summary>
+        public static readonly DependencyProperty HintProperty = DependencyProperty.Register(nameof(Hint), typeof(string), typeof(HintableTextBox),
+                                                                 new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.AffectsMeasure));
+
         static HintableTextBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(HintableTextBox), new FrameworkPropertyMetadata(typeof(HintableTextBox)));

@@ -17,6 +17,10 @@ namespace CoreLand.UI.CustomControls
 {
     public partial class HintableTextBox : TextBox
     {
-
+        public string Hint
+        {
+            get { return (string)GetValue(HintProperty); }
+            set { SetValue(HintProperty, value); }
+        }
     }
 }
