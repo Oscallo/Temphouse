@@ -1,16 +1,18 @@
-﻿using CoreLand.UI.Modules.Commands;
+﻿using CoreLand.UI.Modules.Boxes;
+using CoreLand.UI.Modules.Commands;
 using CoreLand.UI.Modules.Information;
 using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CoreLand.UI.CustomControls
 {
     /// <summary>
     /// Расширенный класс окна, наследуемый от <seealso cref="Window"/>
     /// </summary>
-    public partial class ExtendedWindow : Window
+    public partial class ExtendedWindow : System.Windows.Window
     {
         public ExtendedWindow() : base()
         {
@@ -110,6 +112,22 @@ namespace CoreLand.UI.CustomControls
             get
             {
                 return DesignerProperties.GetIsInDesignMode(this);
+            }
+        }
+
+
+        /// <summary>
+        /// Свойство, показывающее кнопку сокрытия окна.
+        /// </summary>
+        public bool IsHideable
+        {
+            get 
+            {
+                return (bool)GetValue(IsHideableProperty); 
+            }
+            set 
+            {
+                SetValue(IsHideableProperty, BooleanBoxes.Box(value)); 
             }
         }
     }

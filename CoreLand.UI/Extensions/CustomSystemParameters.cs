@@ -2,7 +2,6 @@
 
 namespace CoreLand.UI.Extensions
 {
-
     /// <summary>
     /// Расширение для <seealso cref="SystemParameters"/>
     /// </summary>

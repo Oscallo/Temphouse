@@ -5,8 +5,8 @@
         xmlns:ui="clr-namespace:CoreLand.UI.CustomControls;assembly=CoreLand.UI"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temphouse.Windows"
-        d:Template="{DynamicResource DefaultWindowTemplate}" 
-        mc:Ignorable="d"
+        d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
+        mc:Ignorable="d" IsHideable="True"
         Title="DashboardWindow" Height="450" Width="800" Icon="/Icon.ico">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,5 +16,8 @@
         </Grid.ColumnDefinitions>
 
         <Separator Grid.Column="1" Style="{DynamicResource VerticalSeparatorStyle}"/>
+        <Grid Name="PART_MenuGrid" Margin="5,90,5,10">
+            
+        </Grid>
     </Grid>
 </ui:ExtendedWindow>
