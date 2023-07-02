@@ -2,6 +2,9 @@
 using System;
 using System.Security;
 using System.Windows;
+using System.Windows.Media;
+
+using Window = System.Windows.Window;
 
 namespace CoreLand.UI.CustomControls
 {
