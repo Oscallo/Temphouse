@@ -8,7 +8,7 @@ namespace Temphouse.Models
 {
     public class UserBaseModel
     {
-
+        public UserBaseModel() { }
     }
 
     public class UserModel : UserBaseModel
