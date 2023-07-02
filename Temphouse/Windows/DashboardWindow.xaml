@@ -16,8 +16,11 @@
         </Grid.ColumnDefinitions>
 
         <Separator Grid.Column="1" Style="{DynamicResource VerticalSeparatorStyle}"/>
-        <Grid Name="PART_MenuGrid" Margin="5,90,5,10">
+        <Grid Name="PART_MenuGrid" Style="{DynamicResource MenuGridStyle}">
             
+        </Grid>
+        <Grid Name="PART_UserGrid" Grid.Column="2" Style="{DynamicResource UserGridStyle}">
+
         </Grid>
     </Grid>
 </ui:ExtendedWindow>

@@ -18,7 +18,10 @@
             
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Generic.xaml" />
+                
                 <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Themes/Generic.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Styles/Generic.xaml"/>
+
                 <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Models/DataTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
