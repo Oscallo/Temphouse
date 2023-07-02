@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--#region Цветовая схема -->
+
+
+
+    <!--#endregion-->
+
+    <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+        </Style.Resources>
+    </Style>
+
+    <Style x:Key="LoginButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource RoundedButtonStyle}">
+        <Setter Property="Margin" Value="0,20,0,00" />
+        <Setter Property="Height" Value="50" />
+    </Style>
+
+</ResourceDictionary>

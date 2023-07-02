@@ -13,7 +13,7 @@
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                 <TextBox Margin="0,00,0,20" Height="50"/>
                 <TextBox Margin="0,20,0,20" Height="50"/>
-                <Button  Margin="0,20,0,00" Height="50">Авторизация</Button>
+                <Button  Style="{DynamicResource LoginButtonStyle}" Height="50" Content="Авторизация"/>
             </StackPanel>
         </Grid>
         <Grid x:Name="PART_AuthorizeUsersGrid" Margin="0,30,0,0">
