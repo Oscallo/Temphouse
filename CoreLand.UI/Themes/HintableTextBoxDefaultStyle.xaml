@@ -27,10 +27,12 @@
     <SolidColorBrush x:Key="HintableTextBox.Focus.Background" Color="{DynamicResource HintableTextBox.Focus.BackgroundColor}"/>
     <SolidColorBrush x:Key="HintableTextBox.Focus.Border" Color="{DynamicResource HintableTextBox.Focus.BorderColor}"/>
     <SolidColorBrush x:Key="HintableTextBox.Focus.Foreground" Color="{DynamicResource HintableTextBox.Focus.ForegroundColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.Focus.HintForeground" Color="{DynamicResource HintableTextBox.Focus.HintForegroundColor}"/>
 
     <SolidColorBrush x:Key="HintableTextBox.MouseOver.Background" Color="{DynamicResource HintableTextBox.MouseOver.BackgroundColor}"/>
     <SolidColorBrush x:Key="HintableTextBox.MouseOver.Border" Color="{DynamicResource HintableTextBox.MouseOver.BorderColor}"/>
     <SolidColorBrush x:Key="HintableTextBox.MouseOver.Foreground" Color="{DynamicResource HintableTextBox.MouseOver.ForegroundColor}"/>
+    <SolidColorBrush x:Key="HintableTextBox.MouseOver.HintForeground" Color="{DynamicResource HintableTextBox.MouseOver.HintForegroundColor}"/>
 
     <SolidColorBrush x:Key="HintableTextBox.Disabled.Background" Color="{DynamicResource HintableTextBox.Disabled.BackgroundColor}"/>
     <SolidColorBrush x:Key="HintableTextBox.Disabled.Border" Color="{DynamicResource HintableTextBox.Disabled.BorderColor}"/>
@@ -54,7 +56,7 @@
     <ControlTemplate x:Key="HintableTextBoxTemplate" TargetType="{x:Type ui:HintableTextBox}">
         <Border x:Name="PART_Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
             <Grid>
-                <Label x:Name="PART_HintLabel" Visibility="Collapsed" Content="{TemplateBinding Hint}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                <Label x:Name="PART_HintLabel" Visibility="Collapsed" Content="{TemplateBinding Hint}" Foreground="{TemplateBinding HintForeground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" FontWeight="Bold"/>
                 <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
             </Grid>
         </Border>
@@ -67,15 +69,24 @@
                 <Setter Property="Opacity" TargetName="PART_Border" Value="{Binding Source={StaticResource HintableTextBox.IsEnabled.Opacity}}"/>
                 
                 <Setter Property="BorderBrush" TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Disabled.Border}"/>
+                <Setter Property="Background"  TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Disabled.Background}"/>
+                <Setter Property="Foreground"  TargetName="PART_ContentHost" Value="{DynamicResource HintableTextBox.Disabled.Foreground}"/>
+
                 <Setter Property="Foreground" TargetName="PART_HintLabel" Value="{DynamicResource HintableTextBox.Disabled.HintForeground}"/>
             </Trigger>
-            
+
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="BorderBrush" TargetName="PART_Border" Value="{DynamicResource HintableTextBox.MouseOver.Border}"/>
+                <Setter Property="Background"  TargetName="PART_Border" Value="{DynamicResource HintableTextBox.MouseOver.Background}"/>
+
+                <Setter Property="Foreground" TargetName="PART_HintLabel" Value="{DynamicResource HintableTextBox.MouseOver.HintForeground}"/>
             </Trigger>
             
             <Trigger Property="IsKeyboardFocused" Value="True">
                 <Setter Property="BorderBrush" TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Focus.Border}"/>
+                <Setter Property="Background"  TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Focus.Background}"/>
+
+                <Setter Property="Foreground" TargetName="PART_HintLabel" Value="{DynamicResource HintableTextBox.Focus.HintForeground}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -85,6 +96,7 @@
         <Setter Property="BorderBrush" Value="{DynamicResource HintableTextBox.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource HintableTextBox.Static.Foreground}"/>
         <Setter Property="HintForeground" Value="{DynamicResource HintableTextBox.Static.HintForeground}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -102,6 +114,18 @@
                 </MultiTrigger.Conditions>
                 <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
             </MultiTrigger>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource HintableTextBox.MouseOver.Foreground}"/>
+            </Trigger>
+            
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource HintableTextBox.Focus.Foreground}"/>
+            </Trigger>
+
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource HintableTextBox.Disabled.Foreground}"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
 

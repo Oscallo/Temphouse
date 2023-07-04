@@ -7,7 +7,7 @@
     <Color x:Key="SubPrimaryColor">#13141f</Color>
     
     <Color x:Key="SubSecondaryColor">#3F1DBAC5</Color>
-    <Color x:Key="SecondaryColor">#1DBAC5</Color>
+    <Color x:Key="SecondaryColor">#4C19575B</Color>
     
     <Color x:Key="TertiaryColor">#D14D14</Color>
     <Color x:Key="SubTertiaryColor">#C51D31</Color>
@@ -17,14 +17,14 @@
     <!--#region Window и ExtendedWindow цвета -->
     
     <Color x:Key="Window.Static.BackgroundColor">#23272C</Color>
-    <Color x:Key="Window.Static.ForegroundColor">#1DBAC5</Color>
+    <Color x:Key="Window.Static.ForegroundColor">#4C19575B</Color>
 
     <!--#endregion-->
 
     <!--#region Tooltip цвета -->
 
-    <Color x:Key="ToolTip.BackgroundColor">#23272C</Color>
-    <Color x:Key="ToolTip.ForegroundColor">#1DBAC5</Color>
+    <Color x:Key="ToolTip.BackgroundColor">#4C19575B</Color>
+    <Color x:Key="ToolTip.ForegroundColor">White</Color>
 
     <!--#endregion-->
     
@@ -98,18 +98,20 @@
     <!--#region HintableTextBox цвета -->
 
 
-    <Color x:Key="HintableTextBox.Static.BackgroundColor">#FFDDDDDD</Color>
-    <Color x:Key="HintableTextBox.Static.BorderColor">#FFABAdB3</Color>
-    <Color x:Key="HintableTextBox.Static.ForegroundColor">Black</Color>
-    <Color x:Key="HintableTextBox.Static.HintForegroundColor">#2E2E2E</Color>
+    <Color x:Key="HintableTextBox.Static.BackgroundColor">#4C19575B</Color>
+    <Color x:Key="HintableTextBox.Static.BorderColor">#4C19575B</Color>
+    <Color x:Key="HintableTextBox.Static.ForegroundColor">White</Color>
+    <Color x:Key="HintableTextBox.Static.HintForegroundColor">#B2CACACA</Color>
 
-    <Color x:Key="HintableTextBox.Focus.BackgroundColor">#FFDDDDDD</Color>
-    <Color x:Key="HintableTextBox.Focus.BorderColor">#FF707070</Color>
-    <Color x:Key="HintableTextBox.Focus.ForegroundColor">#FF569DE5</Color>
+    <Color x:Key="HintableTextBox.Focus.BackgroundColor">#6619575B</Color>
+    <Color x:Key="HintableTextBox.Focus.BorderColor">#6619575B</Color>
+    <Color x:Key="HintableTextBox.Focus.ForegroundColor">White</Color>
+    <Color x:Key="HintableTextBox.Focus.HintForegroundColor">#FFE0DFDF</Color>
 
-    <Color x:Key="HintableTextBox.MouseOver.BackgroundColor">#FFBEE6FD</Color>
-    <Color x:Key="HintableTextBox.MouseOver.BorderColor">#FF3C7FB1</Color>
+    <Color x:Key="HintableTextBox.MouseOver.BackgroundColor">#6619575B</Color>
+    <Color x:Key="HintableTextBox.MouseOver.BorderColor">#6619575B</Color>
     <Color x:Key="HintableTextBox.MouseOver.ForegroundColor">White</Color>
+    <Color x:Key="HintableTextBox.MouseOver.HintForegroundColor">#FFE0DFDF</Color>
 
     <Color x:Key="HintableTextBox.Disabled.BackgroundColor">#FFF4F4F4</Color>
     <Color x:Key="HintableTextBox.Disabled.BorderColor">#FFADB2B5</Color>
@@ -118,4 +120,4 @@
 
     <!--#endregion-->
 
-</ResourceDictionary>
+</ResourceDictionary> 
