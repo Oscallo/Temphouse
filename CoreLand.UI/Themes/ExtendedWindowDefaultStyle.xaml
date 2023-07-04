@@ -30,10 +30,10 @@
     <!--#endregion-->
 
     <Style x:Key="DefaultWindowRightButtonStyle" TargetType="{x:Type ui:RoundedSquaredButton}">
-        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="#26FFFFFF"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Edge" Value="26"/>
         <Setter Property="CornerRadius" Value="20"/>
@@ -80,7 +80,7 @@
                                 ContentTemplate="{TemplateBinding ContentTemplate}" 
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </AdornerDecorator>
-                    <ResizeGrip x:Name="WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
+                    <ResizeGrip x:Name="PART_WindowResizeGrip" HorizontalAlignment="Right" VerticalAlignment="Bottom" Visibility="Collapsed" IsTabStop="False" />
                 </Grid>
             </Grid>
         </Grid>
@@ -90,7 +90,7 @@
             </Trigger>
             
             <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
-                <Setter TargetName="WindowResizeGrip" Property="Visibility" Value="Visible" />
+                <Setter TargetName="PART_WindowResizeGrip" Property="Visibility" Value="Visible" />
             </Trigger>
 
             <Trigger Property="WindowStyle" Value="ToolWindow">
@@ -117,14 +117,14 @@
     </ControlTemplate>
 
     <Style TargetType="{x:Type ui:ExtendedWindow}">
-        <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
         <Setter Property="Background" Value="{DynamicResource Window.Static.Background}"/>
         <Setter Property="Foreground" Value="{DynamicResource Window.Static.Foreground}"/>
+        <Setter Property="Template" Value="{DynamicResource DefaultExtendedWindowTemplate}"/>
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="MinHeight" Value="90"/>
         <Setter Property="MinWidth" Value="260"/>
         <Setter Property="IsHideable" Value="True" />
-        <Setter Property="Template" Value="{DynamicResource DefaultExtendedWindowTemplate}"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome CaptionHeight="{DynamicResource Window.HeaderBar.HeaderHeight}"

@@ -32,36 +32,44 @@
                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
         </Border>
         <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{StaticResource SquaredButton.MouseOver.Foreground}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{StaticResource SquaredButton.Pressed.Foreground}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{StaticResource SquaredButton.Disabled.Foreground}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type local:SquaredButton}" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Background" Value="{DynamicResource SquaredButton.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource SquaredButton.Static.Border}"/>
+        <Setter Property="Foreground" Value="{DynamicResource SquaredButton.Static.Foreground}"/>
+        <Setter Property="Template" Value="{StaticResource DefaultSquaredButtonTemplate}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="MinWidth" Value="20"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="Edge" Value="20"/>
+        <Style.Triggers>
             <Trigger Property="IsDefaulted" Value="True">
                 <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{DynamicResource SquaredButton.MouseOver.Background}"/>
                 <Setter Property="BorderBrush" Value="{DynamicResource SquaredButton.MouseOver.Border}"/>
-                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource SquaredButton.MouseOver.Foreground}"/>
             </Trigger>
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Background" Value="{DynamicResource SquaredButton.Pressed.Background}"/>
                 <Setter Property="BorderBrush" Value="{DynamicResource SquaredButton.Pressed.Border}"/>
-                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource SquaredButton.Pressed.Foreground}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Background" Value="{DynamicResource SquaredButton.Disabled.Background}"/>
                 <Setter Property="BorderBrush" Value="{DynamicResource SquaredButton.Disabled.Border}"/>
-                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource SquaredButton.Disabled.Foreground}"/>
             </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
-
-    <Style TargetType="{x:Type local:SquaredButton}" BasedOn="{StaticResource {x:Type Button}}">
-        <Setter Property="SnapsToDevicePixels" Value="true" />
-        <Setter Property="MinWidth" Value="20"/>
-        <Setter Property="MinHeight" Value="20"/>
-        <Setter Property="Edge" Value="20"/>
-        <Setter Property="Background" Value="{DynamicResource SquaredButton.Static.Background}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource SquaredButton.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource SquaredButton.Static.Foreground}"/>
-        <Setter Property="Template" Value="{StaticResource DefaultSquaredButtonTemplate}"/>
+        </Style.Triggers>
     </Style>
 
     

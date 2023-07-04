@@ -27,41 +27,54 @@
     <!--#endregion-->
 
     <ControlTemplate TargetType="{x:Type local:RoundedSquaredButton}" x:Key="DefaultRoundedButtonTemplate">
-        <Border x:Name="PART_border" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+        <Border x:Name="PART_Border" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
             <ContentPresenter x:Name="PART_ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
         </Border>
         <ControlTemplate.Triggers>
-            <Trigger Property="IsDefaulted" Value="True">
-                <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-            </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource RoundedButton.MouseOver.Background}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource RoundedButton.MouseOver.Border}"/>
-                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource RoundedButton.MouseOver.Foreground}"/>
+                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource RoundedButton.MouseOver.Foreground}"/>
             </Trigger>
+            
             <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{DynamicResource RoundedButton.Pressed.Background}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource RoundedButton.Pressed.Border}"/>
-                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource RoundedButton.Pressed.Foreground}"/>
+                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource RoundedButton.Pressed.Foreground}"/>
             </Trigger>
+
             <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="{DynamicResource RoundedButton.Disabled.Background}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource RoundedButton.Disabled.Border}"/>
-                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource RoundedButton.Disabled.Foreground}"/>
+                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource RoundedButton.Disabled.Foreground}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style TargetType="{x:Type local:RoundedSquaredButton}" BasedOn="{StaticResource {x:Type Button}}">
-        <Setter Property="SnapsToDevicePixels" Value="true" />
-        <Setter Property="MinWidth" Value="20"/>
-        <Setter Property="MinHeight" Value="20"/>
-        <Setter Property="Edge" Value="20"/>
         <Setter Property="Background" Value="{DynamicResource RoundedButton.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource RoundedButton.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource RoundedButton.Static.Foreground}"/>
-        <Setter Property="Template" Value="{StaticResource DefaultRoundedButtonTemplate}"/>
+        <Setter Property="Template" Value="{DynamicResource DefaultRoundedButtonTemplate}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="MinWidth" Value="20"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="Edge" Value="20"/>
+        <Style.Triggers>
+            <Trigger Property="IsDefaulted" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource RoundedButton.MouseOver.Background}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource RoundedButton.MouseOver.Border}"/>
+            </Trigger>
+            
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource RoundedButton.Pressed.Background}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource RoundedButton.Pressed.Border}"/>
+            </Trigger>
+            
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{DynamicResource RoundedButton.Disabled.Background}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource RoundedButton.Disabled.Border}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
     
 </ResourceDictionary>
