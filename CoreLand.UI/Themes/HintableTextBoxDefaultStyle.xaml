@@ -83,6 +83,8 @@
             </Trigger>
             
             <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter Property="Visibility" TargetName="PART_HintLabel" Value="Collapsed"/>
+
                 <Setter Property="BorderBrush" TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Focus.Border}"/>
                 <Setter Property="Background"  TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Focus.Background}"/>
 
@@ -97,7 +99,7 @@
         <Setter Property="Foreground" Value="{DynamicResource HintableTextBox.Static.Foreground}"/>
         <Setter Property="HintForeground" Value="{DynamicResource HintableTextBox.Static.HintForeground}"/>
         <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>

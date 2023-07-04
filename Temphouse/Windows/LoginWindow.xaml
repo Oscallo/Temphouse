@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temphouse.Windows"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
-        mc:Ignorable="d" WindowStyle="SingleBorderWindow" IsHideable="False"
+        mc:Ignorable="d" WindowStyle="ToolWindow" IsHideable="False"
         Title="LoginWindow" Height="500" Width="300">
     <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="40">
         <Grid x:Name="PART_FormAuthorizeGrid">
