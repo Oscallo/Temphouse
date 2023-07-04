@@ -84,6 +84,7 @@
             
             <Trigger Property="IsKeyboardFocused" Value="True">
                 <Setter Property="Visibility" TargetName="PART_HintLabel" Value="Collapsed"/>
+                <!-- Необходимо добавить анимацию -->
 
                 <Setter Property="BorderBrush" TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Focus.Border}"/>
                 <Setter Property="Background"  TargetName="PART_Border" Value="{DynamicResource HintableTextBox.Focus.Background}"/>
