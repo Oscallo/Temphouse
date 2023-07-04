@@ -64,7 +64,7 @@
                 </Grid.RowDefinitions>
                 <Grid x:Name="PART_HeaderBar" Grid.Row="0" Panel.ZIndex="{Binding Source={StaticResource Window.HeaderBar.HeaderZIndex}}">
                     <StackPanel x:Name="PART_HeaderLeft" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Left" Margin="20,20,0,0">
-                        <Image Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource Window.HeaderBar.HeaderIconHeight}}" Width="{Binding Source={StaticResource Window.HeaderBar.HeaderIconWidth}}"/>
+                        <Image x:Name="PART_Icon" Source="{TemplateBinding Icon}" Height="{Binding Source={StaticResource Window.HeaderBar.HeaderIconHeight}}" Width="{Binding Source={StaticResource Window.HeaderBar.HeaderIconWidth}}"/>
                     </StackPanel>
                     <StackPanel x:Name="PART_HeaderRight" Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Right" Margin="0,0,15,0">
                         <ui:RoundedSquaredButton x:Name="PART_Hide_Button" Style="{DynamicResource DefaultWindowRightButtonStyle}" Command="{x:Static com:ExtendedSystemCommands.HideInTreyWindowCommand}" ToolTip="Hide" Content="{x:Static fil:WindowButtonFilling.HideButtonFilling}"/>
