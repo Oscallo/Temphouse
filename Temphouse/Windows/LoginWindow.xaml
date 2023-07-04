@@ -18,9 +18,9 @@
         </Grid>
         <Grid x:Name="PART_AuthorizeUsersGrid" Margin="0,30,0,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="Green"/>
-                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="Green"/>
-                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="Green"/>
+                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="#4C206D77"/>
+                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="#4C206D77"/>
+                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="#4C206D77"/>
             </StackPanel>
         </Grid>
     </StackPanel>

@@ -5,12 +5,60 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <SolidColorBrush x:Key="Button.Background" Color="{DynamicResource Button.Static.BackgroundColor}"/>
-    <SolidColorBrush x:Key="Button.Foregtound" Color="{DynamicResource Button.Static.ForegroundColor}"/>
+    <SolidColorBrush x:Key="Button.Static.Background" Color="{DynamicResource Button.Static.BackgroundColor}"/>
+    <SolidColorBrush x:Key="Button.Static.Foreground" Color="{DynamicResource Button.Static.ForegroundColor}"/>
+    <SolidColorBrush x:Key="Button.Static.Border" Color="{DynamicResource Button.Static.BorderColor}"/>
+
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="{DynamicResource Button.MouseOver.BackgroundColor}"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="{DynamicResource Button.MouseOver.ForegroundColor}"/>
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="{DynamicResource Button.MouseOver.BorderColor}"/>
+
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="{DynamicResource Button.Pressed.BackgroundColor}"/>
+    <SolidColorBrush x:Key="Button.Pressed.Foreground" Color="{DynamicResource Button.Pressed.ForegroundColor}"/>
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="{DynamicResource Button.Pressed.BorderColor}"/>
+
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="{DynamicResource Button.Disabled.BorderColor}"/>
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="{DynamicResource Button.Disabled.BorderColor}"/>
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="{DynamicResource Button.Disabled.BorderColor}"/>
+
+    <ControlTemplate x:Key="DefaultButtonTemplate" TargetType="{x:Type Button}">
+        <Border x:Name="PART_Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+            <ContentPresenter x:Name="PART_ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="True">
+                <Setter Property="BorderBrush" TargetName="PART_Border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" TargetName="PART_Border" Value="{StaticResource Button.MouseOver.Background}"/>
+                <Setter Property="BorderBrush" TargetName="PART_Border" Value="{StaticResource Button.MouseOver.Border}"/>
+
+                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource Button.MouseOver.Foreground}"/>
+            </Trigger>
+            
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" TargetName="PART_Border" Value="{StaticResource Button.Pressed.Background}"/>
+                <Setter Property="BorderBrush" TargetName="PART_Border" Value="{StaticResource Button.Pressed.Border}"/>
+
+                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource Button.Pressed.Foreground}"/>
+            </Trigger>
+            
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" TargetName="PART_Border" Value="{StaticResource Button.Disabled.Background}"/>
+                <Setter Property="BorderBrush" TargetName="PART_Border" Value="{StaticResource Button.Disabled.Border}"/>
+                
+                <Setter Property="TextElement.Foreground" TargetName="PART_ContentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
 
     <Style TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="{DynamicResource Button.Background}"/>
-        <Setter Property="Foreground" Value="{DynamicResource Button.Foregtound}"/>
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
+        <Setter Property="Template" Value="{DynamicResource DefaultButtonTemplate}"/>
     </Style>
 
     <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">

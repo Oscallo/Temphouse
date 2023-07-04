@@ -36,16 +36,16 @@
     
     <!--#region Button цвета -->
 
-    <Color x:Key="Button.Static.BackgroundColor">#FFDDDDDD</Color>
-    <Color x:Key="Button.Static.BorderColor">#FF707070</Color>
-    <Color x:Key="Button.Static.ForegroundColor">Black</Color>
+    <Color x:Key="Button.Static.BackgroundColor">#4C206D77</Color>
+    <Color x:Key="Button.Static.BorderColor">#26383838</Color>
+    <Color x:Key="Button.Static.ForegroundColor">White</Color>
 
-    <Color x:Key="Button.MouseOver.BackgroundColor">#FFBEE6FD</Color>
-    <Color x:Key="Button.MouseOver.BorderColor">#FF3C7FB1</Color>
+    <Color x:Key="Button.MouseOver.BackgroundColor">#4C4CA0AB</Color>
+    <Color x:Key="Button.MouseOver.BorderColor">#26383838</Color>
     <Color x:Key="Button.MouseOver.ForegroundColor">White</Color>
 
-    <Color x:Key="Button.Pressed.BackgroundColor">#FFC4E5F6</Color>
-    <Color x:Key="Button.Pressed.BorderColor">#FF2C628B</Color>
+    <Color x:Key="Button.Pressed.BackgroundColor">#4C133E44</Color>
+    <Color x:Key="Button.Pressed.BorderColor">#26383838</Color>
     <Color x:Key="Button.Pressed.ForegroundColor">White</Color>
 
     <Color x:Key="Button.Disabled.BackgroundColor">#FFF4F4F4</Color>
