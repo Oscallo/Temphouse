@@ -5,6 +5,7 @@
         xmlns:ui="clr-namespace:CoreLand.UI.CustomControls;assembly=CoreLand.UI"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temphouse.Windows"
+        xmlns:views="clr-namespace:Temphouse.UserControls"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
         mc:Ignorable="d" WindowStyle="ToolWindow" IsHideable="False"
         Title="Авторизация" Height="500" Width="300">
@@ -16,12 +17,6 @@
                 <Button Name="AuthorizationButton" Style="{DynamicResource LoginButtonStyle}" Content="Авторизация" Click="AuthorizationButton_Click"/>
             </StackPanel>
         </Grid>
-        <Grid x:Name="PART_AuthorizeUsersGrid" Margin="0,30,0,0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="#4C206D77"/>
-                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="#4C206D77"/>
-                <Grid Height="50" Width="50" Margin="5,10,5,10" Background="#4C206D77"/>
-            </StackPanel>
-        </Grid>
+        <views:UsersWithSavedSessionsView x:Name="PART_AuthorizeUsersGrid" Margin="0,30,0,0"/>
     </StackPanel>
 </ui:ExtendedWindow>

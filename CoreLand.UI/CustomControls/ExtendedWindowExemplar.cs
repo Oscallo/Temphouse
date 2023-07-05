@@ -9,6 +9,7 @@ using System.Windows.Input;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 using Window = System.Windows.Window;
+using CoreLand.UI.Modules.Designer;
 
 namespace CoreLand.UI.CustomControls
 {
@@ -114,7 +115,7 @@ namespace CoreLand.UI.CustomControls
         {
             get
             {
-                return DesignerProperties.GetIsInDesignMode(this);
+                return DesignerReporter.IsInDesignMode(this);
             }
         }
 

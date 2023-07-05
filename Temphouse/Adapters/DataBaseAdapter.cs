@@ -9,5 +9,10 @@ namespace Temphouse.Adapters
         {
             throw new NotImplementedException();
         }
+
+        public static UserModel GetUserBySession(SessionModel session)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
