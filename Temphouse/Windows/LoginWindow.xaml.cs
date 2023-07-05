@@ -32,9 +32,10 @@ namespace Temphouse.Windows
 
             string sessionKey = DataBaseAdapter.UserAuthorization(PART_LoginTextBox.Text, PART_PasswordTextBox.Text, out isAuthorizationSuccess);
 
-            if (isAuthorizationSuccess) 
+            if (isAuthorizationSuccess == true) 
             {
                 new DashboardWindow(sessionKey).Show();
+                this.Close();
             }
         }
     }

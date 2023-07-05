@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Temphouse.Models;
 
 namespace Temphouse.Adapters
 {
     public class DataBaseAdapter
     {
-        public static string UserAuthorization(string login, string password, out bool isAuthorizationSuccess)
+        public static SessionModel UserAuthorization(string login, string password, out bool isAuthorizationSuccess)
         {
             throw new NotImplementedException();
         }

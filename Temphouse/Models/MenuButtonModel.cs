@@ -1,7 +1,5 @@
 ﻿using CoreLand.UI.Models;
 using FontAwesome.Sharp;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using Temphouse.Models.Interfaces;
 
 namespace Temphouse.Models
