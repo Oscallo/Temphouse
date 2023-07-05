@@ -20,6 +20,11 @@ namespace Temphouse.Windows
     /// </summary>
     public partial class DashboardWindow : ExtendedWindow
     {
+        public DashboardWindow(string sessionKey)
+        {
+            InitializeComponent();
+        }
+
         public DashboardWindow()
         {
             InitializeComponent();

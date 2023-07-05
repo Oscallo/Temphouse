@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Temphouse.Adapters;
 
 namespace Temphouse.Windows
 {
@@ -27,7 +28,14 @@ namespace Temphouse.Windows
 
         private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            bool isAuthorizationSuccess = false;
+
+            string sessionKey = DataBaseAdapter.UserAuthorization(PART_LoginTextBox.Text, PART_PasswordTextBox.Text, out isAuthorizationSuccess);
+
+            if (isAuthorizationSuccess) 
+            {
+                new DashboardWindow(sessionKey).Show();
+            }
         }
     }
 }

@@ -8,5 +8,9 @@ namespace Temphouse.Adapters
 {
     public class DataBaseAdapter
     {
+        public static string UserAuthorization(string login, string password, out bool isAuthorizationSuccess)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
