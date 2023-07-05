@@ -8,9 +8,9 @@ namespace Temphouse.Windows
     /// </summary>
     public partial class DashboardWindow : ExtendedWindow
     {
-        public DashboardWindow(SessionModel sessionKey)
+        public DashboardWindow(SessionModel sessionKey) : base()
         {
-            InitializeComponent();
+            
         }
 
         public DashboardWindow()
