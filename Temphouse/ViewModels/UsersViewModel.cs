@@ -1,9 +1,11 @@
-﻿using CoreLand.UI.ViewModels;
-using Microsoft.VisualBasic.ApplicationServices;
+﻿using CoreLand.UI.Modules.Commands;
+using CoreLand.UI.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Temphouse.Adapters;
 using Temphouse.Models;
 
@@ -11,6 +13,9 @@ namespace Temphouse.ViewModels
 {
     public class UsersViewModel : BaseViewModel
     {
+        public ICommand SetSessionCommand { get; private set; }
+        public ICommand RemoveSessionCommand { get; private set; }
+
         private ObservableCollection<AuthorizedUserModel> _Users = new ObservableCollection<AuthorizedUserModel>();
 
         public ObservableCollection<AuthorizedUserModel> Users 
@@ -48,6 +53,9 @@ namespace Temphouse.ViewModels
         public void RemoveUser(AuthorizedUserModel user)
         {
             Users.Remove(user);
+
+            /// Это необходимо будет, когда сессии будут подгружаться с адаптера
+            /// ApplicationSettingsAdapter.Instance.RemoveSession(user.Session);
         }
 
         public void RemoveUser(SessionModel session)
@@ -59,6 +67,8 @@ namespace Temphouse.ViewModels
                 RemoveUser(userWithSessions);
             }
 
+            /// Это необходимо будет, когда сессии будут подгружаться с адаптера
+            /// ApplicationSettingsAdapter.Instance.RemoveSession(session);
         }
 
         public async void RemoveUserAsync(AuthorizedUserModel user)
@@ -73,10 +83,18 @@ namespace Temphouse.ViewModels
 
         public UsersViewModel() 
         {
+            this.SetSessionCommand = new RelayCommand(new Action<object>(_SetSesion));
+            this.RemoveSessionCommand = new RelayCommand(new Action<object>(_RemoveSession));
+
+            /// Это необходимо будет, когда сессии будут подгружаться с адаптера
+            /// Users = ApplicationSettingsAdapter.Instance.Sessions;
+
+
+            /// Представление данных для дизайнера
             SessionModel session = new SessionModel();
             UserWithoutPasswordModel userWithoutPassword = new UserWithoutPasswordModel();
-            /// Представление данных для дизайнера
-            AddUser(new AuthorizedUserModel(session,userWithoutPassword));
+
+            AddUser(new AuthorizedUserModel(session, userWithoutPassword));
             AddUser(new AuthorizedUserModel(session, userWithoutPassword));
             AddUser(new AuthorizedUserModel(session, userWithoutPassword));
         }
@@ -87,6 +105,16 @@ namespace Temphouse.ViewModels
             {
                 AddUserAsync(session);
             }
+        }
+
+        private void _RemoveSession(object sessionModel)
+        {
+            RemoveUser((SessionModel)sessionModel);
+        }
+
+        private void _SetSesion(object sessionModel)
+        {
+            throw new NotImplementedException();
         }
     }
 }

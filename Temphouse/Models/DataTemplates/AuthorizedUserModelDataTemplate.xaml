@@ -56,11 +56,8 @@
                     </BeginStoryboard>
                 </EventTrigger>
             </Grid.Triggers>
-            
-            <Button Command="" CommandParameter="{Binding Session}">
-                
-            </Button>
-            <ui:SquaredButton Style="{DynamicResource SquaredButtonStyle}" Command="" CommandParameter="{Binding Session}">
+            <Button Command="{Binding Path=DataContext.SetSessionCommand, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding Session}"/>
+            <ui:SquaredButton Style="{DynamicResource SquaredButtonStyle}" Command="{Binding Path=DataContext.RemoveSessionCommand, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding Session}">
                 <fa:IconImage Style="{DynamicResource IconImageStyle}"/>
             </ui:SquaredButton>
         </Grid>
