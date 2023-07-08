@@ -3,9 +3,17 @@
                     xmlns:local="clr-namespace:Temphouse.Models"
                     xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
 
+    <Style x:Key="IconImageStyle" TargetType="{x:Type fa:IconImage}">
+        <Setter Property="Foreground" Value="{Binding Foreground,RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+        <Setter Property="Icon" Value="{Binding Icon}"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
 
     <DataTemplate DataType="{x:Type local:MenuButtonModel}">
-        <fa:IconImage Margin="4" VerticalAlignment="Center" HorizontalAlignment="Center" Icon="{Binding Icon}" Foreground="{Binding Foreground,RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+        <fa:IconImage Style="{DynamicResource IconImageStyle}"/>
     </DataTemplate>
 
 </ResourceDictionary>

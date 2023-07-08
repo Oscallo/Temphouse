@@ -5,7 +5,7 @@
     
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Models/DataTemplates/MenuButtonModelDataTemplate.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Models/DataTemplates/UserWithoutPasswordModelDataTemplate.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Models/DataTemplates/AuthorizedUserModelDataTemplate.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>

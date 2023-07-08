@@ -2,6 +2,7 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Temphouse.Adapters;
 using Temphouse.Models;
@@ -10,9 +11,9 @@ namespace Temphouse.ViewModels
 {
     public class UsersViewModel : BaseViewModel
     {
-        private ObservableCollection<UserWithoutPasswordModel> _Users = new ObservableCollection<UserWithoutPasswordModel>();
+        private ObservableCollection<AuthorizedUserModel> _Users = new ObservableCollection<AuthorizedUserModel>();
 
-        public ObservableCollection<UserWithoutPasswordModel> Users 
+        public ObservableCollection<AuthorizedUserModel> Users 
         {
             get { return _Users; }
             private set 
@@ -24,19 +25,17 @@ namespace Temphouse.ViewModels
             }
         }
 
-        public void AddUser(UserWithoutPasswordModel user) 
+        public void AddUser(AuthorizedUserModel user) 
         {
             Users.Add(user);
         }
 
         public void AddUser(SessionModel session)
         {
-            UserModel user = DataBaseAdapter.GetUserBySession(session);
-
-            AddUser((UserWithoutPasswordModel)user);
+            AddUser(new AuthorizedUserModel(session));
         }
 
-        public async void AddUserAsync(UserWithoutPasswordModel user)
+        public async void AddUserAsync(AuthorizedUserModel user)
         {
             await Task.Run(() => AddUser(user));
         }
@@ -46,19 +45,23 @@ namespace Temphouse.ViewModels
             await Task.Run(() => AddUserAsync(session));
         }
 
-        public void RemoveUser(UserWithoutPasswordModel user)
+        public void RemoveUser(AuthorizedUserModel user)
         {
             Users.Remove(user);
         }
 
         public void RemoveUser(SessionModel session)
         {
-            UserModel user = DataBaseAdapter.GetUserBySession(session);
+            var userWithSessions = Users.Where(x => x.Session == session).First();
 
-            RemoveUser((UserWithoutPasswordModel)user);
+            if (userWithSessions != null) 
+            {
+                RemoveUser(userWithSessions);
+            }
+
         }
 
-        public async void RemoveUserAsync(UserWithoutPasswordModel user)
+        public async void RemoveUserAsync(AuthorizedUserModel user)
         {
             await Task.Run(() => RemoveUser(user));
         }
@@ -70,10 +73,12 @@ namespace Temphouse.ViewModels
 
         public UsersViewModel() 
         {
+            SessionModel session = new SessionModel();
+            UserWithoutPasswordModel userWithoutPassword = new UserWithoutPasswordModel();
             /// Представление данных для дизайнера
-            AddUser(new UserWithoutPasswordModel());
-            AddUser(new UserWithoutPasswordModel());
-            AddUser(new UserWithoutPasswordModel());
+            AddUser(new AuthorizedUserModel(session,userWithoutPassword));
+            AddUser(new AuthorizedUserModel(session, userWithoutPassword));
+            AddUser(new AuthorizedUserModel(session, userWithoutPassword));
         }
 
         public UsersViewModel(IList<SessionModel> sessions) 
