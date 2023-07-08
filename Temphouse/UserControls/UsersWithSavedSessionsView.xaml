@@ -6,17 +6,19 @@
              xmlns:local="clr-namespace:Temphouse.UserControls"
              xmlns:viewmodels="clr-namespace:Temphouse.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="70" d:DesignWidth="200">
+             d:DesignHeight="80" d:DesignWidth="200">
     <UserControl.DataContext>
         <viewmodels:UsersViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <ItemsControl ItemsSource="{Binding Users}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <ItemsControl ItemsSource="{Binding Users}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </UserControl>

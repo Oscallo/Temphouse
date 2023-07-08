@@ -19,7 +19,7 @@
                 </StackPanel>
             </Grid>
         </Grid>
-        <Grid VerticalAlignment="Bottom" Margin="40,0,40,80">
+        <Grid VerticalAlignment="Bottom" Margin="40,0,40,70">
             <views:UsersWithSavedSessionsView x:Name="PART_AuthorizeUsersGrid" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15"/>
         </Grid>
     </Grid>
