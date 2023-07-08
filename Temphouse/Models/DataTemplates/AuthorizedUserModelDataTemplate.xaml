@@ -55,6 +55,14 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Height" From="0" To="{Binding Source={StaticResource Grid.DefaultHeight}}" Duration="0:0:0.5" />
+                            <DoubleAnimation Storyboard.TargetProperty="Width" From="0" To="{Binding Source={StaticResource Grid.DefaultWidth}}" Duration="0:0:0.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
             </Grid.Triggers>
             <Button Command="{Binding Path=DataContext.SetSessionCommand, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding Session}"/>
             <ui:SquaredButton Style="{DynamicResource SquaredButtonStyle}" Command="{Binding Path=DataContext.RemoveSessionCommand, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding Session}">
