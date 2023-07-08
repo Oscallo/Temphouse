@@ -1,4 +1,5 @@
-﻿using CoreLand.UI.Modules.Commands;
+﻿using CoreLand.UI.CustomControls;
+using CoreLand.UI.Modules.Commands;
 using CoreLand.UI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Windows.Input;
 using Temphouse.Adapters;
 using Temphouse.Models;
 using Temphouse.Modules.Depelopment;
+using Temphouse.Windows;
 
 namespace Temphouse.ViewModels
 {
@@ -16,6 +18,8 @@ namespace Temphouse.ViewModels
     {
         public ICommand SetSessionCommand { get; private set; }
         public ICommand RemoveSessionCommand { get; private set; }
+
+        public ExtendedWindow LoginWindow { get; set; }
 
         private ObservableCollection<AuthorizedUserModel> _Users = new ObservableCollection<AuthorizedUserModel>();
 
@@ -84,8 +88,7 @@ namespace Temphouse.ViewModels
 
         public UsersViewModel() 
         {
-            this.SetSessionCommand = new RelayCommand(new Action<object>(_SetSesion));
-            this.RemoveSessionCommand = new RelayCommand(new Action<object>(_RemoveSession));
+            _InitializeCommands();
 
             /// Это необходимо будет, когда сессии будут подгружаться с адаптера
             /// Users = ApplicationSettingsAdapter.Instance.Sessions;
@@ -95,8 +98,16 @@ namespace Temphouse.ViewModels
             Users = DevMethods.GenerateBlankedAuthorizedUserModel(3);
         }
 
+        private void _InitializeCommands() 
+        {
+            this.SetSessionCommand = new RelayCommand(new Action<object>(_SetSesion));
+            this.RemoveSessionCommand = new RelayCommand(new Action<object>(_RemoveSession));
+        }
+
         public UsersViewModel(IList<SessionModel> sessions) 
         {
+            _InitializeCommands();
+
             foreach (var session in sessions) 
             {
                 AddUserAsync(session);
@@ -111,11 +122,19 @@ namespace Temphouse.ViewModels
         private void _SetSesion(object sessionModel)
         {
             bool sessionIsValid = false;
-            UserModel userModel = DataBaseAdapter.UserAuthorization(((SessionModel)sessionModel), out sessionIsValid);
+            DataBaseAdapter.UserAuthorization((SessionModel)sessionModel, out sessionIsValid);
 
             if (sessionIsValid == true) 
             {
-                throw new NotImplementedException();
+                if (LoginWindow != null)
+                {
+                    new DashboardWindow((SessionModel)sessionModel).Show();
+                    LoginWindow.Close();
+                }
+                else 
+                {
+                    throw new NullReferenceException("Не удалось найти окно, к которому привязан UserControl"); 
+                }
             }
         }
     }

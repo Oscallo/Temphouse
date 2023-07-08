@@ -10,7 +10,7 @@ namespace Temphouse.Adapters
             throw new NotImplementedException();
         }
 
-        public static UserModel UserAuthorization(SessionModel session, out bool isAuthorizationSuccess)
+        public static void UserAuthorization(SessionModel session, out bool isAuthorizationSuccess)
         {
             throw new NotImplementedException();
         }
