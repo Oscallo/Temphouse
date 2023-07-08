@@ -114,7 +114,13 @@ namespace Temphouse.ViewModels
 
         private void _SetSesion(object sessionModel)
         {
-            throw new NotImplementedException();
+            bool sessionIsValid = false;
+            UserModel userModel = DataBaseAdapter.UserAuthorization(((SessionModel)sessionModel), out sessionIsValid);
+
+            if (sessionIsValid == true) 
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }
