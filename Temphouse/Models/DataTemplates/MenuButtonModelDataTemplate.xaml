@@ -8,8 +8,4 @@
         <fa:IconImage Margin="4" VerticalAlignment="Center" HorizontalAlignment="Center" Icon="{Binding Icon}" Foreground="{Binding Foreground,RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type local:UserWithoutPasswordModel}">
-        <Grid Height="50" Width="50" Margin="5,10,5,10" Background="#4C206D77"/>
-    </DataTemplate>
-
 </ResourceDictionary>
