@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Temphouse.Adapters;
 using Temphouse.Models;
+using Temphouse.Modules.Depelopment;
 
 namespace Temphouse.ViewModels
 {
@@ -91,12 +92,7 @@ namespace Temphouse.ViewModels
 
 
             /// Представление данных для дизайнера
-            SessionModel session = new SessionModel();
-            UserWithoutPasswordModel userWithoutPassword = new UserWithoutPasswordModel();
-
-            AddUser(new AuthorizedUserModel(session, userWithoutPassword));
-            AddUser(new AuthorizedUserModel(session, userWithoutPassword));
-            AddUser(new AuthorizedUserModel(session, userWithoutPassword));
+            Users = DevMethods.GenerateBlankedAuthorizedUserModel(3);
         }
 
         public UsersViewModel(IList<SessionModel> sessions) 
