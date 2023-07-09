@@ -1,4 +1,5 @@
 ﻿using CoreLand.UI.CustomControls;
+using CoreLand.UI.Modules.Trey;
 using System;
 using System.ComponentModel;
 using System.Windows;
@@ -7,16 +8,31 @@ namespace CoreLand.UI.Modules.Designer
 {
     public class DesignerReporter
     {
+        #region static Instance
+
+        /// <summary>
+        /// Статический экземпляр объекта.
+        /// </summary>
+        public static DesignerReporter Instance { get; private set; }
+
+        static DesignerReporter()
+        {
+            Instance = new DesignerReporter();
+        }
+
+        #endregion
+
+
         /// <summary>
         /// Проверка на DesignMode.
         /// </summary>
         /// <returns>Возвращает true, если объект <seealso cref="DependencyObject"/> находится в режиме разработки</returns>
-        public static bool IsInDesignMode(DependencyObject dependencyObject) 
+        public bool IsInDesignMode(DependencyObject dependencyObject) 
         {
             return DesignerProperties.GetIsInDesignMode(dependencyObject);
         }
 
-        public static T GetParent<T> (DependencyObject startFindObject) where T : DependencyObject
+        public T GetParent<T> (DependencyObject startFindObject) where T : DependencyObject
         {
             var parent = startFindObject;
             while ((parent is T) == false)
@@ -27,7 +43,7 @@ namespace CoreLand.UI.Modules.Designer
             return (T)parent;
         }
 
-        public static T GetParentExtendedWindow<T>(DependencyObject startFindObject) where T : ExtendedWindow
+        public T GetParentExtendedWindow<T>(DependencyObject startFindObject) where T : ExtendedWindow
         {
             return (T)GetParent<ExtendedWindow>(startFindObject);
         }

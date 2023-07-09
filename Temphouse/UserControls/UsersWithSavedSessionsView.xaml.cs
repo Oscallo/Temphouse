@@ -35,7 +35,7 @@ namespace Temphouse.UserControls
         {
             Loaded += (s, e) =>
             {
-                ((UsersViewModel)this.DataContext).LoginWindow = DesignerReporter.GetParentExtendedWindow<ExtendedWindow>(this);
+                ((UsersViewModel)this.DataContext).LoginWindow = DesignerReporter.Instance.GetParentExtendedWindow<ExtendedWindow>(this);
             };
         }
     }

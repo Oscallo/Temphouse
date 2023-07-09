@@ -115,7 +115,7 @@ namespace CoreLand.UI.CustomControls
         {
             get
             {
-                return DesignerReporter.IsInDesignMode(this);
+                return DesignerReporter.Instance.IsInDesignMode(this);
             }
         }
 
