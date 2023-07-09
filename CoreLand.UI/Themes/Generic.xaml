@@ -7,5 +7,6 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/RoundedButtonDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/ExtendedWindowDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/HintableTextBoxDefaultStyle.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/HintablePasswordBoxDefaultStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

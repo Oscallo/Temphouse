@@ -98,25 +98,25 @@
     <!--#region HintableTextBox цвета -->
 
 
-    <Color x:Key="HintableTextBox.Static.BackgroundColor">#4C206D77</Color>
-    <Color x:Key="HintableTextBox.Static.BorderColor">#26383838</Color>
-    <Color x:Key="HintableTextBox.Static.ForegroundColor">White</Color>
-    <Color x:Key="HintableTextBox.Static.HintForegroundColor">#B2CACACA</Color>
+    <Color x:Key="HintableBoxBase.Static.BackgroundColor">#4C206D77</Color>
+    <Color x:Key="HintableBoxBase.Static.BorderColor">#26383838</Color>
+    <Color x:Key="HintableBoxBase.Static.ForegroundColor">White</Color>
+    <Color x:Key="HintableBoxBase.Static.HintForegroundColor">#B2CACACA</Color>
 
-    <Color x:Key="HintableTextBox.Focus.BackgroundColor">#4C206D77</Color>
-    <Color x:Key="HintableTextBox.Focus.BorderColor">#26383838</Color>
-    <Color x:Key="HintableTextBox.Focus.ForegroundColor">White</Color>
-    <Color x:Key="HintableTextBox.Focus.HintForegroundColor">#FFE0DFDF</Color>
+    <Color x:Key="HintableBoxBase.Focus.BackgroundColor">#4C206D77</Color>
+    <Color x:Key="HintableBoxBase.Focus.BorderColor">#26383838</Color>
+    <Color x:Key="HintableBoxBase.Focus.ForegroundColor">White</Color>
+    <Color x:Key="HintableBoxBase.Focus.HintForegroundColor">#FFE0DFDF</Color>
 
-    <Color x:Key="HintableTextBox.MouseOver.BackgroundColor">#4C206D77</Color>
-    <Color x:Key="HintableTextBox.MouseOver.BorderColor">#26383838</Color>
-    <Color x:Key="HintableTextBox.MouseOver.ForegroundColor">White</Color>
-    <Color x:Key="HintableTextBox.MouseOver.HintForegroundColor">#FFE0DFDF</Color>
+    <Color x:Key="HintableBoxBase.MouseOver.BackgroundColor">#4C206D77</Color>
+    <Color x:Key="HintableBoxBase.MouseOver.BorderColor">#26383838</Color>
+    <Color x:Key="HintableBoxBase.MouseOver.ForegroundColor">White</Color>
+    <Color x:Key="HintableBoxBase.MouseOver.HintForegroundColor">#FFE0DFDF</Color>
 
-    <Color x:Key="HintableTextBox.Disabled.BackgroundColor">#FFF4F4F4</Color>
-    <Color x:Key="HintableTextBox.Disabled.BorderColor">#FFADB2B5</Color>
-    <Color x:Key="HintableTextBox.Disabled.ForegroundColor">#FF838383</Color>
-    <Color x:Key="HintableTextBox.Disabled.HintForegroundColor">#bababa</Color>
+    <Color x:Key="HintableBoxBase.Disabled.BackgroundColor">#FFF4F4F4</Color>
+    <Color x:Key="HintableBoxBase.Disabled.BorderColor">#FFADB2B5</Color>
+    <Color x:Key="HintableBoxBase.Disabled.ForegroundColor">#FF838383</Color>
+    <Color x:Key="HintableBoxBase.Disabled.HintForegroundColor">#bababa</Color>
 
     <!--#endregion-->
 

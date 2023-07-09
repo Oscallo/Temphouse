@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ui="clr-namespace:CoreLand.UI.CustomControls"
+                    xmlns:fil="clr-namespace:CoreLand.UI.Modules.Filling"
+                    xmlns:com="clr-namespace:CoreLand.UI.Modules.Commands"
+                    xmlns:coverter="clr-namespace:CoreLand.UI.Converters"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:ex="clr-namespace:CoreLand.UI.Extensions">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--#region Переменные -->
+
+    <sys:Double x:Key="HintableBoxBase.IsEnabled.Opacity">0.56</sys:Double>
+
+    <!--#endregion-->
+
+    <!--#region Цветовая схема -->
+
+    <SolidColorBrush x:Key="HintableBoxBase.Static.Background" Color="{DynamicResource HintableBoxBase.Static.BackgroundColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.Static.Border" Color="{DynamicResource HintableBoxBase.Static.BorderColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.Static.Foreground" Color="{DynamicResource HintableBoxBase.Static.ForegroundColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.Static.HintForeground" Color="{DynamicResource HintableBoxBase.Static.HintForegroundColor}"/>
+
+    <SolidColorBrush x:Key="HintableBoxBase.Focus.Background" Color="{DynamicResource HintableBoxBase.Focus.BackgroundColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.Focus.Border" Color="{DynamicResource HintableBoxBase.Focus.BorderColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.Focus.Foreground" Color="{DynamicResource HintableBoxBase.Focus.ForegroundColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.Focus.HintForeground" Color="{DynamicResource HintableBoxBase.Focus.HintForegroundColor}"/>
+
+    <SolidColorBrush x:Key="HintableBoxBase.MouseOver.Background" Color="{DynamicResource HintableBoxBase.MouseOver.BackgroundColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.MouseOver.Border" Color="{DynamicResource HintableBoxBase.MouseOver.BorderColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.MouseOver.Foreground" Color="{DynamicResource HintableBoxBase.MouseOver.ForegroundColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.MouseOver.HintForeground" Color="{DynamicResource HintableBoxBase.MouseOver.HintForegroundColor}"/>
+
+    <SolidColorBrush x:Key="HintableBoxBase.Disabled.Background" Color="{DynamicResource HintableBoxBase.Disabled.BackgroundColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.Disabled.Border" Color="{DynamicResource HintableBoxBase.Disabled.BorderColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.Disabled.Foreground" Color="{DynamicResource HintableBoxBase.Disabled.ForegroundColor}"/>
+    <SolidColorBrush x:Key="HintableBoxBase.Disabled.HintForeground" Color="{DynamicResource HintableBoxBase.Disabled.HintForegroundColor}"/>
+    
+    <!--#endregion-->
+    
+
+</ResourceDictionary>
