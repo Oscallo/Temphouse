@@ -1,12 +1,18 @@
 ﻿using CoreLand.UI.Models;
+using System;
+using System.Configuration;
 using Temphouse.Modules.Depelopment;
 
 namespace Temphouse.Models
 {
+    [Serializable]
     public class SessionModel : BaseModel
     {
+        [NonSerialized]
         private int _Id;
+        [NonSerialized]
         private int _UserId;
+        [NonSerialized]
         private string _SessionString;
 
         public SessionModel(int userId)
@@ -49,7 +55,6 @@ namespace Temphouse.Models
                 OnPropertyChanged(nameof(SessionString));
             }
         }
-
 
     }
 }
