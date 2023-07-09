@@ -1,4 +1,5 @@
 ﻿using CoreLand.UI.CustomControls;
+using CoreLand.UI.Modules.Designer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,13 +35,7 @@ namespace Temphouse.UserControls
         {
             Loaded += (s, e) =>
             {
-                var parent = (DependencyObject)this;
-                while ((parent is ExtendedWindow) == false)
-                {
-                    parent = LogicalTreeHelper.GetParent((DependencyObject)parent);
-
-                }
-                ((UsersViewModel)this.DataContext).LoginWindow = (ExtendedWindow)parent;
+                ((UsersViewModel)this.DataContext).LoginWindow = DesignerReporter.GetParentExtendedWindow<ExtendedWindow>(this);
             };
         }
     }
