@@ -3,11 +3,13 @@ using CoreLand.UI.Modules.Trey;
 using System;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Media;
 
 namespace CoreLand.UI.Modules.Designer
 {
     public class DesignerReporter
     {
+
         #region static Instance
 
         /// <summary>
@@ -22,7 +24,6 @@ namespace CoreLand.UI.Modules.Designer
 
         #endregion
 
-
         /// <summary>
         /// Проверка на DesignMode.
         /// </summary>
@@ -32,20 +33,9 @@ namespace CoreLand.UI.Modules.Designer
             return DesignerProperties.GetIsInDesignMode(dependencyObject);
         }
 
-        public T GetParent<T> (DependencyObject startFindObject) where T : DependencyObject
-        {
-            var parent = startFindObject;
-            while ((parent is T) == false)
-            {
-                parent = LogicalTreeHelper.GetParent((DependencyObject)parent);
-
-            }
-            return (T)parent;
-        }
-
         public T GetParentExtendedWindow<T>(DependencyObject startFindObject) where T : ExtendedWindow
         {
-            return (T)GetParent<ExtendedWindow>(startFindObject);
+            return (T)ExtendedWindow.GetWindow(startFindObject);
         }
     }
 }
