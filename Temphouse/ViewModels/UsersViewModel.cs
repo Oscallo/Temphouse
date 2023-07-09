@@ -122,7 +122,7 @@ namespace Temphouse.ViewModels
         private void _SetSesion(object sessionModel)
         {
             bool sessionIsValid = false;
-            DataBaseAdapter.UserAuthorization((SessionModel)sessionModel, out sessionIsValid);
+            DataBaseAdapter.Instance.UserAuthorization((SessionModel)sessionModel, out sessionIsValid);
 
             if (sessionIsValid == true) 
             {

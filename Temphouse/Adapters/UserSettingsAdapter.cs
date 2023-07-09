@@ -10,6 +10,18 @@ namespace Temphouse.Adapters
 {
     public class UserSettingsAdapter
     {
+        #region static Instance
 
+        /// <summary>
+        /// Статический экземпляр объекта.
+        /// </summary>
+        public static UserSettingsAdapter Instance { get; private set; }
+
+        static UserSettingsAdapter()
+        {
+            Instance = new UserSettingsAdapter();
+        }
+
+        #endregion
     }
 }

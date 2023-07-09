@@ -43,7 +43,7 @@ namespace Temphouse.Models
             Session = session;
         }
 
-        public AuthorizedUserModel(SessionModel session) : this(session, DataBaseAdapter.GetUserBySession(session)) { }
+        public AuthorizedUserModel(SessionModel session) : this(session, DataBaseAdapter.Instance.GetUserBySession(session)) { }
 
         public AuthorizedUserModel(SessionModel session, UserModel user) : this(session, (UserWithoutPasswordModel)user) { }
     }

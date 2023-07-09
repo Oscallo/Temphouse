@@ -13,7 +13,7 @@ namespace Temphouse.Adapters
         /// <summary>
         /// Статический экземпляр объекта.
         /// </summary>
-        public static ApplicationSettingsAdapter? Instance { get; private set; }
+        public static ApplicationSettingsAdapter Instance { get; private set; }
 
         static ApplicationSettingsAdapter()
         {

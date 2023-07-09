@@ -5,17 +5,31 @@ namespace Temphouse.Adapters
 {
     public class DataBaseAdapter
     {
-        public static SessionModel UserAuthorization(string login, string password, out bool isAuthorizationSuccess)
+        #region static Instance
+
+        /// <summary>
+        /// Статический экземпляр объекта.
+        /// </summary>
+        public static DataBaseAdapter Instance { get; private set; }
+
+        static DataBaseAdapter()
+        {
+            Instance = new DataBaseAdapter();
+        }
+
+        #endregion
+
+        public SessionModel UserAuthorization(string login, string password, out bool isAuthorizationSuccess)
         {
             throw new NotImplementedException();
         }
 
-        public static void UserAuthorization(SessionModel session, out bool isAuthorizationSuccess)
+        public void UserAuthorization(SessionModel session, out bool isAuthorizationSuccess)
         {
             throw new NotImplementedException();
         }
 
-        public static UserModel GetUserBySession(SessionModel session)
+        public UserModel GetUserBySession(SessionModel session)
         {
             throw new NotImplementedException();
         }
