@@ -16,9 +16,9 @@ namespace Temphouse.Models
             set
             {
                 if (_Id == value) { return; }
-                OnPropertyChanging(nameof(Icon));
+                OnPropertyChanging(nameof(Id));
                 _Id = value;
-                OnPropertyChanged(nameof(Icon));
+                OnPropertyChanged(nameof(Id));
             }
         }
 
@@ -28,9 +28,9 @@ namespace Temphouse.Models
             set
             {
                 if (_Password == value) { return; }
-                OnPropertyChanging(nameof(Icon));
+                OnPropertyChanging(nameof(Password));
                 _Password = value;
-                OnPropertyChanged(nameof(Icon));
+                OnPropertyChanged(nameof(Password));
             }
         }
     }
