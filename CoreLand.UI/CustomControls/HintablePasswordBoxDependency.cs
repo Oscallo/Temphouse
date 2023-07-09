@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 
 namespace CoreLand.UI.CustomControls
 {
-    public partial class HintablePasswordBox : HintableTextBox
+    public partial class HintablePasswordBox : HintableBoxBase
     {
         public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register(nameof(Password), typeof(SecureString), typeof(HintablePasswordBox), new UIPropertyMetadata(new SecureString()));
 

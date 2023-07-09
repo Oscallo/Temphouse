@@ -8,7 +8,7 @@
                     xmlns:ex="clr-namespace:CoreLand.UI.Extensions">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/HintableCommonBoxDefaultStyle.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/HintableBoxBaseDefaultStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
@@ -45,64 +45,16 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style TargetType="{x:Type ui:HintableTextBox}">
-        <Setter Property="Background" Value="{DynamicResource HintableBoxBase.Static.Background}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource HintableBoxBase.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource HintableBoxBase.Static.Foreground}"/>
-        <Setter Property="HintForeground" Value="{DynamicResource HintableBoxBase.Static.HintForeground}"/>
+    <Style TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource {x:Type ui:HintableBoxBase}}">
         <Setter Property="Template" Value="{DynamicResource HintableTextBoxTemplate}"/>
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="BorderThickness" Value="3"/>
-        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
-        <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="AllowDrop" Value="True"/>
-        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
-        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Style.Triggers>
-            <MultiTrigger>
-                <MultiTrigger.Conditions>
-                    <Condition Property="IsInactiveSelectionHighlightEnabled" Value="True"/>
-                    <Condition Property="IsSelectionActive" Value="False"/>
-                </MultiTrigger.Conditions>
-                <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
-            </MultiTrigger>
-
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="BorderBrush" Value="{DynamicResource HintableBoxBase.Disabled.Border}"/>
-                <Setter Property="Background"  Value="{DynamicResource HintableBoxBase.Disabled.Background}"/>
-            </Trigger>
-
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="BorderBrush" Value="{DynamicResource HintableBoxBase.MouseOver.Border}"/>
-                <Setter Property="Background"  Value="{DynamicResource HintableBoxBase.MouseOver.Background}"/>
-                <Setter Property="Foreground" Value="{DynamicResource HintableBoxBase.MouseOver.Foreground}"/>
-            </Trigger>
-            
-            <Trigger Property="IsKeyboardFocused" Value="True">
-                <Setter Property="BorderBrush" Value="{DynamicResource HintableBoxBase.Focus.Border}"/>
-                <Setter Property="Background"  Value="{DynamicResource HintableBoxBase.Focus.Background}"/>
-                <Setter Property="Foreground" Value="{DynamicResource HintableBoxBase.Focus.Foreground}"/>
-            </Trigger>
-
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{DynamicResource HintableBoxBase.Disabled.Foreground}"/>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 
-    <Style x:Key="RoundedHintableTextBoxStyle" TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource {x:Type ui:HintableTextBox}}">
-        <Style.Resources>
-            <Style TargetType="Border">
-                <Setter Property="CornerRadius" Value="10" />
-            </Style>
-        </Style.Resources>
+    <Style x:Key="RoundedHintableTextBoxStyle" TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource RoundedHintableBoxBaseStyle}">
+        <Setter Property="Template" Value="{DynamicResource HintableTextBoxTemplate}"/>
     </Style>
 
-    <Style x:Key="LoginHintableTextBoxStyle" TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource RoundedHintableTextBoxStyle}">
-        <Setter Property="Height" Value="50" />
+    <Style x:Key="LoginHintableTextBoxStyle" TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource LoginHintableBoxBaseStyle}">
+        <Setter Property="Template" Value="{DynamicResource HintableTextBoxTemplate}"/>
     </Style>
-
 
 </ResourceDictionary>

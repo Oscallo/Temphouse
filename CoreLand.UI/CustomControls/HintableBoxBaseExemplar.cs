@@ -16,7 +16,18 @@ using System.Windows.Shapes;
 
 namespace CoreLand.UI.CustomControls
 {
-    public partial class HintableTextBox : HintableBoxBase
+    public partial class HintableBoxBase : TextBox
     {
+        public string Hint
+        {
+            get { return (string)GetValue(HintProperty); }
+            set { SetValue(HintProperty, value); }
+        }
+
+        public SolidColorBrush HintForeground
+        {
+            get { return (SolidColorBrush)GetValue(HintForegroundProperty); }
+            set { SetValue(HintForegroundProperty, value); }
+        }
     }
 }

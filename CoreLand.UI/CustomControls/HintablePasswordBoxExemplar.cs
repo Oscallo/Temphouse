@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,11 @@ namespace CoreLand.UI.CustomControls
     /// <summary>
     /// Спасибо за помощь в решении проблемы <seealso cref="https://stackoverflow.com/questions/17407620/custom-masked-passwordbox-in-wpf">Stackoverflow</seealso>
     /// </summary>
-
-    public partial class HintablePasswordBox : HintableTextBox
+    [TemplatePart(Name = HintablePasswordBox.BUTTONXAMLNAME, Type = typeof(Button))]
+    public partial class HintablePasswordBox : HintableBoxBase
     {
+        public const string BUTTONXAMLNAME = "PART_IsPasswordMaskedButton";
+
         public SecureString Password
         {
             get {return (SecureString)GetValue(PasswordProperty);}
@@ -49,9 +52,8 @@ namespace CoreLand.UI.CustomControls
 
         public HintablePasswordBox()
         {
-            PreviewTextInput += _OnPreviewTextInput;
-            PreviewKeyDown += _OnPreviewKeyDown;
-            CommandManager.AddPreviewExecutedHandler(this, _PreviewExecutedHandler);
+            _InitializeEvents();
+            _InitializeHandlers();
         }
 
         private static void _PreviewExecutedHandler(object sender, ExecutedRoutedEventArgs executedRoutedEventArgs)
@@ -148,7 +150,72 @@ namespace CoreLand.UI.CustomControls
 
         internal void UnMaskAllDisplayText()
         {
-            Text = new string(Password.ToString());
+            Text = new string(SecureStringToString(Password));
         }
+
+        internal string SecureStringToString(SecureString value)
+        {
+            IntPtr valuePtr = IntPtr.Zero;
+            try
+            {
+                valuePtr = Marshal.SecureStringToGlobalAllocUnicode(value);
+                return Marshal.PtrToStringUni(valuePtr);
+            }
+            finally
+            {
+                Marshal.ZeroFreeGlobalAllocUnicode(valuePtr);
+            }
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            _InitializeTemplateEvents();
+        }
+
+        private void _InitializeTemplateEvents()
+        {
+            ((Button)Template.FindName(HintablePasswordBox.BUTTONXAMLNAME, this)).PreviewMouseDown += HintablePasswordBox_MouseLeftButtonDown;
+            ((Button)Template.FindName(HintablePasswordBox.BUTTONXAMLNAME, this)).PreviewMouseUp += HintablePasswordBox_MouseLeftButtonUp;
+        }
+
+        private void _InitializeEvents() 
+        {
+            PreviewTextInput += _OnPreviewTextInput;
+            PreviewKeyDown += _OnPreviewKeyDown;
+        }
+
+        private void HintablePasswordBox_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.IsPasswordMasked = true;
+        }
+
+        private void HintablePasswordBox_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.IsPasswordMasked = false;
+        }
+
+        private void _InitializeHandlers()
+        {
+            CommandManager.AddPreviewExecutedHandler(this, _PreviewExecutedHandler);
+        }
+
+        private void _UnInitializeHandlers()
+        {
+            CommandManager.RemovePreviewExecutedHandler(this, _PreviewExecutedHandler);
+        }
+
+        private void _UnInitializeEvents()
+        {
+            PreviewTextInput -= _OnPreviewTextInput;
+            PreviewKeyDown -= _OnPreviewKeyDown;
+            Loaded -= (_, __) =>
+            {
+                ((Button)Template.FindName(HintablePasswordBox.BUTTONXAMLNAME, this)).MouseLeftButtonDown -= HintablePasswordBox_MouseLeftButtonDown;
+                ((Button)Template.FindName(HintablePasswordBox.BUTTONXAMLNAME, this)).MouseLeftButtonUp -= HintablePasswordBox_MouseLeftButtonUp;
+            };
+        }
+
     }
 }
