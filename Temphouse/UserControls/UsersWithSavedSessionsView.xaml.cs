@@ -26,11 +26,11 @@ namespace Temphouse.UserControls
         {
             InitializeComponent();
 
-            FindParent();
+            _FindParent();
 
         }
 
-        private void FindParent()
+        private void _FindParent()
         {
             Loaded += (s, e) =>
             {
