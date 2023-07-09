@@ -7,6 +7,8 @@ namespace Temphouse.Models
     {
         private int _Id;
         private string _Password;
+        private string _Name;
+        private string _Family;
 
         public UserModel() { }
 
@@ -31,6 +33,30 @@ namespace Temphouse.Models
                 OnPropertyChanging(nameof(Password));
                 _Password = value;
                 OnPropertyChanged(nameof(Password));
+            }
+        }
+
+        public string Name
+        {
+            get => _Name;
+            set
+            {
+                if (_Name == value) { return; }
+                OnPropertyChanging(nameof(Name));
+                _Name = value;
+                OnPropertyChanged(nameof(Name));
+            }
+        }
+
+        public string Family
+        {
+            get => _Family;
+            set
+            {
+                if (_Family == value) { return; }
+                OnPropertyChanging(nameof(Family));
+                _Family = value;
+                OnPropertyChanged(nameof(Family));
             }
         }
     }
