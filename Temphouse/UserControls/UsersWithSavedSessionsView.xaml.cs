@@ -21,37 +21,22 @@ namespace Temphouse.UserControls
     /// <summary>
     /// Логика взаимодействия для UsersWithSavedSessionsView.xaml
     /// </summary>
-    public partial class UsersWithSavedSessionsView : UserControl, IDisposable
+    public partial class UsersWithSavedSessionsView : UserControl
     {
         public UsersWithSavedSessionsView()
         {
             InitializeComponent();
-            _InitializeEvents();
+
+            _FindParent();
+
         }
 
-        private void _InitializeEvents() 
+        private void _FindParent()
         {
-            Loaded += View_Loaded;
+            Loaded += (s, e) =>
+            {
+                ((UsersViewModel)this.DataContext).LoginWindow = DesignerReporter.Instance.GetParentExtendedWindow<ExtendedWindow>(this);
+            };
         }
-
-        private void _UnInitializeEvents()
-        {
-            Loaded -= View_Loaded;
-        }
-
-        private void View_Loaded(object sender, RoutedEventArgs e)
-        {
-            ((UsersViewModel)this.DataContext).LoginWindow = DesignerReporter.Instance.GetParentExtendedWindow<ExtendedWindow>(this);
-        }
-
-        #region IDisposable
-
-        public void Dispose()
-        {
-            _UnInitializeEvents();
-        }
-
-        #endregion
     }
 }
-
