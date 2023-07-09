@@ -13,11 +13,11 @@ namespace Temphouse.Modules.Depelopment
     /// </summary>
     public static class DevMethods
     {
-        public static ObservableCollection<AuthorizedUserModel> GenerateBlankedAuthorizedUserModel(int count) 
+        internal static ObservableCollection<AuthorizedUserModel> GenerateBlankedAuthorizedUserModel(int count) 
         {
             ObservableCollection<AuthorizedUserModel> authorizedUserModels = new ObservableCollection<AuthorizedUserModel>();
 
-            SessionModel session = new SessionModel();
+            SessionModel session = new SessionModel(0);
             UserWithoutPasswordModel userWithoutPassword = new UserWithoutPasswordModel();
 
             for (int i = 0; i < count; i++) 
@@ -28,5 +28,12 @@ namespace Temphouse.Modules.Depelopment
             return authorizedUserModels;
         }
 
+        internal static string GenerateRandomString(int length)
+        {
+            Random random = new Random((int)DateTime.Now.Ticks);
+            const string allChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string rezult = new string(Enumerable.Repeat(allChars, length).Select(s => s[random.Next(s.Length)]).ToArray());
+            return rezult;
+        }
     }
 }
