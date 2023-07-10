@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using Temphouse.Enums;
 using Temphouse.Models;
 
-namespace Temphouse.Adapters
+namespace Temphouse.Modules.Adapters
 {
     public class ApplicationSettingsAdapter : AbstractAdapter
     {
@@ -24,10 +24,10 @@ namespace Temphouse.Adapters
 
         public ObservableCollection<SessionModel> Sessions => _GetSessions();
 
-        public DatabaseConnectionTypeEnum DatabaseConnectionType 
+        public DatabaseConnectionTypeEnum DatabaseConnectionType
         {
             get { return (DatabaseConnectionTypeEnum)Properties.Settings.Default["DatabaseConnectionType"]; }
-            set 
+            set
             {
                 if (DatabaseConnectionType == value) { return; }
                 if (Enum.IsDefined(typeof(DatabaseConnectionTypeEnum), value) == false) { throw new ArgumentOutOfRangeException(); }

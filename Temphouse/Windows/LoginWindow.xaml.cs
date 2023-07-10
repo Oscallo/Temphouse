@@ -1,7 +1,7 @@
 ﻿using CoreLand.UI.CustomControls;
 using System.Windows;
-using Temphouse.Adapters;
 using Temphouse.Models;
+using Temphouse.Modules.Adapters;
 
 namespace Temphouse.Windows
 {

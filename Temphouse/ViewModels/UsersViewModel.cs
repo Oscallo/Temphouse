@@ -7,8 +7,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Temphouse.Adapters;
 using Temphouse.Models;
+using Temphouse.Modules.Adapters;
 using Temphouse.Modules.Depelopment;
 using Temphouse.Windows;
 

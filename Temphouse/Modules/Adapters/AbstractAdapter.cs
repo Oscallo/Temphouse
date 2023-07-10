@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Temphouse.Adapters
+namespace Temphouse.Modules.Adapters
 {
     public abstract class AbstractAdapter : INotifyPropertyChanged, INotifyPropertyChanging
     {

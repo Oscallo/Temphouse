@@ -1,7 +1,7 @@
 ﻿using System;
 using Temphouse.Models;
 
-namespace Temphouse.Adapters
+namespace Temphouse.Modules.Adapters
 {
     public class DataBaseAdapter
     {

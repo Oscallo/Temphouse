@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Temphouse.Models;
 
-namespace Temphouse.Adapters
+namespace Temphouse.Modules.Adapters
 {
     public class UserSettingsAdapter
     {
