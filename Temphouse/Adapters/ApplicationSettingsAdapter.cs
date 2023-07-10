@@ -6,7 +6,7 @@ using Temphouse.Models;
 
 namespace Temphouse.Adapters
 {
-    public class ApplicationSettingsAdapter
+    public class ApplicationSettingsAdapter : AbstractAdapter
     {
         #region static Instance
 
@@ -24,11 +24,17 @@ namespace Temphouse.Adapters
 
         public ObservableCollection<SessionModel> Sessions => _GetSessions();
 
-        public DatabaseConnectionTypeEnum DatabaseConnectionType => _GetDatabaseConnectionType();
-
-        private DatabaseConnectionTypeEnum _GetDatabaseConnectionType()
+        public DatabaseConnectionTypeEnum DatabaseConnectionType 
         {
-            throw new NotImplementedException();
+            get { return (DatabaseConnectionTypeEnum)Properties.Settings.Default["DatabaseConnectionType"]; }
+            set 
+            {
+                if (DatabaseConnectionType == value) { return; }
+                if (Enum.IsDefined(typeof(DatabaseConnectionTypeEnum), value) == false) { throw new ArgumentOutOfRangeException(); }
+                OnPropertyChanging(nameof(DatabaseConnectionType));
+                Properties.Settings.Default["DatabaseConnectionType"] = value;
+                OnPropertyChanged(nameof(DatabaseConnectionType));
+            }
         }
 
         private ObservableCollection<SessionModel> _GetSessions()
