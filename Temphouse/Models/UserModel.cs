@@ -12,10 +12,17 @@ namespace Temphouse.Models
 
         public UserModel() { }
 
+        public UserModel(string name,string family,string password) 
+        {
+            Name = name;
+            Family = family;
+            Password = password;
+        }
+
         public int Id
         {
             get => _Id;
-            set
+            private set
             {
                 if (_Id == value) { return; }
                 OnPropertyChanging(nameof(Id));
