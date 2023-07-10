@@ -76,7 +76,7 @@
                 <Grid>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                         <TextBlock Style="{DynamicResource AuthorizedUserModelTextBoxStyle}" Text="{Binding UserWithoutPasswordModel.Name, Converter={StaticResource StringToFirstCharConverter}}"/>
-                        <TextBlock Style="{DynamicResource AuthorizedUserModelTextBoxStyle}" Foreground="White" Text="{Binding UserWithoutPasswordModel.Family, Converter={StaticResource StringToFirstCharConverter}}"/>
+                        <TextBlock Style="{DynamicResource AuthorizedUserModelTextBoxStyle}" Text="{Binding UserWithoutPasswordModel.Family, Converter={StaticResource StringToFirstCharConverter}}"/>
                     </StackPanel>
                 </Grid>
             </Button>
