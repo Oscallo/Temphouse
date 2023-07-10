@@ -37,7 +37,7 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
     </Style>
 
-    <Style x:Key="AuthorizedUserModelTextBoxStyle" TargetType="{x:Type TextBox}">
+    <Style x:Key="AuthorizedUserModelTextBoxStyle" TargetType="{x:Type TextBlock}">
         <Setter Property="Foreground" Value="White"/>
     </Style>
 
