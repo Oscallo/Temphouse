@@ -3,7 +3,8 @@
                     xmlns:ui="clr-namespace:CoreLand.UI.CustomControls;assembly=CoreLand.UI"
                     xmlns:local="clr-namespace:Temphouse.Models"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp">
+                    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+                    xmlns:tc="clr-namespace:Temphouse.Converters">
 
     <!--#region Переменные -->
 
@@ -36,7 +37,14 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
     </Style>
 
+    <Style x:Key="AuthorizedUserModelTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
     <DataTemplate DataType="{x:Type local:AuthorizedUserModel}">
+        <DataTemplate.Resources>
+            <tc:StringToFirstCharConverter x:Key="StringToFirstCharConverter"/>
+        </DataTemplate.Resources>
         <Grid Style="{DynamicResource GridStyle}" Margin="5,10,5,10">
             <Grid.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
@@ -64,7 +72,14 @@
                     </BeginStoryboard>
                 </EventTrigger>
             </Grid.Triggers>
-            <Button Command="{Binding Path=DataContext.SetSessionCommand, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding Session}"/>
+            <Button Command="{Binding Path=DataContext.SetSessionCommand, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding Session}">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Style="{DynamicResource AuthorizedUserModelTextBoxStyle}" Text="{Binding UserWithoutPasswordModel.Name, Converter={StaticResource StringToFirstCharConverter}}"/>
+                        <TextBlock Style="{DynamicResource AuthorizedUserModelTextBoxStyle}" Foreground="White" Text="{Binding UserWithoutPasswordModel.Family, Converter={StaticResource StringToFirstCharConverter}}"/>
+                    </StackPanel>
+                </Grid>
+            </Button>
             <ui:SquaredButton Style="{DynamicResource SquaredButtonStyle}" Command="{Binding Path=DataContext.RemoveSessionCommand, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding Session}">
                 <fa:IconImage Style="{DynamicResource IconImageStyle}"/>
             </ui:SquaredButton>
