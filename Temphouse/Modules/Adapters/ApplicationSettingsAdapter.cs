@@ -37,6 +37,18 @@ namespace Temphouse.Modules.Adapters
             }
         }
 
+        public bool IsFirstLaunch 
+        {
+            get { return (bool)Properties.Settings.Default["IsFirstLaunch"]; }
+            set
+            {
+                if (IsFirstLaunch == value) { return; }
+                OnPropertyChanging(nameof(IsFirstLaunch));
+                Properties.Settings.Default["IsFirstLaunch"] = value;
+                OnPropertyChanged(nameof(IsFirstLaunch));
+            }
+        }
+
         private ObservableCollection<SessionModel> _GetSessions()
         {
             throw new NotImplementedException();

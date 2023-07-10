@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Temphouse.Modules.Adapters;
 
 namespace Temphouse
 {
@@ -12,7 +13,14 @@ namespace Temphouse
 
         private static Uri _GetStartupWindow()
         {
-            return new Uri("/Windows/LoginWindow.xaml", UriKind.Relative);
+            if (ApplicationSettingsAdapter.Instance.IsFirstLaunch == true)
+            {
+                throw new NotImplementedException();
+            }
+            else 
+            {
+                return new Uri("/Windows/LoginWindow.xaml", UriKind.Relative);
+            }
         }
     }
 }
