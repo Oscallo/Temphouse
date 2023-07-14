@@ -41,6 +41,7 @@
     </ControlTemplate>
 
     <Style TargetType="{x:Type Button}">
+        <Setter Property="Content" Value="Нажми на меня"/>
         <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
         <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
