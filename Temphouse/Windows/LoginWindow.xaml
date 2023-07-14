@@ -9,7 +9,7 @@
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
         mc:Ignorable="d" WindowStyle="ToolWindow" IsHideable="False"
         Title="Авторизация" Height="500" Width="300"
-        ResizeMode="NoResize" >
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid VerticalAlignment="Top" Margin="40,80,40,0">
             <Grid x:Name="PART_FormAuthorizeGrid">
