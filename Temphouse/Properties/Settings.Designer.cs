@@ -34,5 +34,17 @@ namespace Temphouse.Properties {
                 this["IsFirstLaunch"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int DatabaseConnectionType {
+            get {
+                return ((int)(this["DatabaseConnectionType"]));
+            }
+            set {
+                this["DatabaseConnectionType"] = value;
+            }
+        }
     }
 }

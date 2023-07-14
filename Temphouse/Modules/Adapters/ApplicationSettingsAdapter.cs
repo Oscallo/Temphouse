@@ -31,7 +31,7 @@ namespace Temphouse.Modules.Adapters
                 if (DatabaseConnectionType == value) { return; }
                 if (Enum.IsDefined(typeof(DatabaseConnectionTypeEnum), value) == false) { throw new ArgumentOutOfRangeException(); }
                 OnPropertyChanging(nameof(DatabaseConnectionType));
-                Properties.Settings.Default["DatabaseConnectionType"] = value;
+                Properties.Settings.Default["DatabaseConnectionType"] = (int)value;
                 Properties.Settings.Default.Save();
                 OnPropertyChanged(nameof(DatabaseConnectionType));
             }
