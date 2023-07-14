@@ -1,5 +1,4 @@
-﻿using CoreLand.UI.Modules.Trey;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using Temphouse.Enums;
 using Temphouse.Models;
@@ -33,6 +32,7 @@ namespace Temphouse.Modules.Adapters
                 if (Enum.IsDefined(typeof(DatabaseConnectionTypeEnum), value) == false) { throw new ArgumentOutOfRangeException(); }
                 OnPropertyChanging(nameof(DatabaseConnectionType));
                 Properties.Settings.Default["DatabaseConnectionType"] = value;
+                Properties.Settings.Default.Save();
                 OnPropertyChanged(nameof(DatabaseConnectionType));
             }
         }
@@ -45,6 +45,7 @@ namespace Temphouse.Modules.Adapters
                 if (IsFirstLaunch == value) { return; }
                 OnPropertyChanging(nameof(IsFirstLaunch));
                 Properties.Settings.Default["IsFirstLaunch"] = value;
+                Properties.Settings.Default.Save();
                 OnPropertyChanged(nameof(IsFirstLaunch));
             }
         }
