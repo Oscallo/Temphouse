@@ -6,7 +6,7 @@ namespace Temphouse.Extensions
     {
         public static string ToStringCollectionElement(this SessionModel sessionModel)
         {
-            return sessionModel.SessionString;
+            return sessionModel.ToString();
         }
     }
 }

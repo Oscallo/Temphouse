@@ -20,9 +20,9 @@ namespace Temphouse.Models
             SessionString = DevMethods.GenerateRandomString(255);
         }
 
-        public SessionModel(string sessionString)
+        public SessionModel(string sessionModelString)
         {
-            SessionString = sessionString;
+            throw new NotImplementedException();
         }
 
         public int Id
@@ -59,6 +59,11 @@ namespace Temphouse.Models
                 _SessionString = value;
                 OnPropertyChanged(nameof(SessionString));
             }
+        }
+
+        public override string ToString()
+        {
+            return Id.ToString() + ":" + SessionString + ":" + UserId.ToString();
         }
     }
 }
