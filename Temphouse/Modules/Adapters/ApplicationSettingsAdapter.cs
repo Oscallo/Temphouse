@@ -21,8 +21,6 @@ namespace Temphouse.Modules.Adapters
 
         #endregion
 
-        public ObservableCollection<SessionModel> Sessions => _GetSessions();
-
         public DatabaseConnectionTypeEnum DatabaseConnectionType
         {
             get { return (DatabaseConnectionTypeEnum)Properties.Settings.Default["DatabaseConnectionType"]; }
@@ -46,16 +44,6 @@ namespace Temphouse.Modules.Adapters
                 Properties.Settings.Default["IsFirstLaunch"] = value;
                 OnPropertyChanged(nameof(IsFirstLaunch));
             }
-        }
-
-        private ObservableCollection<SessionModel> _GetSessions()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveSession(SessionModel session)
-        {
-            throw new NotImplementedException();
         }
     }
 }
