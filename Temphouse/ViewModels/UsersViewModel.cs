@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Temphouse.Extensions;
 using Temphouse.Models;
 using Temphouse.Modules.Adapters;
 using Temphouse.Modules.Depelopment;
@@ -86,16 +87,13 @@ namespace Temphouse.ViewModels
             await Task.Run(() => RemoveUserAsync(session));
         }
 
-        public UsersViewModel() 
+        public UsersViewModel() : this(UserSettingsAdapter.Instance.Sessions.ToIList())
         {
-            _InitializeCommands();
-
-            /// Это необходимо будет, когда сессии будут подгружаться с адаптера
-            /// Users = ApplicationSettingsAdapter.Instance.Sessions;
-
-
-            /// Представление данных для дизайнера
-            Users = DevMethods.GenerateBlankedAuthorizedUserModel(3);
+            // Если унжно создать для тестирования
+            //if (Users.Count == 0) 
+            //{
+            //    Users = DevMethods.GenerateBlankedAuthorizedUserModel(2);
+            //}
         }
 
         private void _InitializeCommands() 

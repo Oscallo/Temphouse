@@ -32,15 +32,17 @@ namespace Temphouse.Modules.Adapters
             get { return Properties.Settings.Default.SavedUserSessions; }
             init 
             {
-                if (Properties.Settings.Default.SavedUserSessions == null)
-                {
-                    Properties.Settings.Default.SavedUserSessions = new StringCollection();
-                }
-                else if (Properties.Settings.Default.SavedUserSessions == value) { return; }
-                else 
-                {
-                    Properties.Settings.Default.SavedUserSessions = value;
-                }
+                if (value == null) { throw new NullReferenceException(); }
+                if (Properties.Settings.Default.SavedUserSessions == value) { return; }
+                Properties.Settings.Default.SavedUserSessions = value;
+            }
+        }
+
+        public UserSettingsAdapter() 
+        {
+            if (WindowUserSessions == null)
+            {
+                Properties.Settings.Default.SavedUserSessions = new StringCollection();
             }
         }
 
@@ -56,7 +58,18 @@ namespace Temphouse.Modules.Adapters
 
         public ReadOnlyCollection<SessionModel> Sessions 
         {
-            get { throw new NotImplementedException(); }
+            get { return Parse(WindowUserSessions); }
+        }
+
+        private ReadOnlyCollection<SessionModel> Parse(StringCollection windowUserSessions)
+        {
+            IList<SessionModel> sessionModels = new List<SessionModel>();
+            foreach (string session in windowUserSessions) 
+            {
+                sessionModels.Add(SessionModel.ConvertFromString(session));
+            }
+
+            return new ReadOnlyCollection<SessionModel>(sessionModels);
         }
     }
 }
