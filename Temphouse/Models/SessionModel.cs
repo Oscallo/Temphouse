@@ -20,7 +20,7 @@ namespace Temphouse.Models
             SessionString = DevMethods.GenerateRandomString(255);
         }
 
-        public SessionModel(string sessionModelString)
+        public SessionModel(int userId, string sessionString, int id )
         {
             throw new NotImplementedException();
         }
