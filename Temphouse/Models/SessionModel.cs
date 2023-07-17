@@ -9,6 +9,9 @@ namespace Temphouse.Models
     public class SessionModel : BaseModel
     {
         [NonSerialized]
+        private const char PARSECHAR = ':';
+
+        [NonSerialized]
         private int _Id;
         [NonSerialized]
         private int _UserId;
@@ -65,7 +68,22 @@ namespace Temphouse.Models
 
         public override string ToString()
         {
-            return Id.ToString() + ":" + SessionString + ":" + UserId.ToString();
+            return Id.ToString() + PARSECHAR + SessionString + PARSECHAR + UserId.ToString();
+        }
+
+        public static SessionModel ConvertFromString(string sessionModelString) 
+        {
+            List<string> @params =  sessionModelString.Split(PARSECHAR).ToList<string>();
+
+            if (@params.Count < 3) { throw new ArgumentException(); }
+
+            string sessionString = @params[1];
+            int userId = Convert.ToInt32(@params[2]);
+            int id = Convert.ToInt32(@params[0]);
+
+            SessionModel sessionModel = new SessionModel(userId, sessionString, id);
+
+            return sessionModel;
         }
     }
 }
