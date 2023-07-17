@@ -48,9 +48,9 @@
     <Color x:Key="Button.Pressed.BorderColor">#26383838</Color>
     <Color x:Key="Button.Pressed.ForegroundColor">White</Color>
 
-    <Color x:Key="Button.Disabled.BackgroundColor">#FFF4F4F4</Color>
+    <Color x:Key="Button.Disabled.BackgroundColor">#FF838383</Color>
     <Color x:Key="Button.Disabled.BorderColor">#FFADB2B5</Color>
-    <Color x:Key="Button.Disabled.ForegroundColor">#FF838383</Color>
+    <Color x:Key="Button.Disabled.ForegroundColor">#FFF4F4F4</Color>
 
     <!--#endregion-->
     
