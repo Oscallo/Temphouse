@@ -14,7 +14,7 @@ namespace CoreLand.UI.Modules.Commands
     public static class ExtendedSystemCommands
     {
         /// <summary>
-        /// Константа имени для RoutedCommand HideInTreyWindowCommand.
+        /// Константа имени для <seealso cref="RoutedCommand"/> <seealso cref="HideInTreyWindowCommand"/>.
         /// </summary>
         private static string _HIDEINTREYWINDOWCOMMANDNAME = "HideInTreyWindow";
 
