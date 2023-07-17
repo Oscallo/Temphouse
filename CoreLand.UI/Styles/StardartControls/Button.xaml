@@ -17,9 +17,9 @@
     <SolidColorBrush x:Key="Button.Pressed.Foreground" Color="{DynamicResource Button.Pressed.ForegroundColor}"/>
     <SolidColorBrush x:Key="Button.Pressed.Border" Color="{DynamicResource Button.Pressed.BorderColor}"/>
 
-    <SolidColorBrush x:Key="Button.Disabled.Background" Color="{DynamicResource Button.Disabled.BorderColor}"/>
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="{DynamicResource Button.Disabled.BackgroundColor}"/>
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="{DynamicResource Button.Disabled.ForegroundColor}"/>
     <SolidColorBrush x:Key="Button.Disabled.Border" Color="{DynamicResource Button.Disabled.BorderColor}"/>
-    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="{DynamicResource Button.Disabled.BorderColor}"/>
 
     <ControlTemplate x:Key="DefaultButtonTemplate" TargetType="{x:Type Button}">
         <Border x:Name="PART_Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
