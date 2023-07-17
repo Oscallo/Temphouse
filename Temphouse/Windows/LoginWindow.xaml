@@ -21,7 +21,7 @@
             </Grid>
         </Grid>
         <Grid VerticalAlignment="Bottom" Margin="40,0,40,70" Height="100">
-            <views:UsersWithSavedSessionsView x:Name="PART_AuthorizeUsersGrid" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15"/>
+            <views:UsersWithSavedSessionsView x:Name="PART_AuthorizeUsersGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15"/>
         </Grid>
     </Grid>
 </ui:ExtendedWindow>
