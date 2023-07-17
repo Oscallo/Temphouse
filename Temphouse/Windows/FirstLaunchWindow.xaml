@@ -4,11 +4,42 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ui="clr-namespace:CoreLand.UI.CustomControls;assembly=CoreLand.UI"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:com="clr-namespace:Temphouse.Modules.Commands"
         xmlns:local="clr-namespace:Temphouse.Windows"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
         mc:Ignorable="d" IsHideable="False"
         Title="FirstLaunchWindow" Height="450" Width="800">
     <Grid>
         <!-- Заметка, валидация данных происходит на каждом этапе, а отправка же данных администратора тольков конце (или же только после установления ApplicationSettings.Instance.DatabaseConnectionType). -->
+        <Grid Margin="20,50,20,50">
+            <TabControl x:Name="PART_TabControl" SelectedIndex="0" Background="Transparent" BorderBrush="Transparent">
+                <TabControl.ItemContainerStyle>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                    </Style>
+                </TabControl.ItemContainerStyle>
+                <TabItem>
+                    <Grid Background="Transparent">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Выберите тип подключения" FontWeight="Bold" Foreground="White"/>
+                                <ComboBox Height="20" Width="100"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                    <Grid Background="Transparent">
+
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <Button Name="PART_BackButton" Width="100" Height="30" Margin="10,0" Content="Назад" Command="{x:Static com:FirstLaunchCommands.BackTabItemCommand}"/>
+            <Button Name="PART_NextButton" Width="100" Height="30" Margin="10,0" Content="Далее" Command="{x:Static com:FirstLaunchCommands.NextTabItemCommand}" />
+            <Button Width="100" Height="30" Margin="10,0" Content="Готово"/>
+        </StackPanel>
     </Grid>
 </ui:ExtendedWindow>
