@@ -22,7 +22,9 @@ namespace Temphouse.Models
 
         public SessionModel(int userId, string sessionString, int id )
         {
-            throw new NotImplementedException();
+            SessionString = sessionString;
+            Id = id;
+            UserId = userId;
         }
 
         public int Id
