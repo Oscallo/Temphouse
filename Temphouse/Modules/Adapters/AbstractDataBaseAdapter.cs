@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Temphouse.Enums;
 using Temphouse.Models;
 
@@ -38,6 +39,18 @@ namespace Temphouse.Modules.Adapters
         {
             if (DatabaseConnectionStatus == DatabaseConnectionStatusEnum.Closed) { return; }
             if (DatabaseConnectionStatus == DatabaseConnectionStatusEnum.Closing) { return; }
+        }
+
+        public virtual IList<UserModel> GetUsersBySessions(IList<SessionModel> sessions) 
+        {
+            IList<UserModel> users = new List<UserModel>();
+
+            foreach (SessionModel session in sessions) 
+            {
+                users.Add(GetUserBySession(session));
+            }
+
+            return users;
         }
     }
 }
