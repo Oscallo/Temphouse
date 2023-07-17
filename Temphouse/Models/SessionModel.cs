@@ -55,6 +55,5 @@ namespace Temphouse.Models
                 OnPropertyChanged(nameof(SessionString));
             }
         }
-
     }
 }
