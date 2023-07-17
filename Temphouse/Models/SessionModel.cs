@@ -20,6 +20,11 @@ namespace Temphouse.Models
             SessionString = DevMethods.GenerateRandomString(255);
         }
 
+        public SessionModel(string sessionString)
+        {
+            SessionString = sessionString;
+        }
+
         public int Id
         {
             get => _Id;
