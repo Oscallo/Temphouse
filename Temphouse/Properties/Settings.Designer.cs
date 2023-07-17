@@ -46,5 +46,16 @@ namespace Temphouse.Properties {
                 this["DatabaseConnectionType"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection SavedUserSessions {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["SavedUserSessions"]));
+            }
+            set {
+                this["SavedUserSessions"] = value;
+            }
+        }
     }
 }
