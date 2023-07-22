@@ -34,7 +34,7 @@ namespace Temphouse.Modules.Adapters
         static DataBaseAdapterBuilder()
         {
             ApplicationSettingsAdapter.Instance.PropertyChanged += ApplicationSettingsAdapterInstance_PropertyChanged;
-            Instance = _GetDataBaseAdapterByConnectionType(ApplicationSettingsAdapter.Instance.DatabaseConnectionType);
+            Instance = _GetDataBaseAdapterByConnectionType(UserSettingsAdapter.Instance.DatabaseConnectionType);
         }
 
         private static AbstractDataBaseAdapter _GetDataBaseAdapterByConnectionType(DatabaseTypeEnum databaseConnectionType) 
@@ -55,9 +55,9 @@ namespace Temphouse.Modules.Adapters
 
         private static void ApplicationSettingsAdapterInstance_PropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(ApplicationSettingsAdapter.Instance.DatabaseConnectionType))
+            if (e.PropertyName == nameof(UserSettingsAdapter.Instance.DatabaseConnectionType))
             {
-                Instance = _GetDataBaseAdapterByConnectionType(ApplicationSettingsAdapter.Instance.DatabaseConnectionType);
+                Instance = _GetDataBaseAdapterByConnectionType(UserSettingsAdapter.Instance.DatabaseConnectionType);
             }
         }
 

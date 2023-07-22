@@ -9,7 +9,7 @@ namespace Temphouse
 
         private static Uri _GetStartupWindow()
         {
-            if (ApplicationSettingsAdapter.Instance.IsFirstLaunch == true)
+            if (UserSettingsAdapter.Instance.IsFirstLaunch == true)
             {
                 return new Uri("/Windows/FirstLaunchWindow.xaml", UriKind.Relative);
             }
