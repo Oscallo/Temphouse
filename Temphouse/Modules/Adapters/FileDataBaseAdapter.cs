@@ -3,7 +3,7 @@ using Temphouse.Models;
 
 namespace Temphouse.Modules.Adapters
 {
-    public class NetworkDataBaseAdapter : AbstractDataBaseAdapter
+    public class FileDataBaseAdapter : AbstractDataBaseAdapter
     {
         public override SessionModel UserAuthorization(string login, string password, out bool isAuthorizationSuccess)
         {
@@ -22,7 +22,7 @@ namespace Temphouse.Modules.Adapters
 
         public override void CreateDataBase()
         {
-            /// Невозможно создать базу данных.
+            throw new NotImplementedException();
         }
 
         public override void CreateConnection()

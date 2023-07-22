@@ -37,19 +37,19 @@ namespace Temphouse.Modules.Adapters
             Instance = _GetDataBaseAdapterByConnectionType(ApplicationSettingsAdapter.Instance.DatabaseConnectionType);
         }
 
-        private static AbstractDataBaseAdapter _GetDataBaseAdapterByConnectionType(DatabaseConnectionTypeEnum databaseConnectionType) 
+        private static AbstractDataBaseAdapter _GetDataBaseAdapterByConnectionType(DatabaseTypeEnum databaseConnectionType) 
         {
-            if (databaseConnectionType == DatabaseConnectionTypeEnum.Local)
+            if (databaseConnectionType == DatabaseTypeEnum.File)
             {
-                return new LocalDataBaseAdapter();
+                return new FileDataBaseAdapter();
             }
-            else if (databaseConnectionType == DatabaseConnectionTypeEnum.Network)
+            else if (databaseConnectionType == DatabaseTypeEnum.Service)
             {
-                return new NetworkDataBaseAdapter();
+                return new ServiceDataBaseAdapter();
             }
             else
             {
-                throw new Exception("DatabaseConnectionTypeEnum = 0");
+                throw new Exception(nameof(DatabaseTypeEnum.None));
             }
         }
 

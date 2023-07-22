@@ -22,7 +22,7 @@
                     <Grid Background="Transparent">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Выберите тип подключения" FontWeight="Bold" Foreground="White"/>
+                                <Label Content="Выберите тип базы данных:" FontWeight="Bold" Foreground="White"/>
                                 <ComboBox Height="20" Width="100"/>
                             </StackPanel>
                         </StackPanel>

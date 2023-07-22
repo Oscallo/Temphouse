@@ -21,13 +21,13 @@ namespace Temphouse.Modules.Adapters
 
         #endregion
 
-        public DatabaseConnectionTypeEnum DatabaseConnectionType
+        public DatabaseTypeEnum DatabaseConnectionType
         {
-            get { return (DatabaseConnectionTypeEnum)Properties.Settings.Default["DatabaseConnectionType"]; }
+            get { return (DatabaseTypeEnum)Properties.Settings.Default["DatabaseConnectionType"]; }
             set
             {
                 if (DatabaseConnectionType == value) { return; }
-                if (Enum.IsDefined(typeof(DatabaseConnectionTypeEnum), value) == false) { throw new ArgumentOutOfRangeException(); }
+                if (Enum.IsDefined(typeof(DatabaseTypeEnum), value) == false) { throw new ArgumentOutOfRangeException(); }
                 OnPropertyChanging(nameof(DatabaseConnectionType));
                 Properties.Settings.Default["DatabaseConnectionType"] = (int)value;
                 OnPropertyChanged(nameof(DatabaseConnectionType));
