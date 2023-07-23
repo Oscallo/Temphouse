@@ -31,9 +31,10 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
             <Button Name="PART_BackButton" Width="100" Height="30" Margin="10,0" Content="Назад" Command="{x:Static com:FirstLaunchCommands.BackTabItemCommand}"/>
             <Button Name="PART_NextButton" Width="100" Height="30" Margin="10,0" Content="Далее" Command="{x:Static com:FirstLaunchCommands.NextTabItemCommand}" />
-            <Button Width="100" Height="30" Margin="10,0" Content="Готово" IsEnabled="False">
+            <Button Width="100" Height="30" Margin="10,0" Content="Готово">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                        <Setter Property="IsEnabled" Value="False"/>
                         <Style.Triggers>
                             <MultiDataTrigger>
                                 <MultiDataTrigger.Conditions>
