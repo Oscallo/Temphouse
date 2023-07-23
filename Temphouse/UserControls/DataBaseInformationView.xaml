@@ -12,18 +12,11 @@
     <UserControl.DataContext>
         <vm:DataBaseInformationViewModel />
     </UserControl.DataContext>
-    <UserControl.Resources>
-        <ObjectDataProvider x:Key="DatabaseTypeEnumValues" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enums:DatabaseTypeEnum"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-    </UserControl.Resources>
     <Grid Background="Transparent">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal">
                 <Label Content="Выберите тип базы данных:" FontWeight="Bold" Foreground="White"/>
-                <ComboBox Height="20" Width="100" ItemsSource="{Binding Source={StaticResource DatabaseTypeEnumValues}}"/>
+                <ComboBox Height="20" Width="100" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType}"/>
             </StackPanel>
         </StackPanel>
     </Grid>
