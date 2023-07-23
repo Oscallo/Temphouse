@@ -2,7 +2,7 @@
 
 namespace Temphouse.ViewModels
 {
-    public class DataBaseInformationViewModel : BaseViewModel
+    public class DataBaseInformationViewModel : FillinableViewModel
     {
 
     }
