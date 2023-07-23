@@ -26,7 +26,7 @@ namespace Temphouse.ViewModels
         {
             get
             {
-                return Enum.GetValues(typeof(DatabaseTypeEnum)).Cast<DatabaseTypeEnum>();
+                return Enum.GetValues(typeof(DatabaseTypeEnum)).Cast<DatabaseTypeEnum>().Where(e => e != DatabaseTypeEnum.None);
             }
         }
     }
