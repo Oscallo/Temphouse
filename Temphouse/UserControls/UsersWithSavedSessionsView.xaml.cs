@@ -28,7 +28,6 @@ namespace Temphouse.UserControls
             InitializeComponent();
 
             _FindParent();
-
         }
 
         private void _FindParent()
