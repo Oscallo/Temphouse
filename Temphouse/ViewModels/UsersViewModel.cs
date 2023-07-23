@@ -89,7 +89,7 @@ namespace Temphouse.ViewModels
 
         public UsersViewModel() : this(UserSettingsAdapter.Instance.Sessions.ToIList())
         {
-            // Если унжно создать для тестирования
+            // Если нужно создать для тестирования
             //if (Users.Count == 0) 
             //{
             //    Users = DevMethods.GenerateBlankedAuthorizedUserModel(2);
