@@ -5,19 +5,12 @@
         xmlns:ui="clr-namespace:CoreLand.UI.CustomControls;assembly=CoreLand.UI"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:com="clr-namespace:Temphouse.Modules.Commands"
-        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:usc="clr-namespace:Temphouse.UserControls"
         xmlns:local="clr-namespace:Temphouse.Windows"
-        xmlns:enums="clr-namespace:Temphouse.Enums"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
-        mc:Ignorable="d" IsHideable="False"
-        Title="FirstLaunchWindow" Height="450" Width="800">
-    <Window.Resources>
-        <ObjectDataProvider x:Key="DatabaseTypeEnumValues" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enums:DatabaseTypeEnum"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
-    </Window.Resources>
+        mc:Ignorable="d" IsHideable="False" WindowStyle="ToolWindow"
+        Title="FirstLaunchWindow" Height="450" Width="400" 
+        MinHeight="450" MinWidth="400">
     <Grid>
         <!-- Заметка, валидация данных происходит на каждом этапе, а отправка же данных администратора тольков конце (или же только после установления ApplicationSettings.Instance.DatabaseConnectionType). -->
         <Grid Margin="20,50,20,50">
@@ -28,20 +21,10 @@
                     </Style>
                 </TabControl.ItemContainerStyle>
                 <TabItem>
-                    <Grid Background="Transparent">
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="Выберите тип базы данных:" FontWeight="Bold" Foreground="White"/>
-                                <ComboBox Height="20" Width="100" ItemsSource="{Binding Source={StaticResource DatabaseTypeEnumValues}}"/>
-                            </StackPanel>
-                        </StackPanel>
-
-                    </Grid>
+                    <usc:DataBaseInformationView x:Name="PART_DataBaseInformation"/>
                 </TabItem>
                 <TabItem>
-                    <Grid Background="Transparent">
-
-                    </Grid>
+                    <usc:AdministratorDataView x:Name="PART_AdministratorDataView"/>
                 </TabItem>
             </TabControl>
         </Grid>
