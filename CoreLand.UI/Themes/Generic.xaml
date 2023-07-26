@@ -8,5 +8,7 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/ExtendedWindowDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/HintableTextBoxDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/HintablePasswordBoxDefaultStyle.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/EnumSelectorDefaultStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+
 </ResourceDictionary>
