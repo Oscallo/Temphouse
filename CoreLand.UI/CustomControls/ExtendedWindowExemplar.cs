@@ -16,9 +16,16 @@ namespace CoreLand.UI.CustomControls
     /// <summary>
     /// Расширенный класс окна, наследуемый от <seealso cref="Window"/>
     /// </summary>
-    public partial class ExtendedWindow : System.Windows.Window
+    public partial class ExtendedWindow : Window
     {
         public ExtendedWindow() : base()
+        {
+            _InitializeCommandBindings();
+
+            IsHideable = (bool)IsHideableProperty.GetMetadata(typeof(ExtendedWindow)).DefaultValue;
+        }
+
+        private void _InitializeCommandBindings()
         {
             this.CommandBindings.Add(new CommandBinding(ExtendedSystemCommands.CloseWindowCommand, OnCloseWindow));
             this.CommandBindings.Add(new CommandBinding(ExtendedSystemCommands.MaximizeWindowCommand, OnMaximizeWindow, OnCanResizeWindow));

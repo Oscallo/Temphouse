@@ -2,19 +2,18 @@
 using System;
 using System.Security;
 using System.Windows;
-using System.Windows.Media;
 
 using Window = System.Windows.Window;
 
 namespace CoreLand.UI.CustomControls
 {
-    public partial class ExtendedWindow : System.Windows.Window
+    public partial class ExtendedWindow : Window
     {
         /// <summary>
         ///     DependencyProperty свойства IsHideable.
         /// </summary>
         public static readonly DependencyProperty IsHideableProperty = DependencyProperty.Register(nameof(IsHideable), typeof(bool), typeof(ExtendedWindow),
-                               new FrameworkPropertyMetadata(BooleanBoxes.TrueBox,FrameworkPropertyMetadataOptions.AffectsRender, new PropertyChangedCallback(OnIsHideableChanged), new CoerceValueCallback(VerifyAccessHideableCoercion)));
+                               new FrameworkPropertyMetadata(BooleanBoxes.TrueBox,FrameworkPropertyMetadataOptions.AffectsRender|FrameworkPropertyMetadataOptions.Inherits, new PropertyChangedCallback(OnIsHideableChanged), new CoerceValueCallback(VerifyAccessHideableCoercion)));
 
 
         /// <summary>
@@ -34,7 +33,7 @@ namespace CoreLand.UI.CustomControls
         /// Возвращает исключение, если установка свойства запрещена.
         /// </summary>
         /// <param name="d">Свойство</param>
-        /// <exception cref="FieldAccessException"/>
+        /// <exception cref="FieldAccessException"/>`
         [SecurityCritical, SecurityTreatAsSafe]
         private void VerifyApiSupported(DependencyObject d) 
         {
@@ -43,7 +42,8 @@ namespace CoreLand.UI.CustomControls
 
         private static void OnIsHideableChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            
+            ExtendedWindow extendedWindow = (ExtendedWindow)d;
+
         }
 
         static ExtendedWindow()
