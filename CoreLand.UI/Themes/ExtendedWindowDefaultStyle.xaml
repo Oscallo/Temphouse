@@ -85,7 +85,7 @@
             </Grid>
         </Grid>
         <ControlTemplate.Triggers>
-            <Trigger Property="IsHideable" Value="False">
+            <Trigger Property="ui:ExtendedWindow.IsHideable" Value="False">
                 <Setter TargetName="PART_Hide_Button" Property="Visibility" Value="Collapsed"/>
             </Trigger>
             
