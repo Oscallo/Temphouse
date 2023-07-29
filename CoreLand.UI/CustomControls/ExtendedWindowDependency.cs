@@ -16,6 +16,8 @@ namespace CoreLand.UI.CustomControls
                                new FrameworkPropertyMetadata(BooleanBoxes.TrueBox,FrameworkPropertyMetadataOptions.AffectsRender|FrameworkPropertyMetadataOptions.Inherits, new PropertyChangedCallback(OnIsHideableChanged), new CoerceValueCallback(VerifyAccessHideableCoercion)));
 
 
+
+
         /// <summary>
         /// Проверяет на запрет изменения свойства
         /// </summary>
@@ -44,7 +46,9 @@ namespace CoreLand.UI.CustomControls
         {
             ExtendedWindow extendedWindow = (ExtendedWindow)d;
 
+            extendedWindow.OnIsHideableChanged((bool)e.NewValue);
         }
+
 
         static ExtendedWindow()
         {
