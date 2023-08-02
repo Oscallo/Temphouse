@@ -8,6 +8,7 @@
              xmlns:System="clr-namespace:System;assembly=mscorlib"
              xmlns:enums="clr-namespace:Temphouse.Enums"
              xmlns:ui="clr-namespace:CoreLand.UI.CustomControls;assembly=CoreLand.UI"
+             xmlns:uiPanels="clr-namespace:CoreLand.UI.CustomControls.Panels;assembly=CoreLand.UI"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="400">
     <UserControl.DataContext>
@@ -19,7 +20,7 @@
                 <Label Content="Выберите тип базы данных:" FontWeight="Bold" Foreground="White"/>
                 <ComboBox Height="20" Width="100" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType}"/>
             </StackPanel>
-            <ui:EnumSelector ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType}"/>
+            <ui:EnumSelector Height="100" EnumType="{x:Type enums:DatabaseTypeEnum}" SelectedItem="{Binding DatabaseType}"/>
         </StackPanel>
     </Grid>
 </UserControl>
