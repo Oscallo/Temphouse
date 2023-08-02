@@ -43,10 +43,10 @@ namespace CoreLand.UI.CustomControls.Panels
         }
 
         /// <summary>
-        /// Необходимый минимальный размер
+        /// При переопределении в производном классе измеряет размер в структуре, требуемый для дочерних элементов, и определяет размер для класса, производного от <seealso cref="FrameworkElement"/>.
         /// </summary>
-        /// <param name="availableSize"></param>
-        /// <returns></returns>
+        /// <param name="availableSize">Доступный размер, который этот элемент может предоставить дочерним элементам. Можно задать бесконечное значение, указав таким образом, что элемент будет масштабироваться в соответствии с любым содержимым.</param>
+        /// <returns>Размер, определяемый данным элементом для своих потребностей во время структурирования на основе вычисления размеров дочерних элементов.</returns>
         protected override Size MeasureOverride(Size availableSize)
         {
             Size mySize = new Size(0,0);
@@ -64,10 +64,10 @@ namespace CoreLand.UI.CustomControls.Panels
         }
 
         /// <summary>
-        /// Логика расположения элементов
+        /// При переопределении в производном классе размещает дочерние элементы и определяет размер для производного от <seealso cref="FrameworkElement"/>.
         /// </summary>
-        /// <param name="finalSize"></param>
-        /// <returns></returns>
+        /// <param name="finalSize">Итоговая область в родительском элементе, которую этот элемент должен использовать для размещения себя и своих дочерних элементов.</param>
+        /// <returns>Фактический используемый размер.</returns>
         protected override Size ArrangeOverride(Size finalSize)
         {
             if (_ChildrensCount == 0) { return finalSize; }
