@@ -21,13 +21,5 @@ namespace Temphouse.ViewModels
                 OnPropertyChanged(nameof(DatabaseType));
             }
         }
-
-        public IEnumerable<DatabaseTypeEnum> DatabaseTypes
-        {
-            get
-            {
-                return Enum.GetValues(typeof(DatabaseTypeEnum)).Cast<DatabaseTypeEnum>().Where(e => e != DatabaseTypeEnum.None);
-            }
-        }
     }
 }
