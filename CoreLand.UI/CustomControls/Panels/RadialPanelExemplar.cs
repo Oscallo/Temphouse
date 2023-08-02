@@ -112,7 +112,14 @@ namespace CoreLand.UI.CustomControls.Panels
             return finalSize;
         }
 
-        private double _CalculateRadius(Point centerPanelPoint, Size finalSize, double radianStep, int childrensCount) 
+        /// <summary>
+        /// Вычисляет радиус
+        /// </summary>
+        /// <param name="centerPanelPoint">Точка центра </param>
+        /// <param name="finalSize">Итоговая область в родительском элементе, которую этот элемент должен использовать для размещения себя и своих дочерних элементов.</param>
+        /// <param name="radianStep">Шаг в радианах</param>
+        /// <returns></returns>
+        private double _CalculateRadius(Point centerPanelPoint, Size finalSize, double radianStep) 
         {
             bool isHorizontalDecrease = true;
             bool isVerticalDecrease = true;
