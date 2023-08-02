@@ -24,14 +24,14 @@ namespace CoreLand.UI.Extensions
         /// <returns>Валидность значений</returns>
         public static bool IsValid(this CornerRadius cornerRadius, bool allowNegative, bool allowNaN, bool allowPositiveInfinity, bool allowNegativeInfinity)
         {
-            double _topLeft = cornerRadius.TopLeft;
-            double _topRight = cornerRadius.TopRight;
-            double _bottomLeft = cornerRadius.BottomLeft;
-            double _bottomRight = cornerRadius.BottomRight;
+            double topLeft = cornerRadius.TopLeft;
+            double topRight = cornerRadius.TopRight;
+            double bottomLeft = cornerRadius.BottomLeft;
+            double bottomRight = cornerRadius.BottomRight;
 
             if (allowNegative == false)
             {
-                if (_topLeft < 0d || _topRight < 0d || _bottomLeft < 0d || _bottomRight < 0d)
+                if (topLeft < 0d || topRight < 0d || bottomLeft < 0d || bottomRight < 0d)
                 {
                     return (false);
                 }
@@ -39,7 +39,7 @@ namespace CoreLand.UI.Extensions
 
             if (allowNaN == false)
             {
-                if (Double.IsNaN(_topLeft) || Double.IsNaN(_topRight) || Double.IsNaN(_bottomLeft) || Double.IsNaN(_bottomRight))
+                if (Double.IsNaN(topLeft) || Double.IsNaN(topRight) || Double.IsNaN(bottomLeft) || Double.IsNaN(bottomRight))
                 {
                     return (false);
                 }
@@ -47,7 +47,7 @@ namespace CoreLand.UI.Extensions
 
             if (allowPositiveInfinity == false)
             {
-                if (Double.IsPositiveInfinity(_topLeft) || Double.IsPositiveInfinity(_topRight) || Double.IsPositiveInfinity(_bottomLeft) || Double.IsPositiveInfinity(_bottomRight))
+                if (Double.IsPositiveInfinity(topLeft) || Double.IsPositiveInfinity(topRight) || Double.IsPositiveInfinity(bottomLeft) || Double.IsPositiveInfinity(bottomRight))
                 {
                     return (false);
                 }
@@ -55,7 +55,7 @@ namespace CoreLand.UI.Extensions
 
             if (allowNegativeInfinity == false)
             {
-                if (Double.IsNegativeInfinity(_topLeft) || Double.IsNegativeInfinity(_topRight) || Double.IsNegativeInfinity(_bottomLeft) || Double.IsNegativeInfinity(_bottomRight))
+                if (Double.IsNegativeInfinity(topLeft) || Double.IsNegativeInfinity(topRight) || Double.IsNegativeInfinity(bottomLeft) || Double.IsNegativeInfinity(bottomRight))
                 {
                     return (false);
                 }
