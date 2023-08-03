@@ -1,5 +1,6 @@
 ﻿using CoreLand.UI.CustomControls.Windows;
 using CoreLand.UI.Modules.Commands;
+using CoreLand.UI.Standart.Extensions.CollectionExtensions;
 using CoreLand.UI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -7,10 +8,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Temphouse.Extensions;
 using Temphouse.Models;
 using Temphouse.Modules.Adapters;
-using Temphouse.Modules.Depelopment;
 using Temphouse.Windows;
 
 namespace Temphouse.ViewModels

@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace CoreLand.UI.Extensions
+namespace CoreLand.UI.CustomParameters
 {
     /// <summary>
     /// Расширение для <seealso cref="SystemParameters"/>
@@ -18,6 +18,6 @@ namespace CoreLand.UI.Extensions
         /// <summary>
         /// Ширина иконки
         /// </summary>
-        public static double IconWidth { get  { return _IconWidth; } }
+        public static double IconWidth { get { return _IconWidth; } }
     }
 }

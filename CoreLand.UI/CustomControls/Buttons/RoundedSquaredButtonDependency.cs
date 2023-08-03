@@ -1,4 +1,5 @@
-﻿using CoreLand.UI.Extensions;
+﻿using CoreLand.UI.Standart.Extensions;
+using CoreLand.UI.Standart.Extensions.StructExtensions;
 using System.Windows;
 
 namespace CoreLand.UI.CustomControls.Buttons

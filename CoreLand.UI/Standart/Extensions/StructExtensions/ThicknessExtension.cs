@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace CoreLand.UI.Extensions
+namespace CoreLand.UI.Standart.Extensions.StructExtensions
 {
     /// <summary>
     /// Класс расшринения <seealso cref="Thickness"/>
@@ -15,9 +15,9 @@ namespace CoreLand.UI.Extensions
         /// </summary>
         /// <param name="thickness">Thickness в который внесены значения.</param>
         /// <param name="allowNegative">Возможность установки отрицательных значений.</param>
-        /// <param name="allowNaN">Возможность установки <seealso cref="Double.NaN"/></param>
-        /// <param name="allowPositiveInfinity">Возможность установки <seealso cref="Double.PositiveInfinity"/></param>
-        /// <param name="allowNegativeInfinity">Возможность установки <seealso cref="Double.NegativeInfinity"/></param>
+        /// <param name="allowNaN">Возможность установки <seealso cref="double.NaN"/></param>
+        /// <param name="allowPositiveInfinity">Возможность установки <seealso cref="double.PositiveInfinity"/></param>
+        /// <param name="allowNegativeInfinity">Возможность установки <seealso cref="double.NegativeInfinity"/></param>
         /// <returns>Валидность значений</returns>
         public static bool IsValid(this Thickness thickness, bool allowNegative, bool allowNaN, bool allowPositiveInfinity, bool allowNegativeInfinity)
         {
@@ -34,13 +34,13 @@ namespace CoreLand.UI.Extensions
 
             if (allowNaN == false)
             {
-                if (Double.IsNaN(left) || Double.IsNaN(right) || Double.IsNaN(top) || Double.IsNaN(bottom))
+                if (double.IsNaN(left) || double.IsNaN(right) || double.IsNaN(top) || double.IsNaN(bottom))
                     return false;
             }
 
             if (allowPositiveInfinity == false)
             {
-                if (Double.IsPositiveInfinity(left) || Double.IsPositiveInfinity(right) || Double.IsPositiveInfinity(top) || Double.IsPositiveInfinity(bottom))
+                if (double.IsPositiveInfinity(left) || double.IsPositiveInfinity(right) || double.IsPositiveInfinity(top) || double.IsPositiveInfinity(bottom))
                 {
                     return false;
                 }
@@ -48,7 +48,7 @@ namespace CoreLand.UI.Extensions
 
             if (allowNegativeInfinity == false)
             {
-                if (Double.IsNegativeInfinity(left) || Double.IsNegativeInfinity(right) || Double.IsNegativeInfinity(top) || Double.IsNegativeInfinity(bottom))
+                if (double.IsNegativeInfinity(left) || double.IsNegativeInfinity(right) || double.IsNegativeInfinity(top) || double.IsNegativeInfinity(bottom))
                 {
                     return false;
                 }

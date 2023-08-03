@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace CoreLand.UI.Extensions
+namespace CoreLand.UI.Standart.Extensions.StructExtensions
 {
 
     /// <summary>
@@ -18,9 +18,9 @@ namespace CoreLand.UI.Extensions
         /// </summary>
         /// <param name="cornerRadius">CornerRadius в который внесены значения.</param>
         /// <param name="allowNegative">Возможность установки отрицательных значений.</param>
-        /// <param name="allowNaN">Возможность установки <seealso cref="Double.NaN"/></param>
-        /// <param name="allowPositiveInfinity">Возможность установки <seealso cref="Double.PositiveInfinity"/></param>
-        /// <param name="allowNegativeInfinity">Возможность установки <seealso cref="Double.NegativeInfinity"/></param>
+        /// <param name="allowNaN">Возможность установки <seealso cref="double.NaN"/></param>
+        /// <param name="allowPositiveInfinity">Возможность установки <seealso cref="double.PositiveInfinity"/></param>
+        /// <param name="allowNegativeInfinity">Возможность установки <seealso cref="double.NegativeInfinity"/></param>
         /// <returns>Валидность значений</returns>
         public static bool IsValid(this CornerRadius cornerRadius, bool allowNegative, bool allowNaN, bool allowPositiveInfinity, bool allowNegativeInfinity)
         {
@@ -33,35 +33,35 @@ namespace CoreLand.UI.Extensions
             {
                 if (topLeft < 0d || topRight < 0d || bottomLeft < 0d || bottomRight < 0d)
                 {
-                    return (false);
+                    return false;
                 }
             }
 
             if (allowNaN == false)
             {
-                if (Double.IsNaN(topLeft) || Double.IsNaN(topRight) || Double.IsNaN(bottomLeft) || Double.IsNaN(bottomRight))
+                if (double.IsNaN(topLeft) || double.IsNaN(topRight) || double.IsNaN(bottomLeft) || double.IsNaN(bottomRight))
                 {
-                    return (false);
+                    return false;
                 }
             }
 
             if (allowPositiveInfinity == false)
             {
-                if (Double.IsPositiveInfinity(topLeft) || Double.IsPositiveInfinity(topRight) || Double.IsPositiveInfinity(bottomLeft) || Double.IsPositiveInfinity(bottomRight))
+                if (double.IsPositiveInfinity(topLeft) || double.IsPositiveInfinity(topRight) || double.IsPositiveInfinity(bottomLeft) || double.IsPositiveInfinity(bottomRight))
                 {
-                    return (false);
+                    return false;
                 }
             }
 
             if (allowNegativeInfinity == false)
             {
-                if (Double.IsNegativeInfinity(topLeft) || Double.IsNegativeInfinity(topRight) || Double.IsNegativeInfinity(bottomLeft) || Double.IsNegativeInfinity(bottomRight))
+                if (double.IsNegativeInfinity(topLeft) || double.IsNegativeInfinity(topRight) || double.IsNegativeInfinity(bottomLeft) || double.IsNegativeInfinity(bottomRight))
                 {
-                    return (false);
+                    return false;
                 }
             }
 
-            return (true);
+            return true;
         }
     }
 }

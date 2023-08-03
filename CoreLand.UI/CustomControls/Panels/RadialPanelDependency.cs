@@ -1,6 +1,4 @@
-﻿using CoreLand.UI.Extensions;
-using CoreLand.UI.Modules.Boxes;
-using System;
+﻿using CoreLand.UI.Modules.Boxes;
 using System.Windows;
 using System.Windows.Controls;
 

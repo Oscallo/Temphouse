@@ -5,7 +5,7 @@
                     xmlns:com="clr-namespace:CoreLand.UI.Modules.Commands"
                     xmlns:coverter="clr-namespace:CoreLand.UI.Converters"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:ex="clr-namespace:CoreLand.UI.Extensions">
+                    xmlns:ex="clr-namespace:CoreLand.UI.Standart.Extensions">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
