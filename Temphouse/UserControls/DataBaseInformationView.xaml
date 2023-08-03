@@ -5,7 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Temphouse.UserControls"
              xmlns:vm="clr-namespace:Temphouse.ViewModels"
-             xmlns:System="clr-namespace:System;assembly=mscorlib"
              xmlns:enums="clr-namespace:Temphouse.Enums"
              xmlns:uiSelectors="clr-namespace:CoreLand.UI.CustomControls.Selectors;assembly=CoreLand.UI"
              mc:Ignorable="d" 
