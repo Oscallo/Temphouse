@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.Buttons
 {
     public partial class RoundedSquaredButton : SquaredButtonBase
     {

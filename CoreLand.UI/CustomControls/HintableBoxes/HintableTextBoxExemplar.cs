@@ -14,13 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.HintableBoxes
 {
     public partial class HintableTextBox : HintableBoxBase
     {
-        static HintableTextBox()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(HintableTextBox), new FrameworkPropertyMetadata(typeof(HintableTextBox)));
-        }
     }
 }

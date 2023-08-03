@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CoreLand.UI.Modules.Boxes;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +14,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.HintableBoxes
 {
-    public partial class SquaredButton : SquaredButtonBase
+    public partial class HintableTextBox : HintableBoxBase
     {
-        public SquaredButton() : base()
+        static HintableTextBox()
         {
-
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(HintableTextBox), new FrameworkPropertyMetadata(typeof(HintableTextBox)));
         }
     }
 }

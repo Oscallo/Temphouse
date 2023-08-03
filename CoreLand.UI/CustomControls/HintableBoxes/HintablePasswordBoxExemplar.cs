@@ -1,4 +1,4 @@
-﻿using CoreLand.UI.CustomControls.Consts;
+﻿using CoreLand.UI.CustomControls.HintableBoxes.Consts;
 using CoreLand.UI.Modules.Boxes;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.HintableBoxes
 {
     /// <summary>
     /// Спасибо за помощь в решении проблемы <seealso cref="https://stackoverflow.com/questions/17407620/custom-masked-passwordbox-in-wpf">Stackoverflow</seealso>

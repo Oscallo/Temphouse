@@ -1,7 +1,7 @@
 ﻿using CoreLand.UI.Extensions;
 using System.Windows;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.Buttons
 {
     /// <summary>
     /// Скругленная кнопка от <seealso cref="SquaredButton"/>

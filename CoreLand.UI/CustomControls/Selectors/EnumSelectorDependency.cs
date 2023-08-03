@@ -1,4 +1,4 @@
-﻿using CoreLand.UI.CustomControls.Consts;
+﻿using CoreLand.UI.CustomControls.Selectors.Consts;
 using CoreLand.UI.Enums;
 using CoreLand.UI.Modules.Managers;
 using System;

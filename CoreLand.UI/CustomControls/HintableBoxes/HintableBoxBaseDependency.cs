@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.HintableBoxes
 {
     public partial class HintableBoxBase : TextBox
     {

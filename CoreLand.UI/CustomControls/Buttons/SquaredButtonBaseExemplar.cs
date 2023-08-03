@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.Buttons
 {
     public partial class SquaredButtonBase : Button
     {

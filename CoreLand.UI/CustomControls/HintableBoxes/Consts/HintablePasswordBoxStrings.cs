@@ -1,4 +1,4 @@
-﻿namespace CoreLand.UI.CustomControls.Consts
+﻿namespace CoreLand.UI.CustomControls.HintableBoxes.Consts
 {
     public class HintablePasswordBoxStrings
     {

@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:ui="clr-namespace:CoreLand.UI.CustomControls"
+                    xmlns:uiHintableBoxes="clr-namespace:CoreLand.UI.CustomControls.HintableBoxes"
                     xmlns:fil="clr-namespace:CoreLand.UI.Modules.Filling"
                     xmlns:com="clr-namespace:CoreLand.UI.Modules.Commands"
                     xmlns:coverter="clr-namespace:CoreLand.UI.Converters"
@@ -12,7 +13,7 @@
     </ResourceDictionary.MergedDictionaries>
 
 
-    <ControlTemplate x:Key="HintableTextBoxTemplate" TargetType="{x:Type ui:HintableTextBox}">
+    <ControlTemplate x:Key="HintableTextBoxTemplate" TargetType="{x:Type uiHintableBoxes:HintableTextBox}">
         <Border x:Name="PART_Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
             <Grid>
                 <Label x:Name="PART_HintLabel" Visibility="Collapsed" Content="{TemplateBinding Hint}" Foreground="{TemplateBinding HintForeground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" FontWeight="Bold"/>
@@ -45,15 +46,15 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource {x:Type ui:HintableBoxBase}}">
+    <Style TargetType="{x:Type uiHintableBoxes:HintableTextBox}" BasedOn="{StaticResource {x:Type uiHintableBoxes:HintableBoxBase}}">
         <Setter Property="Template" Value="{DynamicResource HintableTextBoxTemplate}"/>
     </Style>
 
-    <Style x:Key="RoundedHintableTextBoxStyle" TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource RoundedHintableBoxBaseStyle}">
+    <Style x:Key="RoundedHintableTextBoxStyle" TargetType="{x:Type uiHintableBoxes:HintableTextBox}" BasedOn="{StaticResource RoundedHintableBoxBaseStyle}">
         <Setter Property="Template" Value="{DynamicResource HintableTextBoxTemplate}"/>
     </Style>
 
-    <Style x:Key="LoginHintableTextBoxStyle" TargetType="{x:Type ui:HintableTextBox}" BasedOn="{StaticResource LoginHintableBoxBaseStyle}">
+    <Style x:Key="LoginHintableTextBoxStyle" TargetType="{x:Type uiHintableBoxes:HintableTextBox}" BasedOn="{StaticResource LoginHintableBoxBaseStyle}">
         <Setter Property="Template" Value="{DynamicResource HintableTextBoxTemplate}"/>
     </Style>
 

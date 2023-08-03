@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:ui="clr-namespace:CoreLand.UI.CustomControls"
+                    xmlns:ui="clr-namespace:CoreLand.UI.CustomControls.HintableBoxes"
                     xmlns:fil="clr-namespace:CoreLand.UI.Modules.Filling"
                     xmlns:com="clr-namespace:CoreLand.UI.Modules.Commands"
                     xmlns:coverter="clr-namespace:CoreLand.UI.Converters"

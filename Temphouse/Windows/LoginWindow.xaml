@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ui="clr-namespace:CoreLand.UI.CustomControls;assembly=CoreLand.UI"
         xmlns:uiWindows="clr-namespace:CoreLand.UI.CustomControls.Windows;assembly=CoreLand.UI"
+        xmlns:uiHintableBoxes="clr-namespace:CoreLand.UI.CustomControls.HintableBoxes;assembly=CoreLand.UI"                
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temphouse.Windows"
         xmlns:views="clr-namespace:Temphouse.UserControls"
@@ -15,8 +16,8 @@
         <Grid VerticalAlignment="Top" Margin="40,80,40,0">
             <Grid x:Name="PART_FormAuthorizeGrid">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                    <ui:HintableTextBox Name="PART_LoginTextBox" Style="{DynamicResource LoginHintableTextBoxStyle}" Margin="0,00,0,20" Hint="Логин"  />
-                    <ui:HintablePasswordBox Name="PART_PasswordTextBox" Style="{DynamicResource LoginHintablePasswordBoxStyle}" Margin="0,20,0,20" Hint="Пароль" />
+                    <uiHintableBoxes:HintableTextBox Name="PART_LoginTextBox" Style="{DynamicResource LoginHintableTextBoxStyle}" Margin="0,00,0,20" Hint="Логин"  />
+                    <uiHintableBoxes:HintablePasswordBox Name="PART_PasswordTextBox" Style="{DynamicResource LoginHintablePasswordBoxStyle}" Margin="0,20,0,20" Hint="Пароль" />
                     <Button Name="AuthorizationButton" Style="{DynamicResource LoginButtonStyle}" Content="Авторизация" Click="AuthorizationButton_Click"/>
                 </StackPanel>
             </Grid>
