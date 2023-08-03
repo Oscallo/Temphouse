@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using System.Windows.Media;
 
-namespace CoreLand.UI.Modules.Helpers
+namespace CoreLand.UI.MicrosoftClasses.Helpers.Standard
 {
     /// <summary>
     /// <seealso cref="https://referencesource.microsoft.com/#PresentationFramework/src/Framework/System/Windows/Standard/DpiHelper.cs,516d4d7a84122f91"/>

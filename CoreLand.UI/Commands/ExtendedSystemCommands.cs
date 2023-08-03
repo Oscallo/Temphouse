@@ -1,9 +1,9 @@
-﻿using CoreLand.UI.Modules.Trey;
+﻿using CoreLand.UI.Trey;
 using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace CoreLand.UI.Modules.Commands
+namespace CoreLand.UI.Commands
 {
     /// <summary>
     /// Фасад от <seealso cref="SystemCommands"/>.
@@ -78,8 +78,8 @@ namespace CoreLand.UI.Modules.Commands
         /// <param name="window">Окно</param>
         /// <param name="screenLocation">Место для отображения системного меню в координатах логического экрана.</param>
         public static void ShowSystemMenu(Window window, Point screenLocation) => SystemCommands.ShowSystemMenu(window, screenLocation);
-        
-        static ExtendedSystemCommands() 
+
+        static ExtendedSystemCommands()
         {
             HideInTreyWindowCommand = new RoutedCommand(_HIDEINTREYWINDOWCOMMANDNAME, typeof(ExtendedSystemCommands));
         }
@@ -89,15 +89,15 @@ namespace CoreLand.UI.Modules.Commands
         /// </summary>
         /// <param name="window">Окно</param>
         /// <exception cref="ArgumentNullException">Значение окна = <seealso cref="Nullable"/></exception>
-        public static void HideInTreyWindow(Window window) 
+        public static void HideInTreyWindow(Window window)
         {
-            if (window == null) 
+            if (window == null)
             {
-                throw new ArgumentNullException(nameof(window));    
+                throw new ArgumentNullException(nameof(window));
             }
-            #pragma warning disable CS8602 // Разыменование вероятной пустой ссылки.
+#pragma warning disable CS8602 // Разыменование вероятной пустой ссылки.
             TreyController.Instance.HideWindow(window);
-            #pragma warning restore CS8602 // Разыменование вероятной пустой ссылки.
+#pragma warning restore CS8602 // Разыменование вероятной пустой ссылки.
         }
     }
 }

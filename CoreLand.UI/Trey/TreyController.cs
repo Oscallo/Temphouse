@@ -1,11 +1,11 @@
-﻿using CoreLand.UI.Modules.Information;
+﻿using CoreLand.UI.Reporters.Information;
 using System;
 using System.Drawing;
 using System.Windows;
 using System.Windows.Forms;
 using ApplicationWPF = System.Windows.Application;
 
-namespace CoreLand.UI.Modules.Trey
+namespace CoreLand.UI.Trey
 {
     /// <summary>
     /// Контроллер окна для вывода в трей
@@ -80,7 +80,7 @@ namespace CoreLand.UI.Modules.Trey
             {
                 _MouseLeftButtonClick();
             }
-            else if (e.Button == MouseButtons.Right) 
+            else if (e.Button == MouseButtons.Right)
             {
                 _MouseRightButtonClick();
             }
@@ -157,7 +157,7 @@ namespace CoreLand.UI.Modules.Trey
         /// Установить новое окно.
         /// </summary>
         /// <param name="window">Новое окно для сокрытия</param>
-        private void _SetWindow(Window window) 
+        private void _SetWindow(Window window)
         {
             if (_HidedWindow != null)
             {

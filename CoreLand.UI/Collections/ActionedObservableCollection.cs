@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace CoreLand.UI.Modules.Collections
+namespace CoreLand.UI.Collections
 {
     public class ActionedObservableCollection<T> : ObservableCollection<T>
     {
@@ -12,9 +12,9 @@ namespace CoreLand.UI.Modules.Collections
         public event EventHandler<NotifyCollectionChangedEventArgs> ItemReplased;
         public event EventHandler<NotifyCollectionChangedEventArgs> ItemReseted;
 
-        public ActionedObservableCollection() 
+        public ActionedObservableCollection()
         {
-            this.CollectionChanged += (sender, e) =>
+            CollectionChanged += (sender, e) =>
             {
                 if (e.Action == NotifyCollectionChangedAction.Add)
                 {
@@ -36,7 +36,7 @@ namespace CoreLand.UI.Modules.Collections
                 {
                     ItemReseted?.Invoke(this, e);
                 }
-                else 
+                else
                 {
                     throw new ArgumentOutOfRangeException(nameof(e));
                 }

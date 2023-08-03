@@ -4,7 +4,7 @@ using System.Collections;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace CoreLand.UI.Modules.Managers
+namespace CoreLand.UI.Managers.Enumeration
 {
     public class EnumerationManager
     {

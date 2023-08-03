@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows;
 
-namespace CoreLand.UI.Modules.Designer
+namespace CoreLand.UI.Reporters.Designer
 {
     public class DesignerReporter
     {
@@ -25,14 +25,14 @@ namespace CoreLand.UI.Modules.Designer
         /// Проверка на DesignMode.
         /// </summary>
         /// <returns>Возвращает true, если объект <seealso cref="DependencyObject"/> находится в режиме разработки</returns>
-        public bool IsInDesignMode(DependencyObject dependencyObject) 
+        public bool IsInDesignMode(DependencyObject dependencyObject)
         {
             return DesignerProperties.GetIsInDesignMode(dependencyObject);
         }
 
         public T GetParentExtendedWindow<T>(DependencyObject startFindObject) where T : ExtendedWindow
         {
-            return (T)ExtendedWindow.GetWindow(startFindObject);
+            return (T)Window.GetWindow(startFindObject);
         }
     }
 }

@@ -1,5 +1,8 @@
-﻿namespace CoreLand.UI.Modules.Helpers
+﻿namespace CoreLand.UI.MicrosoftClasses.Consts.OS32
 {
+    /// <summary>
+    /// https://referencesource.microsoft.com/#WindowsBase/Shared/MS/Win32/ExternDll.cs,46b4803e42c463e5
+    /// </summary>
     public static class ExternDll
     {
         public const string Activeds = "activeds.dll";

@@ -1,6 +1,6 @@
 ﻿using CoreLand.UI.CustomControls.Selectors.Consts;
 using CoreLand.UI.CustomControls.Selectors.DefaultValues.Enums;
-using CoreLand.UI.Modules.Managers;
+using CoreLand.UI.Managers.Enumeration;
 using System;
 using System.Windows;
 using System.Windows.Controls.Primitives;

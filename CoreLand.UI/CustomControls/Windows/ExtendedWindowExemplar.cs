@@ -1,7 +1,7 @@
-﻿using CoreLand.UI.MicrosoftClasses.KnownBoxes;
-using CoreLand.UI.Modules.Commands;
-using CoreLand.UI.Modules.Designer;
-using CoreLand.UI.Modules.Information;
+﻿using CoreLand.UI.Commands;
+using CoreLand.UI.MicrosoftClasses.KnownBoxes;
+using CoreLand.UI.Reporters.Designer;
+using CoreLand.UI.Reporters.Information;
 using System;
 using System.Windows;
 using System.Windows.Input;

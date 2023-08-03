@@ -2,13 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:uiButtons="clr-namespace:CoreLand.UI.CustomControls.Buttons"
                     xmlns:uiWindows="clr-namespace:CoreLand.UI.CustomControls.Windows"
-                    xmlns:fil="clr-namespace:CoreLand.UI.Modules.Filling"
-                    xmlns:com="clr-namespace:CoreLand.UI.Modules.Commands"
+                    xmlns:fil="clr-namespace:CoreLand.UI.Design.Fillings"
+                    xmlns:com="clr-namespace:CoreLand.UI.Commands"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:cp="clr-namespace:CoreLand.UI.CustomParameters">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/ThemeManager/DefaultColorScheme.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/MVVM/Models/DataTemplates.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 

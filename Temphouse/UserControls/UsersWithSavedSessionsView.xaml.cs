@@ -1,5 +1,5 @@
 ﻿using CoreLand.UI.CustomControls.Windows;
-using CoreLand.UI.Modules.Designer;
+using CoreLand.UI.Reporters.Designer;
 using System;
 using System.Collections.Generic;
 using System.Linq;

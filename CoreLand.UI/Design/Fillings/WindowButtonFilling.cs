@@ -1,7 +1,7 @@
 ﻿using CoreLand.UI.MVVM.Models;
 using FontAwesome.Sharp;
 
-namespace CoreLand.UI.Modules.Filling
+namespace CoreLand.UI.Design.Fillings
 {
     public static class WindowButtonFilling
     {
@@ -15,10 +15,10 @@ namespace CoreLand.UI.Modules.Filling
 
         private static WindowButtonModel _RestoreButtonFilling = new WindowButtonModel(IconChar.WindowRestore);
 
-        public static WindowButtonModel CloseButtonFilling 
+        public static WindowButtonModel CloseButtonFilling
         {
             get { return _CloseButtonFilling; }
-            private set 
+            private set
             {
                 _CloseButtonFilling = value;
             }
@@ -60,7 +60,7 @@ namespace CoreLand.UI.Modules.Filling
             }
         }
 
-        static WindowButtonFilling() 
+        static WindowButtonFilling()
         {
 
         }

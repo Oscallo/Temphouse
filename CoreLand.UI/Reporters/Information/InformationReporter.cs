@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Reflection;
 
-namespace CoreLand.UI.Modules.Information
+namespace CoreLand.UI.Reporters.Information
 {
     /// <summary>
     /// Фасад от <seealso cref="Assembly"/> и <seealso cref="Icon"/>
@@ -10,8 +10,8 @@ namespace CoreLand.UI.Modules.Information
     /// </summary>
     public static class InformationReporter
     {
-        #pragma warning disable CS8603 // Возможно, возврат ссылки, допускающей значение NULL.
-        #pragma warning disable CS8602 // Разыменование вероятной пустой ссылки.
+#pragma warning disable CS8603 // Возможно, возврат ссылки, допускающей значение NULL.
+#pragma warning disable CS8602 // Разыменование вероятной пустой ссылки.
 
 
         /// <summary>
@@ -30,8 +30,8 @@ namespace CoreLand.UI.Modules.Information
         /// </summary>
         public static Icon ApplicationIcon => Icon.ExtractAssociatedIcon(Assembly.GetEntryAssembly().Location);
 
-        #pragma warning restore CS8602 // Разыменование вероятной пустой ссылки.
-        #pragma warning restore CS8603 // Возможно, возврат ссылки, допускающей значение NULL.
+#pragma warning restore CS8602 // Разыменование вероятной пустой ссылки.
+#pragma warning restore CS8603 // Возможно, возврат ссылки, допускающей значение NULL.
     }
 }
 

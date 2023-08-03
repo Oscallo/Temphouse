@@ -1,7 +1,7 @@
-﻿using CoreLand.UI.CustomControls.Windows;
-using CoreLand.UI.Modules.Commands;
-using CoreLand.UI.MVVM.ViewModels;
+﻿using CoreLand.UI.Commands;
+using CoreLand.UI.CustomControls.Windows;
 using CoreLand.UI.Extensions.Standart.CollectionExtensions;
+using CoreLand.UI.MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
