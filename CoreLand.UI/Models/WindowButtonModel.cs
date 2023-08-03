@@ -1,6 +1,4 @@
 ﻿using FontAwesome.Sharp;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace CoreLand.UI.Models
 {

@@ -1,9 +1,6 @@
 ﻿using CoreLand.UI.CustomControls.Windows;
-using CoreLand.UI.Modules.Trey;
-using System;
 using System.ComponentModel;
 using System.Windows;
-using System.Windows.Media;
 
 namespace CoreLand.UI.Modules.Designer
 {

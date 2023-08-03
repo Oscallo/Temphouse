@@ -1,9 +1,8 @@
-﻿using System;
-using System.Windows;
+﻿using CoreLand.UI.Modules.Information;
+using System;
 using System.Drawing;
+using System.Windows;
 using System.Windows.Forms;
-using CoreLand.UI.Modules.Information;
-
 using ApplicationWPF = System.Windows.Application;
 
 namespace CoreLand.UI.Modules.Trey
