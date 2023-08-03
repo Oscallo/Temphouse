@@ -1,5 +1,5 @@
 ﻿using CoreLand.UI.CustomControls.Windows;
-using Temphouse.Models;
+using Temphouse.MVVM.Models;
 
 namespace Temphouse.Windows
 {

@@ -1,0 +1,89 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:Temphouse.MVVM.Models"
+                    xmlns:tc="clr-namespace:Temphouse.Converters"
+                    xmlns:uiButtons="clr-namespace:CoreLand.UI.CustomControls.Buttons;assembly=CoreLand.UI">
+
+    <!--#region Переменные -->
+
+    <sys:Double x:Key="Grid.DefaultHeight">50</sys:Double>
+    <sys:Double x:Key="Grid.DefaultWidth">50</sys:Double>
+    <sys:Double x:Key="Grid.EnteredHeight">55</sys:Double>
+    <sys:Double x:Key="Grid.EnteredWidth">55</sys:Double>
+
+    <!--#endregion-->
+
+    <Style x:Key="GridStyle" TargetType="{x:Type Grid}">
+        <Setter Property="Height" Value="{Binding Source={StaticResource Grid.DefaultHeight}}"/>
+        <Setter Property="Width" Value="{Binding Source={StaticResource Grid.DefaultWidth}}"/>
+    </Style>
+
+    <Style x:Key="IconImageStyle" TargetType="{x:Type fa:IconImage}">
+        <Setter Property="Foreground" Value="{Binding Foreground,RelativeSource={RelativeSource AncestorType=ContentControl}}"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Icon" Value="Close"/>
+    </Style>
+
+    <Style x:Key="SquaredButtonStyle" TargetType="{x:Type uiButtons:SquaredButton}">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Edge" Value="15"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <Style x:Key="AuthorizedUserModelTextBoxStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <DataTemplate DataType="{x:Type local:AuthorizedUserModel}">
+        <DataTemplate.Resources>
+            <tc:StringToFirstCharConverter x:Key="StringToFirstCharConverter"/>
+        </DataTemplate.Resources>
+        <Grid Style="{DynamicResource GridStyle}" Margin="5,10,5,10">
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Height" From="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualHeight}" To="{Binding Source={StaticResource Grid.EnteredHeight}}" Duration="0:0:0.1" />
+                            <DoubleAnimation Storyboard.TargetProperty="Width" From="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualWidth}" To="{Binding Source={StaticResource Grid.EnteredWidth}}" Duration="0:0:0.1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Height" From="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualHeight}" To="{Binding Source={StaticResource Grid.DefaultHeight}}" Duration="0:0:0.1" />
+                            <DoubleAnimation Storyboard.TargetProperty="Width" From="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualWidth}" To="{Binding Source={StaticResource Grid.DefaultWidth}}" Duration="0:0:0.1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Height" From="0" To="{Binding Source={StaticResource Grid.DefaultHeight}}" Duration="0:0:0.5" />
+                            <DoubleAnimation Storyboard.TargetProperty="Width" From="0" To="{Binding Source={StaticResource Grid.DefaultWidth}}" Duration="0:0:0.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Grid.Triggers>
+            <Button Command="{Binding Path=DataContext.SetSessionCommand, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding Session}">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Style="{DynamicResource AuthorizedUserModelTextBoxStyle}" Text="{Binding UserWithoutPasswordModel.Name, Converter={StaticResource StringToFirstCharConverter}}"/>
+                        <TextBlock Style="{DynamicResource AuthorizedUserModelTextBoxStyle}" Text="{Binding UserWithoutPasswordModel.Family, Converter={StaticResource StringToFirstCharConverter}}"/>
+                    </StackPanel>
+                </Grid>
+            </Button>
+            <uiButtons:SquaredButton Style="{DynamicResource SquaredButtonStyle}" Command="{Binding Path=DataContext.RemoveSessionCommand, RelativeSource={RelativeSource AncestorType=UserControl,Mode=FindAncestor}}" CommandParameter="{Binding Session}">
+                <fa:IconImage Style="{DynamicResource IconImageStyle}"/>
+            </uiButtons:SquaredButton>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

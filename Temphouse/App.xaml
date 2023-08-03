@@ -22,7 +22,7 @@
                 <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Themes/Generic.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Styles/Generic.xaml"/>
 
-                <ResourceDictionary Source="pack://application:,,,/Temphouse;component/Models/DataTemplates/Generic.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Temphouse;component/MVVM/Models/DataTemplates/Generic.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
         </ResourceDictionary>

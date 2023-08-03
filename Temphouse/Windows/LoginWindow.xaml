@@ -6,7 +6,7 @@
         xmlns:uiHintableBoxes="clr-namespace:CoreLand.UI.CustomControls.HintableBoxes;assembly=CoreLand.UI"                
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temphouse.Windows"
-        xmlns:views="clr-namespace:Temphouse.UserControls"
+        xmlns:views="clr-namespace:Temphouse.MVVM.Views"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
         mc:Ignorable="d" WindowStyle="ToolWindow" IsHideable="False"
         Title="Авторизация" Height="500" Width="300"

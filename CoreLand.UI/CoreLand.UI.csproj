@@ -17,6 +17,7 @@
     <Folder Include="Converters\" />
     <Folder Include="MVVM\Models\Interfaces\" />
     <Folder Include="MVVM\Views\" />
+    <Folder Include="UserControls\" />
   </ItemGroup>
 
 </Project>

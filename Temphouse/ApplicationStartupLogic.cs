@@ -1,5 +1,5 @@
 ﻿using System;
-using Temphouse.Modules.Adapters;
+using Temphouse.DataAccess.Adapters.Subject;
 
 namespace Temphouse
 {
