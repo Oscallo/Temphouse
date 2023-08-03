@@ -5,7 +5,7 @@ using System.Windows;
 
 using Window = System.Windows.Window;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.Windows
 {
     public partial class ExtendedWindow : Window
     {

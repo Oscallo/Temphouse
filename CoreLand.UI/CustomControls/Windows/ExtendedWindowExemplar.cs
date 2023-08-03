@@ -8,7 +8,7 @@ using System.Windows.Input;
 using Window = System.Windows.Window;
 
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.Windows
 {
     /// <summary>
     /// Расширенный класс окна, наследуемый от <seealso cref="Window"/>

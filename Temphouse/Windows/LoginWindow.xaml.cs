@@ -1,4 +1,4 @@
-﻿using CoreLand.UI.CustomControls;
+﻿using CoreLand.UI.CustomControls.Windows;
 using System.Windows;
 using Temphouse.Models;
 using Temphouse.Modules.Adapters;

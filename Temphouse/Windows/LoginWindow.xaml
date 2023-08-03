@@ -1,8 +1,9 @@
-﻿<ui:ExtendedWindow x:Class="Temphouse.Windows.LoginWindow"
+﻿<uiWindows:ExtendedWindow x:Class="Temphouse.Windows.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ui="clr-namespace:CoreLand.UI.CustomControls;assembly=CoreLand.UI"
+        xmlns:uiWindows="clr-namespace:CoreLand.UI.CustomControls.Windows;assembly=CoreLand.UI"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temphouse.Windows"
         xmlns:views="clr-namespace:Temphouse.UserControls"
@@ -24,4 +25,4 @@
             <views:UsersWithSavedSessionsView x:Name="PART_AuthorizeUsersGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15"/>
         </Grid>
     </Grid>
-</ui:ExtendedWindow>
+</uiWindows:ExtendedWindow>

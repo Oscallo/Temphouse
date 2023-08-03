@@ -1,4 +1,5 @@
-﻿using CoreLand.UI.Modules.Boxes;
+﻿using CoreLand.UI.CustomControls.Consts;
+using CoreLand.UI.Modules.Boxes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,9 @@ namespace CoreLand.UI.CustomControls
     /// <summary>
     /// Спасибо за помощь в решении проблемы <seealso cref="https://stackoverflow.com/questions/17407620/custom-masked-passwordbox-in-wpf">Stackoverflow</seealso>
     /// </summary>
-    [TemplatePart(Name = HintablePasswordBox.BUTTONXAMLNAME, Type = typeof(Button))]
+    [TemplatePart(Name = HintablePasswordBoxStrings.ButtonXAMLName, Type = typeof(Button))]
     public partial class HintablePasswordBox : HintableBoxBase
     {
-        public const string BUTTONXAMLNAME = "PART_IsPasswordMaskedButton";
-
         public SecureString Password
         {
             get {return (SecureString)GetValue(PasswordProperty);}
@@ -176,8 +175,8 @@ namespace CoreLand.UI.CustomControls
 
         private void _InitializeTemplateEvents()
         {
-            ((Button)Template.FindName(HintablePasswordBox.BUTTONXAMLNAME, this)).PreviewMouseDown += HintablePasswordBox_MouseLeftButtonDown;
-            ((Button)Template.FindName(HintablePasswordBox.BUTTONXAMLNAME, this)).PreviewMouseUp += HintablePasswordBox_MouseLeftButtonUp;
+            ((Button)Template.FindName(HintablePasswordBoxStrings.ButtonXAMLName, this)).PreviewMouseDown += HintablePasswordBox_MouseLeftButtonDown;
+            ((Button)Template.FindName(HintablePasswordBoxStrings.ButtonXAMLName, this)).PreviewMouseUp += HintablePasswordBox_MouseLeftButtonUp;
         }
 
         private void _InitializeEvents() 
@@ -212,8 +211,8 @@ namespace CoreLand.UI.CustomControls
             PreviewKeyDown -= _OnPreviewKeyDown;
             Loaded -= (_, __) =>
             {
-                ((Button)Template.FindName(HintablePasswordBox.BUTTONXAMLNAME, this)).MouseLeftButtonDown -= HintablePasswordBox_MouseLeftButtonDown;
-                ((Button)Template.FindName(HintablePasswordBox.BUTTONXAMLNAME, this)).MouseLeftButtonUp -= HintablePasswordBox_MouseLeftButtonUp;
+                ((Button)Template.FindName(HintablePasswordBoxStrings.ButtonXAMLName, this)).MouseLeftButtonDown -= HintablePasswordBox_MouseLeftButtonDown;
+                ((Button)Template.FindName(HintablePasswordBoxStrings.ButtonXAMLName, this)).MouseLeftButtonUp -= HintablePasswordBox_MouseLeftButtonUp;
             };
         }
 

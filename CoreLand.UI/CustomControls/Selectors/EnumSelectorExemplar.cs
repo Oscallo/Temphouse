@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Windows.Controls.Primitives;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.Selectors
 {
     public partial class EnumSelector : Selector
     {

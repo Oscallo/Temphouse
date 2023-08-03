@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:ui="clr-namespace:CoreLand.UI.CustomControls"
-                    xmlns:managers="clr-namespace:CoreLand.UI.Modules.Managers"
+                    xmlns:ui="clr-namespace:CoreLand.UI.CustomControls.Selectors"
                     xmlns:uiPanels="clr-namespace:CoreLand.UI.CustomControls.Panels">
 
     <ResourceDictionary.MergedDictionaries>

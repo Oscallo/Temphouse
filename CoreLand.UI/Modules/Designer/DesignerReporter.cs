@@ -1,4 +1,4 @@
-﻿using CoreLand.UI.CustomControls;
+﻿using CoreLand.UI.CustomControls.Windows;
 using CoreLand.UI.Modules.Trey;
 using System;
 using System.ComponentModel;

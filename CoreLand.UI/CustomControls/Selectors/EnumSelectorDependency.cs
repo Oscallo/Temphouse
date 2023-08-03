@@ -1,11 +1,12 @@
-﻿using CoreLand.UI.Enums;
+﻿using CoreLand.UI.CustomControls.Consts;
+using CoreLand.UI.Enums;
 using CoreLand.UI.Modules.Managers;
 using System;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
-namespace CoreLand.UI.CustomControls
+namespace CoreLand.UI.CustomControls.Selectors
 {
     public partial class EnumSelector : Selector
     {
@@ -24,7 +25,7 @@ namespace CoreLand.UI.CustomControls
         private static bool EnumTypeValidation(object value)
         {
             if (value == null) { return false; }
-            if ((((Type)value).BaseType).FullName == "System.Enum") { return true; }
+            if ((((Type)value).BaseType).FullName == EnumSelectorStrings.EnumBaseTypeFullName) { return true; }
             return true;
         }
 

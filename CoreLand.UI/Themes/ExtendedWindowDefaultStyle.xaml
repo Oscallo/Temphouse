@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:ui="clr-namespace:CoreLand.UI.CustomControls"
+                    xmlns:uiWindows="clr-namespace:CoreLand.UI.CustomControls.Windows"
                     xmlns:fil="clr-namespace:CoreLand.UI.Modules.Filling"
                     xmlns:com="clr-namespace:CoreLand.UI.Modules.Commands"
                     xmlns:coverter="clr-namespace:CoreLand.UI.Converters"
@@ -55,7 +56,7 @@
         </Style.Triggers>
     </Style>
 
-    <ControlTemplate x:Key="DefaultExtendedWindowTemplate" TargetType="{x:Type ui:ExtendedWindow}">
+    <ControlTemplate x:Key="DefaultExtendedWindowTemplate" TargetType="{x:Type uiWindows:ExtendedWindow}">
         <Grid>
             <Grid x:Name="PART_ExternalGrid" Background="{TemplateBinding Background}">
                 <Grid.RowDefinitions>
@@ -85,7 +86,7 @@
             </Grid>
         </Grid>
         <ControlTemplate.Triggers>
-            <Trigger Property="ui:ExtendedWindow.IsHideable" Value="False">
+            <Trigger Property="uiWindows:ExtendedWindow.IsHideable" Value="False">
                 <Setter TargetName="PART_Hide_Button" Property="Visibility" Value="Collapsed"/>
             </Trigger>
             
@@ -116,7 +117,7 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
-    <Style TargetType="{x:Type ui:ExtendedWindow}">
+    <Style TargetType="{x:Type uiWindows:ExtendedWindow}">
         <Setter Property="Background" Value="{DynamicResource Window.Static.Background}"/>
         <Setter Property="Foreground" Value="{DynamicResource Window.Static.Foreground}"/>
         <Setter Property="Template" Value="{DynamicResource DefaultExtendedWindowTemplate}"/>
