@@ -9,7 +9,7 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/Theme/DefaultColorScheme.xaml"/>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/MVVM/Models/DataTemplates.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/MVVM/Models/DataTemplates/Generic.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <!--#region Переменные -->
