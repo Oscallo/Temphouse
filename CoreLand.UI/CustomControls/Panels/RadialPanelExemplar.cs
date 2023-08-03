@@ -19,27 +19,15 @@ namespace CoreLand.UI.CustomControls.Panels
         private int _ChildrensCount => Children.Count;
 
         public double Radius 
-        {
-            get
-            {
-                return (double)GetValue(RadiusProperty);
-            }
-            set
-            {
-                SetValue(RadiusProperty, value);
-            }
+        { 
+            get { return (double)GetValue(RadiusProperty); }
+            set { SetValue(RadiusProperty, value); }
         }
 
         public bool IsAutoGenerateRadius
         {
-            get
-            {
-                return (bool)GetValue(IsAutoGenerateRadiusProperty);
-            }
-            set
-            {
-                SetValue(IsAutoGenerateRadiusProperty, BooleanBoxes.Box(value));
-            }
+            get { return (bool)GetValue(IsAutoGenerateRadiusProperty); }
+            set { SetValue(IsAutoGenerateRadiusProperty, BooleanBoxes.Box(value)); }
         }
 
         /// <summary>

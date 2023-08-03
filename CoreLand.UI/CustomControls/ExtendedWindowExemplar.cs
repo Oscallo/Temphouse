@@ -117,10 +117,7 @@ namespace CoreLand.UI.CustomControls
         /// <returns>Возвращает true, если объект <seealso cref="Window"/> находится в режиме разработки</returns>
         public bool IsInDesignMode
         {
-            get
-            {
-                return DesignerReporter.Instance.IsInDesignMode(this);
-            }
+            get { return DesignerReporter.Instance.IsInDesignMode(this); }
         }
 
 
@@ -129,14 +126,8 @@ namespace CoreLand.UI.CustomControls
         /// </summary>
         public bool IsHideable
         {
-            get 
-            {
-                return (bool)GetValue(IsHideableProperty); 
-            }
-            set 
-            {
-                SetValue(IsHideableProperty, BooleanBoxes.Box(value)); 
-            }
+            get { return (bool)GetValue(IsHideableProperty); }
+            set { SetValue(IsHideableProperty, BooleanBoxes.Box(value)); }
         }
 
         private void OnIsHideableChanged(bool isHideable)
