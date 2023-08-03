@@ -3,7 +3,7 @@
                     xmlns:local="clr-namespace:CoreLand.UI.CustomControls.Buttons">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/ThemeManager/DefaultColorScheme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/Theme/DefaultColorScheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <!--#region Цветовая схема -->

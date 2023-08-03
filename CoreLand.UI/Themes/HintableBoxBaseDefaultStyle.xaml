@@ -4,7 +4,7 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/ThemeManager/DefaultColorScheme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/Theme/DefaultColorScheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <!--#region Переменные -->
