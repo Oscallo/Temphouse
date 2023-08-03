@@ -6,7 +6,7 @@
                     xmlns:com="clr-namespace:CoreLand.UI.Modules.Commands"
                     xmlns:coverter="clr-namespace:CoreLand.UI.Converters"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:ex="clr-namespace:CoreLand.UI.Standart.Extensions">
+                    xmlns:cp="clr-namespace:CoreLand.UI.CustomParameters">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
@@ -18,8 +18,8 @@
     <sys:Double x:Key="Window.HeaderBar.HeaderHeight">65</sys:Double>
     <x:Static x:Key="Window.HeaderBar.HeaderZIndex" Member="sys:Int32.MaxValue" />
 
-    <x:Static x:Key="Window.HeaderBar.HeaderIconHeight" Member="ex:CustomSystemParameters.IconHeight"/>
-    <x:Static x:Key="Window.HeaderBar.HeaderIconWidth" Member="ex:CustomSystemParameters.IconWidth"/>
+    <x:Static x:Key="Window.HeaderBar.HeaderIconHeight" Member="cp:CustomSystemParameters.IconHeight"/>
+    <x:Static x:Key="Window.HeaderBar.HeaderIconWidth" Member="cp:CustomSystemParameters.IconWidth"/>
 
     <!--#endregion-->
 
