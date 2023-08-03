@@ -83,7 +83,7 @@ namespace CoreLand.UI.CustomControls.Panels
             centerPanelPoint = _GetCenterPanel(finalSize);
             if (IsAutoGenerateRadius == true)
             {
-                radius = _CalculateRadius(centerPanelPoint, finalSize, radianStep, _ChildrensCount);
+                radius = _CalculateRadius(centerPanelPoint, finalSize, radianStep);
             }
             else 
             {
