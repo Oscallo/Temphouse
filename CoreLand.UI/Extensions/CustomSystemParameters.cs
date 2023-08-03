@@ -13,23 +13,11 @@ namespace CoreLand.UI.Extensions
         /// <summary>
         /// Высота иконки
         /// </summary>
-        public static double IconHeight
-        {
-            get
-            {
-                return _IconHeight;
-            }
-        }
+        public static double IconHeight { get { return _IconHeight; } }
 
         /// <summary>
         /// Ширина иконки
         /// </summary>
-        public static double IconWidth
-        {
-            get
-            {
-                return _IconWidth;
-            }
-        }
+        public static double IconWidth { get  { return _IconWidth; } }
     }
 }
