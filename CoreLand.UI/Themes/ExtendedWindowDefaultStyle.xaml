@@ -4,7 +4,6 @@
                     xmlns:uiWindows="clr-namespace:CoreLand.UI.CustomControls.Windows"
                     xmlns:fil="clr-namespace:CoreLand.UI.Modules.Filling"
                     xmlns:com="clr-namespace:CoreLand.UI.Modules.Commands"
-                    xmlns:coverter="clr-namespace:CoreLand.UI.Converters"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:cp="clr-namespace:CoreLand.UI.CustomParameters">
 

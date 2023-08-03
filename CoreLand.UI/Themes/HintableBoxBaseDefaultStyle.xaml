@@ -1,11 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:ui="clr-namespace:CoreLand.UI.CustomControls.HintableBoxes"
-                    xmlns:fil="clr-namespace:CoreLand.UI.Modules.Filling"
-                    xmlns:com="clr-namespace:CoreLand.UI.Modules.Commands"
-                    xmlns:coverter="clr-namespace:CoreLand.UI.Converters"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                    xmlns:ex="clr-namespace:CoreLand.UI.Standart.Extensions">
+                    xmlns:uiHintableBoxes="clr-namespace:CoreLand.UI.CustomControls.HintableBoxes"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Modules/ThemeManager/DefaultColorScheme.xaml"/>
@@ -41,7 +37,7 @@
     
     <!--#endregion-->
 
-    <Style TargetType="{x:Type ui:HintableBoxBase}">
+    <Style TargetType="{x:Type uiHintableBoxes:HintableBoxBase}">
         <Setter Property="Background" Value="{DynamicResource HintableBoxBase.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource HintableBoxBase.Static.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource HintableBoxBase.Static.Foreground}"/>
@@ -87,7 +83,7 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="RoundedHintableBoxBaseStyle" TargetType="{x:Type ui:HintableBoxBase}" BasedOn="{StaticResource {x:Type ui:HintableBoxBase}}">
+    <Style x:Key="RoundedHintableBoxBaseStyle" TargetType="{x:Type uiHintableBoxes:HintableBoxBase}" BasedOn="{StaticResource {x:Type uiHintableBoxes:HintableBoxBase}}">
         <Style.Resources>
             <Style TargetType="Border">
                 <Setter Property="CornerRadius" Value="10" />
@@ -95,7 +91,7 @@
         </Style.Resources>
     </Style>
 
-    <Style x:Key="LoginHintableBoxBaseStyle" TargetType="{x:Type ui:HintableBoxBase}" BasedOn="{StaticResource RoundedHintableBoxBaseStyle}">
+    <Style x:Key="LoginHintableBoxBaseStyle" TargetType="{x:Type uiHintableBoxes:HintableBoxBase}" BasedOn="{StaticResource RoundedHintableBoxBaseStyle}">
         <Setter Property="Height" Value="50" />
     </Style>
 
