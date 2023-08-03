@@ -1,4 +1,4 @@
-﻿using CoreLand.UI.Modules.Boxes;
+﻿using CoreLand.UI.MicrosoftClasses.KnownBoxes;
 using System.Windows;
 using System.Windows.Controls;
 
