@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using Temphouse.Enums;
-using Temphouse.Models;
-
-namespace Temphouse.Modules.Adapters
+﻿namespace Temphouse.Modules.Adapters
 {
     public class ApplicationSettingsAdapter : AbstractAdapter
     {

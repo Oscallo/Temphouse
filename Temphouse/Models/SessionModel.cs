@@ -1,9 +1,7 @@
 ﻿using CoreLand.UI.MVVM.Models;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
-using System.Windows.Documents;
 using Temphouse.Modules.Depelopment;
 
 namespace Temphouse.Models

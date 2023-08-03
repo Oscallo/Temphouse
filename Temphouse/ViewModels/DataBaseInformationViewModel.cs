@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Temphouse.Enums;
+﻿using Temphouse.Enums;
 using Temphouse.Modules.Adapters;
 
 namespace Temphouse.ViewModels
