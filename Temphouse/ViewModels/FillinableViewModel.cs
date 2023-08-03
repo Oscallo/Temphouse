@@ -1,4 +1,4 @@
-﻿using CoreLand.UI.ViewModels;
+﻿using CoreLand.UI.MVVM.ViewModels;
 
 namespace Temphouse.ViewModels
 {

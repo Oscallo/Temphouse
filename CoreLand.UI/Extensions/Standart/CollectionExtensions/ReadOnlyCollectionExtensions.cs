@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace CoreLand.UI.Standart.Extensions.CollectionExtensions
+namespace CoreLand.UI.Extensions.Standart.CollectionExtensions
 {
     public static class ReadOnlyCollectionExtensions
     {

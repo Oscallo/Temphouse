@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace CoreLand.UI.ViewModels
+namespace CoreLand.UI.MVVM.Models
 {
-    public class BaseViewModel : INotifyPropertyChanged, INotifyPropertyChanging
+    public partial class BaseModel : INotifyPropertyChanged, INotifyPropertyChanging
     {
         #region PropertyChanged and PropertyChanging
 

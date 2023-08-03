@@ -1,4 +1,4 @@
-﻿using CoreLand.UI.Models;
+﻿using CoreLand.UI.MVVM.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

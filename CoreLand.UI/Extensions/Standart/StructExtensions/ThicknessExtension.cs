@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace CoreLand.UI.Standart.Extensions.StructExtensions
+namespace CoreLand.UI.Extensions.Standart.StructExtensions
 {
     /// <summary>
     /// Класс расшринения <seealso cref="Thickness"/>

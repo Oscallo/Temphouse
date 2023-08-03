@@ -1,4 +1,4 @@
-﻿using CoreLand.UI.Models;
+﻿using CoreLand.UI.MVVM.Models;
 using FontAwesome.Sharp;
 
 namespace Temphouse.Models

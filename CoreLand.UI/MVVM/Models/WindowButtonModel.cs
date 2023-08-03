@@ -1,6 +1,6 @@
 ﻿using FontAwesome.Sharp;
 
-namespace CoreLand.UI.Models
+namespace CoreLand.UI.MVVM.Models
 {
     public class WindowButtonModel : CommonIconModel
     {
