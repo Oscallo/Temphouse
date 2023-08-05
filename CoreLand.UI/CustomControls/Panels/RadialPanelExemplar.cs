@@ -16,8 +16,6 @@ namespace CoreLand.UI.CustomControls.Panels
 
         }
 
-        private int _ChildrensCount => Children.Count;
-
         public double Radius 
         { 
             get { return (double)GetValue(RadiusProperty); }
@@ -70,7 +68,7 @@ namespace CoreLand.UI.CustomControls.Panels
         /// <returns>Фактический используемый размер.</returns>
         protected override Size ArrangeOverride(Size finalSize)
         {
-            if (_ChildrensCount == 0) { return finalSize; }
+            if (Children.Count == 0) { return finalSize; }
 
             Point centerPanelPoint;
             double elementRadian = 0;
@@ -79,7 +77,7 @@ namespace CoreLand.UI.CustomControls.Panels
             double radiusX = 0;
             double radiusY = 0;
 
-            radianStep = (_MaxAngle / _ChildrensCount) * _RadianCoef;
+            radianStep = (_MaxAngle / Children.Count) * _RadianCoef;
             centerPanelPoint = _GetCenterPanel(finalSize);
             if (IsAutoGenerateRadius == true)
             {
@@ -124,7 +122,7 @@ namespace CoreLand.UI.CustomControls.Panels
             bool isHorizontalDecrease = true;
             bool isVerticalDecrease = true;
 
-            if (_ChildrensCount < 3)
+            if (Children.Count < 3)
             {
                 isVerticalDecrease = false;
             }
