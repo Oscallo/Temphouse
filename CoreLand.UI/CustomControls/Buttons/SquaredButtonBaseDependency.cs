@@ -35,7 +35,7 @@ namespace CoreLand.UI.CustomControls.Buttons
         private static bool IsEdgeValid(object value)
         {
             double doubleValue = (double)value;
-            return (Double.IsNaN(doubleValue)) || (doubleValue >= 0.0d && !Double.IsPositiveInfinity(doubleValue));
+            return (Double.IsNaN(doubleValue) == true) || (doubleValue >= 0.0d && Double.IsPositiveInfinity(doubleValue) == false);
         }
 
         static SquaredButtonBase()
