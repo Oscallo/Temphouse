@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Media3D;
 
 namespace CoreLand.UI.CustomControls.Panels
 {
@@ -21,6 +22,18 @@ namespace CoreLand.UI.CustomControls.Panels
         { 
             get { return (double)GetValue(RadiusProperty); }
             set { SetValue(RadiusProperty, value); }
+        }
+
+        public double MinRadius
+        {
+            get { return (double)GetValue(MinRadiusProperty); }
+            set { SetValue(MinRadiusProperty, value); }
+        }
+
+        public double MaxRadius
+        {
+            get { return (double)GetValue(MaxRadiusProperty); }
+            set { SetValue(MaxRadiusProperty, value); }
         }
 
         public bool IsAutoGenerateRadius
@@ -145,7 +158,9 @@ namespace CoreLand.UI.CustomControls.Panels
                     // На сколько вылез за пределы элемента
                     double goingBeyondX = coordinateElement.X + elem.DesiredSize.Width - possibleWidth;
 
-                    radius -= goingBeyondX;
+                    if ((radius - goingBeyondX > this.MinRadius) && (radius - goingBeyondX < this.MaxRadius)) { radius -= goingBeyondX; }
+                    else if (radius - goingBeyondX > this.MinRadius) { radius = MinRadius; }
+                    else if (radius - goingBeyondX < this.MaxRadius) { radius = MaxRadius; }
                 }
 
                 if ((coordinateElement.Y + elem.DesiredSize.Height > possibleHeight) && (isVerticalDecrease == true))
@@ -153,7 +168,9 @@ namespace CoreLand.UI.CustomControls.Panels
                     // На сколько вылез за пределы элемента
                     double goingBeyondY = coordinateElement.Y + elem.DesiredSize.Height - possibleHeight;
 
-                    radius -= goingBeyondY;
+                    if ((radius - goingBeyondY > this.MinRadius) && (radius - goingBeyondY < this.MaxRadius)) { radius -= goingBeyondY; }
+                    else if (radius - goingBeyondY > this.MinRadius) { radius = MinRadius; }
+                    else if (radius - goingBeyondY < this.MaxRadius) { radius = MaxRadius; }
                 }
 
                 elementRadian += radianStep;
@@ -166,5 +183,22 @@ namespace CoreLand.UI.CustomControls.Panels
             return new Point(size.Width/2, size.Height/2);
         }
 
+        private void OnRadiusChanged(double newValue)
+        {
+            if (newValue < this.MinRadius) { Radius = this.MinRadius; }
+            if (newValue > this.MaxRadius) { Radius = this.MaxRadius; }
+        }
+
+        private void OnMaxRadiusChanged(double newValue)
+        {
+            if (newValue < this.Radius) { Radius = newValue; }
+            if (newValue < this.MinRadius) { MaxRadius = this.MinRadius; }
+        }
+
+        private void OnMinRadiusChanged(double newValue)
+        {
+            if (newValue > this.Radius) { Radius = newValue; }
+            if (newValue > this.MaxRadius) { MinRadius = this.MaxRadius; }
+        }
     }
 }
