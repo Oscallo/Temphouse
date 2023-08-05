@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Temphouse", "Temphouse\Temphouse.csproj", "{E5E097BD-CDF8-4435-802B-F0E729E5C88D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLand.UI", "CoreLand.UI\CoreLand.UI.csproj", "{C5FC39D8-6B78-49FD-8362-AEED56B16499}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLand.UI", "CoreLand.UI\CoreLand.UI.csproj", "{C5FC39D8-6B78-49FD-8362-AEED56B16499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLand.UI.Templates", "CoreLand.UI.Templates\CoreLand.UI.Templates.csproj", "{E288AE55-16B0-41D2-B96C-E4F15C7FA97E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C5FC39D8-6B78-49FD-8362-AEED56B16499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5FC39D8-6B78-49FD-8362-AEED56B16499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5FC39D8-6B78-49FD-8362-AEED56B16499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E288AE55-16B0-41D2-B96C-E4F15C7FA97E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E288AE55-16B0-41D2-B96C-E4F15C7FA97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E288AE55-16B0-41D2-B96C-E4F15C7FA97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E288AE55-16B0-41D2-B96C-E4F15C7FA97E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
