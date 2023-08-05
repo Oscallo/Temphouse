@@ -3,13 +3,16 @@ using System.Windows.Markup;
 
 [assembly: ThemeInfo(ResourceDictionaryLocation.None, ResourceDictionaryLocation.SourceAssembly)]
 
+[assembly: XmlnsPrefix("http://schemas.oscallo.com/coreland/ui/controls", "ui")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Buttons")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.HintableBoxes")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Panels")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Selectors")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Windows")]
 
-[assembly: XmlnsDefinition("http://development.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Buttons")]
-[assembly: XmlnsDefinition("http://development.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.HintableBoxes")]
-[assembly: XmlnsDefinition("http://development.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Panels")]
-[assembly: XmlnsDefinition("http://development.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Selectors")]
-[assembly: XmlnsDefinition("http://development.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Windows")]
+[assembly: XmlnsPrefix("http://schemas.oscallo.com/coreland/ui/mvvm", "mvvm")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/mvvm", "CoreLand.UI.MVVM.Models")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/mvvm", "CoreLand.UI.MVVM.ViewModels")]
 
-
-[assembly: XmlnsDefinition("http://development.oscallo.com/coreland/ui/mvvm", "CoreLand.UI.MVVM.Models")]
-[assembly: XmlnsDefinition("http://development.oscallo.com/coreland/ui/mvvm", "CoreLand.UI.MVVM.ViewModels")]
+[assembly: XmlnsPrefix("http://schemas.oscallo.com/coreland/ui/mvvm", "uiConv")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/mvvm", "CoreLand.UI.Converters")]
