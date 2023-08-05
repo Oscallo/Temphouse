@@ -1,9 +1,8 @@
-﻿<uiWindows:ExtendedWindow x:Class="Temphouse.Windows.LoginWindow"
+﻿<ui:ExtendedWindow x:Class="Temphouse.Windows.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:uiWindows="clr-namespace:CoreLand.UI.CustomControls.Windows;assembly=CoreLand.UI"
-        xmlns:uiHintableBoxes="clr-namespace:CoreLand.UI.CustomControls.HintableBoxes;assembly=CoreLand.UI"                
+        xmlns:ui="http://development.oscallo.com/coreland/ui/controls"           
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Temphouse.Windows"
         xmlns:views="clr-namespace:Temphouse.MVVM.Views"
@@ -15,8 +14,8 @@
         <Grid VerticalAlignment="Top" Margin="40,80,40,0">
             <Grid x:Name="PART_FormAuthorizeGrid">
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
-                    <uiHintableBoxes:HintableTextBox Name="PART_LoginTextBox" Style="{DynamicResource LoginHintableTextBoxStyle}" Margin="0,00,0,20" Hint="Логин"  />
-                    <uiHintableBoxes:HintablePasswordBox Name="PART_PasswordTextBox" Style="{DynamicResource LoginHintablePasswordBoxStyle}" Margin="0,20,0,20" Hint="Пароль" />
+                    <ui:HintableTextBox Name="PART_LoginTextBox" Style="{DynamicResource LoginHintableTextBoxStyle}" Margin="0,00,0,20" Hint="Логин"  />
+                    <ui:HintablePasswordBox Name="PART_PasswordTextBox" Style="{DynamicResource LoginHintablePasswordBoxStyle}" Margin="0,20,0,20" Hint="Пароль" />
                     <Button Name="AuthorizationButton" Style="{DynamicResource LoginButtonStyle}" Content="Авторизация" Click="AuthorizationButton_Click"/>
                 </StackPanel>
             </Grid>
@@ -25,4 +24,4 @@
             <views:UsersWithSavedSessionsView x:Name="PART_AuthorizeUsersGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="15"/>
         </Grid>
     </Grid>
-</uiWindows:ExtendedWindow>
+</ui:ExtendedWindow>

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Temphouse.MVVM.Views"
              xmlns:vm="clr-namespace:Temphouse.MVVM.ViewModels"
              xmlns:enums="clr-namespace:Temphouse.DataAccess.Enums"
-             xmlns:uiSelectors="clr-namespace:CoreLand.UI.CustomControls.Selectors;assembly=CoreLand.UI"
+             xmlns:ui="http://development.oscallo.com/coreland/ui/controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="400">
     <UserControl.DataContext>
@@ -18,7 +18,7 @@
                 <Label Content="Выберите тип базы данных:" FontWeight="Bold" Foreground="White"/>
                 <ComboBox Height="20" Width="100" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType}"/>
             </StackPanel>
-            <uiSelectors:EnumSelector Height="100" EnumType="{x:Type enums:DatabaseTypeEnum}" SelectedItem="{Binding DatabaseType}"/>
+            <ui:EnumSelector Height="100" EnumType="{x:Type enums:DatabaseTypeEnum}" SelectedItem="{Binding DatabaseType}"/>
         </StackPanel>
     </Grid>
 </UserControl>
