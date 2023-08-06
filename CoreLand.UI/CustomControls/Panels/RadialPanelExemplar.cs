@@ -41,22 +41,24 @@ namespace CoreLand.UI.CustomControls.Panels
         }
 
         /// <summary>
-        /// При переопределении в производном классе измеряет размер в структуре, требуемый для дочерних элементов, и определяет размер для класса, производного от <seealso cref="FrameworkElement"/>.
+        /// При переопределении в производном классе измеряет размер в структуре, требуемый для дочерних элементов, и определяет размер для класса, производного от <seealso cref="FrameworkElement"/>. 
+        /// (Минимальный необходимый размер для элемента)
         /// </summary>
         /// <param name="availableSize">Доступный размер, который этот элемент может предоставить дочерним элементам. Можно задать бесконечное значение, указав таким образом, что элемент будет масштабироваться в соответствии с любым содержимым.</param>
         /// <returns>Размер, определяемый данным элементом для своих потребностей во время структурирования на основе вычисления размеров дочерних элементов.</returns>
         protected override Size MeasureOverride(Size availableSize)
         {
-            Size mySize = new Size(0,0);
+            Size mySize = new Size(0, 0);
 
-            foreach (UIElement child in this.InternalChildren)
+            bool CalculationIsMinWidth = availableSize.Width == Double.PositiveInfinity;
+            bool CalculationIsMinHeight = availableSize.Height == Double.PositiveInfinity;
+
+            foreach (UIElement child in this.Children)
             {
                 child.Measure(availableSize);
                 mySize.Width += child.DesiredSize.Width;
                 mySize.Height += child.DesiredSize.Height;
             }
-
-            // КАК ПОЛУЧИТЬ НОРМАЛЬНОЕ ЗНАЧЕНИЕ????
 
             return mySize;
         }
