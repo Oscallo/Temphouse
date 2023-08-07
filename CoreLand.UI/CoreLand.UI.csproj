@@ -14,11 +14,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="AttachedProperties\Enums\" />
     <Folder Include="Converters\" />
     <Folder Include="MVVM\Models\Interfaces\" />
     <Folder Include="MVVM\Views\" />
     <Folder Include="UserControls\" />
-    <Folder Include="AttachedProperties\" />
   </ItemGroup>
 
 </Project>

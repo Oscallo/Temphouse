@@ -55,8 +55,6 @@ namespace CoreLand.UI.CustomControls.Panels
             /// В противном случае нам возможно понадобиться повторно вызвать Measure у детей, но уже не с PositiveInfinity а с конкретными значениями, чтобы уложиться в отведенные нам availableSize. Конкретная реализация этого этапа зависит от логики размещения, которую мы хотим имплементировать.
             /// Возвращаем availableSize в качестве DesiredSize, если получилось уложиться в availableSize, ну или минимальное значение, превышающее availableSize, которое позволит нашему контролу быть отрендеренным целиком
 
-
-
             Size mySize = new Size(0, 0);
 
             bool CalculationIsMinWidth = availableSize.Width == Double.PositiveInfinity;
