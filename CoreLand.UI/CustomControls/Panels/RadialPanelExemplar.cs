@@ -48,6 +48,15 @@ namespace CoreLand.UI.CustomControls.Panels
         /// <returns>Размер, определяемый данным элементом для своих потребностей во время структурирования на основе вычисления размеров дочерних элементов.</returns>
         protected override Size MeasureOverride(Size availableSize)
         {
+            /// https://habr.com/ru/articles/135990/
+            /// Оценить полный размер детей — рекурсивным вызовом Measure с параметрами Size.Width и Size.Height = double.PositiveInfinity
+            /// Оценить свой собственный полный размер с учетом размеров детей
+            /// Если влезаем в availableSize, то возвращаем значение собственного полного размера
+            /// В противном случае нам возможно понадобиться повторно вызвать Measure у детей, но уже не с PositiveInfinity а с конкретными значениями, чтобы уложиться в отведенные нам availableSize. Конкретная реализация этого этапа зависит от логики размещения, которую мы хотим имплементировать.
+            /// Возвращаем availableSize в качестве DesiredSize, если получилось уложиться в availableSize, ну или минимальное значение, превышающее availableSize, которое позволит нашему контролу быть отрендеренным целиком
+
+
+
             Size mySize = new Size(0, 0);
 
             bool CalculationIsMinWidth = availableSize.Width == Double.PositiveInfinity;
