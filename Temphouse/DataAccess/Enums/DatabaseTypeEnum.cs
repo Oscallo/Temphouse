@@ -19,6 +19,6 @@ namespace Temphouse.DataAccess.Enums
 
         [Browsable(true)]
         [Name("Локальная служба")]
-        LocalService = 2,
+        LocalService = 3,
     }
 }
