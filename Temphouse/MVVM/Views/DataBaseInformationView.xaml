@@ -13,12 +13,9 @@
         <vm:DataBaseInformationViewModel />
     </UserControl.DataContext>
     <Grid Background="Transparent">
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Выберите тип базы данных:" FontWeight="Bold" Foreground="White"/>
-                <ComboBox Height="20" Width="100" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType}"/>
-            </StackPanel>
-            <ui:EnumSelector Height="100" EnumType="{x:Type enums:DatabaseTypeEnum}" SelectedItem="{Binding DatabaseType}"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+            <Label Content="Выберите тип базы данных:" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"/>
+            <ui:EnumSelector HorizontalAlignment="Stretch" Height="180" EnumType="{x:Type enums:DatabaseTypeEnum}" SelectedItem="{Binding DatabaseType}"/>
         </StackPanel>
     </Grid>
 </UserControl>

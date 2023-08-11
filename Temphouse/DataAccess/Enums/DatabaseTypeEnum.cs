@@ -14,7 +14,11 @@ namespace Temphouse.DataAccess.Enums
         File = 1,
 
         [Browsable(true)]
-        [Name("Сетевая БД")]
-        Service = 2
+        [Name("Сетевая служба")]
+        NetworkService = 2,
+
+        [Browsable(true)]
+        [Name("Локальная служба")]
+        LocalService = 2,
     }
 }

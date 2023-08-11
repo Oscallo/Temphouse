@@ -45,13 +45,13 @@ namespace Temphouse.DataAccess.Adapters
             {
                 return new FileDataBaseAdapter();
             }
-            else if (databaseConnectionType == DatabaseTypeEnum.Service)
+            else if (databaseConnectionType == DatabaseTypeEnum.NetworkService)
             {
-                return new ServiceDataBaseAdapter();
+                return new NetworkServiceDataBaseAdapter();
             }
             else
             {
-                throw new Exception(nameof(DatabaseTypeEnum.None));
+                throw new Exception(databaseConnectionType.ToString());
             }
         }
 

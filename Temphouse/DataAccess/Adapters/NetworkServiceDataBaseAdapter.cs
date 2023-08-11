@@ -4,7 +4,7 @@ using Temphouse.MVVM.Models;
 
 namespace Temphouse.DataAccess.Adapters
 {
-    public class ServiceDataBaseAdapter : AbstractDataBaseAdapter
+    public class NetworkServiceDataBaseAdapter : AbstractDataBaseAdapter
     {
         public override SessionModel UserAuthorization(string login, string password, out bool isAuthorizationSuccess)
         {
