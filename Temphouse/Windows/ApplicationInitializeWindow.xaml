@@ -29,7 +29,10 @@
                 <Label Foreground="White" FontWeight="Bold" Content="Тип базы данных:"/>
                 <ComboBox WindowChrome.IsHitTestVisibleInChrome="True" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToName}}"/>
             </StackPanel>
-            <Label Foreground="White" FontWeight="Bold" Content="Наличие базы данных:"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Foreground="White" FontWeight="Bold" Content="Наличие базы данных:"/>
+                <ToggleButton Content="База данных уже создана"/>
+            </StackPanel>
             <TabControl Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
                 
             </TabControl>
