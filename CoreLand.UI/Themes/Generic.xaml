@@ -10,5 +10,4 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/HintablePasswordBoxDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/EnumSelectorDefaultStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-
 </ResourceDictionary>
