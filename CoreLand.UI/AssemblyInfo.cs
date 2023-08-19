@@ -9,10 +9,15 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Panels")]
 [assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Selectors")]
 [assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.CustomControls.Windows")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.AttachedProperties")]
+//[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.MVVM.Views")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/controls", "CoreLand.UI.UserControls")]
 
+/*
 [assembly: XmlnsPrefix("http://schemas.oscallo.com/coreland/ui/mvvm", "mvvm")]
 [assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/mvvm", "CoreLand.UI.MVVM.Models")]
 [assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/mvvm", "CoreLand.UI.MVVM.ViewModels")]
+*/
 
-[assembly: XmlnsPrefix("http://schemas.oscallo.com/coreland/ui/mvvm", "uiConv")]
-[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/mvvm", "CoreLand.UI.Converters")]
+[assembly: XmlnsPrefix("http://schemas.oscallo.com/coreland/ui/uiConverters", "uiConv")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/uiConverters", "CoreLand.UI.Converters")]

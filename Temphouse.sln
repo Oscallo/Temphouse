@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Temphouse", "Temphouse\Temp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLand.UI", "CoreLand.UI\CoreLand.UI.csproj", "{C5FC39D8-6B78-49FD-8362-AEED56B16499}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLand.UI.Templates", "CoreLand.UI.Templates\CoreLand.UI.Templates.csproj", "{E288AE55-16B0-41D2-B96C-E4F15C7FA97E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLand.UI.Templates", "CoreLand.UI.Templates\CoreLand.UI.Templates.csproj", "{E288AE55-16B0-41D2-B96C-E4F15C7FA97E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,12 +14,7 @@
     <Grid>
         <!-- Заметка, валидация данных происходит на каждом этапе, а отправка же данных администратора тольков конце (или же только после установления ApplicationSettings.Instance.DatabaseConnectionType). -->
         <Grid Margin="20,50,20,50">
-            <TabControl WindowChrome.IsHitTestVisibleInChrome="True" x:Name="PART_TabControl" SelectedIndex="0" Background="Transparent" BorderBrush="Transparent">
-                <TabControl.ItemContainerStyle>
-                    <Style TargetType="{x:Type TabItem}">
-                        <Setter Property="Visibility" Value="Collapsed"/>
-                    </Style>
-                </TabControl.ItemContainerStyle>
+            <TabControl WindowChrome.IsHitTestVisibleInChrome="True" x:Name="PART_TabControl" SelectedIndex="0" Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
                 <TabItem>
                     <usc:DataBaseInformationView x:Name="PART_DataBaseInformationView"/>
                 </TabItem>

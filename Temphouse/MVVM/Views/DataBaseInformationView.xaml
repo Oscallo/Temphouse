@@ -7,15 +7,30 @@
              xmlns:vm="clr-namespace:Temphouse.MVVM.ViewModels"
              xmlns:enums="clr-namespace:Temphouse.DataAccess.Enums"
              xmlns:ui="http://schemas.oscallo.com/coreland/ui/controls"
+             xmlns:uiConv="http://schemas.oscallo.com/coreland/ui/uiConverters"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="400">
+    <UserControl.Resources>
+        <uiConv:EnumElementToNameString x:Key="EnumElementToName"/>
+    </UserControl.Resources>
     <UserControl.DataContext>
         <vm:DataBaseInformationViewModel />
     </UserControl.DataContext>
     <Grid Background="Transparent">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
             <Label Content="Выберите тип базы данных:" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"/>
-            <ui:EnumSelector HorizontalAlignment="Stretch" Height="180" EnumType="{x:Type enums:DatabaseTypeEnum}" SelectedItem="{Binding DatabaseType}"/>
+            <ComboBox Height="25" Width="250" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToName}}"/>
+            <TabControl x:Name="PART_TabControl" SelectedIndex="{Binding TabControlIndex, Mode=OneWay}" Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}" Margin="20">
+                <TabItem Name="DatabaseTypeEnum_None"/>
+                <TabItem Name="DatabaseTypeEnum_File">
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Выберите файл базы данных:" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White"/>
+                        <ui:FileSelector Name="PART_FileSelector" HorizontalAlignment="Stretch" FileName="{Binding FilePath}"/>
+                    </StackPanel>
+                </TabItem>
+                <TabItem Name="DatabaseTypeEnum_NetworkService"/>
+                <TabItem Name="DatabaseTypeEnum_LocalService"/>
+            </TabControl>
         </StackPanel>
     </Grid>
 </UserControl>

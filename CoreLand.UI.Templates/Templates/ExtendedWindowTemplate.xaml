@@ -5,11 +5,10 @@
         xmlns:ui="http://schemas.oscallo.com/coreland/ui/controls" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoreLand.UI.Templates"
-        d:Template="{DynamicResource DefaultWindowTemplate}" 
+        d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
         mc:Ignorable="d"
         Title="ExtendedWindowTemplate" Height="450" Width="800">
     <Grid>
-        <!-- Добавить ;assembly=CoreLand.UI в шаблоне и пункте UI -->
-        <!-- Убрать из шаблона дублирующиеся xaml при наличии -->
+
     </Grid>
 </ui:ExtendedWindow>

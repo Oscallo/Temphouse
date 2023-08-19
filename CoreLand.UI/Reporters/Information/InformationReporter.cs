@@ -19,6 +19,10 @@ namespace CoreLand.UI.Reporters.Information
         /// </summary>
         public static string ApplicationVersion => Assembly.GetEntryAssembly().GetName().Version.ToString();
 
+        /// <summary>
+        /// Расположение папки с ПО
+        /// </summary>
+        public static string ApplicationFolder => System.AppDomain.CurrentDomain.BaseDirectory;
 
         /// <summary>
         /// Название ПО.
