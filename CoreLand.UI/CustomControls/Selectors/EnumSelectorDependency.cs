@@ -17,9 +17,12 @@ namespace CoreLand.UI.CustomControls.Selectors
 
         private static void EnumTypeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
+            throw new NotImplementedException();
+            /*
             EnumSelector enumSelector = (EnumSelector)d;
 
             enumSelector.ItemsSource = EnumerationManager.GetValues((Type)e.NewValue);
+            */
         }
 
         private static bool EnumTypeValidation(object value)

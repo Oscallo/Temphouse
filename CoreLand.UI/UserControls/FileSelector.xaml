@@ -1,0 +1,22 @@
+﻿<UserControl x:Name="PART_userControl" x:Class="CoreLand.UI.UserControls.FileSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CoreLand.UI.UserControls"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             MinHeight="30" d:DesignWidth="300">
+    <Border BorderBrush="White" BorderThickness="1">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="{Binding Height, ElementName=PART_userControl, Mode=OneWay}"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" TextAlignment="Left" VerticalAlignment="Center" Margin="3" Foreground="White" FontWeight="Bold" Text="{Binding FileName, ElementName=PART_userControl}"/>
+            <Button Grid.Column="1" ToolTip="Выбрать файл" Click="Button_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <fa:IconImage Margin="4" VerticalAlignment="Center" Height="20" Width="20" HorizontalAlignment="Center" Icon="File" Foreground="White"/>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

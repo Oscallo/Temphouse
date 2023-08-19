@@ -1,0 +1,39 @@
+﻿<ui:ExtendedWindow x:Class="Temphouse.Windows.ApplicationInitializeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ui="http://schemas.oscallo.com/coreland/ui/controls" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Temphouse.Windows"
+        d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
+        mc:Ignorable="d" IsHideable="False" WindowStyle="ToolWindow"
+        Title="ApplicationInitializeWindow" Height="450" Width="400" 
+        MinHeight="450" MinWidth="400">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Row="0">
+            <Label Foreground="White" FontWeight="Bold" Content="Инициализация базы данных:"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Foreground="White" FontWeight="Bold" Content="Тип базы данных:"/>
+                <ComboBox />
+            </StackPanel>
+            <Label Foreground="White" FontWeight="Bold" Content="Наличие базы данных:"/>
+            <TabControl Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
+                
+            </TabControl>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <Label Foreground="White" FontWeight="Bold" Content="Инициализация администратора:"/>
+            <TabControl Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
+
+            </TabControl>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+            
+        </StackPanel>
+    </Grid>
+</ui:ExtendedWindow>
