@@ -29,11 +29,11 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Button.MouseOver.Foreground}"/>
             </Trigger>
-            
+
             <Trigger Property="IsPressed" Value="True">
                 <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Button.Pressed.Foreground}"/>
             </Trigger>
-            
+
             <Trigger Property="IsEnabled" Value="False">
                 <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Button.Disabled.Foreground}"/>
             </Trigger>
