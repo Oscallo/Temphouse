@@ -7,6 +7,7 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/Separator.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/ComboBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/Button.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/TabControl.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
