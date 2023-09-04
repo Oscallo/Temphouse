@@ -120,4 +120,24 @@
 
     <!--#endregion-->
 
+    <!--#region ToggleButton цвета -->
+
+    <Color x:Key="ToggleButton.Static.BackgroundColor">#FFFFFFFF</Color>
+    <Color x:Key="ToggleButton.Static.BorderColor">Transparent</Color>
+    <Color x:Key="ToggleButton.Static.ForegroundColor">#FFFFFFFF</Color>
+
+    <Color x:Key="ToggleButton.MouseOver.BackgroundColor">#FFBEE6FD</Color>
+    <Color x:Key="ToggleButton.MouseOver.BorderColor">Transparent</Color>
+    <Color x:Key="ToggleButton.MouseOver.ForegroundColor">#FFFFFFFF</Color>
+
+    <Color x:Key="ToggleButton.Pressed.BackgroundColor">#FF2C628B</Color>
+    <Color x:Key="ToggleButton.Pressed.BorderColor">Transparent</Color>
+    <Color x:Key="ToggleButton.Pressed.ForegroundColor">#FFFFFFFF</Color>
+
+    <Color x:Key="ToggleButton.Disabled.BackgroundColor">#FFADB2B5</Color>
+    <Color x:Key="ToggleButton.Disabled.BorderColor">Transparent</Color>
+    <Color x:Key="ToggleButton.Disabled.ForegroundColor">#FF838383</Color>
+
+    <!--#endregion-->
+
 </ResourceDictionary> 

@@ -23,21 +23,21 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical" Grid.Row="0" >
+        <StackPanel Orientation="Vertical" Grid.Row="0" Margin="0,0,40,0">
             <Label Foreground="White" FontWeight="Bold" Content="Инициализация базы данных:"/>
-            <StackPanel Orientation="Horizontal">
-                <Label Foreground="White" FontWeight="Bold" Content="Тип базы данных:"/>
-                <ComboBox WindowChrome.IsHitTestVisibleInChrome="True" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToName}}"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Foreground="White" FontWeight="Bold" Content="Наличие базы данных:"/>
-                <ToggleButton Content="База данных уже создана"/>
-            </StackPanel>
+            <Grid Margin="0,0,0,3">
+                <Label HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" Content="Тип базы данных:" />
+                <ComboBox HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToName}}"/>
+            </Grid>
+            <Grid Margin="0,0,0,3">
+                <Label HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" Content="Наличие базы данных:"/>
+                <ToggleButton Margin="3" HorizontalAlignment="Right" />
+            </Grid>
             <TabControl Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
                 
             </TabControl>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="1">
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,0,40,0">
             <Label Foreground="White" FontWeight="Bold" Content="Инициализация администратора:"/>
             <TabControl Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
 
