@@ -11,7 +11,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="400">
     <UserControl.Resources>
-        <uiConv:EnumElementToNameString x:Key="EnumElementToName"/>
+        <uiConv:EnumElementToNameStringConverter x:Key="EnumElementToName"/>
     </UserControl.Resources>
     <UserControl.DataContext>
         <vm:DataBaseInformationViewModel />

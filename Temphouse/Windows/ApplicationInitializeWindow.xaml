@@ -12,7 +12,7 @@
         Title="ApplicationInitializeWindow" Height="450" Width="400" 
         MinHeight="450" MinWidth="400">
     <ui:ExtendedWindow.Resources>
-        <uiConv:EnumElementToNameString x:Key="EnumElementToName"/>
+        <uiConv:EnumElementToNameStringConverter x:Key="EnumElementToName"/>
     </ui:ExtendedWindow.Resources>
     <ui:ExtendedWindow.DataContext>
         <vm:ApplicationInitializeViewModel/>
