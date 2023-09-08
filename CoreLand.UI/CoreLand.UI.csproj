@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Folder Include="AttachedProperties\Enums\" />
+    <Folder Include="Extensions\Standart\ClassExtensions\" />
     <Folder Include="MVVM\Models\Interfaces\" />
     <Folder Include="MVVM\Views\" />
   </ItemGroup>
