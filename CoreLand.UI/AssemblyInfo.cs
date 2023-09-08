@@ -19,5 +19,8 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/mvvm", "CoreLand.UI.MVVM.ViewModels")]
 */
 
-[assembly: XmlnsPrefix("http://schemas.oscallo.com/coreland/ui/uiConverters", "uiConv")]
+[assembly: XmlnsPrefix("http://schemas.oscallo.com/coreland/ui/uiConverters", "uiConverters")]
 [assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/uiConverters", "CoreLand.UI.Converters")]
+
+[assembly: XmlnsPrefix("http://schemas.oscallo.com/coreland/ui/uiValidation", "uiValidation")]
+[assembly: XmlnsDefinition("http://schemas.oscallo.com/coreland/ui/uiValidation", "CoreLand.UI.Validation")]
