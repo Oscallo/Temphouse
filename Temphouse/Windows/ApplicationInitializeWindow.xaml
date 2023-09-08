@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ui="http://schemas.oscallo.com/coreland/ui/controls" 
         xmlns:uiConv="http://schemas.oscallo.com/coreland/ui/uiConverters"
+        xmlns:uiValid="http://schemas.oscallo.com/coreland/ui/uiValidation"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Temphouse.MVVM.ViewModels"
         xmlns:local="clr-namespace:Temphouse.Windows"
@@ -44,7 +45,7 @@
                 <ui:HintableTextBox.Text>
                     <Binding Path="AdministratorData.Name">
                         <Binding.ValidationRules>
-                            <DataErrorValidationRule />
+                            <uiValid:NotEmptyStringRule/>
                         </Binding.ValidationRules>
                     </Binding>
                 </ui:HintableTextBox.Text>
@@ -53,7 +54,7 @@
                 <ui:HintableTextBox.Text>
                     <Binding Path="AdministratorData.SecondName">
                         <Binding.ValidationRules>
-                            <DataErrorValidationRule />
+                            <uiValid:NotEmptyStringRule/>
                         </Binding.ValidationRules>
                     </Binding>
                 </ui:HintableTextBox.Text>
@@ -62,7 +63,7 @@
                 <ui:HintableTextBox.Text>
                     <Binding Path="AdministratorData.Family">
                         <Binding.ValidationRules>
-                            <DataErrorValidationRule />
+                            <uiValid:NotEmptyStringRule/>
                         </Binding.ValidationRules>
                     </Binding>
                 </ui:HintableTextBox.Text>
@@ -71,7 +72,7 @@
                 <ui:HintablePasswordBox.Password>
                     <Binding Path="AdministratorData.Password">
                         <Binding.ValidationRules>
-                            <DataErrorValidationRule />
+                            <uiValid:NotEmptyStringRule/>
                         </Binding.ValidationRules>
                     </Binding>
                 </ui:HintablePasswordBox.Password>
