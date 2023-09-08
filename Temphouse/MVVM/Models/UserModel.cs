@@ -23,10 +23,7 @@ namespace Temphouse.MVVM.Models
             get => _Id;
             private set
             {
-                if (_Id == value) { return; }
-                OnPropertyChanging(nameof(Id));
-                _Id = value;
-                OnPropertyChanged(nameof(Id));
+                SetValue(ref _Id, value);
             }
         }
 
@@ -35,10 +32,7 @@ namespace Temphouse.MVVM.Models
             get => _Password;
             set
             {
-                if (_Password == value) { return; }
-                OnPropertyChanging(nameof(Password));
-                _Password = value;
-                OnPropertyChanged(nameof(Password));
+                SetValue(ref _Password, value);
             }
         }
 
@@ -47,10 +41,7 @@ namespace Temphouse.MVVM.Models
             get => _Name;
             set
             {
-                if (_Name == value) { return; }
-                OnPropertyChanging(nameof(Name));
-                _Name = value;
-                OnPropertyChanged(nameof(Name));
+                SetValue(ref _Name, value);
             }
         }
 
@@ -59,10 +50,7 @@ namespace Temphouse.MVVM.Models
             get => _Family;
             set
             {
-                if (_Family == value) { return; }
-                OnPropertyChanging(nameof(Family));
-                _Family = value;
-                OnPropertyChanged(nameof(Family));
+                SetValue(ref _Family, value);
             }
         }
     }

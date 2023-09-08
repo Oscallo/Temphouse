@@ -27,5 +27,17 @@ namespace CoreLand.UI.MVVM.Models
         }
 
         #endregion
+
+        protected void SetValue<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        {
+            if (Equals(storage, value))
+            {
+                return;
+            }
+
+            this.OnPropertyChanging(propertyName);
+            storage = value;
+            this.OnPropertyChanged(propertyName);
+        }
     }
 }

@@ -36,10 +36,7 @@ namespace Temphouse.MVVM.Models
             get => _Id;
             set
             {
-                if (_Id == value) { return; }
-                OnPropertyChanging(nameof(Id));
-                _Id = value;
-                OnPropertyChanged(nameof(Id));
+                SetValue(ref _Id, value);
             }
         }
 
@@ -48,10 +45,7 @@ namespace Temphouse.MVVM.Models
             get => _UserId;
             set
             {
-                if (_UserId == value) { return; }
-                OnPropertyChanging(nameof(UserId));
-                _UserId = value;
-                OnPropertyChanged(nameof(UserId));
+                SetValue(ref _UserId, value);
             }
         }
 
@@ -60,10 +54,7 @@ namespace Temphouse.MVVM.Models
             get => _SessionString;
             set
             {
-                if (_SessionString == value) { return; }
-                OnPropertyChanging(nameof(SessionString));
-                _SessionString = value;
-                OnPropertyChanged(nameof(SessionString));
+                SetValue(ref _SessionString, value);
             }
         }
 

@@ -18,10 +18,7 @@ namespace Temphouse.MVVM.Models
             get => _IsSelected;
             set
             {
-                if (_IsSelected == value) { return; }
-                OnPropertyChanging(nameof(IsSelected));
-                _IsSelected = value;
-                OnPropertyChanged(nameof(IsSelected));
+                SetValue(ref _IsSelected, value);
             }
         }
 
@@ -30,10 +27,7 @@ namespace Temphouse.MVVM.Models
             get => _Title;
             set
             {
-                if (_Title == value) { return; }
-                OnPropertyChanging(nameof(Title));
-                _Title = value;
-                OnPropertyChanged(nameof(Title));
+                SetValue(ref _Title, value);
             }
         }
     }

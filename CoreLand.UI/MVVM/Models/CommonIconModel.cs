@@ -18,10 +18,7 @@ namespace CoreLand.UI.MVVM.Models
             get => _Icon;
             set
             {
-                if (_Icon == value) { return; }
-                OnPropertyChanging(nameof(Icon));
-                _Icon = value;
-                OnPropertyChanged(nameof(Icon));
+                SetValue(ref _Icon, value);
             }
         }
     }

@@ -13,10 +13,7 @@ namespace Temphouse.MVVM.Models
             get => _session;
             set
             {
-                if (_session == value) { return; }
-                OnPropertyChanging(nameof(Session));
-                _session = value;
-                OnPropertyChanged(nameof(Session));
+                SetValue(ref _session, value);
             }
         }
 
@@ -25,10 +22,7 @@ namespace Temphouse.MVVM.Models
             get => _userWithoutPassword;
             set
             {
-                if (_userWithoutPassword == value) { return; }
-                OnPropertyChanging(nameof(UserWithoutPasswordModel));
-                _userWithoutPassword = value;
-                OnPropertyChanged(nameof(UserWithoutPasswordModel));
+                SetValue(ref _userWithoutPassword, value);
             }
         }
 
