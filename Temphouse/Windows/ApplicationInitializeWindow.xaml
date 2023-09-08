@@ -38,12 +38,44 @@
 
             </TabControl>
         </StackPanel>
-        <StackPanel x:Name="SP" IsEnabled="{Binding IsDatabaseAlredyCreated, Mode=OneWay, Converter={StaticResource InvertedBoolConverter}}" Orientation="Vertical" Grid.Row="1" Margin="0,0,40,0">
+        <StackPanel IsEnabled="{Binding IsDatabaseAlredyCreated, Mode=OneWay, Converter={StaticResource InvertedBoolConverter}}" Orientation="Vertical" Grid.Row="1" Margin="0,0,40,0">
             <Label Foreground="White" FontWeight="Bold" Content="Инициализация администратора:"/>
-            <ui:HintableTextBox Hint="Имя администратора" Text="{Binding AdministratorData.Name}"/>
-            <ui:HintableTextBox Hint="Отчество администратора" Text="{Binding AdministratorData.SecondName}"/>
-            <ui:HintableTextBox Hint="Фамилия администратора" Text="{Binding AdministratorData.Family}"/>
-            <ui:HintablePasswordBox Hint="Пароль администратора" Password="{Binding AdministratorData.Password}"/>
+            <ui:HintableTextBox Margin="0,0,0,5" Height="40" Hint="Имя администратора">
+                <ui:HintableTextBox.Text>
+                    <Binding Path="AdministratorData.Name">
+                        <Binding.ValidationRules>
+                            <DataErrorValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </ui:HintableTextBox.Text>
+            </ui:HintableTextBox>
+            <ui:HintableTextBox Margin="0,0,0,5" Height="40" Hint="Отчество администратора">
+                <ui:HintableTextBox.Text>
+                    <Binding Path="AdministratorData.SecondName">
+                        <Binding.ValidationRules>
+                            <DataErrorValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </ui:HintableTextBox.Text>
+            </ui:HintableTextBox>
+            <ui:HintableTextBox Margin="0,0,0,5" Height="40" Hint="Фамилия администратора">
+                <ui:HintableTextBox.Text>
+                    <Binding Path="AdministratorData.Family">
+                        <Binding.ValidationRules>
+                            <DataErrorValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </ui:HintableTextBox.Text>
+            </ui:HintableTextBox>
+            <ui:HintablePasswordBox Margin="0,0,0,5" Height="40" Hint="Пароль администратора">
+                <ui:HintablePasswordBox.Password>
+                    <Binding Path="AdministratorData.Password">
+                        <Binding.ValidationRules>
+                            <DataErrorValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </ui:HintablePasswordBox.Password>
+            </ui:HintablePasswordBox>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
             
