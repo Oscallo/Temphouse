@@ -1,10 +1,6 @@
 ﻿using CoreLand.UI.Managers.Enumeration;
 using CoreLand.UI.MVVM.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Temphouse.DataAccess.Adapters.Subject;
 using Temphouse.DataAccess.Enums;
 
@@ -25,5 +21,19 @@ namespace Temphouse.MVVM.ViewModels
         }
 
         public Array DatabaseTypes => EnumerationManager.GetValues(typeof(DatabaseTypeEnum));
+
+        public bool IsDatabaseAlredyCreated 
+        {
+            get { return _IsDatabaseAlredyCreated; }
+            set
+            {
+                if (value == _IsDatabaseAlredyCreated) { return; }
+                OnPropertyChanging(nameof(DatabaseType));
+                _IsDatabaseAlredyCreated = value;
+                OnPropertyChanged(nameof(DatabaseType));
+            }
+        }
+
+        private bool _IsDatabaseAlredyCreated = true;
     }
 }
