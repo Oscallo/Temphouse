@@ -18,6 +18,7 @@
     <Folder Include="Extensions\Standart\ClassExtensions\" />
     <Folder Include="MVVM\Models\Interfaces\" />
     <Folder Include="MVVM\Views\" />
+    <Folder Include="Validation\Interfaces\" />
   </ItemGroup>
 
 </Project>
