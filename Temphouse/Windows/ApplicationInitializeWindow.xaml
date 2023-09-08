@@ -9,8 +9,8 @@
         xmlns:local="clr-namespace:Temphouse.Windows"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
         mc:Ignorable="d" IsHideable="False" WindowStyle="ToolWindow"
-        Title="ApplicationInitializeWindow" Height="450" Width="400" 
-        MinHeight="450" MinWidth="400">
+        Title="ApplicationInitializeWindow" Height="480" Width="400" 
+        MinHeight="480" MinWidth="400">
     <ui:ExtendedWindow.Resources>
         <uiConv:EnumElementToNameStringConverter x:Key="EnumElementToNameConverter"/>
         <uiConv:InvertedBoolConverter x:Key="InvertedBoolConverter"/>
