@@ -13,6 +13,7 @@
         MinHeight="450" MinWidth="400">
     <ui:ExtendedWindow.Resources>
         <uiConv:EnumElementToNameStringConverter x:Key="EnumElementToNameConverter"/>
+        <uiConv:InvertedBoolConverter x:Key="InvertedBoolConverter"/>
     </ui:ExtendedWindow.Resources>
     <ui:ExtendedWindow.DataContext>
         <vm:ApplicationInitializeViewModel/>
@@ -37,7 +38,7 @@
                 
             </TabControl>
         </StackPanel>
-        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="0,0,40,0">
+        <StackPanel x:Name="SP" IsEnabled="{Binding IsDatabaseAlredyCreated, Mode=OneWay, Converter={StaticResource InvertedBoolConverter}}" Orientation="Vertical" Grid.Row="1" Margin="0,0,40,0">
             <Label Foreground="White" FontWeight="Bold" Content="Инициализация администратора:"/>
             <TabControl Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
 
