@@ -18,7 +18,7 @@
     <ui:ExtendedWindow.DataContext>
         <vm:ApplicationInitializeViewModel/>
     </ui:ExtendedWindow.DataContext>
-    <Grid Margin="20">
+    <Grid Margin="20,20,20,20">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -28,21 +28,22 @@
             <Label Foreground="White" FontWeight="Bold" Content="Инициализация базы данных:"/>
             <Grid Margin="0,0,0,3">
                 <Label HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" Content="Тип базы данных:" />
-                        <ComboBox HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToNameConverter}}"/>
+                <ComboBox HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToNameConverter}}"/>
             </Grid>
             <Grid Margin="0,0,0,3">
                 <Label HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" Content="Наличие базы данных:"/>
                 <ToggleButton Margin="3" HorizontalAlignment="Right" IsChecked="{Binding IsDatabaseAlredyCreated}"/>
             </Grid>
             <TabControl Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
-                
+
             </TabControl>
         </StackPanel>
         <StackPanel x:Name="SP" IsEnabled="{Binding IsDatabaseAlredyCreated, Mode=OneWay, Converter={StaticResource InvertedBoolConverter}}" Orientation="Vertical" Grid.Row="1" Margin="0,0,40,0">
             <Label Foreground="White" FontWeight="Bold" Content="Инициализация администратора:"/>
-            <TabControl Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
-
-            </TabControl>
+            <ui:HintableTextBox Hint="Имя администратора" Text="{Binding AdministratorData.Name}"/>
+            <ui:HintableTextBox Hint="Отчество администратора" Text="{Binding AdministratorData.SecondName}"/>
+            <ui:HintableTextBox Hint="Фамилия администратора" Text="{Binding AdministratorData.Family}"/>
+            <ui:HintablePasswordBox Hint="Пароль администратора" Password="{Binding AdministratorData.Password}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
             
