@@ -34,6 +34,6 @@ namespace Temphouse.MVVM.ViewModels
             }
         }
 
-        private bool _IsDatabaseAlredyCreated = true;
+        private bool _IsDatabaseAlredyCreated = false;
     }
 }
