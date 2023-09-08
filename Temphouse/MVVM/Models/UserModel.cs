@@ -4,10 +4,11 @@ namespace Temphouse.MVVM.Models
 {
     public class UserModel : BaseModel
     {
-        private int _Id;
-        private string _Password;
-        private string _Name;
-        private string _Family;
+        private int _Id = -1;
+        private string _Password = string.Empty;
+        private string _Name = string.Empty;
+        private string _SecondName = string.Empty;
+        private string _Family = string.Empty;
 
         public UserModel() { }
 
@@ -42,6 +43,14 @@ namespace Temphouse.MVVM.Models
             set
             {
                 SetValue(ref _Name, value);
+            }
+        }
+        public string SecondName
+        {
+            get => _SecondName;
+            set
+            {
+                SetValue(ref _SecondName, value);
             }
         }
 
