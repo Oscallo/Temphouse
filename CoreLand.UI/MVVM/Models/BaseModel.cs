@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace CoreLand.UI.MVVM.Models
@@ -26,9 +27,7 @@ namespace CoreLand.UI.MVVM.Models
             }
         }
 
-        #endregion
-
-        protected void SetValue<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        protected void SetValue<T>(ref T storage, T value, IList<string> otherPropertyNames = null, [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
             {
@@ -36,8 +35,27 @@ namespace CoreLand.UI.MVVM.Models
             }
 
             this.OnPropertyChanging(propertyName);
+            if (otherPropertyNames != null)
+            {
+                foreach (var otherPropertyName in otherPropertyNames)
+                {
+                    this.OnPropertyChanging(otherPropertyName);
+                }
+            }
+
             storage = value;
+
             this.OnPropertyChanged(propertyName);
+            if (otherPropertyNames != null)
+            {
+                foreach (var otherPropertyName in otherPropertyNames)
+                {
+                    this.OnPropertyChanged(otherPropertyName);
+                }
+            }
         }
+
+        #endregion
+
     }
 }
