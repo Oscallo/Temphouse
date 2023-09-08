@@ -130,9 +130,13 @@
     <Color x:Key="ToggleButton.MouseOver.BorderColor">Transparent</Color>
     <Color x:Key="ToggleButton.MouseOver.ForegroundColor">#FFFFFFFF</Color>
 
-    <Color x:Key="ToggleButton.Pressed.BackgroundColor">#FF2C628B</Color>
+    <Color x:Key="ToggleButton.Pressed.BackgroundColor">#FF3C628B</Color>
     <Color x:Key="ToggleButton.Pressed.BorderColor">Transparent</Color>
     <Color x:Key="ToggleButton.Pressed.ForegroundColor">#FFFFFFFF</Color>
+
+    <Color x:Key="ToggleButton.Checked.BackgroundColor">#FF2C628B</Color>
+    <Color x:Key="ToggleButton.Checked.BorderColor">Transparent</Color>
+    <Color x:Key="ToggleButton.Checked.ForegroundColor">#FFFFFFFF</Color>
 
     <Color x:Key="ToggleButton.Disabled.BackgroundColor">#FFADB2B5</Color>
     <Color x:Key="ToggleButton.Disabled.BorderColor">Transparent</Color>
