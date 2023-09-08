@@ -12,7 +12,7 @@
         Title="ApplicationInitializeWindow" Height="450" Width="400" 
         MinHeight="450" MinWidth="400">
     <ui:ExtendedWindow.Resources>
-        <uiConv:EnumElementToNameStringConverter x:Key="EnumElementToName"/>
+        <uiConv:EnumElementToNameStringConverter x:Key="EnumElementToNameConverter"/>
     </ui:ExtendedWindow.Resources>
     <ui:ExtendedWindow.DataContext>
         <vm:ApplicationInitializeViewModel/>
@@ -27,7 +27,7 @@
             <Label Foreground="White" FontWeight="Bold" Content="Инициализация базы данных:"/>
             <Grid Margin="0,0,0,3">
                 <Label HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" Content="Тип базы данных:" />
-                <ComboBox HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToName}}"/>
+                        <ComboBox HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToNameConverter}}"/>
             </Grid>
             <Grid Margin="0,0,0,3">
                 <Label HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" Content="Наличие базы данных:"/>
