@@ -28,9 +28,9 @@ namespace Temphouse.MVVM.ViewModels
             set
             {
                 if (value == _IsDatabaseAlredyCreated) { return; }
-                OnPropertyChanging(nameof(DatabaseType));
+                OnPropertyChanging(nameof(IsDatabaseAlredyCreated));
                 _IsDatabaseAlredyCreated = value;
-                OnPropertyChanged(nameof(DatabaseType));
+                OnPropertyChanged(nameof(IsDatabaseAlredyCreated));
             }
         }
 
