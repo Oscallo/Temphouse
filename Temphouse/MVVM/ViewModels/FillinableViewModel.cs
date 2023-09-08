@@ -11,10 +11,7 @@ namespace Temphouse.MVVM.ViewModels
             get { return _IsFillingFinished; }
             set
             {
-                if (value == _IsFillingFinished) { return; }
-                OnPropertyChanging(nameof(IsFillingFinished));
-                _IsFillingFinished = value;
-                OnPropertyChanged(nameof(IsFillingFinished));
+                SetValue(ref _IsFillingFinished, value);
             }
         }
     }

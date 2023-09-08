@@ -29,10 +29,7 @@ namespace Temphouse.MVVM.ViewModels
             get { return _Users; }
             private set
             {
-                if (value == _Users) { return; }
-                OnPropertyChanging(nameof(Users));
-                _Users = value;
-                OnPropertyChanged(nameof(Users));
+                SetValue(ref _Users, value);
             }
         }
 

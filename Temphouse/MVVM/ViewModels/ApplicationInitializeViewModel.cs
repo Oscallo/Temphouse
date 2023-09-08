@@ -27,10 +27,7 @@ namespace Temphouse.MVVM.ViewModels
             get { return _IsDatabaseAlredyCreated; }
             set
             {
-                if (value == _IsDatabaseAlredyCreated) { return; }
-                OnPropertyChanging(nameof(IsDatabaseAlredyCreated));
-                _IsDatabaseAlredyCreated = value;
-                OnPropertyChanged(nameof(IsDatabaseAlredyCreated));
+                SetValue(ref _IsDatabaseAlredyCreated, value);
             }
         }
 

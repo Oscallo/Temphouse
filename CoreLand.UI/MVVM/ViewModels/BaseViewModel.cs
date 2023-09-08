@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace CoreLand.UI.MVVM.ViewModels
@@ -23,6 +24,33 @@ namespace CoreLand.UI.MVVM.ViewModels
             if (PropertyChanging != null)
             {
                 PropertyChanging(this, new PropertyChangingEventArgs(prop));
+            }
+        }
+        protected void SetValue<T>(ref T storage, T value, IList<string> otherPropertyNames = null, [CallerMemberName] string propertyName = null)
+        {
+            if (Equals(storage, value))
+            {
+                return;
+            }
+
+            this.OnPropertyChanging(propertyName);
+            if (otherPropertyNames != null)
+            {
+                foreach (var otherPropertyName in otherPropertyNames)
+                {
+                    this.OnPropertyChanging(otherPropertyName);
+                }
+            }
+
+            storage = value;
+
+            this.OnPropertyChanged(propertyName);
+            if (otherPropertyNames != null)
+            {
+                foreach (var otherPropertyName in otherPropertyNames)
+                {
+                    this.OnPropertyChanged(otherPropertyName);
+                }
             }
         }
 

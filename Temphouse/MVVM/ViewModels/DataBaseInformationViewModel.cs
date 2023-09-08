@@ -32,10 +32,7 @@ namespace Temphouse.MVVM.ViewModels
             get { return _FilePath; }
             set
             {
-                if (value == _FilePath) { return; }
-                OnPropertyChanging(nameof(FilePath));
-                _FilePath = value;
-                OnPropertyChanged(nameof(FilePath));
+                SetValue(ref _FilePath, value);
             }
         }
 
