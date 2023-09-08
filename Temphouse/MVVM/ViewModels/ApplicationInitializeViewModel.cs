@@ -8,6 +8,7 @@ namespace Temphouse.MVVM.ViewModels
 {
     public class ApplicationInitializeViewModel : BaseViewModel
     {
+        private bool _IsDatabaseAlredyCreated = false;
         public DatabaseTypeEnum DatabaseType
         {
             get { return UserSettingsAdapter.Instance.DatabaseConnectionType; }
