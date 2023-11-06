@@ -10,6 +10,7 @@
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/TabControl.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/ToggleButton.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/PasswordBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/TextBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Styles/StardartControls/Label.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 

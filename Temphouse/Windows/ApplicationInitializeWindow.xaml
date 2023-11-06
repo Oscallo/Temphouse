@@ -42,6 +42,7 @@
                     <Label Content="Наличие базы данных:"/>
                     <ToggleButton HorizontalAlignment="Right" IsChecked="{Binding IsDatabaseAlredyCreated}"/>
                 </Grid>
+                <ui:FileSelector/>
             </StackPanel>
         </Grid>
 

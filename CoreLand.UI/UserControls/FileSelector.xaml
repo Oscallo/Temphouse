@@ -5,18 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CoreLand.UI.UserControls"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:ap="clr-namespace:CoreLand.UI.AttachedProperties"
              mc:Ignorable="d" 
-             MinHeight="30" d:DesignWidth="300">
-    <Border BorderBrush="White" BorderThickness="1">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="{Binding Height, ElementName=PART_userControl, Mode=OneWay}"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" TextAlignment="Left" VerticalAlignment="Center" Margin="3" Foreground="White" FontWeight="Bold" Text="{Binding FileName, ElementName=PART_userControl}"/>
-            <Button Grid.Column="1" ToolTip="Выбрать файл" Click="Button_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                <fa:IconImage Margin="4" VerticalAlignment="Center" Height="20" Width="20" HorizontalAlignment="Center" Icon="File" Foreground="White"/>
-            </Button>
-        </Grid>
-    </Border>
+             MinHeight="28" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Content="Путь:"/>
+        <TextBox Grid.Column="1" Text="{Binding FileName, ElementName=PART_userControl}"/>
+        <Button Grid.Column="2" ToolTip="Выбрать файл" ap:CornerRadiusSetter.CornerRadius="18" Height="18" Width="18" Click="Button_Click" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <fa:IconImage VerticalAlignment="Center" HorizontalAlignment="Center" Icon="File" Foreground="White"/>
+        </Button>
+    </Grid>
 </UserControl>
