@@ -1,20 +1,8 @@
 ﻿using CoreLand.UI.Reporters.Information;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms.VisualStyles;
-using System.Windows.Input;
 using System.Windows.Markup;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using OpenDialogNamespace = System.Windows.Forms;
 
 namespace CoreLand.UI.UserControls
@@ -28,7 +16,6 @@ namespace CoreLand.UI.UserControls
         public static readonly DependencyProperty FileNameProperty = DependencyProperty.Register("FileName", typeof(string), typeof(FileSelector),new PropertyMetadata(InformationReporter.ApplicationFolder));
         
         public static readonly RoutedEvent FileNameChangedEvent = EventManager.RegisterRoutedEvent("FileNameChanged", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(FileSelector));
-
 
         private OpenDialogNamespace.OpenFileDialog fileDialog = new OpenDialogNamespace.OpenFileDialog();
 
