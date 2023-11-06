@@ -3,8 +3,6 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:enum="clr-namespace:CoreLand.UI.Managers.Theme.Enums">
 
-
-
     <!-- Альфа-канал перед цветом (Узнать значение можно на сайте https://rgbacolorpicker.com/rgba-to-hex)
     00 - 0%
     1A - 10%
@@ -109,58 +107,6 @@
     <SolidColorBrush x:Key="NeutralSolidColorBrush/30" Color="{DynamicResource DisabledColor/300/100}"/>
 
     <SolidColorBrush x:Key="OnNeutralSolidColorBrush/30" Color="{DynamicResource OnDisabledColor/300/100}"/>
-
-    <!--#endregion-->
-
-    
-    <!--#region Separator цвета -->
-
-    <Color x:Key="Separator.BackgroundColor">#4C4E4E4E</Color>
-    
-    <!--#endregion-->
-    
-    <!--#region SquaredButton цвета -->
-
-    <Color x:Key="SquaredButton.Static.BackgroundColor">#FFDDDDDD</Color>
-    <Color x:Key="SquaredButton.Static.BorderColor">#FF707070</Color>
-    <Color x:Key="SquaredButton.Static.ForegroundColor">Black</Color>
-
-    <Color x:Key="SquaredButton.MouseOver.BackgroundColor">#FFBEE6FD</Color>
-    <Color x:Key="SquaredButton.MouseOver.BorderColor">#FF3C7FB1</Color>
-    <Color x:Key="SquaredButton.MouseOver.ForegroundColor">White</Color>
-
-    <Color x:Key="SquaredButton.Pressed.BackgroundColor">#FFC4E5F6</Color>
-    <Color x:Key="SquaredButton.Pressed.BorderColor">#FF2C628B</Color>
-    <Color x:Key="SquaredButton.Pressed.ForegroundColor">White</Color>
-
-    <Color x:Key="SquaredButton.Disabled.BackgroundColor">#FFF4F4F4</Color>
-    <Color x:Key="SquaredButton.Disabled.BorderColor">#FFADB2B5</Color>
-    <Color x:Key="SquaredButton.Disabled.ForegroundColor">#FF838383</Color>
-
-    <!--#endregion-->
-
-    <!--#region HintableTextBox цвета -->
-
-
-    <Color x:Key="HintableBoxBase.Static.BackgroundColor">#4C206D77</Color>
-    <Color x:Key="HintableBoxBase.Static.BorderColor">#26383838</Color>
-    <Color x:Key="HintableBoxBase.Static.ForegroundColor">White</Color>
-    <Color x:Key="HintableBoxBase.Static.HintForegroundColor">#B2CACACA</Color>
-
-    <Color x:Key="HintableBoxBase.Focus.BackgroundColor">#4C206D77</Color>
-    <Color x:Key="HintableBoxBase.Focus.BorderColor">#26383838</Color>
-    <Color x:Key="HintableBoxBase.Focus.ForegroundColor">White</Color>
-    <Color x:Key="HintableBoxBase.Focus.HintForegroundColor">#FFE0DFDF</Color>
-
-    <Color x:Key="HintableBoxBase.MouseOver.BackgroundColor">#4C206D77</Color>
-    <Color x:Key="HintableBoxBase.MouseOver.BorderColor">#26383838</Color>
-    <Color x:Key="HintableBoxBase.MouseOver.ForegroundColor">White</Color>
-    <Color x:Key="HintableBoxBase.MouseOver.HintForegroundColor">#FFE0DFDF</Color>
-
-    <Color x:Key="HintableBoxBase.Disabled.BackgroundColor">#FFF4F4F4</Color>
-    <Color x:Key="HintableBoxBase.Disabled.BorderColor">#FFADB2B5</Color>
-    <Color x:Key="HintableBoxBase.Disabled.ForegroundColor">#FF838383</Color>
-    <Color x:Key="HintableBoxBase.Disabled.HintForegroundColor">#bababa</Color>
 
     <!--#endregion-->
 
