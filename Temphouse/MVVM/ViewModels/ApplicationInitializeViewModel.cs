@@ -10,6 +10,8 @@ namespace Temphouse.MVVM.ViewModels
     public class ApplicationInitializeViewModel : BaseViewModel
     {
         private bool _IsDatabaseAlredyCreated = false;
+        private bool _IsHeedCryptoOperation = true;
+        private string _DatabasePath = string.Empty;
         private UserModel _AdministratorData = new UserModel();
 
         public DatabaseTypeEnum DatabaseType
@@ -35,12 +37,30 @@ namespace Temphouse.MVVM.ViewModels
             }
         }
 
+        public bool IsHeedCryptoOperation
+        {
+            get { return _IsHeedCryptoOperation; }
+            set
+            {
+                SetValue(ref _IsHeedCryptoOperation, value);
+            }
+        }
+
         public UserModel AdministratorData 
         {
             get { return _AdministratorData; }
             set
             {
                 SetValue(ref _AdministratorData, value);
+            }
+        }
+
+        public string DatabasePath
+        {
+            get { return _DatabasePath; }
+            set
+            {
+                SetValue(ref _DatabasePath, value);
             }
         }
     }

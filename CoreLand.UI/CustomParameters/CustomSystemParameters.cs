@@ -7,8 +7,8 @@ namespace CoreLand.UI.CustomParameters
     /// </summary>
     public static class CustomSystemParameters
     {
-        private static double _IconHeight = 45;
-        private static double _IconWidth = 45;
+        private static double _IconHeight = 30;
+        private static double _IconWidth = 30;
 
         /// <summary>
         /// Высота иконки

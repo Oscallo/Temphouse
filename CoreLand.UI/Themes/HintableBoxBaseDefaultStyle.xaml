@@ -4,10 +4,6 @@
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     xmlns:ap="clr-namespace:CoreLand.UI.AttachedProperties">
 
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/Theme/DefaultColorScheme.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
-
     <!--#region Переменные -->
 
     <sys:Double x:Key="HintableBoxBase.IsEnabled.Opacity">0.56</sys:Double>

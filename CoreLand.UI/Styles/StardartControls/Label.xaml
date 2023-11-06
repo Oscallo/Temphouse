@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:convs="clr-namespace:CoreLand.UI.Converters">
+
+    <!-- Version 0.5.0 -->
+
+    <Style x:Key="HeaderLabelStyle" TargetType="{x:Type Label}">
+        <Style.Resources>
+
+            <!--#region Foreground Resources -->
+
+            <SolidColorBrush x:Key="HeaderLabelStyle.Static.Foreground" Color="{DynamicResource OnSecondaryColor/500/100}"/>
+            <SolidColorBrush x:Key="HeaderLabelStyle.Disabled.Foreground" Color="{DynamicResource OnDisabledColor/300/100}"/>
+
+            <!--#endregion-->
+
+            <!--#region Background Resources -->
+
+            <SolidColorBrush x:Key="HeaderLabelStyle.Static.Background" Color="{DynamicResource SecondaryColor/500/100}"/>
+
+            <!--#endregion-->
+            
+        </Style.Resources>
+
+        <Setter Property="Background" Value="{DynamicResource HeaderLabelStyle.Static.Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource HeaderLabelStyle.Static.Foreground}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Padding" Value="5,5,0,5"/>
+        <Setter Property="Template" Value="{DynamicResource HeaderLabelTemplate}"/>
+        
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource HeaderLabelStyle.Disabled.Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <ControlTemplate x:Key="HeaderLabelTemplate" TargetType="{x:Type Label}">
+        <ControlTemplate.Resources>
+
+            <!-- region Converters -->
+
+            <convs:ActualHeightAndActualWidthToPointCollectionBeveledRectangle x:Key="ToBeveledRectangleConverter"/>
+
+            <!--#endregion-->
+            
+        </ControlTemplate.Resources>
+        
+        <Grid>
+            <Polygon Panel.ZIndex="0" Stroke="{TemplateBinding BorderThickness}" Fill="{TemplateBinding Background}">
+                <Polygon.Points>
+                    <MultiBinding Converter="{StaticResource ToBeveledRectangleConverter}" ConverterParameter="45">
+                        <Binding Path="ActualHeight" ElementName="PART_ContentPresenter"/>
+                        <Binding Path="ActualWidth" ElementName="PART_ContentPresenter"/>
+                        <Binding Path="Margin" ElementName="PART_ContentPresenter"/>
+                    </MultiBinding>
+                </Polygon.Points>
+            </Polygon>
+            <ContentPresenter Name="PART_ContentPresenter" Panel.ZIndex="1" RecognizesAccessKey="True" 
+                              Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Grid>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type Label}">
+        <Style.Resources>
+
+            <!--#region Foreground Resources -->
+
+            <SolidColorBrush x:Key="LabelStyle.Static.Foreground" Color="{DynamicResource OnSecondaryColor/500/100}"/>
+
+            <!--#endregion-->
+
+        </Style.Resources>
+        <Setter Property="Foreground" Value="{DynamicResource LabelStyle.Static.Foreground}"/>
+    </Style>
+
+
+</ResourceDictionary>

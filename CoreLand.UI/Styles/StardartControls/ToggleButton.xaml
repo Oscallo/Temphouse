@@ -2,102 +2,135 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:convs="clr-namespace:CoreLand.UI.Converters">
 
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/Theme/DefaultColorScheme.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
+    <!-- Version 1.5.5 -->
 
-    <SolidColorBrush x:Key="ToggleButton.Static.Background" Color="{DynamicResource ToggleButton.Static.BackgroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.Static.Foreground" Color="{DynamicResource ToggleButton.Static.ForegroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.Static.Border" Color="{DynamicResource ToggleButton.Static.BorderColor}"/>
+    <Style TargetType="{x:Type ToggleButton}">
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Template" Value="{DynamicResource CreepingToggleButtonControlTemplate}"/>
+    </Style>
 
-    <SolidColorBrush x:Key="ToggleButton.MouseOver.Background" Color="{DynamicResource ToggleButton.MouseOver.BackgroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.MouseOver.Foreground" Color="{DynamicResource ToggleButton.MouseOver.ForegroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.MouseOver.Border" Color="{DynamicResource ToggleButton.MouseOver.BorderColor}"/>
-
-    <SolidColorBrush x:Key="ToggleButton.Checked.Background" Color="{DynamicResource ToggleButton.Checked.BackgroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.Checked.Foreground" Color="{DynamicResource ToggleButton.Checked.ForegroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.Checked.Border" Color="{DynamicResource ToggleButton.Checked.BorderColor}"/>
-
-    <SolidColorBrush x:Key="ToggleButton.Pressed.Background" Color="{DynamicResource ToggleButton.Pressed.BackgroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.Pressed.Foreground" Color="{DynamicResource ToggleButton.Pressed.ForegroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.Pressed.Border" Color="{DynamicResource ToggleButton.Pressed.BorderColor}"/>
-
-    <SolidColorBrush x:Key="ToggleButton.Disabled.Background" Color="{DynamicResource ToggleButton.Disabled.BackgroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.Disabled.Foreground" Color="{DynamicResource ToggleButton.Disabled.ForegroundColor}"/>
-    <SolidColorBrush x:Key="ToggleButton.Disabled.Border" Color="{DynamicResource ToggleButton.Disabled.BorderColor}"/>
-
-    <ControlTemplate x:Key="DefaultToggleButtonTemplate" TargetType="{x:Type ToggleButton}">
+    <ControlTemplate x:Key="CreepingToggleButtonControlTemplate" TargetType="{x:Type ToggleButton}">
         <ControlTemplate.Resources>
+
+            <!-- region Converters -->
+
             <convs:ContentToVisibilityConverter x:Key="ContentToVisibilityConverter"/>
+            <convs:SolidColorBrushToColorConverter x:Key="SolidColorBrushToColorConverter"/>
+
+            <!--#endregion-->
+
+            <!--#region Ellipse Resources -->
+
+            <SolidColorBrush x:Key="ToggleButton.Static.Ellipse" Color="{DynamicResource NeutralColor/300/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Disabled.Ellipse" Color="{DynamicResource DisabledColor/300/100}"/>
+
+            <!--#endregion-->
+
+            <!--#region Border Resources -->
+
+            <SolidColorBrush x:Key="ToggleButton.Static.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.MouseOver.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Checked.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Pressed.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Disabled.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
+
+            <!--#endregion-->
+
+            <!--#region Background Resources -->
+
+            <SolidColorBrush x:Key="ToggleButton.Static.Background" Color="{DynamicResource NeutralColor/600/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.MouseOver.Background" Color="{DynamicResource SecondaryColor/700/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Checked.Background" Color="{DynamicResource  SecondaryColor/500/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Pressed.Background" Color="{DynamicResource SecondaryColor/900/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Disabled.Background" Color="{DynamicResource NeutralColor/700/100}"/>
+
+            <!--#endregion-->
+
+            <!--#region Foreground Resources -->
+
+            <SolidColorBrush x:Key="ToggleButton.Static.Foreground" Color="{DynamicResource OnNeutralColor/500/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.MouseOver.Foreground" Color="{DynamicResource OnNeutralColor/500/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Checked.Foreground" Color="{DynamicResource OnNeutralColor/500/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Pressed.Foreground" Color="{DynamicResource OnNeutralColor/500/100}"/>
+            <SolidColorBrush x:Key="ToggleButton.Disabled.Foreground" Color="{DynamicResource OnDisabledColor/300/100}"/>
+
+            <!--#endregion-->
+
         </ControlTemplate.Resources>
+        
         <StackPanel Orientation="Horizontal">
+            <ContentPresenter x:Name="PART_ContentPresenter" VerticalAlignment="Center" Margin="0,0,5,0" 
+                              Visibility="{Binding Path=Content, RelativeSource={RelativeSource Mode=TemplatedParent},Converter={StaticResource ContentToVisibilityConverter}}" Content="{TemplateBinding Content}">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="{Binding Source={StaticResource ToggleButton.Static.Foreground}, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                </TextBlock.Foreground>
+            </ContentPresenter>
+            <Border x:Name="PART_Border" CornerRadius="10" Width="40" Height="20" 
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                <Border.Background>
+                    <SolidColorBrush Color="{Binding Source={StaticResource ToggleButton.Static.Background}, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                </Border.Background>
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="{Binding Source={StaticResource ToggleButton.Static.BorderBrush}, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                </Border.BorderBrush>
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0.5" Direction="0" Opacity="0.3" />
+                </Border.Effect>
+                <Ellipse x:Name="PART_Ellipse" Stretch="Uniform" Margin="2 1 2 1" HorizontalAlignment="Stretch">
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="{Binding Source={StaticResource ToggleButton.Static.Ellipse}, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                    </Ellipse.Fill>
+                    <Ellipse.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.3" Direction="260" />
+                    </Ellipse.Effect>
+                </Ellipse>
+            </Border>
+
             <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused"/>
+                    <VisualState x:Name="Unfocused"/>
+                </VisualStateGroup>
                 <VisualStateGroup x:Name="CheckStates">
                     <VisualState x:Name="Checked">
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="{StaticResource ToggleButton.Checked.BackgroundColor}" Duration="0:0:0.1" />
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource ToggleButton.Checked.Background},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
                             <ThicknessAnimation Storyboard.TargetName="PART_Ellipse" Storyboard.TargetProperty="Margin" To="20 1 2 1" Duration="0:0:0.1" />
                         </Storyboard>
                     </VisualState>
                     <VisualState x:Name="Unchecked">
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="{StaticResource ToggleButton.Static.BackgroundColor}" Duration="0:0:0.1" />
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource ToggleButton.Static.Background},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
                             <ThicknessAnimation Storyboard.TargetName="PART_Ellipse" Storyboard.TargetProperty="Margin" To="2 1 2 1" Duration="0:0:0.1" />
                         </Storyboard>
                     </VisualState>
                     <VisualState x:Name="Indeterminate"/>
                 </VisualStateGroup>
                 <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal" />
-                    <VisualState x:Name="MouseOver">
+                    <VisualState x:Name="Normal">
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="{StaticResource ToggleButton.MouseOver.BackgroundColor}" Duration="0:0:0.2" />
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="{StaticResource ToggleButton.MouseOver.BorderColor}" Duration="0:0:0.2" />
+                            <ColorAnimation Storyboard.TargetName="PART_Ellipse" Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource ToggleButton.Static.Ellipse},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_ContentPresenter" Storyboard.TargetProperty="(TextBlock.Foreground).Color" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource ToggleButton.Static.Foreground},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
                         </Storyboard>
                     </VisualState>
-                    <VisualState x:Name="Pressed" >
-                        <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="{StaticResource ToggleButton.Pressed.BackgroundColor}" Duration="0:0:0.2" />
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="{StaticResource ToggleButton.Pressed.BorderColor}" Duration="0:0:0.2" />
-                        </Storyboard>
-                    </VisualState>
+                    <VisualState x:Name="MouseOver"/>
+                    <VisualState x:Name="Pressed" />
                     <VisualState x:Name="Disabled">
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" To="{StaticResource ToggleButton.Disabled.BackgroundColor}" Duration="0:0:0.1" />
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" To="{StaticResource ToggleButton.Disabled.BorderColor}" Duration="0:0:0.1" />
+                            <ColorAnimation Storyboard.TargetName="PART_Ellipse" Storyboard.TargetProperty="(Ellipse.Fill).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource ToggleButton.Disabled.Ellipse},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_ContentPresenter" Storyboard.TargetProperty="(TextBlock.Foreground).Color" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource ToggleButton.Disabled.Foreground},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
                         </Storyboard>
                     </VisualState>
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-
-            <ContentPresenter x:Name="PART_ContentPresenter" Visibility="{Binding Path=Content, RelativeSource={RelativeSource Mode=TemplatedParent},Converter={StaticResource ContentToVisibilityConverter}}" VerticalAlignment="Center" Content="{TemplateBinding Content}" Margin="0,0,5,0"/>
-            <Border x:Name="PART_Border" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" Width="40" Height="20">
-                <Border.Effect>
-                    <DropShadowEffect ShadowDepth="0.5" Direction="0" Opacity="0.3" />
-                </Border.Effect>
-                <Ellipse x:Name="PART_Ellipse" Fill="White" Stretch="Uniform" Margin="2 1 2 1" Stroke="Gray" StrokeThickness="0.2" HorizontalAlignment="Stretch">
-                    <Ellipse.Effect>
-                        <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.3" Direction="260" />
-                    </Ellipse.Effect>
-                </Ellipse>
-            </Border>
         </StackPanel>
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Foreground" Value="{DynamicResource ToggleButton.Disabled.Foreground}"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Foreground" Value="{DynamicResource ToggleButton.Pressed.Foreground}"/>
-            </Trigger>
-        </ControlTemplate.Triggers>
     </ControlTemplate>
-
-    <Style TargetType="{x:Type ToggleButton}">
-        <Setter Property="Background" Value="{DynamicResource ToggleButton.Static.Background}"/>
-        <Setter Property="Foreground" Value="{DynamicResource ToggleButton.Static.Foreground}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource ToggleButton.Static.Border}"/>
-        <Setter Property="Height" Value="20"/>
-        <Setter Property="Template" Value="{DynamicResource DefaultToggleButtonTemplate}"/>
-    </Style>
-
+    
 </ResourceDictionary>

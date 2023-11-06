@@ -1,82 +1,117 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:ap="clr-namespace:CoreLand.UI.AttachedProperties">
+                    xmlns:ap="clr-namespace:CoreLand.UI.AttachedProperties"
+                    xmlns:convs="clr-namespace:CoreLand.UI.Converters">
 
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/Theme/DefaultColorScheme.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
-
-    <SolidColorBrush x:Key="Button.Static.Background" Color="{DynamicResource Button.Static.BackgroundColor}"/>
-    <SolidColorBrush x:Key="Button.Static.Foreground" Color="{DynamicResource Button.Static.ForegroundColor}"/>
-    <SolidColorBrush x:Key="Button.Static.Border" Color="{DynamicResource Button.Static.BorderColor}"/>
-
-    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="{DynamicResource Button.MouseOver.BackgroundColor}"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="{DynamicResource Button.MouseOver.ForegroundColor}"/>
-    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="{DynamicResource Button.MouseOver.BorderColor}"/>
-
-    <SolidColorBrush x:Key="Button.Pressed.Background" Color="{DynamicResource Button.Pressed.BackgroundColor}"/>
-    <SolidColorBrush x:Key="Button.Pressed.Foreground" Color="{DynamicResource Button.Pressed.ForegroundColor}"/>
-    <SolidColorBrush x:Key="Button.Pressed.Border" Color="{DynamicResource Button.Pressed.BorderColor}"/>
-
-    <SolidColorBrush x:Key="Button.Disabled.Background" Color="{DynamicResource Button.Disabled.BackgroundColor}"/>
-    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="{DynamicResource Button.Disabled.ForegroundColor}"/>
-    <SolidColorBrush x:Key="Button.Disabled.Border" Color="{DynamicResource Button.Disabled.BorderColor}"/>
-
-    <ControlTemplate x:Key="DefaultButtonTemplate" TargetType="{x:Type Button}">
-        <Border x:Name="PART_Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
-            <ContentPresenter x:Name="PART_ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-        </Border>
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Button.MouseOver.Foreground}"/>
-            </Trigger>
-
-            <Trigger Property="IsPressed" Value="True">
-                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Button.Pressed.Foreground}"/>
-            </Trigger>
-
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter TargetName="PART_ContentPresenter" Property="TextElement.Foreground" Value="{DynamicResource Button.Disabled.Foreground}"/>
-            </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>
+    <!-- Version 1.0.0 -->
 
     <Style TargetType="{x:Type Button}">
         <Setter Property="Content" Value="Нажми на меня"/>
-        <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
-        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}"/>
-        <Setter Property="Template" Value="{DynamicResource DefaultButtonTemplate}"/>
         <Setter Property="FontWeight" Value="Bold"/>
-        <Style.Triggers>
-            <Trigger Property="IsDefaulted" Value="True">
-                <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-            </Trigger>
-            
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource Button.MouseOver.Background}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource Button.MouseOver.Border}"/>
-            </Trigger>
-
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="{DynamicResource Button.Pressed.Background}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource Button.Pressed.Border}"/>
-            </Trigger>
-
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="{DynamicResource Button.Disabled.Background}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource Button.Disabled.Border}"/>
-            </Trigger>
-        </Style.Triggers>
+        <Setter Property="Template" Value="{DynamicResource DefaultButtonTemplate}"/>
     </Style>
 
-    <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
-        <Setter Property="ap:CornerRadiusSetter.CornerRadius" Value="10"/>
-    </Style>
+    <ControlTemplate x:Key="DefaultButtonTemplate" TargetType="{x:Type Button}">
+        <ControlTemplate.Resources>
 
-    <Style x:Key="LoginButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource RoundedButtonStyle}">
-        <Setter Property="Margin" Value="0,20,0,00" />
-        <Setter Property="Height" Value="50" />
-    </Style>
+            <!-- region Converters -->
 
+            <convs:SolidColorBrushToColorConverter x:Key="SolidColorBrushToColorConverter"/>
+
+            <!--#endregion-->
+
+            <!--#region Border Resources -->
+
+            <SolidColorBrush x:Key="Button.Static.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
+            <SolidColorBrush x:Key="Button.MouseOver.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
+            <SolidColorBrush x:Key="Button.Pressed.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
+            <SolidColorBrush x:Key="Button.Disabled.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
+
+            <!--#endregion-->
+
+            <!--#region Background Resources -->
+
+            <SolidColorBrush x:Key="Button.Static.Background" Color="{DynamicResource SecondaryColor/500/100}"/>
+            <SolidColorBrush x:Key="Button.MouseOver.Background" Color="{DynamicResource SecondaryColor/700/100}"/>
+            <SolidColorBrush x:Key="Button.Pressed.Background" Color="{DynamicResource SecondaryColor/900/100}"/>
+            <SolidColorBrush x:Key="Button.Disabled.Background" Color="{DynamicResource DisabledColor/300/100}"/>
+
+            <!--#endregion-->
+
+            <!--#region Foreground Resources -->
+
+            <SolidColorBrush x:Key="Button.Static.Foreground" Color="{DynamicResource OnSecondaryColor/500/100}"/>
+            <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="{DynamicResource OnSecondaryColor/700/100}"/>
+            <SolidColorBrush x:Key="Button.Pressed.Foreground" Color="{DynamicResource OnSecondaryColor/900/100}"/>
+            <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="{DynamicResource OnDisabledColor/300/100}"/>
+
+            <!--#endregion-->
+
+        </ControlTemplate.Resources>
+
+        <Border x:Name="PART_Border" SnapsToDevicePixels="True" BorderThickness="{TemplateBinding BorderThickness}">
+            <Border.Background>
+                <SolidColorBrush Color="{Binding Source={StaticResource Button.Static.Background}, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+            </Border.Background>
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{Binding Source={StaticResource Button.Static.Foreground}, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+            </TextBlock.Foreground>
+            <Border.BorderBrush>
+                <SolidColorBrush Color="{Binding Source={StaticResource Button.Static.BorderBrush}, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+            </Border.BorderBrush>
+            <ContentPresenter x:Name="PART_ContentPresenter" Focusable="False" RecognizesAccessKey="True" 
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Margin="{TemplateBinding Padding}"/>
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused"/>
+                    <VisualState x:Name="Unfocused"/>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.Static.Background},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(TextBlock.Foreground).Color" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.Static.Foreground},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.Static.BorderBrush},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.MouseOver.Background},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(TextBlock.Foreground).Color" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.MouseOver.Foreground},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.MouseOver.BorderBrush},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed" >
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.Pressed.Background},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(TextBlock.Foreground).Color" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.Pressed.Foreground},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.Pressed.BorderBrush},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.Disabled.Background},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(TextBlock.Foreground).Color" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.Disabled.Foreground},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Duration="0:0:0.1"
+                                                        To="{Binding Source={StaticResource Button.Disabled.BorderBrush},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Border>
+    </ControlTemplate>
+    
 </ResourceDictionary>

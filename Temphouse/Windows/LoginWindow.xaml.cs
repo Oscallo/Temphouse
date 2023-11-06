@@ -19,11 +19,11 @@ namespace Temphouse.Windows
         {
             bool isAuthorizationSuccess = false;
 
-            SessionModel sessionKey = DataBaseAdapterBuilder.Instance.UserAuthorization(PART_LoginTextBox.Text, PART_PasswordTextBox.Text, out isAuthorizationSuccess);
+            //SessionModel sessionKey = DataBaseAdapterBuilder.Instance.UserAuthorization(PART_LoginTextBox.Text, PART_PasswordTextBox.Text, out isAuthorizationSuccess);
 
             if (isAuthorizationSuccess == true) 
             {
-                new DashboardWindow(sessionKey).Show();
+                //new DashboardWindow(sessionKey).Show();
                 this.Close();
             }
         }

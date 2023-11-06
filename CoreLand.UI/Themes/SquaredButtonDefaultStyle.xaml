@@ -2,10 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:CoreLand.UI.CustomControls.Buttons">
 
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Managers/Theme/DefaultColorScheme.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
-
     <!--#region Цветовая схема -->
 
     <SolidColorBrush x:Key="SquaredButton.Static.Background" Color="{DynamicResource SquaredButton.Static.BackgroundColor}"/>
@@ -27,7 +23,7 @@
     <!--#endregion-->
 
     <ControlTemplate TargetType="{x:Type local:SquaredButton}" x:Key="DefaultSquaredButtonTemplate">
-        <Border x:Name="PART_border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+        <Border x:Name="PART_Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
             <ContentPresenter x:Name="PART_ContentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" 
                               RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
         </Border>

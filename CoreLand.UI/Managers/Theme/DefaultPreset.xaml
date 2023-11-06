@@ -1,0 +1,167 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:enum="clr-namespace:CoreLand.UI.Managers.Theme.Enums">
+
+
+
+    <!-- Альфа-канал перед цветом (Узнать значение можно на сайте https://rgbacolorpicker.com/rgba-to-hex)
+    00 - 0%
+    1A - 10%
+    33 - 20%
+    4D - 30%
+    66 - 40%
+    80 - 50%
+    99 - 60%
+    B3 - 70%
+    CC - 80%
+    E6 - 90%
+    FF - 100%
+    -->
+    
+    <!-- region Информация о пресете -->
+
+    <sys:String x:Key="Preset.Theme.Name">XCore</sys:String>
+    <sys:String x:Key="Preset.Theme.Author">Oscallo Dev</sys:String>
+    <enum:PresetTypeEnum x:Key="Preset.Theme.Type">Light</enum:PresetTypeEnum>
+
+    <!--#endregion-->
+
+    <!--#region На основе каких цветов будет построение остальных -->
+
+    <Color x:Key="NeutralColor/300/020">#33D9D9D9</Color>
+    <Color x:Key="NeutralColor/300/100">#D9D9D9</Color>
+    <Color x:Key="NeutralColor/500/100">#1A1E26</Color>
+    <Color x:Key="NeutralColor/600/100">#1A1D23</Color>
+    <Color x:Key="NeutralColor/700/100">#1A1C20</Color>
+
+    <Color x:Key="OnNeutralColor/300/020">#FFFFFF</Color>
+    <Color x:Key="OnNeutralColor/300/100">#000000</Color>
+    <Color x:Key="OnNeutralColor/500/100">#FFFFFF</Color>
+    <Color x:Key="OnNeutralColor/700/100">#FFFFFF</Color>
+
+    <Color x:Key="PrimaryColor/500/100">#5ABFA3</Color>
+
+    <Color x:Key="OnPrimaryColor/500/100">#FFFFFF</Color>
+
+    <Color x:Key="SecondaryColor/300/050">#80324359</Color>
+    <Color x:Key="SecondaryColor/300/100">#324359</Color>
+    <Color x:Key="SecondaryColor/500/100">#3E3C73</Color>
+    <Color x:Key="SecondaryColor/700/100">#3D4573</Color>
+    <Color x:Key="SecondaryColor/900/100">#2C335A</Color>
+
+    <Color x:Key="OnSecondaryColor/300/050">#FFFFFF</Color>
+    <Color x:Key="OnSecondaryColor/300/100">#FFFFFF</Color>
+    <Color x:Key="OnSecondaryColor/500/100">#FFFFFF</Color>
+    <Color x:Key="OnSecondaryColor/700/100">#FFFFFF</Color>
+    <Color x:Key="OnSecondaryColor/900/100">#FFFFFF</Color>
+
+    <Color x:Key="ErrorColor/500/100">#FF0000</Color>
+
+    <Color x:Key="OnErrorColor/500/100">#FFFFFF</Color>
+
+    <Color x:Key="SuccessColor/500/100">#27682D</Color>
+
+    <Color x:Key="OnSuccessColor/500/100">#FFFFFF</Color>
+
+    <Color x:Key="DisabledColor/100/100">#868383</Color>
+    <Color x:Key="DisabledColor/300/100">#656565</Color>
+
+    <Color x:Key="OnDisabledColor/300/100">#9D9D9D</Color>
+
+    <!--#endregion-->
+
+    <!--#region На основе каких кистей будет построение остальных -->
+
+    <SolidColorBrush x:Key="NeutralSolidColorBrush/300/20" Color="{DynamicResource NeutralColor/300/020}"/>
+    <SolidColorBrush x:Key="NeutralSolidColorBrush/300/100" Color="{DynamicResource NeutralColor/300/100}"/>
+    <SolidColorBrush x:Key="NeutralSolidColorBrush/500" Color="{DynamicResource NeutralColor/500/100}"/>
+    <SolidColorBrush x:Key="NeutralSolidColorBrush/700" Color="{DynamicResource NeutralColor/700/100}"/>
+
+    <SolidColorBrush x:Key="OnNeutralSolidColorBrush/300/20" Color="{DynamicResource OnNeutralColor/300/020}"/>
+    <SolidColorBrush x:Key="OnNeutralSolidColorBrush/300/100" Color="{DynamicResource OnNeutralColor/300/100}"/>
+    <SolidColorBrush x:Key="OnNeutralSolidColorBrush/500" Color="{DynamicResource OnNeutralColor/500/100}"/>
+    <SolidColorBrush x:Key="OnNeutralSolidColorBrush/700" Color="{DynamicResource OnNeutralColor/700/100}"/>
+
+    <SolidColorBrush x:Key="PrimarySolidColorBrush/500" Color="{DynamicResource PrimaryColor/500/100}"/>
+
+    <SolidColorBrush x:Key="OnPrimarySolidColorBrush/500" Color="{DynamicResource OnPrimaryColor/500/100}"/>
+
+    <SolidColorBrush x:Key="SecondarySolidColorBrush/300" Color="{DynamicResource SecondaryColor/300/100}"/>
+    <SolidColorBrush x:Key="SecondarySolidColorBrush/500" Color="{DynamicResource SecondaryColor/500/100}"/>
+    <SolidColorBrush x:Key="SecondarySolidColorBrush/700" Color="{DynamicResource SecondaryColor/700/100}"/>
+    <SolidColorBrush x:Key="SecondarySolidColorBrush/900" Color="{DynamicResource SecondaryColor/900/100}"/>
+
+    <SolidColorBrush x:Key="OnSecondarySolidColorBrush/300" Color="{DynamicResource OnSecondaryColor/300/100}"/>
+    <SolidColorBrush x:Key="OnSecondarySolidColorBrush/500" Color="{DynamicResource OnSecondaryColor/500/100}"/>
+    <SolidColorBrush x:Key="OnSecondarySolidColorBrush/700" Color="{DynamicResource OnSecondaryColor/700/100}"/>
+    <SolidColorBrush x:Key="OnSecondarySolidColorBrush/900" Color="{DynamicResource OnSecondaryColor/900/100}"/>
+
+    <SolidColorBrush x:Key="ErrorSolidColorBrush/500" Color="{DynamicResource ErrorColor/500/100}"/>
+
+    <SolidColorBrush x:Key="OnErrorSolidColorBrush/500" Color="{DynamicResource OnErrorColor/500/100}"/>
+
+    <SolidColorBrush x:Key="SuccessSolidColorBrush/500" Color="{DynamicResource SuccessColor/500/100}"/>
+
+    <SolidColorBrush x:Key="OnSuccessSolidColorBrush/500" Color="{DynamicResource OnSuccessColor/500/100}"/>
+
+    <SolidColorBrush x:Key="NeutralSolidColorBrush/20" Color="{DynamicResource DisabledColor/100/100}"/>
+    <SolidColorBrush x:Key="NeutralSolidColorBrush/30" Color="{DynamicResource DisabledColor/300/100}"/>
+
+    <SolidColorBrush x:Key="OnNeutralSolidColorBrush/30" Color="{DynamicResource OnDisabledColor/300/100}"/>
+
+    <!--#endregion-->
+
+    
+    <!--#region Separator цвета -->
+
+    <Color x:Key="Separator.BackgroundColor">#4C4E4E4E</Color>
+    
+    <!--#endregion-->
+    
+    <!--#region SquaredButton цвета -->
+
+    <Color x:Key="SquaredButton.Static.BackgroundColor">#FFDDDDDD</Color>
+    <Color x:Key="SquaredButton.Static.BorderColor">#FF707070</Color>
+    <Color x:Key="SquaredButton.Static.ForegroundColor">Black</Color>
+
+    <Color x:Key="SquaredButton.MouseOver.BackgroundColor">#FFBEE6FD</Color>
+    <Color x:Key="SquaredButton.MouseOver.BorderColor">#FF3C7FB1</Color>
+    <Color x:Key="SquaredButton.MouseOver.ForegroundColor">White</Color>
+
+    <Color x:Key="SquaredButton.Pressed.BackgroundColor">#FFC4E5F6</Color>
+    <Color x:Key="SquaredButton.Pressed.BorderColor">#FF2C628B</Color>
+    <Color x:Key="SquaredButton.Pressed.ForegroundColor">White</Color>
+
+    <Color x:Key="SquaredButton.Disabled.BackgroundColor">#FFF4F4F4</Color>
+    <Color x:Key="SquaredButton.Disabled.BorderColor">#FFADB2B5</Color>
+    <Color x:Key="SquaredButton.Disabled.ForegroundColor">#FF838383</Color>
+
+    <!--#endregion-->
+
+    <!--#region HintableTextBox цвета -->
+
+
+    <Color x:Key="HintableBoxBase.Static.BackgroundColor">#4C206D77</Color>
+    <Color x:Key="HintableBoxBase.Static.BorderColor">#26383838</Color>
+    <Color x:Key="HintableBoxBase.Static.ForegroundColor">White</Color>
+    <Color x:Key="HintableBoxBase.Static.HintForegroundColor">#B2CACACA</Color>
+
+    <Color x:Key="HintableBoxBase.Focus.BackgroundColor">#4C206D77</Color>
+    <Color x:Key="HintableBoxBase.Focus.BorderColor">#26383838</Color>
+    <Color x:Key="HintableBoxBase.Focus.ForegroundColor">White</Color>
+    <Color x:Key="HintableBoxBase.Focus.HintForegroundColor">#FFE0DFDF</Color>
+
+    <Color x:Key="HintableBoxBase.MouseOver.BackgroundColor">#4C206D77</Color>
+    <Color x:Key="HintableBoxBase.MouseOver.BorderColor">#26383838</Color>
+    <Color x:Key="HintableBoxBase.MouseOver.ForegroundColor">White</Color>
+    <Color x:Key="HintableBoxBase.MouseOver.HintForegroundColor">#FFE0DFDF</Color>
+
+    <Color x:Key="HintableBoxBase.Disabled.BackgroundColor">#FFF4F4F4</Color>
+    <Color x:Key="HintableBoxBase.Disabled.BorderColor">#FFADB2B5</Color>
+    <Color x:Key="HintableBoxBase.Disabled.ForegroundColor">#FF838383</Color>
+    <Color x:Key="HintableBoxBase.Disabled.HintForegroundColor">#bababa</Color>
+
+    <!--#endregion-->
+
+</ResourceDictionary> 

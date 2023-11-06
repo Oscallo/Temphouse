@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ui="http://schemas.oscallo.com/coreland/ui/controls" 
         xmlns:uiConv="http://schemas.oscallo.com/coreland/ui/uiConverters"
-        xmlns:uiValid="http://schemas.oscallo.com/coreland/ui/uiValidation"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Temphouse.MVVM.ViewModels"
         xmlns:local="clr-namespace:Temphouse.Windows"
+        mc:Ignorable="d" IsHideable="False"
         d:Template="{DynamicResource DefaultExtendedWindowTemplate}" 
-        mc:Ignorable="d" IsHideable="False" WindowStyle="ToolWindow"
-        Title="ApplicationInitializeWindow" Height="485" Width="400" 
-        MinHeight="485" MinWidth="400">
+        WindowStyle="ToolWindow" ResizeMode="NoResize"
+        Title="ApplicationInitializeWindow" 
+        Height="600" Width="700">
     <ui:ExtendedWindow.Resources>
         <uiConv:EnumElementToNameStringConverter x:Key="EnumElementToNameConverter"/>
         <uiConv:InvertedBoolConverter x:Key="InvertedBoolConverter"/>
@@ -19,67 +19,58 @@
     <ui:ExtendedWindow.DataContext>
         <vm:ApplicationInitializeViewModel/>
     </ui:ExtendedWindow.DataContext>
-    <Grid Margin="20,20,20,20">
+    <Grid Margin="50,45,25,25">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Vertical" Grid.Row="0" Margin="0,0,40,0">
-            <Label Foreground="White" FontWeight="Bold" Content="Инициализация базы данных:"/>
-            <Grid Margin="0,0,0,3">
-                <Label HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" Content="Тип базы данных:" />
-                <ComboBox HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToNameConverter}}"/>
-            </Grid>
-            <Grid Margin="0,0,0,3">
-                <Label HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" Content="Наличие базы данных:"/>
-                <ToggleButton Margin="3" HorizontalAlignment="Right" IsChecked="{Binding IsDatabaseAlredyCreated}"/>
-            </Grid>
-            <TabControl Background="Transparent" BorderBrush="Transparent" ItemContainerStyle="{DynamicResource CollapsedHeaderTabItem}">
+        <Grid Name="PART_DatabaseInitializeGrid" Grid.Row="0" Grid.Column="0">
+            <StackPanel Orientation="Vertical" Width="250" HorizontalAlignment="Left">
+                <Label Content="Инициализация базы данных:" Style="{DynamicResource HeaderLabelStyle}"/>
+                <Grid>
+                    <Label Content="Тип базы данных:"/>
+                    <ComboBox HorizontalAlignment="Right" WindowChrome.IsHitTestVisibleInChrome="True" ItemsSource="{Binding DatabaseTypes}" SelectedItem="{Binding DatabaseType, Converter={StaticResource EnumElementToNameConverter}}"/>
+                </Grid>
+                <Grid>
+                    <Label Content="Наличие базы данных:"/>
+                    <ToggleButton HorizontalAlignment="Right" IsChecked="{Binding IsDatabaseAlredyCreated}"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
 
-            </TabControl>
-        </StackPanel>
-        <StackPanel IsEnabled="{Binding IsDatabaseAlredyCreated, Mode=OneWay, Converter={StaticResource InvertedBoolConverter}}" Orientation="Vertical" Grid.Row="1" Margin="0,0,40,0">
-            <Label Foreground="White" FontWeight="Bold" Content="Инициализация администратора:"/>
-            <ui:HintableTextBox Margin="0,0,0,5" Height="40" Hint="Имя администратора">
-                <ui:HintableTextBox.Text>
-                    <Binding Path="AdministratorData.Name">
-                        <Binding.ValidationRules>
-                            <uiValid:NotEmptyStringRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </ui:HintableTextBox.Text>
-            </ui:HintableTextBox>
-            <ui:HintableTextBox Margin="0,0,0,5" Height="40" Hint="Отчество администратора">
-                <ui:HintableTextBox.Text>
-                    <Binding Path="AdministratorData.SecondName">
-                        <Binding.ValidationRules>
-                            <uiValid:NotEmptyStringRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </ui:HintableTextBox.Text>
-            </ui:HintableTextBox>
-            <ui:HintableTextBox Margin="0,0,0,5" Height="40" Hint="Фамилия администратора">
-                <ui:HintableTextBox.Text>
-                    <Binding Path="AdministratorData.Family">
-                        <Binding.ValidationRules>
-                            <uiValid:NotEmptyStringRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </ui:HintableTextBox.Text>
-            </ui:HintableTextBox>
-            <ui:HintablePasswordBox Margin="0,0,0,5" Height="40" Hint="Пароль администратора">
-                <ui:HintablePasswordBox.Password>
-                    <Binding Path="AdministratorData.Password">
-                        <Binding.ValidationRules>
-                            <uiValid:NotEmptyStringRule/>
-                        </Binding.ValidationRules>
-                    </Binding>
-                </ui:HintablePasswordBox.Password>
-            </ui:HintablePasswordBox>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
-            
-        </StackPanel>
+        <Grid Name="PART_CryptoOperationInitializeGrid" Grid.Row="2" Grid.Column="0" IsEnabled="{Binding IsDatabaseAlredyCreated, Mode=OneWay, Converter={StaticResource InvertedBoolConverter}}">
+            <StackPanel Orientation="Vertical" Width="250" HorizontalAlignment="Left">
+                <Label Content="Криптографические операции:" Style="{DynamicResource HeaderLabelStyle}"/>
+                <Grid>
+                    <Label Content="Шифрование базы данных:" />
+                    <ToggleButton HorizontalAlignment="Right" IsChecked="{Binding IsHeedCryptoOperation}"/>
+                </Grid>
+                <Grid IsEnabled="{Binding IsHeedCryptoOperation, Mode=OneWay}">
+                    <Label Content="Сохранить пароль в программе:"/>
+                    <ToggleButton HorizontalAlignment="Right"/>
+                </Grid>
+                <Grid IsEnabled="{Binding IsHeedCryptoOperation, Mode=OneWay}">
+                    <Label Content="Пароль:" />
+                    <PasswordBox HorizontalAlignment="Right" Width="160" Height="28" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+
+        <Grid Name="PART_AdministatorInitializeGrid" Grid.RowSpan="3" Grid.Column="2">
+            <StackPanel Orientation="Vertical">
+                <Label Style="{DynamicResource HeaderLabelStyle}" Content="Инициализация администратора:"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Name="PART_FinishInitializeGrid" Grid.Row="3" Grid.ColumnSpan="3">
+            <Button Height="50" Width="350" Content="Инициализация закончена" TextElement.FontSize="24"/>
+        </Grid>
     </Grid>
 </ui:ExtendedWindow>

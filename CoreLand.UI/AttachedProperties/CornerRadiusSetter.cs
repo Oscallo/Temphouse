@@ -51,6 +51,7 @@ namespace CoreLand.UI.AttachedProperties
             {
                 "border",
                 "PART_Border",
+                "PART_border",
                 "Border"
             };
 

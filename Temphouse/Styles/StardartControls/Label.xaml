@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type Label}">
+        <Style.Resources>
+
+            <!--#region Foreground Resources -->
+
+            <SolidColorBrush x:Key="LabelStyle.Static.Foreground" Color="{DynamicResource OnSecondaryColor/500/100}"/>
+
+            <!--#endregion-->
+
+        </Style.Resources>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="{DynamicResource LabelStyle.Static.Foreground}"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
+</ResourceDictionary>
