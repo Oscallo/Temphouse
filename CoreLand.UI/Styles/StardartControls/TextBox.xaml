@@ -3,85 +3,75 @@
                     xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
                     xmlns:ap="clr-namespace:CoreLand.UI.AttachedProperties"
                     xmlns:convs="clr-namespace:CoreLand.UI.Converters">
-
-    <!-- Version 1.5.5 -->
+    
+    <!-- Version 2.0.0 -->
 
     <Style TargetType="{x:Type TextBox}">
         <Style.Resources>
-            
-            <!--#region Foreground Resources -->
-
-            <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="{DynamicResource OnNeutralColor/500/100}"/>
-            <SolidColorBrush x:Key="TextBox.Disabled.Foreground" Color="{DynamicResource OnDisabledColor/300/100}"/>
-
-            <!--#endregion-->
-            
-        </Style.Resources>
-        <Setter Property="ap:CornerRadiusSetter.CornerRadius" Value="10"/>
-        <Setter Property="Foreground" Value="{DynamicResource TextBox.Static.Foreground}"/>
-        <Setter Property="Template" Value="{DynamicResource DefaulTextBoxControlTemplate}"/>
-    </Style>
-
-    <ControlTemplate x:Key="DefaulTextBoxControlTemplate" TargetType="{x:Type TextBox}">
-        <ControlTemplate.Resources>
 
             <!-- region Converters -->
-
             <convs:SolidColorBrushToColorConverter x:Key="SolidColorBrushToColorConverter"/>
-
             <!--#endregion-->
 
-            <!--#region Border Resources -->
-
+            <!--#region Static Brushes -->
+            <SolidColorBrush x:Key="TextBox.Static.Foreground" Color="{DynamicResource OnNeutralColor/500/100}"/>
             <SolidColorBrush x:Key="TextBox.Static.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
-            <SolidColorBrush x:Key="TextBox.MouseOver.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/> <!-- - -->
-            <SolidColorBrush x:Key="TextBox.Disabled.BorderBrush" Color="{DynamicResource DisabledColor/300/100}"/> <!-- - -->
-
-            <!--#endregion-->
-
-            <!--#region Background Resources -->
-
             <SolidColorBrush x:Key="TextBox.Static.Background" Color="{DynamicResource NeutralColor/700/100}"/>
-            <SolidColorBrush x:Key="TextBox.Disabled.Background" Color="{DynamicResource DisabledColor/300/100}"/> <!-- - -->
-
             <!--#endregion-->
 
-        </ControlTemplate.Resources>
-        <Border x:Name="PART_Border" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
-            <Border.Background>
-                <SolidColorBrush Color="{Binding Source={StaticResource TextBox.Static.Background}, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
-            </Border.Background>
-            <Border.BorderBrush>
-                <SolidColorBrush Color="{Binding Source={StaticResource TextBox.Static.BorderBrush}, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
-            </Border.BorderBrush>
-            <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal">
-                        <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="0:0:0.1"
-                                                        To="{Binding Source={StaticResource TextBox.Static.Background},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Duration="0:0:0.1"
-                                                        To="{Binding Source={StaticResource TextBox.Static.BorderBrush},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
-                        </Storyboard>
-                    </VisualState>
-                    <VisualState x:Name="MouseOver">
-                        <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Duration="0:0:0.1"
-                                                        To="{Binding Source={StaticResource TextBox.MouseOver.BorderBrush},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
-                        </Storyboard>
-                    </VisualState>
-                    <VisualState x:Name="Disabled">
-                        <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Duration="0:0:0.1"
-                                                        To="{Binding Source={StaticResource TextBox.Disabled.Background},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
-                            <ColorAnimation Storyboard.TargetName="PART_Border" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Duration="0:0:0.1"
-                                                        To="{Binding Source={StaticResource TextBox.Disabled.BorderBrush},Converter={StaticResource SolidColorBrushToColorConverter}}"/>
-                        </Storyboard>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" VerticalAlignment="Center" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="5,0,0,0"/>
-        </Border>
-    </ControlTemplate>
+            <!--#region Static Brushes -->
+            <SolidColorBrush x:Key="TextBox.Disabled.Foreground" Color="{DynamicResource OnDisabledColor/300/100}"/>
+            <!--#endregion-->
+
+            <!--#region Storyboards -->
+            <Storyboard x:Key="IsDisabledAnimation">
+                <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Storyboard.TargetName="PART_Border" To="{StaticResource DisabledColor/300/100}" Duration="0:0:0.1"/>
+                <ColorAnimation Storyboard.TargetProperty="BorderBrush.(SolidColorBrush.Color)" Storyboard.TargetName="PART_Border" To="{StaticResource SecondaryColor/300/100}" Duration="0:0:0.1"/>
+            </Storyboard>
+            <!--#endregion-->
+
+        </Style.Resources>
+        <Setter Property="Background" Value="{DynamicResource TextBox.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TextBox.Static.BorderBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource TextBox.Static.Foreground}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="ap:CornerRadiusSetter.CornerRadius" Value="10"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="True"/>
+        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border x:Name="PART_Border" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                        <Border.Background>
+                            <SolidColorBrush Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Background, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                        </Border.Background>
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderBrush, Converter={StaticResource SolidColorBrushToColorConverter}}"/>
+                        </Border.BorderBrush>
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="False" VerticalAlignment="Center" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="5,0,0,0"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard x:Name="IsDisabledStoryboardBeginer" Storyboard="{StaticResource IsDisabledAnimation}"/>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <StopStoryboard BeginStoryboardName="IsDisabledStoryboardBeginer" />
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{StaticResource TextBox.Disabled.Foreground}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
 </ResourceDictionary>
