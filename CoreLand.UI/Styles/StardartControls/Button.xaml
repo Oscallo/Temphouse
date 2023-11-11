@@ -32,7 +32,6 @@
                 <ColorAnimation Storyboard.TargetProperty="BorderBrush.(SolidColorBrush.Color)" Storyboard.TargetName="PART_Border" To="{StaticResource SecondaryColor/300/100}" Duration="0:0:0.1"/>
             </Storyboard>
 
-
         </Style.Resources>
         <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.BorderBrush}"/>
