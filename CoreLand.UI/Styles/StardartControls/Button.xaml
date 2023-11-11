@@ -7,16 +7,29 @@
 
     <Style TargetType="{x:Type Button}">
         <Style.Resources>
+            <!--#region Converters -->
             <convs:SolidColorBrushToColorConverter x:Key="SolidColorBrushToColorConverter"/>
-
+            <!--#endregion-->
+            
+            <!--#region Static Brushes -->
             <SolidColorBrush x:Key="Button.Static.BorderBrush" Color="{DynamicResource SecondaryColor/300/100}"/>
             <SolidColorBrush x:Key="Button.Static.Background" Color="{DynamicResource SecondaryColor/500/100}"/>
-
             <SolidColorBrush x:Key="Button.Static.Foreground" Color="{DynamicResource OnSecondaryColor/500/100}"/>
-            <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="{DynamicResource OnSecondaryColor/700/100}"/>
-            <SolidColorBrush x:Key="Button.Pressed.Foreground" Color="{DynamicResource OnSecondaryColor/900/100}"/>
-            <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="{DynamicResource OnDisabledColor/300/100}"/>
+            <!--#endregion-->
 
+            <!--#region MouseOver Brushes -->
+            <SolidColorBrush x:Key="Button.MouseOver.Foreground" Color="{DynamicResource OnSecondaryColor/700/100}"/>
+            <!--#endregion-->
+
+            <!--#region Pressed Brushes -->
+            <SolidColorBrush x:Key="Button.Pressed.Foreground" Color="{DynamicResource OnSecondaryColor/900/100}"/>
+            <!--#endregion-->
+
+            <!--#region Disabled Brushes -->
+            <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="{DynamicResource OnDisabledColor/300/100}"/>
+            <!--#endregion-->
+
+            <!--#region Storyboards -->
             <Storyboard x:Key="MouseOverAnimation">
                 <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Storyboard.TargetName="PART_Border" To="{StaticResource SecondaryColor/700/100}" Duration="0:0:0.1"/>
                 <ColorAnimation Storyboard.TargetProperty="BorderBrush.(SolidColorBrush.Color)" Storyboard.TargetName="PART_Border" To="{StaticResource SecondaryColor/300/100}" Duration="0:0:0.1"/>
@@ -31,7 +44,8 @@
                 <ColorAnimation Storyboard.TargetProperty="Background.(SolidColorBrush.Color)" Storyboard.TargetName="PART_Border" To="{StaticResource DisabledColor/300/100}" Duration="0:0:0.1"/>
                 <ColorAnimation Storyboard.TargetProperty="BorderBrush.(SolidColorBrush.Color)" Storyboard.TargetName="PART_Border" To="{StaticResource SecondaryColor/300/100}" Duration="0:0:0.1"/>
             </Storyboard>
-
+            <!--#endregion-->
+            
         </Style.Resources>
         <Setter Property="Background" Value="{DynamicResource Button.Static.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.BorderBrush}"/>
