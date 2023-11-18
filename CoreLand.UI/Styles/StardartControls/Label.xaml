@@ -26,6 +26,7 @@
         <Setter Property="Foreground" Value="{DynamicResource HeaderLabelStyle.Static.Foreground}"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="Padding" Value="5,5,0,5"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
         <Setter Property="Template" Value="{DynamicResource HeaderLabelTemplate}"/>
         
         <Style.Triggers>
