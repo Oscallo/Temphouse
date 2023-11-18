@@ -9,6 +9,7 @@ using System.Windows.Media;
 
 namespace CoreLand.UI.Converters
 {
+    [ValueConversion(typeof(SolidColorBrush),typeof(Color))]
     public class SolidColorBrushToColorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -19,7 +20,9 @@ namespace CoreLand.UI.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            Color color = (Color)value;
+            Brush colorBrush = new SolidColorBrush(color);
+            return colorBrush;
         }
     }
 }
