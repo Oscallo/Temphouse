@@ -16,9 +16,8 @@ namespace CoreLand.UI.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Color color = (Color)value;
-            Brush colorBrush = new SolidColorBrush(color);
-            return colorBrush;
+            ColorToSolidColorBrushConverter colorToSolidColorBrushConverter = new ColorToSolidColorBrushConverter();
+            return colorToSolidColorBrushConverter.Convert(value, targetType, parameter, culture);
         }
     }
 }
