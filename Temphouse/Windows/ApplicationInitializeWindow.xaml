@@ -70,17 +70,17 @@
                 <Label Style="{DynamicResource HeaderLabelStyle}" Content="Инициализация администратора:"/>
                 <ucs:UserIcon Margin="5"/>
                 <Label Content="Фамилия:" />
-                <TextBox HorizontalAlignment="Stretch" Height="28" />
+                <TextBox HorizontalAlignment="Stretch" Height="28" Text="{Binding AdministratorData.Family}"/>
                 <Label Content="Имя:" />
-                <TextBox HorizontalAlignment="Stretch" Height="28" />
+                <TextBox HorizontalAlignment="Stretch" Height="28" Text="{Binding AdministratorData.Name}" />
                 <Label Content="Отчество:" />
-                <TextBox HorizontalAlignment="Stretch" Height="28" />
+                <TextBox HorizontalAlignment="Stretch" Height="28" Text="{Binding AdministratorData.SecondName}"/>
                 <Label Content="Дата рождения:" />
                 <TextBox HorizontalAlignment="Stretch" Height="28" />
                 <Label Content="Имя пользователя:" />
-                <TextBox HorizontalAlignment="Stretch" Height="28" />
+                <TextBox HorizontalAlignment="Stretch" Height="28" Text="{Binding AdministratorData.Login}"/>
                 <Label Content="Пароль:" />
-                <PasswordBox HorizontalAlignment="Stretch" Height="28" />
+                <PasswordBox HorizontalAlignment="Stretch" Height="28" PasswordChanged="PasswordBox_PasswordChanged" />
             </StackPanel>
         </Grid>
 
