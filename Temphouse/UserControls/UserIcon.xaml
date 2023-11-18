@@ -7,6 +7,13 @@
              mc:Ignorable="d" Height="60" Width="60"
              d:DesignHeight="60" d:DesignWidth="60">
     <Grid>
-            
+        <Ellipse Stroke="{DynamicResource SecondarySolidColorBrush/300}" StrokeThickness="2">
+            <Ellipse.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="{DynamicResource SecondaryColor/500/100}" Offset="0" />
+                    <GradientStop Color="{DynamicResource SecondaryColor/700/100}" Offset="1" />
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
     </Grid>
 </UserControl>
