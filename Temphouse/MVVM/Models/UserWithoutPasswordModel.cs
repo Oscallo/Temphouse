@@ -1,4 +1,6 @@
-﻿namespace Temphouse.MVVM.Models
+﻿using System.Security;
+
+namespace Temphouse.MVVM.Models
 {
     public class UserWithoutPasswordModel : UserModel
     {
@@ -6,6 +8,6 @@
 
         public UserWithoutPasswordModel() : base() { }
 
-        public UserWithoutPasswordModel(string name, string family, string password) : base(name, family, password) { }
+        public UserWithoutPasswordModel(string name, string family) : base(name, family, null) { }
     }
 }

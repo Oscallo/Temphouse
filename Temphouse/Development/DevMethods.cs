@@ -18,7 +18,7 @@ namespace Temphouse.Development
             ObservableCollection<AuthorizedUserModel> authorizedUserModels = new ObservableCollection<AuthorizedUserModel>();
 
             SessionModel session = new SessionModel(0);
-            UserWithoutPasswordModel userWithoutPassword = new UserWithoutPasswordModel(GenerateRandomString(4), GenerateRandomString(3), GenerateRandomString(5));
+            UserWithoutPasswordModel userWithoutPassword = new UserWithoutPasswordModel(GenerateRandomString(4), GenerateRandomString(3));
 
             for (int i = 0; i < count; i++)
             {

@@ -1,22 +1,33 @@
 ﻿using CoreLand.UI.MVVM.Models;
+using System.Security;
 
 namespace Temphouse.MVVM.Models
 {
     public class UserModel : BaseModel
     {
         private int _Id = -1;
-        private string _Password = string.Empty;
+        private SecureString _Password;
         private string _Name = string.Empty;
         private string _SecondName = string.Empty;
         private string _Family = string.Empty;
+        private string _Login = string.Empty;
 
         public UserModel() { }
 
-        public UserModel(string name, string family, string password)
+        public UserModel(string name, string family, SecureString password)
         {
             Name = name;
             Family = family;
             Password = password;
+        }
+
+        public string Login
+        {
+            get => _Login;
+            set
+            {
+                SetValue(ref _Login, value);
+            }
         }
 
         public int Id
@@ -28,7 +39,7 @@ namespace Temphouse.MVVM.Models
             }
         }
 
-        public string Password
+        public SecureString Password
         {
             get => _Password;
             set
