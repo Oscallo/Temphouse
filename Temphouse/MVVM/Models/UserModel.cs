@@ -1,4 +1,5 @@
 ﻿using CoreLand.UI.MVVM.Models;
+using System;
 using System.Security;
 
 namespace Temphouse.MVVM.Models
@@ -11,6 +12,7 @@ namespace Temphouse.MVVM.Models
         private string _SecondName = string.Empty;
         private string _Family = string.Empty;
         private string _Login = string.Empty;
+        private DateOnly _DateBirthday = new DateOnly();
 
         public UserModel() { }
 
@@ -27,6 +29,15 @@ namespace Temphouse.MVVM.Models
             set
             {
                 SetValue(ref _Login, value);
+            }
+        }
+
+        public DateOnly DateBirthday
+        {
+            get => _DateBirthday;
+            set
+            {
+                SetValue(ref _DateBirthday, value);
             }
         }
 
