@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ui="http://schemas.oscallo.com/coreland/ui/controls" 
+        xmlns:ucs="clr-namespace:Temphouse.UserControls"
         xmlns:uiConv="http://schemas.oscallo.com/coreland/ui/uiConverters"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Temphouse.MVVM.ViewModels"
@@ -67,6 +68,19 @@
         <Grid Name="PART_AdministatorInitializeGrid" Grid.RowSpan="3" Grid.Column="2">
             <StackPanel Orientation="Vertical">
                 <Label Style="{DynamicResource HeaderLabelStyle}" Content="Инициализация администратора:"/>
+                <ucs:UserIcon Margin="5"/>
+                <Label Content="Фамилия:" />
+                <TextBox HorizontalAlignment="Stretch" Height="28" />
+                <Label Content="Имя:" />
+                <TextBox HorizontalAlignment="Stretch" Height="28" />
+                <Label Content="Отчество:" />
+                <TextBox HorizontalAlignment="Stretch" Height="28" />
+                <Label Content="Дата рождения:" />
+                <TextBox HorizontalAlignment="Stretch" Height="28" />
+                <Label Content="Имя пользователя:" />
+                <TextBox HorizontalAlignment="Stretch" Height="28" />
+                <Label Content="Пароль:" />
+                <PasswordBox HorizontalAlignment="Stretch" Height="28" />
             </StackPanel>
         </Grid>
 
@@ -74,4 +88,15 @@
             <Button Height="50" Width="350" Content="Инициализация закончена" TextElement.FontSize="24"/>
         </Grid>
     </Grid>
+    
+    
 </ui:ExtendedWindow>
+
+    
+    
+<!-- Список задач:
+    1. Toggle Button
+    2. FileSelector
+    3. ComboBox
+    4. Исправка багов
+    -->
