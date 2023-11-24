@@ -3,10 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/ExToggleButton.xaml"/>
+
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/SquaredButtonDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/ExtendedWindowDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/EPasswordBoxDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/HintableTextBoxDefaultStyle.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/CoreLand.UI;component/Themes/HintablePasswordBoxDefaultStyle.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+
 </ResourceDictionary>
